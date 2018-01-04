@@ -23,6 +23,8 @@ installed_extras:
   - drush
   - mailhog
   - varnish
+  - adminer
+  - pimpmylog
 
 extra_packages:
   - unzip

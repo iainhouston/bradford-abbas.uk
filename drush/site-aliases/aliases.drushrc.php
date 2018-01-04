@@ -9,6 +9,9 @@
   'remote-host' => 'live.bradford-abbas.uk',
   'remote-user' => 'ubuntu',
   'ssh-options' => '-o PasswordAuthentication=no -i ~/.ssh/BAPC-2.pem',
+  'path-aliases' => array(
+     '%files' => 'sites/default/files',
+    ),
 );
 $aliases['balive'] = $aliases['live.bradford-abbas.uk'];
 
@@ -20,6 +23,7 @@ $aliases['local.bradford-abbas.uk'] = array(
   'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "' . (getenv('VAGRANT_HOME') ?: drush_server_home() . '/.vagrant.d') . '/insecure_private_key"',
   'path-aliases' => array(
     '%drush-script' => '/usr/local/bin/drush',
+    '%files' => 'sites/default/files',
   ),
 );
 $aliases['badev'] = $aliases['local.bradford-abbas.uk'];
