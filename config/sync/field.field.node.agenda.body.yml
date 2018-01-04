@@ -1,0 +1,22 @@
+uuid: 76985033-2925-4c3b-923e-62f5855d58a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.agenda
+  module:
+    - text
+id: node.agenda.body
+field_name: body
+entity_type: node
+bundle: agenda
+label: 'Agenda text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,17 @@
+uuid: ca868ffa-aadd-4fcd-8842-e825237327fd
+langcode: en
+status: true
+dependencies: {  }
+name: 'History Society'
+id: history_society
+description: ''
+format: html
+priority: 0
+receipt: true
+from_name: 'Bradford Abbas History Society'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: histsoc@bradford-abbas.uk
+hyperlinks: true
+new_account: none
+opt_inout: double
+weight: 0

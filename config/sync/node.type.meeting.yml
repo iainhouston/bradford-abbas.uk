@@ -1,0 +1,17 @@
+uuid: bda7726a-e1b7-4ea7-a800-d707faf95bd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Meeting
+type: meeting
+description: '<p>A meeting or some other significant event of the smaller authority. A summons to a meeting can be emailed to Councillors and others.</p>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

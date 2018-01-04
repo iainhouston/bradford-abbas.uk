@@ -1,0 +1,43 @@
+uuid: 2787b413-985a-4686-a3e3-dc703a53f335
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.history_society_event.body
+    - field.field.node.history_society_event.field_meeting_date
+    - field.field.node.history_society_event.simplenews_issue
+    - node.type.history_society_event
+  module:
+    - datetime
+    - text
+    - user
+id: node.history_society_event.teaser
+targetEntityType: node
+bundle: history_society_event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_meeting_date:
+    type: datetime_custom
+    weight: 2
+    label: above
+    settings:
+      date_format: 'Y-m-d\TH:i:s'
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  simplenews_issue: true

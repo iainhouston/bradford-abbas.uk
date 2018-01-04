@@ -1,0 +1,19 @@
+uuid: 6402561f-89bf-46ed-a7cd-30c60f93dc8b
+langcode: en
+status: true
+dependencies: {  }
+id: history_society_editor
+label: 'History society editor'
+weight: -8
+is_admin: null
+permissions:
+  - 'create history_society_event content'
+  - 'delete any history_society_event content'
+  - 'delete history_society_event revisions'
+  - 'delete own history_society_event content'
+  - 'edit any history_society_event content'
+  - 'edit own history_society_event content'
+  - 'revert history_society_event revisions'
+  - 'send newsletter'
+  - 'view history_society_event revisions'
+  - 'view the administration theme'

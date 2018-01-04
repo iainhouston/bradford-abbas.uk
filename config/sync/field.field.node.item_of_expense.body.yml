@@ -1,0 +1,22 @@
+uuid: e61bd02a-7006-4191-bc2a-420738797efb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.item_of_expense
+  module:
+    - text
+id: node.item_of_expense.body
+field_name: body
+entity_type: node
+bundle: item_of_expense
+label: Notes
+description: '<p>Any notes you''d like to make about this transaction that you wish to be available to the public.</p>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

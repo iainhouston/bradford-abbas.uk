@@ -1,0 +1,27 @@
+uuid: 9ab1aa62-0cb4-44a2-a800-aca20b75e169
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minutes_meeting
+    - node.type.meeting
+    - node.type.minutes
+id: node.minutes.field_minutes_meeting
+field_name: field_minutes_meeting
+entity_type: node
+bundle: minutes
+label: 'Meeting details'
+description: 'Choose the existing <em>Meeting</em> relating to these <em>Minutes</em>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      meeting: meeting
+    sort:
+      field: field_meeting_date
+      direction: DESC
+field_type: entity_reference

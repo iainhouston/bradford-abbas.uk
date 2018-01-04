@@ -1,0 +1,19 @@
+uuid: 2ceb765d-8937-4b73-8d00-ae76e637e7dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: 3BiX0lHzQ8EyHRnO56OziilMZPNxJImXpSAQUTuALLU
+name: 'General Circular'
+type: simplenews_issue
+description: '<p>A <em>General Circular</em> is for ad hoc newsletters.</p><p>(This is not intended for summoning Councillors; a <em>Meeting</em> can be  sent as an email circular for this purpose.)</p><p>As yet we have not placed a sign-up form on the website to gather subscribers to the <em>General Circular</em></p>'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,8 @@
+uuid: 86590b04-ecd0-48ab-8b00-a82713b83b81
+langcode: en
+status: true
+dependencies: {  }
+id: ba_kind
+label: BA-kind
+locked: false
+pattern: 'g:i a'

@@ -1,0 +1,19 @@
+uuid: 448e54b6-4865-4639-9600-d9c0a2c50314
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_agenda
+field_name: field_agenda
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

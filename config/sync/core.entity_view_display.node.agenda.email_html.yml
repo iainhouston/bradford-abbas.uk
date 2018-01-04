@@ -1,0 +1,38 @@
+uuid: a7303d8b-7bf5-47c7-a000-ef9308bd6e60
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.agenda.body
+    - field.field.node.agenda.field_agenda_meeting
+    - field.field.node.agenda.field_agenda_status
+    - field.field.node.agenda.field_agenda_time_stamp
+    - node.type.agenda
+  module:
+    - text
+    - user
+id: node.agenda.email_html
+targetEntityType: node
+bundle: agenda
+mode: email_html
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_agenda_status:
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_agenda_meeting: true
+  field_agenda_time_stamp: true
+  links: true

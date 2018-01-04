@@ -1,0 +1,31 @@
+uuid: 8c25dadc-2da0-438b-a400-bb8cc986d636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meeting_place
+    - node.type.meeting
+    - taxonomy.vocabulary.meeting_place
+  content:
+    - 'taxonomy_term:meeting_place:fc6cdfa8-691c-4eba-b22c-44d990cb03bb'
+id: node.meeting.field_meeting_place
+field_name: field_meeting_place
+entity_type: node
+bundle: meeting
+label: 'Meeting place'
+description: "<p>Please select the Meeting Place from the drop-down list.</p>\r\n<p>If you want to create a new Meeting Place that is not in the list, then go to <em>Manage >> Structure >> Taxonomy Terms</em></p> \r\n<p><strong>The remaining fields on this form can be added at a later time</strong></p>\r\n<p><strong>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</strong></p>"
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: fc6cdfa8-691c-4eba-b22c-44d990cb03bb
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      meeting_place: meeting_place
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

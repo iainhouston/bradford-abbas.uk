@@ -1,0 +1,17 @@
+uuid: 581c5a46-8ef1-4bf2-b006-6e85f57ace10
+langcode: en
+status: true
+dependencies: {  }
+name: Councillors
+id: councillors
+description: 'This list of  email addresses are "subscribed" by the Parish Clerk and is used to summons councillors to meetings; circulate documents, etc.'
+format: html
+priority: 0
+receipt: true
+from_name: 'Bradford Abbas Parish Clerk'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: clerk@bradford-abbas.uk
+hyperlinks: true
+new_account: 'off'
+opt_inout: double
+weight: 0

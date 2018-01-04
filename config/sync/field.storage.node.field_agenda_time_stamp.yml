@@ -1,0 +1,20 @@
+uuid: 106b2364-0511-4431-9500-b1cc87f1dd16
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_agenda_time_stamp
+field_name: field_agenda_time_stamp
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

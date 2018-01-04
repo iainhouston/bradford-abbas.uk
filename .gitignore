@@ -22,3 +22,6 @@
 
 # Ignore Vagrant files.
 .vagrant/
+
+# Ignore Drupal temporary files
+tmp/

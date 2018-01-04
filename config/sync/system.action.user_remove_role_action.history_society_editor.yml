@@ -1,0 +1,14 @@
+uuid: 75291920-3bab-4a19-ae0d-49f25fe0c752
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.history_society_editor
+  module:
+    - user
+id: user_remove_role_action.history_society_editor
+label: 'Remove the History society editor role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: history_society_editor

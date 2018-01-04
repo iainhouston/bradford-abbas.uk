@@ -1,0 +1,9 @@
+uuid: f26decfd-38ec-47ce-b101-1f6dede5bc35
+langcode: en
+status: true
+dependencies: {  }
+name: 'Meeting Place'
+vid: meeting_place
+description: ''
+hierarchy: 0
+weight: 0

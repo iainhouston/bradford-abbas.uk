@@ -1,0 +1,12 @@
+uuid: 0808e00f-88ed-4a52-9800-a22937495bd5
+langcode: en
+status: true
+dependencies: {  }
+id: contact_the_parish_council
+label: 'Contact the Parish Council'
+recipients:
+  - clerk@bradford-abbas.uk
+reply: 'Thanks for contacting Bradford Abbas Parish Council. Your message has been passed to the Parish Clerk.'
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

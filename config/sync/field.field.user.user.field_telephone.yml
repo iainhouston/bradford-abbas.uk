@@ -1,0 +1,21 @@
+uuid: e95087ca-9bf5-475b-8800-aef2ed8f4ff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_telephone
+  module:
+    - telephone
+    - user
+id: user.user.field_telephone
+field_name: field_telephone
+entity_type: user
+bundle: user
+label: Telephone
+description: 'Only enter your telephone number if you want it made available to the public. There is a contact form that the public can use to contact the Parish Council.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,9 @@
+uuid: 1bd861b2-8642-41b5-a451-81e8e9713ab1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Meeting Type'
+vid: meeting_type
+description: ''
+hierarchy: 0
+weight: 0

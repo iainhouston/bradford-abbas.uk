@@ -1,0 +1,44 @@
+uuid: 9b03f459-7579-4c10-a275-5d256ed29465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.village_plan_page.body
+    - field.field.node.village_plan_page.field_back_to_index
+    - field.field.node.village_plan_page.field_file_under
+    - node.type.village_plan_page
+  module:
+    - link
+    - text
+    - user
+id: node.village_plan_page.default
+targetEntityType: node
+bundle: village_plan_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_back_to_index:
+    weight: 103
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_file_under: true

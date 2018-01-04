@@ -1,0 +1,9 @@
+uuid: 6d0b5344-d4ac-4cf7-8401-1f9ce68c1266
+langcode: en
+status: true
+dependencies: {  }
+name: 'Document status'
+vid: document_status
+description: ''
+hierarchy: 0
+weight: 0

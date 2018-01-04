@@ -1,0 +1,22 @@
+uuid: c2d074b4-fcd5-4279-bf3a-0e445ec740a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: village_plan
+label: village_plan
+type: 'canonical_entities:node'
+pattern: 'village_plan/[node:field_file_under]/[node:title]'
+selection_criteria:
+  dab559b1-5826-4e78-b77b-0b6a077ecaeb:
+    id: node_type
+    bundles:
+      village_plan_page: village_plan_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: dab559b1-5826-4e78-b77b-0b6a077ecaeb
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,22 @@
+uuid: 01750111-ca56-4b0d-b517-23e4e45f6941
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pellucid_monoset
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: pellucid_monoset_messages
+theme: pellucid_monoset
+region: content_top
+weight: -9
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

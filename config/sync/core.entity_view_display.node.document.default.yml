@@ -1,0 +1,44 @@
+uuid: 7136d1f9-8cc5-41ba-8328-40b51cddddff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.document.body
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_uploaded_files
+    - field.field.node.document.simplenews_issue
+    - node.type.document
+  module:
+    - file
+    - text
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document_type:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_uploaded_files:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  links: true
+  simplenews_issue: true

@@ -1,0 +1,22 @@
+uuid: 99c8611e-c438-4a26-8705-0523e1f51610
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.minutes
+  module:
+    - text
+id: node.minutes.body
+field_name: body
+entity_type: node
+bundle: minutes
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

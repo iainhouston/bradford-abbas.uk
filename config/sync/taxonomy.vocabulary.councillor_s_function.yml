@@ -1,0 +1,9 @@
+uuid: 2a288246-5c60-49ed-a600-b7843e377865
+langcode: en
+status: true
+dependencies: {  }
+name: 'Councillor''s function'
+vid: councillor_s_function
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,14 @@
+uuid: 91e50acc-66b8-4f9e-8a02-176393e2aa99
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.history_society_editor
+  module:
+    - user
+id: user_add_role_action.history_society_editor
+label: 'Add the History society editor role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: history_society_editor

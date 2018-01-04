@@ -1,0 +1,17 @@
+uuid: c827fe0d-824d-4d47-9a27-77c74484d5a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Village Plan page'
+type: village_plan_page
+description: 'A page in our Village Plan'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

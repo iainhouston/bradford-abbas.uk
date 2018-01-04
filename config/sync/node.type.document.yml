@@ -1,0 +1,18 @@
+uuid: 8ee66725-7f49-4515-b200-c673f3e01d9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Document
+type: document
+description: '<p>A supporting document, typically relating to one or more <em>Meeting</em>s: e.g. a Planning document; something something from WDDC; etc.</p>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

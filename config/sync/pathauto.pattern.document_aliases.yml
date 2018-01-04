@@ -1,0 +1,22 @@
+uuid: 2dc46cb5-d65c-4c34-9c01-1fb502b34ca2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: document_aliases
+label: 'Document aliases'
+type: 'canonical_entities:node'
+pattern: 'document/[node:created:short]'
+selection_criteria:
+  af633418-a96a-4270-8308-8f5aeba840de:
+    id: node_type
+    bundles:
+      document: document
+    negate: false
+    context_mapping:
+      node: node
+    uuid: af633418-a96a-4270-8308-8f5aeba840de
+selection_logic: and
+weight: -5
+relationships: {  }

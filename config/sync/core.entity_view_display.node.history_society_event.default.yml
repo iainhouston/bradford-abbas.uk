@@ -1,0 +1,41 @@
+uuid: d9a90702-2270-4f07-a358-0cfa0a577f0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.history_society_event.body
+    - field.field.node.history_society_event.field_meeting_date
+    - field.field.node.history_society_event.simplenews_issue
+    - node.type.history_society_event
+  module:
+    - datetime
+    - text
+    - user
+id: node.history_society_event.default
+targetEntityType: node
+bundle: history_society_event
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_meeting_date:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  simplenews_issue: true

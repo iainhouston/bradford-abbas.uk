@@ -1,0 +1,32 @@
+uuid: c9eb02eb-7ef8-4add-9e00-cc4d5df2f40b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.simplenews_issue
+    - node.type.minutes
+    - simplenews.newsletter.councillors
+  module:
+    - simplenews
+id: node.minutes.simplenews_issue
+field_name: simplenews_issue
+entity_type: node
+bundle: minutes
+label: 'Circulation list'
+description: '<p>Strictly optional. It should not usually be necessary to use this field.</p><p>Minutes are referenced from a <em>Meeting</em> for for public viewing.</p>'
+required: false
+translatable: true
+default_value:
+  -
+    handler: simplenews_all
+    handler_settings: null
+    status: 0
+    sent_count: 0
+    subscribers: 0
+    target_uuid: 581c5a46-8ef1-4bf2-b006-6e85f57ace10
+default_value_callback: ''
+settings:
+  handler: 'default:simplenews_newsletter'
+  handler_settings:
+    target_bundles: null
+field_type: simplenews_issue

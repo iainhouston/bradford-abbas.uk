@@ -1,0 +1,22 @@
+uuid: ad26029b-807b-4e14-924e-7888515c22f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.document
+  module:
+    - text
+id: node.document.body
+field_name: body
+entity_type: node
+bundle: document
+label: Notes
+description: "<p>This is where we can note any variances or comments on negative responses to internal control objectives, for example.</p>\r\n<p>You can get reasonable results from pasting the selected contents of a Microsoft Word document here, but you may have to tidy it up a bit before saving the <em>Document</em></p>"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

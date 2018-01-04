@@ -1,0 +1,52 @@
+uuid: f6fe6c0f-4429-4b6e-8607-7d329fccd3b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.diff
+    - field.field.node.document.body
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_uploaded_files
+    - field.field.node.document.simplenews_issue
+    - node.type.document
+  module:
+    - file
+    - text
+    - user
+id: node.document.diff
+targetEntityType: node
+bundle: document
+mode: diff
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document_type:
+    weight: 1
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_uploaded_files:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  simplenews_issue:
+    type: entity_reference_label
+    weight: 3
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true

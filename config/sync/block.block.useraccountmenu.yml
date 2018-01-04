@@ -1,0 +1,24 @@
+uuid: e3c1c728-0e1e-4e5d-8209-a71197ab8a56
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - pellucid_monoset
+id: useraccountmenu
+theme: pellucid_monoset
+region: front_eight
+weight: -13
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

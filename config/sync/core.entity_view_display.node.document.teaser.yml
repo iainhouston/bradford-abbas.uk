@@ -1,0 +1,43 @@
+uuid: fb85ccd7-2168-4360-b509-9e2700582038
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.document.body
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_uploaded_files
+    - field.field.node.document.simplenews_issue
+    - node.type.document
+  module:
+    - file
+    - text
+    - user
+id: node.document.teaser
+targetEntityType: node
+bundle: document
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_uploaded_files:
+    type: file_default
+    weight: 1
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_document_type: true
+  simplenews_issue: true

@@ -1,0 +1,22 @@
+uuid: a50ca75e-2ad6-4418-ba05-05dfdcf909bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: meeting_aliases
+label: 'Meeting aliases'
+type: 'canonical_entities:node'
+pattern: 'meeting/[node:field_meeting_date]'
+selection_criteria:
+  9b770d1e-645e-4b32-a100-a499d7c2d845:
+    id: node_type
+    bundles:
+      meeting: meeting
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9b770d1e-645e-4b32-a100-a499d7c2d845
+selection_logic: and
+weight: -5
+relationships: {  }

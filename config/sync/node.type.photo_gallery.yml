@@ -1,0 +1,17 @@
+uuid: 035852c8-b782-43e3-a602-2cd869e1da56
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Photo Gallery'
+type: photo_gallery
+description: '<p>A photo gallery using the <em>JuiceBox</em> Javascript library (v 1.4.4.2 Pro)</p>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

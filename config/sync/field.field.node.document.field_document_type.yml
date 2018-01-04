@@ -1,0 +1,27 @@
+uuid: c41d2294-2e89-4c2e-b500-b71b9cc71e9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_type
+    - node.type.document
+    - taxonomy.vocabulary.document_type
+id: node.document.field_document_type
+field_name: field_document_type
+entity_type: node
+bundle: document
+label: 'Document type'
+description: "<p>Select from the drop-down list.</p>\r\n<p>Please contact the <em>Parish Clerk</em> or <em>webmaster</em> if there is nothing there that meets your needs.</p>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_type: document_type
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

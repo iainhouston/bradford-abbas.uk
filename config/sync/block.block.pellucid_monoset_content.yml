@@ -1,0 +1,22 @@
+uuid: d31a0cc2-fd9e-47bd-8a52-82f999e34fc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pellucid_monoset
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: pellucid_monoset_content
+theme: pellucid_monoset
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

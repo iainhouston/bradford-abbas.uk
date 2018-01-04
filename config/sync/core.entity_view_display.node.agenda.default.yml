@@ -1,0 +1,48 @@
+uuid: f4be2b5b-9264-48a3-bc00-d2f8fcc1a654
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.agenda.body
+    - field.field.node.agenda.field_agenda_meeting
+    - field.field.node.agenda.field_agenda_status
+    - field.field.node.agenda.field_agenda_time_stamp
+    - node.type.agenda
+  module:
+    - text
+    - user
+id: node.agenda.default
+targetEntityType: node
+bundle: agenda
+mode: default
+content:
+  body:
+    label: visually_hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_agenda_meeting:
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_agenda_status:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_agenda_time_stamp: true

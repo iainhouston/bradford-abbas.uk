@@ -1,0 +1,28 @@
+uuid: 39847558-664d-4a5b-8b26-3d28262b8b1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_back_to_index
+    - node.type.village_plan_page
+  module:
+    - link
+id: node.village_plan_page.field_back_to_index
+field_name: field_back_to_index
+entity_type: node
+bundle: village_plan_page
+label: 'Back to index'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'internal:/village-plan-index'
+    title: 'Back to Village Plan Index'
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

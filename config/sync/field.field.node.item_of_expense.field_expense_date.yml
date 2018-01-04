@@ -1,0 +1,24 @@
+uuid: 3d3f9734-1ec1-42a3-8206-6c7b22ec40cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expense_date
+    - node.type.item_of_expense
+  module:
+    - datetime
+id: node.item_of_expense.field_expense_date
+field_name: field_expense_date
+entity_type: node
+bundle: item_of_expense
+label: 'Expense date'
+description: 'date the expenditure was incurred'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

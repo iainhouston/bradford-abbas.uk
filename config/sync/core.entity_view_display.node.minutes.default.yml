@@ -1,0 +1,44 @@
+uuid: b9faa7c6-101c-4af4-b515-211e4adefc68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.minutes.body
+    - field.field.node.minutes.field_minutes_meeting
+    - field.field.node.minutes.field_minutes_status
+    - field.field.node.minutes.simplenews_issue
+    - node.type.minutes
+  module:
+    - text
+    - user
+id: node.minutes.default
+targetEntityType: node
+bundle: minutes
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_minutes_meeting:
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_minutes_status:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  links: true
+  simplenews_issue: true

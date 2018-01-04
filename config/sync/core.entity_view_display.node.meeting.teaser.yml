@@ -1,0 +1,51 @@
+uuid: 50c409a0-dd78-476d-a11d-29b90cb1da44
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.meeting.body
+    - field.field.node.meeting.field_agenda
+    - field.field.node.meeting.field_meeting_date
+    - field.field.node.meeting.field_meeting_minutes
+    - field.field.node.meeting.field_meeting_place
+    - field.field.node.meeting.field_meeting_type
+    - field.field.node.meeting.field_supporting_documents
+    - field.field.node.meeting.simplenews_issue
+    - node.type.meeting
+  module:
+    - text
+    - user
+id: node.meeting.teaser
+targetEntityType: node
+bundle: meeting
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_meeting_place:
+    type: entity_reference_label
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_agenda: true
+  field_meeting_date: true
+  field_meeting_minutes: true
+  field_meeting_type: true
+  field_supporting_documents: true
+  simplenews_issue: true

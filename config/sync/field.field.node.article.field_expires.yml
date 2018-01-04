@@ -1,0 +1,21 @@
+uuid: 92dcf401-dd11-42d8-8d10-96ca45ec6b4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expires
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_expires
+field_name: field_expires
+entity_type: node
+bundle: article
+label: Expires
+description: 'The date after which this <em>Article</em> will not be viewed by the public'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

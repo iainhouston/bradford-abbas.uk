@@ -1,0 +1,17 @@
+uuid: 68e79bc4-f808-45a3-8a24-36f5b881ca8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Minutes
+type: minutes
+description: 'The <em>Minutes</em> relating to one particular <em>Meeting</em>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,31 @@
+uuid: 0c978aa3-3f29-4367-bf03-3a03d1e8e13e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:33dc9f24-d5bb-46a3-bb09-9aed02e37406'
+  module:
+    - block_content
+    - system
+  theme:
+    - pellucid_monoset
+id: websitefeedbackheader
+theme: pellucid_monoset
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:33dc9f24-d5bb-46a3-bb09-9aed02e37406'
+settings:
+  id: 'block_content:33dc9f24-d5bb-46a3-bb09-9aed02e37406'
+  label: 'Website feedback header'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /contact/feedback
+    negate: false
+    context_mapping: {  }

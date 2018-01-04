@@ -1,0 +1,27 @@
+uuid: e5f36ce9-9948-4d89-b200-e4cbdf34f03e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uploaded_files
+    - node.type.document
+  module:
+    - file
+id: node.document.field_uploaded_files
+field_name: field_uploaded_files
+entity_type: node
+bundle: document
+label: 'Uploaded files'
+description: '<p>Upload One or more files as required. </p><p>Please convert any Micosoft Word documents into PDF format.<br>Browsers can display PDF but not Word</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf'
+  max_filesize: '8 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

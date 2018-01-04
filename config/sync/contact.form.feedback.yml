@@ -1,0 +1,14 @@
+uuid: ef93406e-28a3-435d-9808-8c50363b851c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - webmaster@bradford-abbas.uk
+reply: 'Thanks you for providing feedback about the website.'
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

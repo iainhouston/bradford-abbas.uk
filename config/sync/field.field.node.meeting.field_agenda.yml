@@ -1,0 +1,27 @@
+uuid: fc1b5595-e068-4c58-9a07-7fed417b4099
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agenda
+    - node.type.agenda
+    - node.type.meeting
+id: node.meeting.field_agenda
+field_name: field_agenda
+entity_type: node
+bundle: meeting
+label: Agenda
+description: 'Choose the name of the <em>Agenda</em> for this <em>Meeting</em> when it is ready to be seen by anybody looking for details of the meeting.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      agenda: agenda
+    sort:
+      field: field_agenda_time_stamp
+      direction: DESC
+field_type: entity_reference

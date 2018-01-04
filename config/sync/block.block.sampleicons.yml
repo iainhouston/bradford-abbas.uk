@@ -1,0 +1,25 @@
+uuid: 30a01d98-44c1-496b-b042-66e4b948fad7
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:70f121a1-60fd-4b36-900a-10349580e19a'
+  module:
+    - block_content
+  theme:
+    - pellucid_monoset
+id: sampleicons
+theme: pellucid_monoset
+region: content
+weight: -11
+provider: null
+plugin: 'block_content:70f121a1-60fd-4b36-900a-10349580e19a'
+settings:
+  id: 'block_content:70f121a1-60fd-4b36-900a-10349580e19a'
+  label: 'Sample Icons'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

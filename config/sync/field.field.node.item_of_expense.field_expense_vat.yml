@@ -1,0 +1,25 @@
+uuid: 71f1de99-3592-4c29-b353-83036685f040
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expense_vat
+    - node.type.item_of_expense
+id: node.item_of_expense.field_expense_vat
+field_name: field_expense_vat
+entity_type: node
+bundle: item_of_expense
+label: 'Expense V.A.T.'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: £
+  suffix: ''
+field_type: decimal

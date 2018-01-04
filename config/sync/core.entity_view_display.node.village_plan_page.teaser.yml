@@ -1,0 +1,32 @@
+uuid: f93c61e8-5df9-4d8a-9019-abe40f5a2033
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.village_plan_page.body
+    - field.field.node.village_plan_page.field_back_to_index
+    - field.field.node.village_plan_page.field_file_under
+    - node.type.village_plan_page
+  module:
+    - text
+    - user
+id: node.village_plan_page.teaser
+targetEntityType: node
+bundle: village_plan_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_back_to_index: true
+  field_file_under: true

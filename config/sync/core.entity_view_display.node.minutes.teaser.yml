@@ -1,0 +1,46 @@
+uuid: c9783491-3250-4aa0-9300-c30321c4413e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.minutes.body
+    - field.field.node.minutes.field_minutes_meeting
+    - field.field.node.minutes.field_minutes_status
+    - field.field.node.minutes.simplenews_issue
+    - node.type.minutes
+  module:
+    - text
+    - user
+id: node.minutes.teaser
+targetEntityType: node
+bundle: minutes
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_minutes_meeting:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_minutes_status:
+    type: entity_reference_label
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true
+  simplenews_issue: true

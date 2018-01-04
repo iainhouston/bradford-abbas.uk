@@ -1,0 +1,18 @@
+uuid: 3358f577-d82e-4cf1-ae05-5a80cfa71aa9
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Item of expense'
+type: item_of_expense
+description: '<p>An item of expenditure above £100</p>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

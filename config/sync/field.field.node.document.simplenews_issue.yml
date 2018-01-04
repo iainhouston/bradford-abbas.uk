@@ -1,0 +1,32 @@
+uuid: 602c22f1-3853-4411-9356-863c2e93fd8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.simplenews_issue
+    - node.type.document
+    - simplenews.newsletter.councillors
+  module:
+    - simplenews
+id: node.document.simplenews_issue
+field_name: simplenews_issue
+entity_type: node
+bundle: document
+label: 'Circulation list'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    handler: simplenews_all
+    handler_settings: null
+    status: 0
+    sent_count: 0
+    subscribers: 0
+    target_uuid: 581c5a46-8ef1-4bf2-b006-6e85f57ace10
+default_value_callback: ''
+settings:
+  handler: 'default:simplenews_newsletter'
+  handler_settings:
+    target_bundles: null
+field_type: simplenews_issue

@@ -1,0 +1,22 @@
+uuid: 4824e2af-fd8c-4b60-9521-33328a6dfe0d
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - pellucid_monoset
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: pellucid_monoset_powered
+theme: pellucid_monoset
+region: content
+weight: -13
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: cbe5e368-8b81-4d14-a13e-3fea880d5b4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meeting_date
+    - node.type.history_society_event
+  module:
+    - datetime
+id: node.history_society_event.field_meeting_date
+field_name: field_meeting_date
+entity_type: node
+bundle: history_society_event
+label: 'Meeting time'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,23 @@
+uuid: 6fc98c21-1cce-456e-bd60-96bdbc72decd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agenda_time_stamp
+    - node.type.agenda
+id: node.agenda.field_agenda_time_stamp
+field_name: field_agenda_time_stamp
+entity_type: node
+bundle: agenda
+label: 'Time stamp'
+description: 'This field should not be visible to the user. It is used to sort Agendas'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

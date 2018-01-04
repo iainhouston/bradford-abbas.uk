@@ -1,0 +1,32 @@
+uuid: a4c2a72a-a37b-4706-9005-5e117e50b013
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_function
+    - taxonomy.vocabulary.councillor_s_function
+  content:
+    - 'taxonomy_term:councillor_s_function:ea4c24bf-cde1-4c6e-9400-b2a5537e84b1'
+  module:
+    - user
+id: user.user.field_function
+field_name: field_function
+entity_type: user
+bundle: user
+label: Function
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: ea4c24bf-cde1-4c6e-9400-b2a5537e84b1
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      councillor_s_function: councillor_s_function
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

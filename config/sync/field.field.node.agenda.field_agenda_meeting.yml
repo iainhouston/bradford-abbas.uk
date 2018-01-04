@@ -1,0 +1,27 @@
+uuid: dc572909-b4f2-458d-9300-c3447ca07774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agenda_meeting
+    - node.type.agenda
+    - node.type.meeting
+id: node.agenda.field_agenda_meeting
+field_name: field_agenda_meeting
+entity_type: node
+bundle: agenda
+label: Meeting
+description: '<p>Start typing to reveal the Meeting for which this is the Agenda</p><p>Then click the chosen Meeting before clicking <em>Save</em></p>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      meeting: meeting
+    sort:
+      field: field_agenda_time_stamp
+      direction: DESC
+field_type: entity_reference

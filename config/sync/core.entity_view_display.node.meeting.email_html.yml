@@ -1,0 +1,77 @@
+uuid: 99530022-7c0c-4784-9d5b-91027849c1d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.meeting.body
+    - field.field.node.meeting.field_agenda
+    - field.field.node.meeting.field_meeting_date
+    - field.field.node.meeting.field_meeting_minutes
+    - field.field.node.meeting.field_meeting_place
+    - field.field.node.meeting.field_meeting_type
+    - field.field.node.meeting.field_supporting_documents
+    - field.field.node.meeting.simplenews_issue
+    - node.type.meeting
+  module:
+    - datetime
+    - text
+    - user
+id: node.meeting.email_html
+targetEntityType: node
+bundle: meeting
+mode: email_html
+content:
+  body:
+    type: text_trimmed
+    weight: 5
+    label: inline
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_agenda:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_meeting_date:
+    weight: 0
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: ba_kind
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_meeting_minutes:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_meeting_place:
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_supporting_documents:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_meeting_type: true
+  links: true
+  simplenews_issue: true

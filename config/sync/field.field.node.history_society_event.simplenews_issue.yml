@@ -1,0 +1,33 @@
+uuid: a1dd02e0-3be4-4113-af36-0225315f010c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.simplenews_issue
+    - node.type.history_society_event
+    - simplenews.newsletter.history_society
+  module:
+    - simplenews
+id: node.history_society_event.simplenews_issue
+field_name: simplenews_issue
+entity_type: node
+bundle: history_society_event
+label: Issue
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    handler: simplenews_all
+    handler_settings: null
+    status: 0
+    sent_count: 0
+    subscribers: 0
+    target_uuid: ca868ffa-aadd-4fcd-8842-e825237327fd
+default_value_callback: ''
+settings:
+  handler: 'default:simplenews_newsletter'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: simplenews_issue

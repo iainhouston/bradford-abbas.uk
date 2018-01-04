@@ -1,0 +1,24 @@
+uuid: 8c650e51-1195-434b-9404-4a7609037948
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.meetings_past_and_future
+  module:
+    - views
+  theme:
+    - pellucid_monoset
+id: views_block__meetings_past_and_future_block_2
+theme: pellucid_monoset
+region: front_six
+weight: -11
+provider: null
+plugin: 'views_block:meetings_past_and_future-block_2'
+settings:
+  id: 'views_block:meetings_past_and_future-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

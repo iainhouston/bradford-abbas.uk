@@ -1,0 +1,22 @@
+uuid: d07ac3bb-f3ba-44c3-8947-713f0a753686
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_external_bodies
+  module:
+    - user
+id: user.user.field_external_bodies
+field_name: field_external_bodies
+entity_type: user
+bundle: user
+label: 'External bodies'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: None
+default_value_callback: ''
+settings: {  }
+field_type: string_long

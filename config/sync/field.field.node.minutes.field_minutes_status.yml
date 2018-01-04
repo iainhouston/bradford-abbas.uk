@@ -1,0 +1,31 @@
+uuid: 90c67aa7-b10c-4005-b82e-46b6ff6763cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minutes_status
+    - node.type.minutes
+    - taxonomy.vocabulary.document_status
+  content:
+    - 'taxonomy_term:document_status:054662a1-f53e-4f78-8407-7b0e7f0dda2c'
+id: node.minutes.field_minutes_status
+field_name: field_minutes_status
+entity_type: node
+bundle: minutes
+label: 'Document status'
+description: "<p>Set the <em>Document status</em> to <em>Final</em> when these <em>Minutes</em> have been approved by the Officers.</p>\r\n<p>You can only edit or delete the text of <em>Minutes</em> when in <em>Draft</em> status.<br>Remember to make a note in the <em>Revision log message</em> box if you're changing the <em>Document status</em> of these  <em>Minutes</em></p>"
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 054662a1-f53e-4f78-8407-7b0e7f0dda2c
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_status: document_status
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

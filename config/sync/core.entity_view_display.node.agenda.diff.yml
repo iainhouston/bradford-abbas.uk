@@ -1,0 +1,39 @@
+uuid: 4e0b52cd-b534-44e9-9e63-99d6b3bc323f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.diff
+    - field.field.node.agenda.body
+    - field.field.node.agenda.field_agenda_meeting
+    - field.field.node.agenda.field_agenda_status
+    - field.field.node.agenda.field_agenda_time_stamp
+    - node.type.agenda
+  module:
+    - text
+    - user
+id: node.agenda.diff
+targetEntityType: node
+bundle: agenda
+mode: diff
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_agenda_status:
+    weight: 1
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_agenda_meeting: true
+  field_agenda_time_stamp: true
+  links: true

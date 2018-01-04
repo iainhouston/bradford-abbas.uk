@@ -1,0 +1,25 @@
+uuid: f6e05e63-01d6-4459-8911-17642860020a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:837a4d40-309a-4a17-8500-dd7a0ff8df99'
+  module:
+    - block_content
+  theme:
+    - pellucid_monoset
+id: varioussupportingdocuments
+theme: pellucid_monoset
+region: front_four
+weight: -12
+provider: null
+plugin: 'block_content:837a4d40-309a-4a17-8500-dd7a0ff8df99'
+settings:
+  id: 'block_content:837a4d40-309a-4a17-8500-dd7a0ff8df99'
+  label: 'Various supporting documents'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
