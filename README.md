@@ -19,8 +19,10 @@ drush sql-sync  @balive @self
 drush   updb
 ```
 
-Managing the sectrets file
+Managing the secrets file
 ---------------------------
+
+This is where the drupal admin pw, drupal db pw and mysql root pw are encoded.
 
 ```
 ansible-vault create  vm/secrets.yml
@@ -47,13 +49,14 @@ Remove the preamble before the string `ssh-rsa` in `/root/.ssh/authorized_keys`
 Create `vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/vars.yml` per the tutorial creating a new
 admin account (`webmaster`) on the server with the password recorded in `Vault PW` here on the Mac.
 
-We should now be able to `ssh webmaster@staging.bradford-abbas.uk` and do superuser things using the password recorded in `Vault PW` here on the Mac.
-
 Now run the 'init' playbook.
 
 ```
 ansible-playbook -i vm/staging.inventory vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/init.yml -e "ansible_ssh_user=root"
 ```
+
+We should now have created `webmaster` and be able to `ssh webmaster@staging.bradford-abbas.uk` and thence `sudo`  things using the password recorded in `Vault PW` here on the Mac.
+
 
 Provisioning the staging server
 --------------------------------
