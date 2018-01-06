@@ -3,6 +3,7 @@
 drupal_build_composer_project: false
 drupal_build_composer: false
 drupal_composer_dependencies: []
+composer_github_oauth_token: '931bca162b3d41aa92ba0bd63d0bb065f9865997'
 
 # Drupal install settings.
 drupal_site_name: "My Production Website"
@@ -23,6 +24,9 @@ installed_extras:
   - varnish
   # - adminer
   # - pimpmylog
+
+drush_launcher_version: "0.5.0"
+drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
 
 # Add any extra Debian apt packages we would like installed.
 extra_packages:

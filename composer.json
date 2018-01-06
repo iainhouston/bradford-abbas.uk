@@ -54,7 +54,7 @@
         "drupal/simplenews": "1.x-dev",
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "~1.1",
-        "drush/drush": "~8.0|^9.0.0-beta8",
+        "drush/drush": "~9.0",
         "iainhouston/juicebox_pro": "dev-master",
         "iainhouston/pellucid_agenda": "dev-master",
         "iainhouston/pellucid_document": "dev-master",
@@ -67,6 +67,7 @@
     "require-dev": {
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
+        "drupal/devel": "^1.0",
         "drupal/link_css": "1.x-dev",
         "geerlingguy/drupal-vm": "^4.7",
         "jcalderonzumba/gastonjs": "~1.0.2",

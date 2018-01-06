@@ -7,9 +7,11 @@ I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutori
 
 Just a few differences:
 
-1. Instead of his `vagrant.config.yml` we needed to name it `local.config.yml`
+1. <span style="text-decoration: line-through;">Instead of his `vagrant.config.yml` we needed to name it `local.config.yml`</span>.
 
-2. These commands were run inside the vagrant VM since the `drush loader` seemed to have problems with the aliases when running the `..sync` commands.
+Not true after all as, after inspecting Jeff's code, I found it - the creation of the development site - to work as documented as long as we ensured the environment variable was correctly set by issuing commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
+
+2. These commands were run inside the vagrant VM since the `drush loader` (drush 8.1.15) seemed to have problems with the aliases when running the `..sync` commands.
 
 ```
 vagrant ssh
@@ -22,7 +24,7 @@ drush   updb
 Managing the secrets file
 ---------------------------
 
-This is where the drupal admin pw, drupal db pw and mysql root pw are encoded.
+This is where the itdrupal admin pw, drupal db pw and mysql root pw are encoded.
 
 ```
 ansible-vault create  vm/secrets.yml
@@ -66,3 +68,17 @@ We'll try:
 ```
 DRUPALVM_ENV=prod ansible-playbook -i vm/staging.inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
 ```
+
+# To Do
+
+Please <span style="text-decoration: line-through;">strike through a completed item</span> when done.
+
+1. Automate ssh keys and config to allow remote AWS servers acccess to private git repos **or** rationalise composer repo URIs.
+
+2. Find correct way to integrate our own Ansible roles and tasks with `vendor/geerlingguy/drupal-vm` roles and tasks.
+
+3. Automate `dkim` configuration (on production server and not on staging server)
+
+4. Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).
+`
+5. Conflict with drush as provisioned; as required by composer;  and drush-wrapper. Other drush conflicts: go to dush:~9.0; convert site_alias
