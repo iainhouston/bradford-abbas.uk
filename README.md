@@ -81,6 +81,9 @@ Please <span style="text-decoration: line-through;">strike through a completed i
 
 3. Automate `dkim` configuration (on production server and not on staging server)
 
-4. Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).
-`
+4. <span style="text-decoration: line-through;">Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).`</span>
+Not reproduced. Seemingly `.emacs.d` was  installed as root.
+
 5. Conflict with drush as provisioned; as required by composer;  and drush-wrapper. Other drush conflicts: go to dush:~9.0; convert site_alias
+
+6. 
