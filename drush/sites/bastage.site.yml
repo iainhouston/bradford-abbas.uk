@@ -1,0 +1,7 @@
+bastage:
+  host: staging.bradford-abbas.uk
+  options:
+    ssh-options: '-o PasswordAuthentication=no -i /Users/iainhouston/.ssh/BAPC-2.pem'
+  root: /var/www/staging/web
+  uri: staging.bradford-abbas.uk
+  user: ubuntu

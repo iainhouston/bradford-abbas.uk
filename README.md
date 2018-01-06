@@ -24,13 +24,15 @@ drush   updb
 Managing the secrets file
 ---------------------------
 
-This is where the itdrupal admin pw, drupal db pw and mysql root pw are encoded.
+This is where the passwords for drupal admin, drupal db; and mysql root;  are encoded.
 
 ```
 ansible-vault create  vm/secrets.yml
 ansible-vault view  vm/secrets.yml
 ansible-vault edit  vm/secrets.yml
 ```
+
+(Note issue below with `secrets.yml` when creating  the development machine once more after having provisioned the prod machine)
 
 
 Initialising the staging server

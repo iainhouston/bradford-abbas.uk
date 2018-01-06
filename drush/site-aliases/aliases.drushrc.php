@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Drush Aliases for Example.com.
+ * Drush Aliases for bradford-abbas.uk development ad maintenance
  */
  $aliases['live.bradford-abbas.uk'] = array(
   'uri' => 'bradford-abbas.uk',
