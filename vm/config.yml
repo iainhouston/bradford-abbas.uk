@@ -47,5 +47,3 @@ firewall_enabled: false
 apache_listen_port: "81"
 varnish_listen_port: "80"
 varnish_default_backend_port: "81"
-
-composer_github_oauth_token: '931bca162b3d41aa92ba0bd63d0bb065f9865997'
