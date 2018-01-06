@@ -9,6 +9,7 @@ composer_github_oauth_token: '931bca162b3d41aa92ba0bd63d0bb065f9865997'
 drupal_site_name: "My Production Website"
 drupal_core_path: "/var/www/drupal/web"
 drupal_install_site: true
+drupal_enable_modules: []
 
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
