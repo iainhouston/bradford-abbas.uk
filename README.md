@@ -36,7 +36,7 @@ Just a few notes:
     drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
     ```
 
-    It really is as simple as that. Oh but we also needed to convert our alias files into `.yml`.
+    It really is as simple as that. OK, well, we also needed to convert our alias files into `.yml`.
 
 Managing the secrets file
 ---------------------------
