@@ -1,6 +1,6 @@
 # Development and maintenance of Bradford Abbas Parish Council website
 
-How to set up the development site on MacBook
+How to set up the development site on Mac
 ===============
 
 I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod#comment-7231).
@@ -11,12 +11,12 @@ Just a few differences:
 
 Not true after all as, after inspecting Jeff's code, I found it - the creation of the development site - to work as documented as long as we ensured the environment variable was correctly set by issuing commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
 
-2. These commands were run inside the vagrant VM since the `drush loader` (drush 8.1.15) seemed to have problems with the aliases when running the `..sync` commands.
+2. <span style="text-decoration: line-through;">These commands were run inside the vagrant VM since the `drush loader` (drush 8.1.15) seemed to have problems with the aliases when running the `..sync` commands.</span>
 
 ```
 vagrant ssh
 cd /var/www/drupal/web
-drush rsync  @balive:%files @self:%files
+drush rsync  @balive:%files @self:%files --exclude-paths=sync:css:js:php
 drush sql-sync  @balive @self
 drush   updb
 ```
@@ -65,10 +65,11 @@ We should now have created `webmaster` and be able to `ssh webmaster@staging.bra
 Provisioning the staging server
 --------------------------------
 
-We'll try:
+Couldn't make Drupal VM deal with `DRUPALVM_ENV=staging` and `staging.inventory` etc. so we're sticking to a `DRUPALVM_ENV=prod`-only approach and will switch staging->live in due course.
+
 
 ```
-DRUPALVM_ENV=prod ansible-playbook -i vm/staging.inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
+DRUPALVM_ENV=prod ansible-playbook -i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
 ```
 
 # To Do
@@ -84,6 +85,12 @@ Please <span style="text-decoration: line-through;">strike through a completed i
 4. <span style="text-decoration: line-through;">Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).`</span>
 Not reproduced. Seemingly `.emacs.d` was  installed as root.
 
-5. Conflict with drush as provisioned; as required by composer;  and drush-wrapper. Other drush conflicts: go to dush:~9.0; convert site_alias
+5. <span style="text-decoration: line-through;">Conflict with drush as provisioned; as required by composer;  and drush-wrapper. Other drush conflicts: go to dush:~9.0; convert site_alias</span>. Removed `drush-wrapper` and used `drush_launcher_version: "0.5.0"` and `drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar`
 
-6. 
+  All drush commands in roles work.
+
+6. Investigate why `drush updb` fails first time after deployment of modified repo but not the second time playbook is run.
+
+7. Automate? tweaks: `www.bradford-abbas.uk`; http -> https; DMIM email signing
+
+8. <span style="text-decoration: line-through;">`secrets.yml` reequires vault password on `vagrant up`</span>. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant up` from failing; and asks for password. 
