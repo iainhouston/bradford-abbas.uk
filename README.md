@@ -5,21 +5,38 @@ How to set up the development site on Mac
 
 I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod#comment-7231).
 
-Just a few differences:
+Just a few notes:
 
-1. <span style="text-decoration: line-through;">Instead of his `vagrant.config.yml` we needed to name it `local.config.yml`</span>.
+1. Local environment at this time:
 
-Not true after all as, after inspecting Jeff's code, I found it - the creation of the development site - to work as documented as long as we ensured the environment variable was correctly set by issuing commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
+    ```
+    python --version #==> Python 2.7.14
+    ansible --version #==> ansible 2.4.2.0
+    vagrant --version #==> Vagrant 2.0.1
+    VBoxManage --version #==> Virtual Box 5.2.4r119785
+    composer --version  #==> ... 1.6.2 2018-01-05 15:28:4
+    ```
 
-2. <span style="text-decoration: line-through;">These commands were run inside the vagrant VM since the `drush loader` (drush 8.1.15) seemed to have problems with the aliases when running the `..sync` commands.</span>
+    Experience shows that unexplained provisioning errors can often disappear after having upgraded to the latest of each of `ansible`; `vagrant`; and `VirtalBox`.
 
-```
-vagrant ssh
-cd /var/www/drupal/web
-drush rsync  @balive:%files @self:%files --exclude-paths=sync:css:js:php
-drush sql-sync  @balive @self
-drush   updb
-```
+1. Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
+
+2. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
+
+    ```
+    vagrant ssh
+    drush rsync  @balive:%files @self:%files --exclude-paths=sync:css:js:php
+    drush sql-sync  @balive @self
+    drush @self updb
+    ```
+3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (prod) `config.yml` we have:
+
+    ```
+    drush_launcher_version: "0.5.0"
+    drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
+    ```
+
+    It really is as simple as that. Oh but we also needed to convert our alias files into `.yml`.
 
 Managing the secrets file
 ---------------------------
@@ -35,7 +52,7 @@ ansible-vault edit  vm/secrets.yml
 (Note issue below with `secrets.yml` when creating  the development machine once more after having provisioned the prod machine)
 
 
-Initialising the staging server
+Initialising the AWS EC2 staging server
 -------------------------------
 
 Enable `root` login on EC2 server. This assumes that we have the AWS EC2 server accounts private key in `~/.ssh/BAPC-2.pem` on the Mac
@@ -43,7 +60,7 @@ Enable `root` login on EC2 server. This assumes that we have the AWS EC2 server 
 
 ```
 ssh ubuntu@staging.bradford-abbas.uk # from local
-sudo emacs /root/.ssh/authorized_keys # on rremote
+sudo emacs /root/.ssh/authorized_keys # on remote
 exit # back to local (MacBook) after editing authorized_keys on remote as below
 
 ```
@@ -72,25 +89,7 @@ Couldn't make Drupal VM deal with `DRUPALVM_ENV=staging` and `staging.inventory`
 DRUPALVM_ENV=prod ansible-playbook -i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
 ```
 
-# To Do
+TO DO items
+-----------
 
-Please <span style="text-decoration: line-through;">strike through a completed item</span> when done.
-
-1. Automate ssh keys and config to allow remote AWS servers acccess to private git repos **or** rationalise composer repo URIs.
-
-2. Find correct way to integrate our own Ansible roles and tasks with `vendor/geerlingguy/drupal-vm` roles and tasks.
-
-3. Automate `dkim` configuration (on production server and not on staging server)
-
-4. <span style="text-decoration: line-through;">Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).`</span>
-Not reproduced. Seemingly `.emacs.d` was  installed as root.
-
-5. <span style="text-decoration: line-through;">Conflict with drush as provisioned; as required by composer;  and drush-wrapper. Other drush conflicts: go to dush:~9.0; convert site_alias</span>. Removed `drush-wrapper` and used `drush_launcher_version: "0.5.0"` and `drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar`
-
-  All drush commands in roles work.
-
-6. Investigate why `drush updb` fails first time after deployment of modified repo but not the second time playbook is run.
-
-7. Automate? tweaks: `www.bradford-abbas.uk`; http -> https; DMIM email signing
-
-8. <span style="text-decoration: line-through;">`secrets.yml` reequires vault password on `vagrant up`</span>. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant up` from failing; and asks for password. 
+See [here](TODO.md)
