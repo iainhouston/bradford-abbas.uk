@@ -41,8 +41,12 @@ extra_packages:
 dashboard_install_dir: ''
 apache_packages_state: installed
 
-# Use AWS EC2 's firewall
-firewall_enabled: false
+# Restrict the firewall to only ports that are required for external services.
+firewall_allowed_tcp_ports:
+  - "22"
+  - "80"
+  - "443"
+firewall_log_dropped_packets: true
 
 # Set Apache to listen on port 81 (internal only), and Varnish on 80.
 apache_listen_port: "81"

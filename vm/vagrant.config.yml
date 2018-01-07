@@ -44,11 +44,5 @@ firewall_allowed_tcp_ports:
   - "8025"
 firewall_log_dropped_packets: false
 
-# Set Apache to listen on port 80, and Varnish on 81.
-apache_listen_port: "80"
-varnish_listen_port: "81"
-varnish_default_backend_port: "80"
-
-
-drupalvm_vagrant_version_min: '1.8.6'
-drupalvm_ansible_version_min: '2.2'
+drupalvm_vagrant_version_min: '2.0.1'
+drupalvm_ansible_version_min: '2.4'
