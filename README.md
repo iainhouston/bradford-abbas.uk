@@ -3,7 +3,7 @@
 How to set up the development site on Mac
 ===============
 
-I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod#comment-7231).
+I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod).
 
 Just a few notes:
 
@@ -29,6 +29,14 @@ Just a few notes:
     drush sql-sync  @balive @self
     drush @self updb
     ```
+
+    Although Jeff recommends - and we shold try:
+
+    > If you're still having issues, you can avoid `sql-sync` entirely
+    > and pipe the mysqldump output yourself with:
+    > `drush @remote sql-dump | drush @drupalvm.drupalvm.test sql-cli``
+
+
 3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (prod) `config.yml` we have:
 
     ```
@@ -88,6 +96,12 @@ Couldn't make Drupal VM deal with `DRUPALVM_ENV=staging` and `staging.inventory`
 ```
 DRUPALVM_ENV=prod ansible-playbook -i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
 ```
+
+Running additional tasks not in Drupal VM's provisioning roles and tasks
+-------------------------------------------
+
+To use an extra ansible task file, configure the path to the file (relative to `provisioning/playbook.yml`) in `<DRUPALVM_ENV>config.yml`:
+
 
 TO DO items
 -----------

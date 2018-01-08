@@ -13,3 +13,13 @@ apache_vhosts:
   - servername: "{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
+# path relative to current playbook.yml
+post_provision_tasks_dir: "../../../../post_provision_tasks/*"
+
+extra_packages:
+  - unzip
+  - emacs24-nox
+  - php-elisp
+  - opendkim
+  - opendkim-tools

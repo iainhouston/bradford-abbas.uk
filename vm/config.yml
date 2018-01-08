@@ -5,6 +5,9 @@ drupal_build_composer: false
 drupal_composer_dependencies: []
 composer_github_oauth_token: '931bca162b3d41aa92ba0bd63d0bb065f9865997'
 
+# We'll manage our own - especially now we're using .yml aliases
+configure_drush_aliases: false
+
 # Drupal install settings.
 drupal_site_name: "My Production Website"
 drupal_core_path: "/var/www/drupal/web"
@@ -34,8 +37,6 @@ extra_packages:
   - unzip
   - emacs24-nox
   - php-elisp
-  - opendkim
-  - opendkim-tools
 
 # Other secure defaults.
 dashboard_install_dir: ''
