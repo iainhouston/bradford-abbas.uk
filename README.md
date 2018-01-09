@@ -7,6 +7,9 @@ I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutori
 
 Just a few notes:
 
+Development setup
+-----------------
+
 1. Local environment at this time:
 
     ```
@@ -46,6 +49,16 @@ Just a few notes:
 
     It really is as simple as that. OK, well, we also needed to convert our alias files into `.yml`.
 
+From Development to Production
+==============================
+
+Once we have created encrypted a `secrets.yml` file for production; should we wish to reprovision our vagrant development server, we will need to supply our vault password tp Ansible which vagrant will only do after we have added this to our delegate `Vagrantfile` located in the project root.
+
+```
+ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'
+```
+
+
 Managing the secrets file
 ---------------------------
 
@@ -57,50 +70,53 @@ ansible-vault view  vm/secrets.yml
 ansible-vault edit  vm/secrets.yml
 ```
 
-(Note issue below with `secrets.yml` when creating  the development machine once more after having provisioned the prod machine)
-
 
 Initialising the AWS EC2 staging server
 -------------------------------
 
-Enable `root` login on EC2 server. This assumes that we have the AWS EC2 server accounts private key in `~/.ssh/BAPC-2.pem` on the Mac
+1. Enable `root` login on EC2 server. This assumes that we have the AWS EC2 server accounts private key in `~/.ssh/BAPC-2.pem` on the Mac
 
+  ```
+  ssh ubuntu@remote.server.uk # from local
+  sudo emacs /root/.ssh/authorized_keys # on remote
+  ```
 
-```
-ssh ubuntu@staging.bradford-abbas.uk # from local
-sudo emacs /root/.ssh/authorized_keys # on remote
-exit # back to local (MacBook) after editing authorized_keys on remote as below
+2. On EC2 server: remove the preamble before the string `ssh-rsa` in `/root/.ssh/authorized_keys`
 
-```
-
-Remove the preamble before the string `ssh-rsa` in `/root/.ssh/authorized_keys`
-
-Create `vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/vars.yml` per the tutorial creating a new
+3. On local control machine: Create `vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/vars.yml` per the tutorial creating a new
 admin account (`webmaster`) on the server with the password recorded in `Vault PW` here on the Mac.
 
-Now run the 'init' playbook.
+4. On local control machine: run the 'init' playbook.
+
+  ```
+  ansible-playbook -i vm/staging.inventory vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/init.yml -e "ansible_ssh_user=root"
+  ```
+
+  We should now have created `webmaster` and be able to `ssh webmaster@remote.server.uk` and thence `sudo`  things using the password recorded in `Vault PW` here on the Mac.
+
+5. On EC2 server: revert the preamble before the string `ssh-rsa` in `/root/.ssh/authorized_keys` to prevent anyone logging into `root` directly.
+
+Provisioning the Production server
+==================================
 
 ```
-ansible-playbook -i vm/staging.inventory vendor/geerlingguy/drupal-vm/examples/prod/bootstrap/init.yml -e "ansible_ssh_user=root"
-```
-
-We should now have created `webmaster` and be able to `ssh webmaster@staging.bradford-abbas.uk` and thence `sudo`  things using the password recorded in `Vault PW` here on the Mac.
-
-
-Provisioning the staging server
---------------------------------
-
-Couldn't make Drupal VM deal with `DRUPALVM_ENV=staging` and `staging.inventory` etc. so we're sticking to a `DRUPALVM_ENV=prod`-only approach and will switch staging->live in due course.
-
-
-```
-DRUPALVM_ENV=prod ansible-playbook -i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml -e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass
+DRUPALVM_ENV=prod ansible-playbook \
+-i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+-e "config_dir=$(pwd)/vm" \
+--become --ask-become-pass \
+--ask-vault-pass
 ```
 
 Running additional tasks not in Drupal VM's provisioning roles and tasks
 -------------------------------------------
 
 To use an extra ansible task file, configure the path to the file (relative to `provisioning/playbook.yml`) in `<DRUPALVM_ENV>config.yml`:
+
+
+A note about provisioning a staging server
+--------------------------------
+
+Couldn't make Drupal VM deal with `DRUPALVM_ENV=staging` and `staging.inventory` etc. so we're sticking to a `DRUPALVM_ENV=prod`-only approach and will switch staging->live in due course either by provisioning a new EC2 server or just reprovisioning this one after having changed relvevant `inventory` settings and `prod.config.yml` and DNS settings.
 
 
 TO DO items
