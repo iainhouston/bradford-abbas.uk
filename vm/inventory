@@ -1,2 +1,2 @@
 [drupalvm]
-52.29.163.255 ansible_ssh_user=webmaster
+52.29.27.148 ansible_ssh_user=webmaster
