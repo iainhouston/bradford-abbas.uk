@@ -8,12 +8,14 @@ drupal_deploy_dir: /var/www/drupal
 drupal_domain: "staging.bradford-abbas.uk"
 vagrant_hostname: "{{ drupal_domain }}"
 
-# Only add the production docroot virtualhost.
-apache_vhosts:
-  - servername: "{{ drupal_domain }}"
-    documentroot: "{{ drupal_core_path }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+nginx_hosts:
+  - server_name: "{{ drupal_domain }} www.{{ drupal_domain }}"
+    root: "{{ drupal_core_path }}"
+    is_php: true
 
+nginx_remove_default_vhost: true
+nginx_ppa_use: true
+nginx_vhost_template: "templates/nginx-vhost.conf.j2"
 # path relative to current playbook.yml
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 

@@ -3,6 +3,7 @@
 drupal_build_composer_project: false
 drupal_build_composer: false
 drupal_composer_dependencies: []
+drupalvm_webserver: nginx
 
 # We'll manage our own - especially now we're using .yml aliases
 configure_drush_aliases: false
@@ -24,8 +25,6 @@ php_sendmail_path: "/usr/sbin/sendmail -t -i"
 
 installed_extras:
   - drush
-  - varnish
-  - upload-progress
 
 drush_launcher_version: "0.5.0"
 drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
@@ -46,8 +45,3 @@ firewall_allowed_tcp_ports:
   - "80"
   - "443"
 firewall_log_dropped_packets: true
-
-# Set Apache to listen on port 81 (internal only), and Varnish on 80.
-apache_listen_port: "81"
-varnish_listen_port: "80"
-varnish_default_backend_port: "81"

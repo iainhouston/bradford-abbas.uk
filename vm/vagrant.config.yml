@@ -23,10 +23,8 @@ php_sendmail_path: "/opt/mailhog/mhsendmail"
 installed_extras:
   - drush
   - mailhog
-  - varnish
   - adminer
   - pimpmylog
-  - upload-progress
 
 extra_packages:
   - unzip
@@ -40,10 +38,30 @@ firewall_allowed_tcp_ports:
   - "22"
   - "25"
   - "80"
-  - "81"
   - "443"
   - "8025"
 firewall_log_dropped_packets: false
 
 drupalvm_vagrant_version_min: '2.0.1'
 drupalvm_ansible_version_min: '2.4'
+
+nginx_hosts:
+  - server_name: "{{ drupal_domain }} www.{{ drupal_domain }}"
+    root: "{{ drupal_core_path }}"
+    is_php: true
+
+  - server_name: "adminer.{{ vagrant_hostname }}"
+    root: "{{ adminer_install_dir }}"
+    is_php: true
+
+  - server_name: "xhprof.{{ vagrant_hostname }}"
+    root: "{{ php_xhprof_html_dir }}"
+    is_php: true
+
+  - server_name: "pimpmylog.{{ vagrant_hostname }}"
+    root: "{{ pimpmylog_install_dir }}"
+    is_php: true
+
+  - server_name: "{{ vagrant_ip }} dashboard.{{ vagrant_hostname }}"
+    root: "{{ dashboard_install_dir }}"
+    is_php: true
