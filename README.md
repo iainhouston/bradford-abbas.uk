@@ -22,7 +22,7 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
     composer --version  #==> ... 1.6.2 2018-01-05 15:28:4
     ```
 
-    Experience shows that unexplained provisioning errors can often disappear after having upgraded to the latest of each of `ansible`; `vagrant`; and `VirtalBox`.
+    **Errors?** Experience shows that unexplained provisioning errors can often disappear after having upgraded to the latest of each of `ansible`; `vagrant`; and `VirtalBox`.
 
 1. Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
 
