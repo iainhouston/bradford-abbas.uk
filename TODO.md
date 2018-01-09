@@ -4,9 +4,9 @@ Please ~~strike through a completed item~~ when done.
 
 1. Automate ssh keys and config to allow remote AWS servers acccess to private git repos **or** rationalise composer repo URIs.
 
-2. Find correct way to integrate our own Ansible roles and tasks with `vendor/geerlingguy/drupal-vm` roles and tasks.
+2. ~~Find correct way to integrate our own Ansible roles and tasks with `vendor/geerlingguy/drupal-vm` roles and tasks.~~
 
-3. Automate `dkim` configuration (on production server and not on staging server)
+3. ~~Automate `dkim` configuration (on production server and not on staging server)~~
 
 4. ~~Fix emacs directory error on provisioned servers: `Unable to access 'user-emacs-directory' (~/.emacs.d/).`~~
 Not reproduced. Seemingly `.emacs.d` was  installed as root.
@@ -22,3 +22,5 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
 8. ~~`secrets.yml` reequires vault password on `vagrant up`~~. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant provision` from failing; and asks for password.
 
 9. post_provision_tasks to include setting `../tmp` and `sites/default/files/` to `www-data:www-data` **or** ensure that `webmaster` is included in admin group properly?
+
+10. CHange from Varnish and Apache to Nginx - for ssl reasons and extra Varning software not really necessary additional complexity for our site.
