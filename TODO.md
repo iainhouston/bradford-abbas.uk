@@ -24,3 +24,5 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
 9. post_provision_tasks to include setting `../tmp` and `sites/default/files/` to `www-data:www-data` **or** ensure that `webmaster` is included in admin group properly?
 
 10. CHange from Varnish and Apache to Nginx - for ssl reasons and extra Varning software not really necessary additional complexity for our site.
+
+11. Update DNS settings: A records and TXT records for SPF.
