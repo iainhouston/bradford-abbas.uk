@@ -7,9 +7,9 @@
 
 - name: Place DKIM key file
   copy:
-    src: "../../../../certs/dkim.key"
+    src: "{{ config_dir }}/certs/dkim.key"
     dest: /etc/postfix/dkim.key
-    mode: a-w,o-r
+    mode: a-w,go-r
     owner: opendkim
 
 - name: Configure OpenDKIM

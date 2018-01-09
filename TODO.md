@@ -19,4 +19,6 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
 
 7. Automate? tweaks: `www.bradford-abbas.uk`; http -> https; DMIM email signing
 
-8. ~~`secrets.yml` reequires vault password on `vagrant up`~~. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant up` from failing; and asks for password.
+8. ~~`secrets.yml` reequires vault password on `vagrant up`~~. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant provision` from failing; and asks for password.
+
+9. post_provision_tasks to include setting `../tmp` and `sites/default/files/` to `www-data:www-data` **or** ensure that `webmaster` is included in admin group properly?

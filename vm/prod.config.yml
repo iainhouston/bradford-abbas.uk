@@ -15,7 +15,7 @@ apache_vhosts:
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 # path relative to current playbook.yml
-post_provision_tasks_dir: "../../../../post_provision_tasks/*"
+post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 
 extra_packages:
   - unzip

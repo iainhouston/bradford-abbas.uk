@@ -26,6 +26,7 @@ installed_extras:
   - varnish
   - adminer
   - pimpmylog
+  - upload-progress
 
 extra_packages:
   - unzip
