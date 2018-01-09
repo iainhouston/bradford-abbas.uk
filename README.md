@@ -10,6 +10,8 @@ Just a few notes:
 Development setup
 -----------------
 
+I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/en/latest/getting-started/installation-windows/) how its done on a Windows 10 machine.
+
 1. Local environment at this time:
 
     ```
