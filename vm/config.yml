@@ -37,7 +37,6 @@ extra_packages:
 
 # Other secure defaults.
 dashboard_install_dir: ''
-apache_packages_state: installed
 
 # Restrict the firewall to only ports that are required for external services.
 firewall_allowed_tcp_ports:

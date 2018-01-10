@@ -1,0 +1,18 @@
+---
+- name: copy SSL certificate
+  copy:
+    src: "{{ config_dir }}/certs/SSL.crt"
+    dest: /etc/ssl/certs/SSL.crt
+    owner: www-data
+    group: www-data
+    mode: a-w,o-r,ug+r
+  become: yes
+
+- name: copy SSL key
+  copy:
+    src: "{{ config_dir }}/certs/SSL.key"
+    dest: /etc/ssl/private/SSL.key
+    owner: www-data
+    group: www-data
+    mode: a-w,o-r,ug+r
+  become: yes
