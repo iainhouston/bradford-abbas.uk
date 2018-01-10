@@ -16,7 +16,7 @@
         },
         "jsjuicebox": {
             "type": "git",
-            "url": "softgit:/srv/git/juicebox_pro.git"
+            "url": "https://github.com/iainhouston/pellucid_gallery.git"
         },
         "monoset": {
             "type": "git",
@@ -55,9 +55,9 @@
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "~1.1",
         "drush/drush": "~9.0",
-        "iainhouston/juicebox_pro": "dev-master",
         "iainhouston/pellucid_agenda": "dev-master",
         "iainhouston/pellucid_document": "dev-master",
+        "iainhouston/pellucid_gallery": "dev-master",
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
         "iainhouston/pellucid_monoset": "dev-master",
