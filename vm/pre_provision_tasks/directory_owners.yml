@@ -1,0 +1,22 @@
+---
+- name: Ensure files directory is writable by Nginx http server
+# After we rsync from prod we gat rsyncer's ownership
+  file:
+    path: "{{ drupal_core_path }}/sites/default/files"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: ug+w,g+s
+  become: yes
+  tags: ['drupal']
+
+- name: Ensure tmp directory is writable by Ngix http server
+  file:
+    path: "{{ drupal_core_path }}/../tmp"
+    recurse: yes
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: ug+w,g+s
+  become: yes
+  tags: ['drupal']

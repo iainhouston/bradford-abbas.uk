@@ -3,8 +3,8 @@
   copy:
     src: "{{ config_dir }}/certs/SSL.crt"
     dest: /etc/ssl/certs/SSL.crt
-    owner: www-data
-    group: www-data
+    owner: root
+    group: root
     mode: a-w,o-r,ug+r
   become: yes
 
@@ -12,7 +12,7 @@
   copy:
     src: "{{ config_dir }}/certs/SSL.key"
     dest: /etc/ssl/private/SSL.key
-    owner: www-data
-    group: www-data
+    owner: root
+    group: ssl-cert
     mode: a-w,o-r,ug+r
   become: yes
