@@ -1,6 +1,18 @@
 # Development and maintenance of Bradford Abbas Parish Council website
 
-How to set up the development site on Mac
+Maintenance: Pushing updated stuff to the live site
+============================
+
+```
+DRUPALVM_ENV=prod ansible-playbook \
+-i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+-e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass \
+--tags=drupal
+```
+
+This doesn't provision the live server, it does just those tasks - with `tags: ['drupal']` - required to update the Drupal core and contributed modules together with the SSL key and certificates when we need any of these updated.
+
+Development: How to provision the development site on Mac
 ===============
 
 I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod).
@@ -11,6 +23,8 @@ Development setup
 -----------------
 
 I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/en/latest/getting-started/installation-windows/) how its done on a Windows 10 machine.
+
+The notes in this section add my experience to Jeff's directions.
 
 1. Local environment at this time:
 
@@ -35,14 +49,16 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
     drush @self updb
     ```
 
-    Although Jeff recommends - and we shold try:
+    Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination.
+
+    Although Jeff recommends - and we should try:
 
     > If you're still having issues, you can avoid `sql-sync` entirely
     > and pipe the mysqldump output yourself with:
     `drush @remote sql-dump | drush @drupalvm.drupalvm.test sql-cli``
 
 
-3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (prod) `config.yml` we have:
+3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we have:
 
     ```
     drush_launcher_version: "0.5.0"
@@ -113,6 +129,15 @@ DRUPALVM_ENV=prod ansible-playbook \
 
 Running additional tasks not in Drupal VM's provisioning roles and tasks
 -------------------------------------------
+
+In `prod.config.yml` we added ...
+
+```
+# setup DKIM; Place certs etc.
+# path relative to current playbook.yml
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
+```
 
 To use an extra ansible task file, configure the path to the file (relative to `provisioning/playbook.yml`) in `<DRUPALVM_ENV>config.yml`:
 

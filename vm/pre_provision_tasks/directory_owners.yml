@@ -10,7 +10,7 @@
   become: yes
   tags: ['drupal']
 
-- name: Ensure tmp directory is writable by Ngix http server
+- name: Ensure tmp directory is writable by Nginx http server
   file:
     path: "{{ drupal_core_path }}/../tmp"
     recurse: yes
