@@ -1,7 +1,0 @@
-bastage:
-  host: staging.bradford-abbas.uk
-  options:
-    ssh-options: '-o PasswordAuthentication=no -i ~/.ssh/BAPC-2.pem'
-  root: /var/www/drupal/web
-  uri: staging.bradford-abbas.uk
-  user: ubuntu

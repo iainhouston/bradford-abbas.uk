@@ -2,6 +2,6 @@ balive:
   host: live.bradford-abbas.uk
   options:
     ssh-options: '-o PasswordAuthentication=no -i ~/.ssh/BAPC-2.pem'
-  root: /var/www/live/web
+  root: /var/www/drupal/web
   uri: bradford-abbas.uk
   user: ubuntu
