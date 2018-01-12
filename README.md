@@ -55,7 +55,17 @@ The notes in this section add my experience to Jeff's directions.
 
     > If you're still having issues, you can avoid `sql-sync` entirely
     > and pipe the mysqldump output yourself with:
-    `drush @remote sql-dump | drush @drupalvm.drupalvm.test sql-cli``
+    `drush @remote sql-dump | drush @drupalvm.drupalvm.test sql-cli`
+
+    Since `drush rsync` is not working as it used to, I am using:
+
+    ```
+    rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
+    ./web/sites/default/files/ \
+    --exclude=js --exclude=php --exclude=css
+    ```
+
+    **Note** That the `drush rsync` is n
 
 
 3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we have:
