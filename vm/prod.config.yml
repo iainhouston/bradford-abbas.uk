@@ -7,7 +7,7 @@ drupal_deploy_dir: /var/www/drupal
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
 # nginx vhost template needs punctuation escaped
-drupal_domain_esc: "bradford-abbas\.uk"
+drupal_domain_esc: "bradford-abbas\\.uk"
 vagrant_hostname: "{{ drupal_domain }}"
 
 
@@ -27,6 +27,6 @@ nginx_remove_default_vhost: true
 nginx_ppa_use: true
 nginx_vhost_template: "{{ config_dir }}/templates/nginx-ssl-vhost.j2"
 nginx_hosts:
-  - server: "{{ drupal_domain }}"
+  - server_name: "{{ drupal_domain }}"
     state: "present"
     filename: "{{ drupal_domain }}.conf"

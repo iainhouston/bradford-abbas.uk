@@ -20,3 +20,14 @@
     mode: ug+w,g+s
   become: yes
   tags: ['drupal']
+
+- name: Ensure config directory is writable by Nginx http server
+  file:
+    path: "{{ drupal_core_path }}/../config"
+    recurse: yes
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: ug+w
+  become: yes
+  tags: ['drupal']
