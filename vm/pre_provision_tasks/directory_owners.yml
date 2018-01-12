@@ -26,7 +26,7 @@
     path: "{{ drupal_core_path }}/../config"
     recurse: yes
     state: directory
-    owner: www-data
+    owner: "{{ ansible_ssh_user }}"
     group: www-data
     mode: ug+w
   become: yes
