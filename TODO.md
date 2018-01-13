@@ -15,25 +15,26 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
 
   All drush commands in roles "work" ....
 
-6. Investigate why `drush updb` fails first time after deployment of modified repo but not the second time playbook is run.
+6. ~~Investigate why `drush updb` fails first time after deployment of modified repo but not the second time playbook is run.~~ No longer reproduced. Went away after we started using `--tags=drupal`
 
-7. Automate? tweaks: ~~`www.bradford-abbas.uk`~~; http -> https; ~~DMIM email signing~~ (To test)
+7. Automate? tweaks: ~~`www.bradford-abbas.uk`~~; ~~http -> https~~; ~~DMIM email signing~~ Done.
 
 8. ~~`secrets.yml` reequires vault password on `vagrant up`~~. `ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'` in delegated `Vagrantfile` prevents `vagrant provision` from failing; and asks for password.
 
-9. post_provision_tasks to include setting `../tmp` and `sites/default/files/` to `www-data:www-data` **or** ensure that `webmaster` is included in admin group properly?
+9. ~~post_provision_tasks to include setting `../tmp` and `sites/default/files/` to `www-data:www-data` **or** ensure that `webmaster` is included in admin group properly?~~
 
 10. ~~Change from Varnish and Apache to Nginx - for ssl reasons and extra Varning software not really necessary additional complexity for our site.~~
 
-11. Update DNS settings: A records and TXT records for SPF.
+11. ~~Update DNS settings: A records and TXT records for SPF.~~
 
-12. Raise issue with drush 9 rsync %files
+12. ~~Raise issue with drush 9 rsync %files~~
 
-13. Place `~./ssh/config` to workaround drush alias bug not recognising `-i` argument
+13. ~~Raise issue with drush 9 rsync %files~~
 
-14. README.md:
+14. ~~Place `~./ssh/config` to workaround drush alias bug not recognising `-i` argument~~ [See](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml)
+
+15. README.md:
 
     1. Re-order; review; re-organise
 
-    2. ansible-vault cert files (already in certs/README.txt)
-    
+    2. ~~ansible-vault cert files (already in certs/README.txt)~~

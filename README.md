@@ -1,7 +1,9 @@
 # Development and maintenance of Bradford Abbas Parish Council website
+Regular maintenance
+===============
 
-Maintenance: Pushing updated stuff to the live site
-============================
+Pushing updated stuff to the live site
+-----------------------
 
 ```
 DRUPALVM_ENV=prod ansible-playbook \
@@ -10,23 +12,29 @@ DRUPALVM_ENV=prod ansible-playbook \
 --tags=drupal
 ```
 
-This doesn't provision the live server, it does just those tasks - with `tags: ['drupal']` - required to update the Drupal core and contributed modules together with the SSL key and certificates when we need any of these updated.
+This doesn't re-provision the live server, it does just those tasks - with `tags: ['drupal']` - required to update the following:
 
-Development: How to provision the development site on Mac
+-  Drupal core and contributed modules (via `composer.json`)
+-  Our SSL key and certificate
+-  Drupal configuration changes (but not a live `drush cim`)
+
+when any of these have been updated on the local development site.
+
+Development:
 ===============
 
 I used Jeff Geerling's Drupal-VM to create a local Drupal server per his [tutorial](https://www.jeffgeerling.com/blog/2017/soup-nuts-using-drupal-vm-build-local-and-prod).
 
-Just a few notes:
+Just a few notes to expand on Jeff's excellent directions:
 
-Development setup
+
+Provisioning the development site
 -----------------
 
 I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/en/latest/getting-started/installation-windows/) how its done on a Windows 10 machine.
 
-The notes in this section add my experience to Jeff's directions.
 
-1. Local environment at this time:
+1. **Required software** Local environment at this time:
 
     ```
     python --version #==> Python 2.7.14
@@ -36,11 +44,17 @@ The notes in this section add my experience to Jeff's directions.
     composer --version  #==> ... 1.6.2 2018-01-05 15:28:4
     ```
 
-    **Errors?** Experience shows that unexplained provisioning errors can often disappear after having upgraded to the latest of each of `ansible`; `vagrant`; and `VirtalBox`.
+    **Errors?** My experience over several years of using Drupal-VM shows that unexplained provisioning errors can often disappear after you are sure you have upgraded to the latest of each of `ansible`; `vagrant`; and `VirtalBox`.
 
-1. Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`
+2. **Key environment variable** Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`. Keep and eye on `echo $DRUPALVM_ENV`: that caught me out.
 
-2. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
+3. **Drush**
+
+  This took a lot of my bandwidth as older versions of drush and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.
+
+  I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)
+
+    1. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
 
     ```
     vagrant ssh
@@ -49,38 +63,41 @@ The notes in this section add my experience to Jeff's directions.
     drush @self updb
     ```
 
-    Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination.
+    But ...
 
-    Although Jeff recommends - and we should try:
+    2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.
 
-    > If you're still having issues, you can avoid `sql-sync` entirely
-    > and pipe the mysqldump output yourself with:
-    `drush @remote sql-dump | drush @drupalvm.drupalvm.test sql-cli`
+      - Since `drush rsync` is not working as it used to, I am using:
 
-    Since `drush rsync` is not working as it used to, I am using:
+        ```
+        rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
+        ./web/sites/default/files/ \
+        --exclude=js --exclude=php --exclude=css
+        ```
 
-    ```
-    rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
-    ./web/sites/default/files/ \
-    --exclude=js --exclude=php --exclude=css
-    ```
+        Note that - at this time - neither of the above commands work properly.
 
-    **Note** That the `drush rsync` is n
+      - Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.
 
 
-3. I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we have:
+4. **Drush Launcher:** I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we now have:
 
     ```
     drush_launcher_version: "0.5.0"
     drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
     ```
 
-    It really is as simple as that. OK, well, we also needed to convert our alias files into `.yml`.
+    It really is as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [here](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml)
+
+Provisioning
+========
 
 From Development to Production
-==============================
+--------------
 
-Once we have created encrypted a `secrets.yml` file for production; should we wish to reprovision our vagrant development server, we will need to supply our vault password tp Ansible which vagrant will only do after we have added this to our delegate `Vagrantfile` located in the project root.
+Again; I followed Jeff's blog. However, if you want to go back to provisioning a local server after you've provisioned your remote prod server, you'll have to account for the presence of any files you encrypted with `ansible-vault`.
+
+Once we have created encrypted a `secrets.yml` file for production; should we wish to reprovision our vagrant development server, we will need to supply our vault password to Ansible which vagrant will only do after we have added this to our delegate `Vagrantfile` located in the project root.
 
 ```
 ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'
@@ -96,6 +113,15 @@ This is where the passwords for drupal admin, drupal db; and mysql root;  are en
 ansible-vault create  vm/secrets.yml
 ansible-vault view  vm/secrets.yml
 ansible-vault edit  vm/secrets.yml
+```
+
+Encrypting SSL key and certificate.
+-----------
+
+Like this:
+
+```
+ansible-vault encrypt  vm/certs/SSL.crt
 ```
 
 
