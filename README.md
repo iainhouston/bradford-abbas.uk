@@ -54,30 +54,30 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 
   I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)
 
-      1. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
+  1. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
+
+  ```
+  vagrant ssh
+  drush rsync  @balive:%files @self:%files --exclude-paths=sync:css:js:php
+  drush sql-sync  @balive @self
+  drush @self updb
+  ```
+
+  But ...
+
+  2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.
+
+    - Since `drush rsync` is not working as it used to, I am using:
 
       ```
-      vagrant ssh
-      drush rsync  @balive:%files @self:%files --exclude-paths=sync:css:js:php
-      drush sql-sync  @balive @self
-      drush @self updb
+      rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
+      ./web/sites/default/files/ \
+      --exclude=js --exclude=php --exclude=css
       ```
 
-      But ...
+      Note that - at this time - neither of the above commands work properly.
 
-      2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.
-
-        - Since `drush rsync` is not working as it used to, I am using:
-
-          ```
-          rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
-          ./web/sites/default/files/ \
-          --exclude=js --exclude=php --exclude=css
-          ```
-
-          Note that - at this time - neither of the above commands work properly.
-
-        - Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.
+    - Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.
 
 
 4. **Drush Launcher:** I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`. This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we now have:
