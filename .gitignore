@@ -28,3 +28,6 @@ tmp/
 
 # Ignore MacOS
 .DS_Store
+
+# Saved SQL dumps easily recreated each development cycle
+/vm/saved_sql/*
