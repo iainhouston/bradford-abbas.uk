@@ -1,4 +1,26 @@
 # Development and maintenance of Bradford Abbas Parish Council website
+
+Quick start
+========
+
+1. Clone this repo to `~/bradford-abbas.uk`
+
+2. Add the following alias to your `~/.bashrc` (or `~/.bash_aliases` as appropriate):
+
+  ```
+  alias cdbadev="cd ~/bradford-abbas.uk && source ./scripts/badev/.dev_aliases"
+  ```
+
+3. `$ source ~/.bashrc`
+
+4. `$ cdbadev` =>
+
+  ```
+  updateLiveCode - Code and Config to Live site
+  rsyncp2dfiles  - Get latest files from live site
+  sqldumpDev     - Get latest SQL from live site`
+  ```
+
 Regular maintenance
 ===============
 
@@ -19,6 +41,45 @@ This doesn't re-provision the live server, it does just those tasks - with `tags
 -  Drupal configuration changes (but not a live `drush cim`)
 
 when any of these have been updated on the local development site.
+
+Important configuration files
+======================
+
+These are in the following directories:
+
+-  **Project root: `~/bradford-abbas.uk`**
+
+  -  `composer.json`
+
+  -  `Vagrantfile`
+
+-  **The `config` directory**
+
+  This is where the Drupal configuration `.yml` are kept under `git` version control. After you have run `updateLiveCode` you then run `drush @balive cim` to import the new configuration into the live site.
+
+-  **The `drush` directory**
+
+  - `drush/sites` contains the drush alias definitions for `@balive` and `@badev`
+
+
+-  **The `scripts` directory**
+
+  Where the shortcut commands (see above) are defined.
+
+
+-  **The `vm` directory**
+
+  - **`vm/certs`**
+
+  When a new SSL key / certificate pair are downloaded (via LCN, our registrar) they are encrypted here with `ansible-vault` ([see below](#enc_ssl)).
+
+  - **`vm/post_provision_tasks`**
+
+  - **`vm/pre_provision_tasks`**
+
+  - **`vm/templates`**
+
+-  **Web root: the `web` directory**
 
 Development:
 ===============
@@ -114,10 +175,10 @@ ansible-vault view  vm/secrets.yml
 ansible-vault edit  vm/secrets.yml
 ```
 
-Encrypting SSL key and certificate.
+Encrypting SSL key and certificate.</a>
 -----------
 
-Like this:
+<a name="enc_ssl">Like this:</a>
 
 ```
 ansible-vault encrypt  vm/certs/SSL.crt
