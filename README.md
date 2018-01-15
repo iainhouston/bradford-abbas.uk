@@ -119,7 +119,7 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 2. **Key environment variable** Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`. Keep and eye on `echo $DRUPALVM_ENV`: that caught me out.
 
 3. **Drush:**
-  Getting `drush` right took a lot of my bandwidth as older versions  and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.  
+  Getting `drush` right took a lot of my bandwidth as older versions  and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.   
 
   I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)  
 
@@ -140,13 +140,15 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 
     *  Since `drush rsync` is not working as it used to, I am doing  
 
-        ```
-        rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
-        ./web/sites/default/files/ \
-        --exclude=js --exclude=php --exclude=css
-        ```  
+       ```
+       rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
+       ./web/sites/default/files/ \
+       --exclude=js --exclude=php --exclude=css
+       ```  
 
-    *  Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.  
+    *  Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.   
+
+    * Issues raised on Github [`rsync`](https://github.com/drush-ops/drush/issues/3306) and [`sql-sync`](https://github.com/drush-ops/drush/issues/3305)
 
   3. **Drush Launcher:**  
 
