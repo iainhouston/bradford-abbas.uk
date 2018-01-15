@@ -97,7 +97,7 @@ These are in the following directories:
 
     * `vm/vagrant.config.yml`  
 
-      configuration variables peculiar to the vagrant development server. e.g. extra debugging software installs etc. 
+      configuration variables peculiar to the vagrant development server. e.g. extra debugging software installs etc.
 
 *  The `web` directory
 
@@ -105,9 +105,9 @@ These are in the following directories:
 
 *  Project root: `~/bradford-abbas.uk`  
 
-  *  `composer.json`
+    *  `composer.json`
 
-  *  `Vagrantfile`
+    *  `Vagrantfile`
 
 Development:
 ===============
