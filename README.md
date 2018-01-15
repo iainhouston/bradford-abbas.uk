@@ -68,17 +68,36 @@ These are in the following directories:
 
 * The `vm` directory
 
-  * `vm/certs`
+    * `vm/certs`
 
-    When a new SSL key / certificate pair are downloaded (via LCN, our registrar) they are encrypted here with `ansible-vault` ([see below](#enc_ssl)).
+      When a new SSL key / certificate pair are downloaded (via LCN, our registrar) they are encrypted here with `ansible-vault` ([see below](#enc_ssl)).
 
-  * `vm/post_provision_tasks`
+    * `vm/post_provision_tasks`
 
-  * `vm/pre_provision_tasks`
+    * `vm/pre_provision_tasks`
 
-  * `vm/templates`  
+    * `vm/templates`  
 
-      Nginx web server settings for `bradford-abbas.uk` are declared in `vm/templates/nginx-ssl-vhost.j2`
+        Nginx web server settings for `bradford-abbas.uk` are declared in `vm/templates/nginx-ssl-vhost.j2`
+
+    * `vm/config.yml`    
+
+      Minimal configuration common to, and overwriiten often by `prod.config.yml` and `vagrant.config.yml`
+
+    * `vm/inventory`  
+      The IP address of the live server and the Unix user id that Ansible will use to access the live server. The user id has admin priviledges as set up by [Initialising the AWS EC2 live server](#init_aws) below.  
+
+    * `vm/prod.config.yml`    
+
+      configuration variables peculiar to the live server. e.g. Nginx vhost settings; SSL certificate tasks etc.  
+
+    * `vm/secrets.yml`   
+
+      Any Ansible configuration variables we want to encrypt with `ansible-vault`  
+
+    * `vm/vagrant.config.yml`  
+
+      configuration variables peculiar to the vagrant development server. e.g. extra debugging software installs etc. 
 
 *  The `web` directory
 
@@ -160,7 +179,7 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 <a name=dlaunch>Drush Launcher</a>
 ---------
 
-iIn `vm/config.yml` we declare the *launcher* as the executable rather than the `drush` executable itself
+In `vm/config.yml` we declare the *launcher* as the executable rather than the `drush` executable itself
 
 ```
 drush_launcher_version: "0.5.0"
@@ -212,8 +231,7 @@ Encrypting SSL key and certificate.</a>
 ansible-vault encrypt  vm/certs/SSL.crt
 ```
 
-
-Initialising the AWS EC2 live server
+<a name=init_AWS>Initialising the AWS EC2 live server</a>
 -------------------------------
 
 This step is required before we can provision the live server with all the software we require.
