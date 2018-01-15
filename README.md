@@ -152,17 +152,28 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 
   3. **Drush Launcher:**  
 
-    To use `drush` globally (at `drush:~9.0`) we install the [Drush Launcher](https://github.com/drush-ops/drush-launcher) instead of the  `drush` php executable which is locally installed in the `vendor` directory.
+    To use `drush` globally (at `drush:~9.0`) we install the
+    [Drush Launcher](https://github.com/drush-ops/drush-launcher)
+    instead of the  `drush` php executable which is locally installed
+    in the `vendor` directory.
 
-    I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`.
-    This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml`, where we now have:  
+    I had unexplained errors with `drush/drush:8.1.15`
+    so switched to `drush/drush:~9.0`.
+    This means that I also required `ansible` to install  the
+    [Drush Launcher](https://github.com/drush-ops/drush-launcher).
+    The only real effect on provisioning `vagrant` and `prod` is
+    in the default (minimal) `config.yml`, where we now have:  
 
     ```
     drush_launcher_version: "0.5.0"
     drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
     ```
+    .
 
-    It's pretty much as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
+    It's pretty much as simple as that. OK, well, we also needed to convert
+    our alias files into `.yml`. The conversion command didn't work
+    properly. For example, the ssh options were  not as described
+    [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
 
 Provisioning
 ========
