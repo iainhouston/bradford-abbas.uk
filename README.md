@@ -151,18 +151,17 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
     * Issues raised on Github [`rsync`](https://github.com/drush-ops/drush/issues/3306) and [`sql-sync`](https://github.com/drush-ops/drush/issues/3305)
 
   3. **Drush Launcher:**  
-
     To use `drush` globally (at `drush:~9.0`) we install the
     [Drush Launcher](https://github.com/drush-ops/drush-launcher)
     instead of the  `drush` php executable which is locally installed
-    in the `vendor` directory.
+    in the `vendor` directory.   
 
     I had unexplained errors with `drush/drush:8.1.15`
     so switched to `drush/drush:~9.0`.
     This means that I also required `ansible` to install  the
     [Drush Launcher](https://github.com/drush-ops/drush-launcher).
     The only real effect on provisioning `vagrant` and `prod` is
-    in the default (minimal) `config.yml`, where we now have:  
+    in the default (minimal) `config.yml`, where we now have:     
 
     ```
     drush_launcher_version: "0.5.0"
