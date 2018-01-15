@@ -160,11 +160,13 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
     This means that I also required `ansible` to install  the
     [Drush Launcher](https://github.com/drush-ops/drush-launcher).  
     The only real effect on provisioning `vagrant` and `prod` is
-    in the default (minimal) `config.yml`, where we now have:     
+    in the default (minimal) `config.yml`, where we now have    
+
     ```
     drush_launcher_version: "0.5.0"
     drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
     ```
+    
     It's pretty much as simple as that. OK, well, we also needed to convert
     our alias files into `.yml`. The conversion command didn't work
     properly. For example, the ssh options were  not as described
