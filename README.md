@@ -84,7 +84,7 @@ These are in the following directories:
 
     This is Drupal's *docroot*
 
-*  Project root: `~/bradford-abbas.uk`
+*  Project root: `~/bradford-abbas.uk`  
 
   *  `composer.json`
 
@@ -119,11 +119,11 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 2. **Key environment variable** Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`. Keep and eye on `echo $DRUPALVM_ENV`: that caught me out.
 
 3. **Drush:**
-  Getting `drush` right took a lot of my bandwidth as older versions  and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.
+  Getting `drush` right took a lot of my bandwidth as older versions  and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.  
 
-  I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)
+  I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)  
 
-  1. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:
+  1. Run these commands *inside* the vagrant VM (or prod server) - regardless of whether you're using `drush` 8.1.15 or ~9.0  - only one of the aliases can be remote when running the `(sql-|r)sync` command. e.g.:  
 
     ```
     vagrant ssh
@@ -134,9 +134,9 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 
     Note that - at this time - neither of the above commands work properly.
 
-    But ...
+    But ...  
 
-  2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.
+  2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.  
 
     *  Since `drush rsync` is not working as it used to, I am doing  
 
@@ -148,15 +148,19 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 
     *  Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.  
 
-  3. **Drush Launcher:** I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`.
-  This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we now have:
+  3. **Drush Launcher:**  
+
+    To use `drush` globally (at `drush:~9.0`) we install the [Drush Launcher](https://github.com/drush-ops/drush-launcher) instead of the  `drush` php executable which is locally installed in the `vendor` directory.
+
+    I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`.
+    This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml`, where we now have:  
 
     ```
     drush_launcher_version: "0.5.0"
     drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
     ```
 
-  It's pretty much as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
+    It's pretty much as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
 
 Provisioning
 ========
