@@ -18,7 +18,7 @@ Quick start
   ```
   updateLiveCode - Code and Config to Live site
   rsyncp2dfiles  - Get latest files from live site
-  sqldumpDev     - Get latest SQL from live site`
+  sqldumpDev     - Get latest SQL from live site
   ```
 
 Regular maintenance
@@ -27,59 +27,68 @@ Regular maintenance
 Pushing updated stuff to the live site
 -----------------------
 
+`updateLiveCode` is shorthand for:
+
 ```
-DRUPALVM_ENV=prod ansible-playbook \
--i vm/inventory vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
--e "config_dir=$(pwd)/vm" --become --ask-become-pass --ask-vault-pass \
---tags=drupal
+DRUPALVM_ENV=prod \
+ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+--inventory-file=vm/inventory \
+--tags=drupal   \
+--extra-vars="config_dir=$(pwd)/vm" \
+--become --ask-become-pass --ask-vault-pass
 ```
 
-This doesn't re-provision the live server, it does just those tasks - with `tags: ['drupal']` - required to update the following:
+This doesn't re-provision the live server, it does just those playbook tasks - those with `tags: ['drupal']` - required to update the following:
 
--  Drupal core and contributed modules (via `composer.json`)
--  Our SSL key and certificate
--  Drupal configuration changes (but not a live `drush cim`)
+*  Drupal core and contributed modules (via `composer.json`)
+*  Our SSL key and certificate
+*  Drupal configuration YAML from most recent  `drush @badev cex`   
+   *but note that it doesn't run a*  `drush @balive cim`
 
-when any of these have been updated on the local development site.
+So you run `updateLiveCode` when any of these have been updated and tested on the local development site.
 
 Important configuration files
 ======================
 
 These are in the following directories:
 
--  **Project root: `~/bradford-abbas.uk`**
+* The `config` directory
 
-  -  `composer.json`
+    This is where the Drupal configuration `.yml` are kept under `git` version control. After you have run `updateLiveCode` you then run `drush @balive cim` to import the new configuration into the live site.
 
-  -  `Vagrantfile`
+* The `drush` directory
 
--  **The `config` directory**
-
-  This is where the Drupal configuration `.yml` are kept under `git` version control. After you have run `updateLiveCode` you then run `drush @balive cim` to import the new configuration into the live site.
-
--  **The `drush` directory**
-
-  - `drush/sites` contains the drush alias definitions for `@balive` and `@badev`
+    *  `drush/sites` contains the drush alias definitions for `@balive` and `@badev`
 
 
--  **The `scripts` directory**
+* The `scripts` directory
 
-  Where the shortcut commands (see above) are defined.
+  Where the shortcut / convenience commands (see above) are defined.
 
 
--  **The `vm` directory**
+* The `vm` directory
 
-  - **`vm/certs`**
+  * `vm/certs`
 
-  When a new SSL key / certificate pair are downloaded (via LCN, our registrar) they are encrypted here with `ansible-vault` ([see below](#enc_ssl)).
+    When a new SSL key / certificate pair are downloaded (via LCN, our registrar) they are encrypted here with `ansible-vault` ([see below](#enc_ssl)).
 
-  - **`vm/post_provision_tasks`**
+  * `vm/post_provision_tasks`
 
-  - **`vm/pre_provision_tasks`**
+  * `vm/pre_provision_tasks`
 
-  - **`vm/templates`**
+  * `vm/templates`  
 
--  **Web root: the `web` directory**
+      Nginx web server settings for `bradford-abbas.uk` are declared in `vm/templates/nginx-ssl-vhost.j2`
+
+*  The `web` directory
+
+    This is Drupal's *docroot*
+
+*  Project root: `~/bradford-abbas.uk`
+
+  *  `composer.json`
+
+  *  `Vagrantfile`
 
 Development:
 ===============
@@ -110,7 +119,7 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
 2. **Key environment variable** Ensure that the `DRUPALVM_ENV` environment variable is correctly set by issuing vagrant commands in the form: `DRUPALVM_ENV=vagrant vagrant up` and `DRUPALVM_ENV=vagrant vagrant provision`. Keep and eye on `echo $DRUPALVM_ENV`: that caught me out.
 
 3. **Drush:**
-  This took a lot of my bandwidth as older versions of drush and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.
+  Getting `drush` right took a lot of my bandwidth as older versions  and the latest Drupal 8.4 have different dependencies on Symfony packages. So I really had to persist with `composer` etc. to get a working vagrant-based development setup.
 
   I am using drush 9.0.0-rc2. I encountered problems with both 8.1.15 and 9.0.0-rc2, but suppose Moshe Weitzman will be fixing 9.0.0-rc2 (I raised issues for some of the following)
 
@@ -123,31 +132,31 @@ I do my development on a Mac but Jeff describes [here](http://docs.drupalvm.com/
     drush @self updb
     ```
 
+    Note that - at this time - neither of the above commands work properly.
+
     But ...
 
   2. **Workarounds:** Right now drush 9 (9.0.0-rc2) doesn't properly rsync to the correct destination (`drush rsync  @balive:%files @self:%files`) and `drush sql-dump  @balive` produces extraneous text in the SQL dump.
 
-    - Since `drush rsync` is not working as it used to, I am using:
+    *  Since `drush rsync` is not working as it used to, I am doing  
 
-      ```
-      rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
-      ./web/sites/default/files/ \
-      --exclude=js --exclude=php --exclude=css
-      ```
+        ```
+        rsync -avz wpbapc:/var/www/drupal/web/sites/default/files/ \
+        ./web/sites/default/files/ \
+        --exclude=js --exclude=php --exclude=css
+        ```  
 
-      Note that - at this time - neither of the above commands work properly.
+    *  Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.  
 
-    - Edit the output of `drush sql-dump  @balive > tmp.sql` to remove extraneous text string.
+  3. **Drush Launcher:** I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`.
+  This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we now have:
 
-    3. **Drush Launcher:** I had unexplained errors with `drush/drush:8.1.15` so switched to `drush/drush:~9.0`.
-    This means that I also required `ansible` to install  the [Drush Launcher](https://github.com/drush-ops/drush-launcher). The only real effect on provisioning `vagrant` and `prod` is in the default (minimal) `config.yml` we now have:
+    ```
+    drush_launcher_version: "0.5.0"
+    drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
+    ```
 
-      ```
-      drush_launcher_version: "0.5.0"
-      drush_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
-      ```
-
-    It's pretty much as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
+  It's pretty much as simple as that. OK, well, we also needed to convert our alias files into `.yml`. The conversion command didn't work properly. For example, the ssh options were  not as described [on the drush github repo](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml).
 
 Provisioning
 ========
