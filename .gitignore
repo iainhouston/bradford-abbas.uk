@@ -31,3 +31,7 @@ tmp/
 
 # Saved SQL dumps easily recreated each development cycle
 /vm/saved_sql/*
+
+# working files in vagrant dev machine
+bradford-abbas.uk.sql
+.s3ignore
