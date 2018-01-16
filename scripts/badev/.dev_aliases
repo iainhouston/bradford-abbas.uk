@@ -18,6 +18,6 @@ alias cdsite="cd $BADEV/web/sites/default/"
 alias cdfiles="cd $BADEV/web/sites/default/files"
 
 # Dumps: SQL
-echo "sqldumpDev     - Get latest SQL from live site"
+echo "sqldumpLive    - Get latest SQL from live site"
 # alias sqldumpDev="sh $BADEV/scripts/badev/sqldumpDev.sh"
 alias sqldumpLive="sh $BADEV/scripts/badev/sqldumpLive.sh"

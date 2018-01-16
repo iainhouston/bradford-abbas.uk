@@ -18,7 +18,7 @@ Quick start
   ```
   updateLiveCode - Code and Config to Live site
   rsyncp2dfiles  - Get latest files from live site
-  sqldumpDev     - Get latest SQL from live site
+  sqldumpLive    - Get latest SQL from live site
   ```
 
 Regular maintenance
