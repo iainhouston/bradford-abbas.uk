@@ -14,6 +14,7 @@ drupal_core_path: "/var/www/drupal/web"
 drupal_install_site: true
 drupal_enable_modules: []
 
+ba_cron_hour: "05"
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/15"
@@ -34,6 +35,7 @@ extra_packages:
   - unzip
   - emacs24-nox
   - php-elisp
+  - s3cmd
 
 # Other secure defaults.
 dashboard_install_dir: ''

@@ -8,7 +8,7 @@ ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 ENV['DRUPALVM_DIR'] = "vendor/geerlingguy/drupal-vm"
 
 # Added after initial provisioning of VM and adding `vm/secrets.yml` for prod
-ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass'
+ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass --skip-tags=prod_only'
 
 # Load the real Vagrantfile
 load "#{__dir__}/#{ENV['DRUPALVM_DIR']}/Vagrantfile"

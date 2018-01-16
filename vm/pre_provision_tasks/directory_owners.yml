@@ -8,7 +8,7 @@
     group: www-data
     mode: ug+w,g+s
   become: yes
-  tags: ['drupal']
+  tags: ['drupal', 'prod_only']
 
 - name: Ensure tmp directory is writable by Nginx http server
   file:
@@ -19,7 +19,7 @@
     group: www-data
     mode: ug+w,g+s
   become: yes
-  tags: ['drupal']
+  tags: ['drupal', 'prod_only']
 
 - name: Ensure config directory is writable by Nginx http server
   file:
@@ -30,4 +30,4 @@
     group: www-data
     mode: ug+w
   become: yes
-  tags: ['drupal']
+  tags: ['drupal', 'prod_only']
