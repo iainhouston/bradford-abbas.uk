@@ -1,0 +1,14 @@
+---
+- name: Ensure Dev sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/dev"
+    state: directory
+  become: no
+
+- name: Ensure Live sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/live"
+    state: directory
+  become: no
