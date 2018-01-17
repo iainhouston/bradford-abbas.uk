@@ -68,6 +68,7 @@
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
         "drupal/devel": "^1.0",
+        "drupal/drupal-extension": "~3.0",
         "drupal/link_css": "1.x-dev",
         "geerlingguy/drupal-vm": "^4.7",
         "jcalderonzumba/gastonjs": "~1.0.2",
