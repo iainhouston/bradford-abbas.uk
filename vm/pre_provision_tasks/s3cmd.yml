@@ -9,6 +9,7 @@
     dest: "~/.s3cfg"
     mode: u+rw
   tags: ['drupal']
+  become: no
 
 - name: Place .s3ignore file to exclude some dirs from backup to Amazon S3
   copy:

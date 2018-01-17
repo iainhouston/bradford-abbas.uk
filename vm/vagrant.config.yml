@@ -65,5 +65,3 @@ nginx_hosts:
   - server_name: "{{ vagrant_ip }} dashboard.{{ vagrant_hostname }}"
     root: "{{ dashboard_install_dir }}"
     is_php: true
-
-pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
