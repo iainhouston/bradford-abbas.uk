@@ -7,3 +7,6 @@ echo "Clearing caches before dumping Live database"
 drush @balive cr
 echo "Dumping Live database to $FILE"
 drush @balive sql-dump > $FILE
+
+# drush uses rsync -t flag which writes extraneous text
+sed -i '' 's/^Connection to/-- Connection to/' $FILE
