@@ -1,8 +1,21 @@
 ---
-- name: Ensure files directory is writable by Nginx http server
-# After we rsync from prod we gat rsyncer's ownership
+- name: Ensure public files directory is writable by Nginx http server
+# After we rsync from prod we get ssh'd (remote) rsyncer's ownership
   file:
-    path: "{{ drupal_core_path }}/sites/default/files"
+    path: "{{ drupal_core_path }}/sites/default/files/"
+    recurse: yes
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: ug+w,g+s
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Ensure private files directory is writable by Nginx http server
+# After we rsync from prod we get ssh'd (remote) rsyncer's ownership
+  file:
+    path: "{{ drupal_core_path }}/sites/default/files/private"
+    recurse: yes
     state: directory
     owner: www-data
     group: www-data
