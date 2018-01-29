@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_dpi
     - field.field.user.user.field_external_bodies
     - field.field.user.user.field_first_name
     - field.field.user.user.field_function
@@ -13,6 +14,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.medium
   module:
+    - file
     - image
     - user
 _core:
@@ -22,6 +24,13 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_dpi:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
   field_notes:
     weight: 1
     label: above
