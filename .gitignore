@@ -23,8 +23,9 @@
 # Ignore Vagrant files.
 .vagrant/
 
-# Ignore Drupal temporary files
+# Ignore Drupal temporary and private files
 tmp/
+private_files/
 
 # Ignore MacOS
 .DS_Store
