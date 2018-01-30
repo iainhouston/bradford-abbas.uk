@@ -1,4 +1,5 @@
 export BADEV="$HOME/bradford-abbas.uk"
+export LIVE_SSH_ALIAS="wpbapc"
 
 echo "updateLiveCode - Code and Config to Live site"
 alias updateLiveCode="sh $BADEV/scripts/badev/updateLiveCode.sh"
@@ -6,16 +7,18 @@ alias updateLiveCode="sh $BADEV/scripts/badev/updateLiveCode.sh"
 # Production to Development
 echo "rsyncp2dfiles  - Get latest files from live site"
 alias rsyncp2dfiles="sh $BADEV/scripts/badev/rsyncProd2DevFiles.sh"
-# alias syncp2ddb="sh $BADEV/scripts/badev/syncProd2DevDB.sh"
+
+# exceptionally - bring dev Drupal Config settings in line with live ones
+alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
 
 # Development change directory
 alias cdc="cd $BADEV/"
 alias cdd="cd $BADEV/web/"
-alias cdl="cd $BADEV/web/libraries"
-alias cdm="cd $BADEV/web/modules/contrib/"
-alias cdt="cd $BADEV/web/themes/contrib/pellucid_monoset"
-alias cdsite="cd $BADEV/web/sites/default/"
-alias cdfiles="cd $BADEV/web/sites/default/files"
+alias cdl="cd $BADEV/web/libraries/ && ls $BADEV/web/libraries/"
+alias cdm="cd $BADEV/web/modules/contrib/ && ls $BADEV/web/modules/contrib/"
+alias cdt="cd $BADEV/web/themes/contrib/pellucid_monoset/ && ls $BADEV/web/themes/contrib/pellucid_monoset/"
+alias cds="cd $BADEV/web/sites/default/"
+alias cdf="cd $BADEV/web/sites/default/files/"
 
 # Dumps: SQL
 echo "sqldumpLive    - Get latest SQL from live site"
