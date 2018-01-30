@@ -682,7 +682,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'Notes:<ul><li>Representation on external local public bodies if nominated to represent the Parish Council</li><li>DPI is A signed Declaration of Pecuniary Interest</li></ul>'
+            value: 'Notes:<ul><li>Representation on <em>external local public bodies</em> if nominated to represent the Parish Council</li><li><em>DPI</em> is a signed Declaration of Pecuniary Interest</li></ul>'
             format: basic_html
           plugin_id: text
       empty: {  }

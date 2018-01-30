@@ -68,6 +68,7 @@ permissions:
   - 'use text format basic_html'
   - 'view agenda revisions'
   - 'view all revisions'
+  - 'view any webform submission'
   - 'view article revisions'
   - 'view document revisions'
   - 'view item_of_expense revisions'
