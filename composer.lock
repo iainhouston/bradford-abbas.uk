@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1e07951c0be773cc055c5da04f20d2d",
+    "content-hash": "aac588050cc5a43f669b1b58475d0f8e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7118,16 +7118,16 @@
         },
         {
             "name": "drupal/drupal-extension",
-            "version": "v3.4.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhedstrom/drupalextension.git",
-                "reference": "50ff0f413f0dc4732f49638e743f86f45e835e50"
+                "reference": "3306359199eda5b4c660fe5f3f7eed5723c0f4ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhedstrom/drupalextension/zipball/50ff0f413f0dc4732f49638e743f86f45e835e50",
-                "reference": "50ff0f413f0dc4732f49638e743f86f45e835e50",
+                "url": "https://api.github.com/repos/jhedstrom/drupalextension/zipball/3306359199eda5b4c660fe5f3f7eed5723c0f4ec",
+                "reference": "3306359199eda5b4c660fe5f3f7eed5723c0f4ec",
                 "shasum": ""
             },
             "require": {
@@ -7136,12 +7136,13 @@
                 "behat/mink-extension": "~2.0",
                 "behat/mink-goutte-driver": "~1.0",
                 "behat/mink-selenium2-driver": "~1.1",
-                "drupal/drupal-driver": "~1.3",
+                "drupal/drupal-driver": "^1.3.2",
                 "symfony/dependency-injection": "~2.7|~3.0",
                 "symfony/event-dispatcher": "~2.7|~3.0"
             },
             "require-dev": {
                 "behat/mink-zombie-driver": "^1.2",
+                "drupal/coder": "^8.2",
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
                 "phpspec/phpspec": "~2.0",
                 "phpunit/phpunit": "3.7.*"
@@ -7161,7 +7162,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7184,7 +7185,7 @@
                 "test",
                 "web"
             ],
-            "time": "2017-12-06T20:35:40+00:00"
+            "time": "2018-02-08T16:56:25+00:00"
         },
         {
             "name": "drupal/link_css",
@@ -7229,7 +7230,8 @@
             "homepage": "https://www.drupal.org/project/link_css",
             "support": {
                 "source": "http://cgit.drupalcode.org/link_css"
-            }
+            },
+            "time": "2016-11-08T03:19:30+00:00"
         },
         {
             "name": "fabpot/goutte",
