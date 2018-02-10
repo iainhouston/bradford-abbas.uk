@@ -51,7 +51,6 @@
         "drupal/juicebox": "2.0-beta3",
         "drupal/mailsystem": "4.1",
         "drupal/pathauto": "1.0.0",
-        "drupal/rules": "3.x-dev",
         "drupal/simplenews": "1.x-dev",
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "~1.1",
