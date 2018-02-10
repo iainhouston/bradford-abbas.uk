@@ -1,0 +1,23 @@
+admin_content_notification_email_subject: 'Agenda updated'
+admin_content_notification_email_body: '<em>@content_title </em> <br/> has been @action on the Parish  Council website<br/> Submitted by : @user_who_posted <br/>  link : @content_link'
+_core:
+  default_config_hash: XmXUXmqgs5ESGLFRunc0O9-3Mm3_A48fQDSU27QVo38
+admin_content_notification_node_types:
+  agenda: agenda
+  article: null
+  document: null
+  history_society_event: null
+  item_of_expense: null
+  meeting: null
+  minutes: null
+  page: null
+  photo_gallery: null
+  simplenews_issue: null
+  village_plan_page: null
+admin_content_notification_trigger_on_node_update: '1'
+admin_content_notification_allowed_roles:
+  officer: officer
+  anonymous: null
+  history_society_editor: null
+  administrator: null
+admin_content_notification_email: parishcouncilofficers@bradford-abbas.uk

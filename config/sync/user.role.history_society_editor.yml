@@ -7,6 +7,7 @@ label: 'History society editor'
 weight: -8
 is_admin: null
 permissions:
+  - 'administer simplenews subscriptions'
   - 'create history_society_event content'
   - 'delete any history_society_event content'
   - 'delete history_society_event revisions'

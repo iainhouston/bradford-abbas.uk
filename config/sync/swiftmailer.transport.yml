@@ -2,10 +2,13 @@ transport: native
 smtp_host: leo.misfits-server.net
 smtp_port: 25
 smtp_encryption: tls
-smtp_username: iainadmin
-smtp_password: puio77998.Leo
 sendmail_path: /usr/sbin/sendmail
 sendmail_mode: bs
 spool_directory: ''
 _core:
   default_config_hash: 0SeYZshzgoabDrbz-junYqeQOQ9BypPv2gaFcnqKy0M
+smtp_credential_provider: swiftmailer
+smtp_credentials:
+  swiftmailer:
+    username: iainadmin
+    password: puio77998.Leo
