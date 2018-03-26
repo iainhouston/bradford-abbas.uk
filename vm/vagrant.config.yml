@@ -25,6 +25,8 @@ installed_extras:
   - mailhog
   - adminer
   - pimpmylog
+  - xdebug
+
 
 extra_packages:
   - unzip
@@ -67,3 +69,5 @@ nginx_hosts:
     is_php: true
 
 post_provision_tasks_dir: "{{ config_dir }}/local_tasks/*"
+
+php_xdebug_default_enable: 1
