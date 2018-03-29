@@ -172,7 +172,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '>'
+          operator: '>='
           value:
             min: ''
             max: ''
@@ -192,6 +192,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
