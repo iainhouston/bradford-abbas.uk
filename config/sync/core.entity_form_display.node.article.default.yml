@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
@@ -104,5 +103,4 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden:
-  comment: true
+hidden: {  }
