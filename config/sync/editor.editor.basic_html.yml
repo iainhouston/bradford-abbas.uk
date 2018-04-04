@@ -35,7 +35,7 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
+            - file_browser
             - Table
             - PasteFromWord
         -
@@ -51,6 +51,8 @@ settings:
   plugins:
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public

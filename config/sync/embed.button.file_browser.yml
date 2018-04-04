@@ -2,6 +2,8 @@ uuid: 7165cbfe-0c3a-4b8d-946c-8f28baf9bbb6
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'file:file:db2cad05-1e3b-4b35-b163-99d7d036130c'
   module:
     - entity_embed
     - file
@@ -15,8 +17,8 @@ type_settings:
   entity_type: file
   bundles: {  }
   display_plugins:
-    - 'file:file_default'
     - 'image:image'
+    - 'file:file_default'
   entity_browser: browse_files
   entity_browser_settings:
     display_review: false
