@@ -18,3 +18,4 @@ permissions:
   - 'subscribe to newsletters'
   - 'use advanced search'
   - 'use text format restricted_html'
+  - 'view media'

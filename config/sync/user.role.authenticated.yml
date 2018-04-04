@@ -44,5 +44,6 @@ permissions:
   - 'use text format basic_html'
   - 'view article revisions'
   - 'view document revisions'
+  - 'view media'
   - 'view simplenews_issue revisions'
   - 'view village_plan_page revisions'

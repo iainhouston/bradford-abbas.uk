@@ -31,6 +31,7 @@ module:
   libraries: 0
   link: 0
   mailsystem: 0
+  media: 0
   meeting: 0
   menu_ui: 0
   minutes: 0
