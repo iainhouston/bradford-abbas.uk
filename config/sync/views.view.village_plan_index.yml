@@ -230,7 +230,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<p>The Parish Council are starting to put together a <em>Village Plan</em> in which we can document aspects of the village that we value and how the village might evolve over time.</p>\n<p>At this time the <em>Village Plan</em> is a <em>work in progress</em> in which we are seeking your input to improve the content. Some sections are skeletons that need fleshing out.</p>\n<p>If you would like to comment on what you see, or would like to add or amend a section, the please contact <a href=\"https://bradford-abbas.uk/user/21\">Terry Hunt (contact form and details)</p>\n<p></p>"
+            value: "<p>The Parish Council are starting to put together a <em>Village Plan</em> in which we can document aspects of the village that we value and how the village might evolve over time.</p>\n<p>At this time the <em>Village Plan</em> is a <em>work in progress</em> in which we are seeking your input to improve the content. Some sections are skeletons that need fleshing out.</p>\n<p>If you would like to comment on what you see, or would like to add or amend a section, the please contact <a href=\"https://bradford-abbas.uk/user/21\">Terry Hunt</a></p>\n<p></p>"
             format: basic_html
           plugin_id: text
       footer: {  }
