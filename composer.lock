@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "58fb73ca7cff3bdaeb8a6b7d04a3c327",
+    "content-hash": "372cacc12ec1239bc5c2c3d2634538de",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4059,11 +4059,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.0.6",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "d6b41f3addd7864d87a4669075a14213352e6aae"
+                "reference": "f49b8e7e63d3ae61a297e54f17aa5fadb27678ed"
             },
             "type": "drupal-theme",
             "license": [
@@ -4081,7 +4081,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2018-04-04T18:31:12+00:00"
+            "time": "2018-04-19T11:28:32+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
