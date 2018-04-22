@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "372cacc12ec1239bc5c2c3d2634538de",
+    "content-hash": "f957c945581d5eee16e2e3c452c65a85",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1980,6 +1980,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "Relative to absolute URLs in emails": "https://www.drupal.org/files/issues/mail-relative-to-absolute-2704597-43.patch"
                 }
             },
             "autoload": {

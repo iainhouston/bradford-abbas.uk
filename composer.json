@@ -145,6 +145,11 @@
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Relative to absolute URLs in emails": "https://www.drupal.org/files/issues/mail-relative-to-absolute-2704597-43.patch"
+            }
         }
     }
 }
