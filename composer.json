@@ -58,7 +58,7 @@
         "drupal/admin_content_notification": "^2.2",
         "drupal/console": "^1.0.2",
         "drupal/contribute": "^5.0@beta",
-        "drupal/core": "8.5.2",
+        "drupal/core": "8.5.3",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
         "drupal/embed": "^1.0",
