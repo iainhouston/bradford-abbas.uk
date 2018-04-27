@@ -70,7 +70,7 @@
         "drupal/simplenews": "1.x-dev",
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "~1.1",
-        "drupal/webform": "^5.0@RC",
+        "drupal/webform": "5.0-rc12",
         "drush/drush": "~9.0",
         "iainhouston/dropzone": "dev-master",
         "iainhouston/imagesloaded": "dev-master",

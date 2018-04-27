@@ -12,3 +12,17 @@
     path: "{{ config_dir }}/saved_sql/live"
     state: directory
   become: no
+
+- name: Ensure Private file directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/../private_files"
+    state: directory
+  become: no
+
+- name: Ensure Drupal's temporary directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/../tmp"
+    state: directory
+  become: no

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4a4f7f9648b8075ecc5a6d002f3d43f",
+    "content-hash": "e69c848225ed3ef04ab921a428b38ac6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8892,7 +8892,6 @@
         "drupal/diff": 20,
         "drupal/simplenews": 20,
         "drupal/swiftmailer": 20,
-        "drupal/webform": 5,
         "iainhouston/dropzone": 20,
         "iainhouston/imagesloaded": 20,
         "iainhouston/masonry": 20,
