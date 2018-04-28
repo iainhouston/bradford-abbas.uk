@@ -22,14 +22,14 @@ bundle: meeting
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content
   field_agenda:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       view_mode: email_html
@@ -47,7 +47,7 @@ content:
     type: datetime_default
     region: content
   field_meeting_minutes:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link: true
@@ -73,9 +73,9 @@ content:
     region: content
   links:
     weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_meeting_type: true
   simplenews_issue: true
