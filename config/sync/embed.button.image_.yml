@@ -1,0 +1,22 @@
+uuid: 1645937b-d239-4ed0-82e1-4709a33abf3c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:ae746c24-a7db-43ad-b012-e2bb40568401'
+  module:
+    - entity_embed
+    - file
+    - image
+label: 'Image browser'
+id: image_
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles: {  }
+  display_plugins:
+    - 'image:image'
+  entity_browser: browser_for_images
+  entity_browser_settings:
+    display_review: false
+icon_uuid: ae746c24-a7db-43ad-b012-e2bb40568401

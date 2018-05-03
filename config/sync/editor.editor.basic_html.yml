@@ -34,14 +34,14 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
-            - file_browser
+            - image_
             - Table
-            - PasteFromWord
         -
           name: 'Block Formatting'
           items:
             - Format
+            - Blockquote
+            - PasteFromWord
         -
           name: Tools
           items:

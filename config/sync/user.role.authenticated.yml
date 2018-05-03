@@ -9,6 +9,7 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access browser_for_images entity browser pages'
   - 'access comments'
   - 'access content'
   - 'access draggableviews'
@@ -27,6 +28,7 @@ permissions:
   - 'delete own simplenews_issue content'
   - 'delete own village_plan_page content'
   - 'delete village_plan_page revisions'
+  - 'dropzone upload files'
   - 'edit any document content'
   - 'edit any simplenews_issue content'
   - 'edit any village_plan_page content'
