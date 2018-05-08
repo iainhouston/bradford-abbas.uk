@@ -19,6 +19,7 @@ drupal_account_pass: admin
 drupal_db_password: drupal
 mysql_root_password: root
 
+php_date_timezone: "Europe/London"
 php_sendmail_path: "/opt/mailhog/mhsendmail"
 installed_extras:
   - drush
@@ -26,7 +27,7 @@ installed_extras:
   - adminer
   - pimpmylog
   # - xdebug
-  
+
 php_xdebug_default_enable: 0
 
 extra_packages:
