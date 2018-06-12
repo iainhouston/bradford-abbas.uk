@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.simplenews_issue
     - image.style.thumbnail
     - node.type.article
   module:
@@ -71,6 +72,12 @@ content:
       display_label: true
     weight: 6
     third_party_settings: {  }
+    region: content
+  simplenews_issue:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   status:
     type: boolean_checkbox

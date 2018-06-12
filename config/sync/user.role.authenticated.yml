@@ -40,6 +40,7 @@ permissions:
   - 'revert simplenews_issue revisions'
   - 'revert village_plan_page revisions'
   - 'search content'
+  - 'send newsletter'
   - 'skip comment approval'
   - 'subscribe to newsletters'
   - 'use advanced search'
