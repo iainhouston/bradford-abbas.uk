@@ -80,7 +80,7 @@
         "iainhouston/pellucid_gallery": "dev-master",
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
-        "iainhouston/pellucid_monoset": "1.1.1",
+        "iainhouston/pellucid_monoset": "1.1.2",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
