@@ -13,6 +13,7 @@ permissions:
   - 'access in-place editing'
   - 'access toolbar'
   - 'access tour'
+  - 'administer nodes'
   - 'administer simplenews subscriptions'
   - 'administer users'
   - 'create agenda content'

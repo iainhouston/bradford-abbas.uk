@@ -6,11 +6,12 @@ open: null
 close: null
 uid: 1
 template: false
+archive: false
 id: affordable_housing_questionnaire
 title: 'Affordable Housing Questionnaire'
 description: ''
 category: ''
-elements: "see_more:\n  '#type': webform_toggle\n  '#title': 'Would you like to see more Affordable Housing in Bradford Abbas?'\n  '#on_text': 'Yes'\n  '#off_text': 'No'\ndo_you_have_children_or_relatives_who_would_like_to_benefit_from:\n  '#type': webform_toggle\n  '#title': 'Do you have children or relatives who would benefit?'\n  '#help': 'Let us know if you have children or relatives who would like to benefit from affordable housing in Bradford Abbas?'\n  '#more_title': More\n  '#more': 'Do you have children or relatives who would like to benefit from affordable housing in Bradford Abbas?'\n  '#description_display': invisible\n  '#on_text': 'Yes'\n  '#off_text': 'No'\nhow_many_affordable_houses_:\n  '#type': textfield\n  '#title': 'How many affordable houses?'\n  '#description': 'How many affordable houses would you consider an acceptable amount?'\n  '#format_items': comma\npotential_site_:\n  '#type': webform_toggle\n  '#title': 'Potential site?'\n  '#description': 'Do you think that the putative site north of Petits Close and / or Queens Road is the right place?'\n  '#on_text': 'Yes'\n  '#off_text': 'No'\nwhere_else_is_suitable_:\n  '#type': textarea\n  '#title': 'Where else is suitable?'\n  '#description': 'Bearing in mind that there are restrictions on where new building can,&nbsp;or should, take place in the village, or where land is available, where do&nbsp;you think would be a suitable location for affordable housing?'\n  '#format_items': comma\npost_code_:\n  '#type': textfield\n  '#title': 'Post code?'\n  '#description': 'Are you a resident of Bradford Abbas? If, so, what is your postcode?'\n  '#required': true\n  '#required_error': 'We are only collecting residents'' views'\n  '#format_items': comma\nyour_comments:\n  '#type': textarea\n  '#title': 'Your comments'\n  '#description': 'Are there any other comments that you would like to make?'\n  '#format_items': comma\npersonal_data:\n  '#type': item\n  '#title': 'Personal data'\n  '#description': 'Please note that your postcode, or any other personal data you provide with this questionnaire, will be kept strictly private in accordance with the <a href=\"/page/about#aboutprivacy\" target=\"_blank\">Parish Council&rsquo;s&nbsp;Privacy Statement.</a>.'\n"
+elements: "about_this_questionnaire:\n  '#type': item\n  '#title': 'More about this questionnaire: '\n  '#markup': 'For background information on Affordable Housing in Bradford Abbas please visit <a href=\"/village_plan/settlement-pattern-character/affordable-housing-where-build-where-not-build\" target=\"_blank\">this page</a>.'\nsee_more:\n  '#type': webform_toggle\n  '#title': 'Would you like to see more Affordable Housing in Bradford Abbas?'\n  '#on_text': 'Yes'\n  '#off_text': 'No'\ndo_you_have_children_or_relatives_who_would_like_to_benefit_from:\n  '#type': webform_toggle\n  '#title': 'Do you have children or relatives who could benefit?'\n  '#help': 'Let us know if you have children or relatives who would like to benefit from affordable housing in Bradford Abbas?'\n  '#description_display': invisible\n  '#on_text': 'Yes'\n  '#off_text': 'No'\nhow_many_affordable_houses_:\n  '#type': textfield\n  '#title': 'How many affordable houses?'\n  '#description': 'How many affordable houses would you consider an acceptable amount?'\n  '#format_items': comma\npotential_site_:\n  '#type': webform_toggle\n  '#title': 'Potential site?'\n  '#description': 'Do you think that the putative site north of Pettitts Close and / or Queens Road is the right place?'\n  '#on_text': 'Yes'\n  '#off_text': 'No'\nwhere_else_is_suitable_:\n  '#type': textarea\n  '#title': 'Where else is suitable?'\n  '#description': 'Bearing in mind that there are restrictions on where new building can,&nbsp;or should, take place in the village, or where land is available, where do&nbsp;you think would be a suitable location for affordable housing?'\n  '#format_items': comma\npost_code_:\n  '#type': textfield\n  '#title': 'Post code?'\n  '#description': 'Are you a resident of Bradford Abbas? If, so, what is your postcode?'\n  '#required': true\n  '#required_error': 'We are only collecting residents'' views'\n  '#format_items': comma\nyour_comments:\n  '#type': textarea\n  '#title': 'Your comments'\n  '#description': 'Are there any other comments that you would like to make?'\n  '#format_items': comma\npersonal_data:\n  '#type': item\n  '#title': 'Personal data'\n  '#description': 'Please note that your postcode, or any other personal data you provide with this questionnaire, will be kept strictly private in accordance with the <a href=\"/page/about#aboutprivacy\" target=\"_blank\">Parish Council&rsquo;s&nbsp;Privacy Statement.</a>.'\n"
 css: ''
 javascript: ''
 settings:
@@ -46,10 +47,13 @@ settings:
   submission_label: ''
   submission_log: false
   submission_user_columns: {  }
+  submission_user_duplicate: false
   submission_login: false
   submission_login_message: ''
   submission_exception_message: ''
   submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
   autofill: false
   autofill_message: ''
   autofill_excluded_elements: {  }
@@ -67,6 +71,7 @@ settings:
   preview_attributes: {  }
   preview_excluded_elements: {  }
   preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
   draft: none
   draft_multiple: false
   draft_auto_save: false
@@ -105,7 +110,8 @@ access:
     users: {  }
     permissions: {  }
   view_any:
-    roles: {  }
+    roles:
+      - officer
     users: {  }
     permissions: {  }
   update_any:
