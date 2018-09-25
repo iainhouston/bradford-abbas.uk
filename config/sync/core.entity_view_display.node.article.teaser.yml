@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.simplenews_issue
     - node.type.article
   module:
     - text
@@ -36,3 +37,4 @@ hidden:
   field_expires: true
   field_image: true
   field_tags: true
+  simplenews_issue: true

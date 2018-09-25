@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.simplenews_issue
     - node.type.article
   module:
     - user
@@ -21,9 +22,12 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body: true
   comment: true
   field_expires: true
   field_image: true
   field_tags: true
+  simplenews_issue: true

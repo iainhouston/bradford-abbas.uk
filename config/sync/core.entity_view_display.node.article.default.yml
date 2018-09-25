@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.simplenews_issue
     - image.style.large
     - node.type.article
   module:
@@ -61,3 +62,4 @@ content:
     third_party_settings: {  }
 hidden:
   comment: true
+  simplenews_issue: true
