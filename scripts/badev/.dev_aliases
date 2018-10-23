@@ -23,8 +23,9 @@ alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
 
 # Dumps: SQL
-echo "sqldumpLive    - Get latest SQL from live site"
-# alias sqldumpDev="sh $BADEVSCRIPTS/sqldumpDev.sh"
+# echo "sqldumpLive    - Get latest SQL from live site"
+echo "sqlSyncLive    - Copy Database from live site"
+alias sqlSyncLive="sh $BADEVSCRIPTS/sqlSyncLive.sh"
 alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
 
 # Safe export of configuration to ensure --dev modules are not enabled
