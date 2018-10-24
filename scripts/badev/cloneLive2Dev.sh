@@ -15,3 +15,8 @@ drush @badev sql:drop -y
 echo "Loading replica of Live database"
 drush @badev sql:cli < $FILE
 drush @badev cr
+
+echo "Syncing files from Live to Dev machine"
+rsync -avz $LIVE_SSH_ALIAS:/var/www/drupal/web/sites/default/files/ \
+$BADEV/web/sites/default/files/ \
+--exclude=js --exclude=php --exclude=css

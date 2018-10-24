@@ -7,7 +7,7 @@ echo "updateLiveCode - Code and Config to Live site"
 alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
 
 # Production to Development
-echo "rsyncp2dfiles  - Get latest files from live site"
+# echo "rsyncp2dfiles  - Get latest files from live site"
 alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
 
 # exceptionally - bring dev Drupal Config settings in line with live ones
@@ -24,16 +24,16 @@ alias cdf="cd $BADEV/web/sites/default/files/"
 
 # Dumps: SQL
 # echo "sqldumpLive    - Get latest SQL from live site"
-echo "sqlSyncLive    - Copy Database from live site"
-alias sqlSyncLive="sh $BADEVSCRIPTS/sqlSyncLive.sh"
+echo "cloneLive2Dev  - Clone Live Database and Files to Dev site"
+alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
 alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
 
 # Safe export of configuration to ensure --dev modules are not enabled
-echo "safecex        - Safe export of configuration"
+echo "safecex        - Safe export of Dev site's configuration"
 alias safecex="sh $BADEVSCRIPTS/safecex.sh"
 
 # Enable development modules
-echo "endev          - Enable development modules"
+echo "endev          - Enable development modules in Dev site"
 alias endev="sh $BADEVSCRIPTS/endev.sh"
 
 # For pretty printing
