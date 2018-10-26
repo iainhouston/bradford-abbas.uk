@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "602d0683d02c602f9e606cf916000498",
+    "content-hash": "f92a6567db9615d679f40b975d132747",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2063,16 +2063,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.6.1",
+            "version": "8.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "1c8b96c89288daf4d145c6dbcf1e8f0d0c9d7970"
+                "reference": "356292934802bb1aecc478e88a3cba77442d7c62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/1c8b96c89288daf4d145c6dbcf1e8f0d0c9d7970",
-                "reference": "1c8b96c89288daf4d145c6dbcf1e8f0d0c9d7970",
+                "url": "https://api.github.com/repos/drupal/core/zipball/356292934802bb1aecc478e88a3cba77442d7c62",
+                "reference": "356292934802bb1aecc478e88a3cba77442d7c62",
                 "shasum": ""
             },
             "require": {
@@ -2300,7 +2300,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-09-10T11:50:07+00:00"
+            "time": "2018-10-17T22:19:50+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -3436,17 +3436,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-rc21",
+            "version": "5.0.0-rc24",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-rc21"
+                "reference": "8.x-5.0-rc24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc21.zip",
-                "reference": "8.x-5.0-rc21",
-                "shasum": "d9b778bc13784d2fd6a651d7deb471791af6ba5e"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc24.zip",
+                "reference": "8.x-5.0-rc24",
+                "shasum": "9dda44bef5e497cbf0ed6dfc443d70ef51b1bc49"
             },
             "require": {
                 "drupal/core": "*"
@@ -3466,8 +3466,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-rc21",
-                    "datestamp": "1536405484",
+                    "version": "8.x-5.0-rc24",
+                    "datestamp": "1540255380",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."

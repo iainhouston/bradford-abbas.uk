@@ -1,0 +1,19 @@
+PHP 7.1.19 (cli) (built: Aug 17 2018 18:03:17) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+Composer version 1.6.2 2018-01-05 15:28:41
+Vagrant 2.2.0
+VirtualBox 5.2.20r125813
+ansible 2.5.2
+  config file = None
+  configured module search path = ['/Users/iainhouston/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.6/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.6.5 (default, Apr 25 2018, 14:23:58) [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.1)]
+NodeJS Version v8.11.1
+npm Version 5.6.0
+vagrant-auto_network (1.0.2, global)
+vagrant-cachier (1.2.1, global)
+vagrant-hostsupdater (1.1.1.160, global)
+vagrant-vbguest (0.15.1, global)
+Developer Edition of Mozilla Firefox 64.0
