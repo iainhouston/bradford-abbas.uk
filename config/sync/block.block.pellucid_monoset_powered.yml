@@ -11,7 +11,7 @@ _core:
 id: pellucid_monoset_powered
 theme: pellucid_monoset
 region: content
-weight: -13
+weight: -9
 provider: null
 plugin: system_powered_by_block
 settings:

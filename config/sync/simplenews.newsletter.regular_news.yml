@@ -1,0 +1,17 @@
+uuid: 7d11c97f-0e5b-4b8f-a2bd-10c44b192336
+langcode: en
+status: true
+dependencies: {  }
+name: 'Regular News'
+id: regular_news
+description: 'The Regular News newsletter is distributed to all subscribers opting in using the form on the News section of the home page '
+format: html
+priority: 0
+receipt: true
+from_name: 'Bradford Abbas Parish Council'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: clerk@bradford-abbas.uk
+hyperlinks: true
+new_account: none
+opt_inout: double
+weight: 0

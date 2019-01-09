@@ -10,7 +10,7 @@ dependencies:
 id: simplenewssubscription
 theme: pellucid_monoset
 region: content
-weight: -10
+weight: -11
 provider: null
 plugin: simplenews_subscription_block
 settings:

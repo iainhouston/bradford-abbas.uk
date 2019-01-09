@@ -1,0 +1,24 @@
+uuid: 5caade32-2c00-470c-942a-11bbcb7feeef
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+  theme:
+    - pellucid_monoset
+id: simplenewssubscription_2
+theme: pellucid_monoset
+region: front_five
+weight: -15
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Regular News subscription'
+  provider: simplenews
+  label_display: visible
+  newsletters:
+    regular_news: regular_news
+  message: 'Stay informed - subscribe to our newsletter.'
+  unique_id: 144c2b10-571d-48eb-8873-e2667978de3b
+visibility: {  }

@@ -94,7 +94,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: page
   confirmation_title: 'Your booking request has been submitted'
-  confirmation_message: '<a href="/hall">Return to the Village Hall page</a>.'
+  confirmation_message: "The Village Hall Bookings administrator will contact you in due course.<br />\r\n<a href=\"/hall\">Return to the Village Hall page</a>."
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: false
