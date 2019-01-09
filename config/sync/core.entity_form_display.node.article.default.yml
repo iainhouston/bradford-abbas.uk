@@ -3,16 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.browser_for_images
     - field.field.node.article.body
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
+    - field.field.node.article.field_news_teaser
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
-    - image.style.thumbnail
     - node.type.article
   module:
     - datetime
-    - image
+    - entity_browser
     - path
     - text
 _core:
@@ -24,36 +25,50 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 2
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
+      summary_rows: 1
     third_party_settings: {  }
     region: content
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     region: content
   field_expires:
-    weight: 9
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_image:
-    type: image_image
+    type: entity_browser_file
     weight: 3
     settings:
-      progress_indicator: throbber
+      entity_browser: browser_for_images
+      field_widget_remove: true
+      selection_mode: selection_append
       preview_image_style: thumbnail
+      field_widget_edit: true
+      field_widget_replace: false
+      open: false
+      view_mode: default
     third_party_settings: {  }
+    region: content
+  field_news_teaser:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 2
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -62,7 +77,7 @@ content:
     region: content
   path:
     type: path
-    weight: 8
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -70,11 +85,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 9
     third_party_settings: {  }
     region: content
   simplenews_issue:
-    weight: 122
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -83,14 +98,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 121
+    weight: 12
     third_party_settings: {  }
     region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 10
     third_party_settings: {  }
     region: content
   title:
@@ -103,7 +118,7 @@ content:
     region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60

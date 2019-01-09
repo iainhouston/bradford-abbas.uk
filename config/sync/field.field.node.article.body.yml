@@ -14,8 +14,8 @@ field_name: body
 entity_type: node
 bundle: article
 label: Body
-description: ''
-required: false
+description: 'What you type in here will appear on the main Body Page (after clicking "Read More") and in the email''d-out newsletter article.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

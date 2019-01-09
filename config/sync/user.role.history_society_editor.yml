@@ -16,5 +16,6 @@ permissions:
   - 'edit own history_society_event content'
   - 'revert history_society_event revisions'
   - 'send newsletter'
+  - 'use text format basic_html'
   - 'view history_society_event revisions'
   - 'view the administration theme'

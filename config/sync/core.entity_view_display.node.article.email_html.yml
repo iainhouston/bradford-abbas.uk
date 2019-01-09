@@ -1,41 +1,50 @@
-uuid: c07da0b0-67ec-4158-9a07-7c40c216b51c
+uuid: cb05206f-0746-4a2f-82e1-950af46a224e
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.email_html
     - field.field.node.article.body
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
-    - field.field.node.article.field_news_teaser
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
+    - image.style.large
     - node.type.article
   module:
+    - image
     - text
     - user
 _core:
-  default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
-id: node.article.teaser
+  default_config_hash: JtAg_-waIt1quMtdDtHIaXJMxvTuSmxW7bWyO6Zd68E
+id: node.article.email_html
 targetEntityType: node
 bundle: article
-mode: teaser
+mode: email_html
 content:
-  field_news_teaser:
+  body:
     type: text_default
-    weight: 0
-    region: content
-    label: hidden
+    weight: 1
     settings: {  }
     third_party_settings: {  }
+    label: hidden
+    region: content
+  field_image:
+    type: image
+    weight: 0
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+    region: content
   links:
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
+  comment: true
   field_expires: true
-  field_image: true
   field_tags: true
   simplenews_issue: true
