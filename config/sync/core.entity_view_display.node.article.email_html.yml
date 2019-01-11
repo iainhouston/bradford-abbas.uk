@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_expires
     - field.field.node.article.field_image
+    - field.field.node.article.field_news_teaser
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
     - image.style.large
@@ -46,5 +47,6 @@ content:
 hidden:
   comment: true
   field_expires: true
+  field_news_teaser: true
   field_tags: true
   simplenews_issue: true
