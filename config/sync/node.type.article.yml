@@ -13,7 +13,7 @@ _core:
   default_config_hash: i4OVV5qrD7abstl4SKS8v5Ee7PuxrL548iZVSty1HRg
 name: Article
 type: article
-description: 'Use <em>Articles</em> for time-sensitive content like news, press releases or blog posts. An <em>Article</em> appears in the "News" section of the Bradford Abbas Parish Council website'
+description: "Each <em>News Article</em> appears ... </br>\r\n&nbsp;&nbsp;&nbsp;as a <em>teaser</em> in the \"News\" section on the front page of the Bradford Abbas Parish Council website;</br>\r\n&nbsp;&nbsp;&nbsp;in more detail in its own page on the website\r\n"
 help: ''
 new_revision: false
 preview_mode: 1
