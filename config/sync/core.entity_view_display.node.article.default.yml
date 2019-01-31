@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.article.field_news_teaser
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
-    - image.style.large
+    - image.style.juicebox_small
     - node.type.article
   module:
     - datetime
@@ -43,7 +43,7 @@ content:
     type: image
     weight: 0
     settings:
-      image_style: large
+      image_style: juicebox_small
       image_link: ''
     third_party_settings: {  }
     label: hidden
