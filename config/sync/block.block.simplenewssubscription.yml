@@ -15,7 +15,7 @@ provider: null
 plugin: simplenews_subscription_block
 settings:
   id: simplenews_subscription_block
-  label: 'Newsletter subscription'
+  label: 'History Society Newsletter subscription'
   provider: simplenews
   label_display: visible
   newsletters:
