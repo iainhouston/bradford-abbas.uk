@@ -59,7 +59,7 @@
         "drupal/cleantalk": "^2.5",
         "drupal/console": "^1.0.2",
         "drupal/contribute": "^5.0@beta",
-        "drupal/core": "^8.6",
+        "drupal/core": "8.7.0",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
         "drupal/embed": "^1.0",
@@ -83,7 +83,6 @@
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
         "iainhouston/pellucid_monoset": "^1.1",
-        "symfony/http-foundation": "3.4.14",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
