@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Meeting Type'
 vid: meeting_type
 description: ''
-hierarchy: 0
 weight: 0

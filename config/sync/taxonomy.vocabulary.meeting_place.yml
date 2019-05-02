@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Meeting Place'
 vid: meeting_place
 description: ''
-hierarchy: 0
 weight: 0

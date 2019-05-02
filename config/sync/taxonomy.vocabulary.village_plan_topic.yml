@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Village Plan Topic'
 vid: village_plan_topic
 description: ''
-hierarchy: 0
 weight: 0

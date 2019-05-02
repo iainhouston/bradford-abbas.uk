@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Councillor''s function'
 vid: councillor_s_function
 description: ''
-hierarchy: 0
 weight: 0
