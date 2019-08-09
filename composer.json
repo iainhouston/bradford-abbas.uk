@@ -56,10 +56,10 @@
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/admin_content_notification": "^3.1",
-        "drupal/cleantalk": "^2.5",
+        "drupal/cleantalk": "^3.0",
         "drupal/console": "^1.0.2",
         "drupal/contribute": "^5.0@beta",
-        "drupal/core": "^8.6",
+        "drupal/core": "^8.7.6",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
         "drupal/embed": "^1.0",
@@ -83,22 +83,13 @@
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
         "iainhouston/pellucid_monoset": "^1.1",
-        "symfony/http-foundation": "3.4.14",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
         "drupal/devel": "^1.0",
-        "drupal/drupal-extension": "~4.0",
         "drupal/link_css": "1.x-dev",
-        "geerlingguy/drupal-vm": "4.8.0",
-        "jcalderonzumba/gastonjs": "~1.0.2",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsstream": "~1.2",
-        "phpunit/phpunit": ">=4.8.28 <5",
-        "symfony/css-selector": "~2.8|~3.0"
+        "geerlingguy/drupal-vm": "4.8.0"
     },
     "conflict": {
         "drupal/drupal": "*"
