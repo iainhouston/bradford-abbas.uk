@@ -2,5 +2,5 @@
 
 set -x
 
-drush $DEVALIAS pmu link_css devel kint
-drush $DEVALIAS cex -y
+$DRUSH $DEVALIAS pmu link_css devel kint
+$DRUSH $DEVALIAS cex -y

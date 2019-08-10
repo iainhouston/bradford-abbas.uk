@@ -1,7 +1,8 @@
 badev:
   host: vagrant.bradford-abbas.uk
   ssh:
-    options: '-o PasswordAuthentication=no -i ~/.vagrant.d/insecure_private_key'
+    tty: 0
+    options: '-i ~/.vagrant.d/insecure_private_key'
   root: /var/www/drupal/web
   uri: vagrant.bradford-abbas.uk
   user: vagrant

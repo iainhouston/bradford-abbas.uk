@@ -1,7 +1,8 @@
 balive:
   host: bradford-abbas.uk
   ssh:
-    options: '-o PasswordAuthentication=no -i ~/.ssh/BAPC-2.pem'
+    tty: 0
+    options: '-i ~/.ssh/BAPC-2.pem'
   root: /var/www/drupal/web
   uri: bradford-abbas.uk
   user: webmaster

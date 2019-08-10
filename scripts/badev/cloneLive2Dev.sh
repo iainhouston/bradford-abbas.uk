@@ -4,17 +4,17 @@
 NOW=$(date +"%a-%H%M-%d%b%y")
 FILE="$BADEV/vm/saved_sql/live/$NOW.sql"
 echo "Clearing caches before dumping Live database"
-drush @balive cr
+$DRUSH @balive cr
 echo "Dumping Live database"
-drush @balive sql:dump > $FILE
+$DRUSH @balive sql:dump > $FILE
 
 # drush uses rsync -t flag which writes extraneous text
 sed -i '' 's/^Connection to/-- Connection to/' $FILE
 
-drush @badev sql:drop -y
+$DRUSH @badev sql:drop -y
 echo "Loading replica of Live database"
-drush @badev sql:cli < $FILE
-drush @badev cr
+$DRUSH @badev sql:cli < $FILE
+$DRUSH @badev cr
 
 echo "Syncing files from Live to Dev machine"
 rsync -avz $LIVE_SSH_ALIAS:/var/www/drupal/web/sites/default/files/ \
