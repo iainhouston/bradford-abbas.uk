@@ -47,7 +47,7 @@ This doesn't re-provision the live server, it does just those playbook tasks - t
 
 So you run `updateLiveCode` when any of these have been updated and tested on the local development site.
 
-More important detail can be found in my blog post ["DrupalVM in use"](https://iainhouston.com/posts/drupalvm-bapc/)
+More important detail can be found in my blog post ["DrupalVM in use"](https://iainhouston.com/drupalbapc/)
 
 
 TO DO items
