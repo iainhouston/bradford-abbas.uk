@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6327f7bd709b565ebdd6f0ca4cff21ef",
+    "content-hash": "488c7f3151610e964b8e63f226219f17",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4981,11 +4981,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.15",
+            "version": "V1.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "866eb4e3430d5172f7f0c0f882cd0b576483adcb"
+                "reference": "b0b6521a01795b4c4dbbd8c59f6a56d8b7313b20"
             },
             "type": "drupal-theme",
             "license": [
@@ -5003,7 +5003,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2019-02-04T19:26:54+00:00"
+            "time": "2019-08-18T16:06:18+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -8216,52 +8216,6 @@
             }
         },
         {
-            "name": "drupal/link_css",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/link_css.git",
-                "reference": "2e53337457471db70629dd75a888ddee08583280"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1478575440",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "gigabates",
-                    "homepage": "https://www.drupal.org/user/1257024"
-                },
-                {
-                    "name": "jorgegc",
-                    "homepage": "https://www.drupal.org/user/834154"
-                }
-            ],
-            "description": "Include CSS files using <link> element instead of @import.",
-            "homepage": "https://www.drupal.org/project/link_css",
-            "support": {
-                "source": "http://cgit.drupalcode.org/link_css"
-            },
-            "time": "2016-11-08T03:19:30+00:00"
-        },
-        {
             "name": "geerlingguy/drupal-vm",
             "version": "4.8.0",
             "source": {
@@ -8315,8 +8269,7 @@
         "iainhouston/pellucid_document": 20,
         "iainhouston/pellucid_gallery": 20,
         "iainhouston/pellucid_meeting": 20,
-        "iainhouston/pellucid_minutes": 20,
-        "drupal/link_css": 20
+        "iainhouston/pellucid_minutes": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

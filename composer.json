@@ -88,7 +88,6 @@
     },
     "require-dev": {
         "drupal/devel": "^1.0",
-        "drupal/link_css": "1.x-dev",
         "geerlingguy/drupal-vm": "4.8.0"
     },
     "conflict": {
