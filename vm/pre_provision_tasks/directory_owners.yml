@@ -6,7 +6,7 @@
     state: directory
     owner: www-data
     group: www-data
-    mode: ug+w,g+s
+    mode: ug+w
   become: yes
   tags: ['drupal', 'prod_only']
 
@@ -17,7 +17,7 @@
     state: directory
     owner: www-data
     group: www-data
-    mode: ug+w,g+s
+    mode: ug+w
   become: yes
   tags: ['drupal', 'prod_only']
 
@@ -28,7 +28,7 @@
     state: directory
     owner: www-data
     group: www-data
-    mode: ug+w,g+s
+    mode: ug+w
   become: yes
   tags: ['drupal', 'prod_only']
 
