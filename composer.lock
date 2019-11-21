@@ -1207,6 +1207,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -4981,11 +4982,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.17",
+            "version": "V1.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "a8d24e6c4c846b29dedf4706a48322f62dd986f5"
+                "reference": "7377162bc188bfc700a129e4fe5900718be4b413"
             },
             "type": "drupal-theme",
             "license": [
@@ -5003,7 +5004,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2019-11-12T14:01:23+00:00"
+            "time": "2019-11-21T09:25:55+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
