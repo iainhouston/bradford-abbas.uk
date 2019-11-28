@@ -9,7 +9,7 @@ format: html
 priority: 0
 receipt: true
 from_name: 'Bradford Abbas History Society'
-subject: '[[simplenews-newsletter:name]] [node:title]'
+subject: '[[simplenews-newsletter:name]] Upcoming event'
 from_address: histsoc@bradford-abbas.uk
 hyperlinks: true
 new_account: none
