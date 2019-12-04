@@ -23,6 +23,7 @@ alias cdm="cd $BADEV/web/modules/contrib/ && ls $BADEV/web/modules/contrib/"
 alias cdt="cd $BADEV/web/themes/contrib/pellucid_monoset/ && ls $BADEV/web/themes/contrib/pellucid_monoset/"
 alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
+alias cdv="cd $BADEV/vendor/iainhouston/drupal-vm"
 
 # Dumps: SQL
 # echo "sqldumpLive    - Get latest SQL from live site"
@@ -45,5 +46,5 @@ export GREEN='\x1B[0;32m'
 export NC='\x1B[0m' # No Colour
 
 # Check versions of software required on this machine
-alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
+alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ruby --version && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
 alias devSoftwareVersions='(checkVersions 2>&1) | tee  checkVersions.txt'

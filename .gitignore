@@ -7,14 +7,12 @@
 /web/profiles/contrib/
 /web/libraries/
 
-# Ignore sensitive information
+# Ignore sensitive / development information
 /web/sites/*/settings.php
 /web/sites/*/default.settings.php
 /web/sites/*/settings.local.php
 /web/sites/*/default.services.yml
 /web/sites/*/services.yml
-
-# Ignore sites' development services
 /web/sites/development.services.yml
 
 # Ignore Drupal's file directory

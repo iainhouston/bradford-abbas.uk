@@ -1,50 +1,131 @@
 ---
-# Composer project settings.
-drupal_build_composer_project: false
-drupal_build_composer: false
-drupal_composer_dependencies: []
-drupalvm_webserver: nginx
+# Force use of ansible_local provisioner, even if Ansible is installed on host.
+force_ansible_local: false
 
-# We'll manage our own - especially now we're using .yml aliases
+# The web server software to use. Can be either 'apache' or 'nginx'.
+drupalvm_webserver: apache
+
+# The database system to use. Can be either 'mysql' or 'pgsql'.
+drupal_db_backend: mysql
+
+# Not using makefile
+drupal_build_makefile: false
+
+# We are using a composer based site deployment strategy For production
+drupal_build_composer: false
+
+# We are not using Composer's create-project as a site deployment strategy.
+drupal_build_composer_project: false
+
+# Set this to 'false' if you don't need to install drupal (using the drupal_*
+# settings below), but instead copy down a database (e.g. using drush sql-sync).
+drupal_install_site: false
+
+# Required Drupal settings.
+drupal_core_path: "{{ drupal_composer_install_dir }}/web"
+drupal_core_owner: "{{ drupalvm_user }}"
+drupal_db_user: drupal
+drupal_db_password: drupal
+drupal_db_name: drupal
+drupal_db_host: localhost
+
+# Settings for installing a Drupal site if 'drupal_install_site:' is 'true'.
+drupal_major_version: 8
+drupal_domain: "{{ vagrant_hostname }}"
+drupal_site_name: "Drupal"
+drupal_install_profile: standard
+drupal_enable_modules: [ 'devel' ]
+drupal_account_name: admin
+drupal_account_pass: admin
+
+# Additional arguments or options to pass to `drush site-install`.
+drupal_site_install_extra_args: []
+
+# Cron jobs are added to the vagrant user's crontab. Keys include name
+# (required), minute, hour, day, weekday, month, job (required), and state.
+drupalvm_cron_jobs: []
+
+# Drupal VM automatically creates a drush alias file in your ~/.drush folder if
+# this variable is 'true'.
 configure_drush_aliases: false
 
-# Drupal install settings.
-drupal_site_name: "My Production Website"
-drupal_core_path: "/var/www/drupal/web"
-drupal_install_site: true
-drupal_enable_modules: []
+# Helper variable to configure the PHP-FPM connection for each Apache
+# VirtualHost in the `apache_vhosts` list.
+apache_vhost_php_fpm_parameters: |
+    <FilesMatch \.php$>
+      SetHandler "proxy:fcgi://{{ php_fpm_listen }}"
+    </FilesMatch>
 
-ba_cron_hour: "05"
-drupalvm_cron_jobs:
-  - name: "Drupal Cron"
-    minute: "*/15"
-    job: "{{ drush_path }} -r {{ drupal_core_path }} core-cron --quiet"
+apache_packages_state: latest
+apache_remove_default_vhost: true
+apache_mods_enabled:
+  - expires.load
+  - headers.load
+  - ssl.load
+  - rewrite.load
+  - proxy.load
+  - proxy_fcgi.load
 
-# Other overrides.
-php_version: "7.2"
-php_sendmail_path: "/usr/sbin/sendmail -t -i"
+# MySQL databases and users.
+mysql_databases:
+  - name: "{{ drupal_db_name }}"
+    encoding: utf8mb4
+    collation: utf8mb4_general_ci
 
-installed_extras:
-  - drush
+mysql_users:
+  - name: "{{ drupal_db_user }}"
+    host: "%"
+    password: "{{ drupal_db_password }}"
+    priv: "{{ drupal_db_name }}.*:ALL"
 
-drush_launcher_install: yes
-drush_launcher_version: "0.5.1"
-drush_launcher_phar_url: https://github.com/drush-ops/drush-launcher/releases/download/{{ drush_launcher_version }}/drush.phar
-
-
-# Add any extra Debian apt packages we would like installed.
 extra_packages:
   - unzip
-  - emacs24-nox
+  - emacs-nox
   - php-elisp
-  - s3cmd
 
-# Other secure defaults.
-dashboard_install_dir: ''
+# You can configure almost anything else on the server in the rest of this file.
+extra_security_enabled: false
 
-# Restrict the firewall to only ports that are required for external services.
-firewall_allowed_tcp_ports:
-  - "22"
-  - "80"
-  - "443"
-firewall_log_dropped_packets: true
+# PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
+# See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
+php_version: "7.4"
+php_install_recommends: no
+php_memory_limit: "192M"
+php_display_errors: "On"
+php_display_startup_errors: "On"
+php_realpath_cache_size: "1024K"
+php_sendmail_path: "/opt/mailhog/mhsendmail"
+php_opcache_enabled_in_ini: true
+php_opcache_memory_consumption: "192"
+php_opcache_max_accelerated_files: 4096
+php_max_input_vars: "4000"
+
+# Drupal VM defaults to using PHP-FPM with either Apache or Nginx. 
+php_enable_php_fpm: true
+php_fpm_listen: "127.0.0.1:9000"
+
+composer_path: /usr/bin/composer
+composer_home_path: "/home/{{ drupalvm_user }}/.composer"
+composer_home_owner: "{{ drupalvm_user }}"
+composer_home_group: "{{ drupalvm_user }}"
+composer_global_packages:
+  - { name: hirak/prestissimo, release: '^0.3' }
+
+# Run specified scripts before or after VM is provisioned. Use {{ playbook_dir }}
+# to reference the provisioning/ folder in Drupal VM or {{ config_dir }} to
+# reference the directory where your `config.yml` is.
+pre_provision_scripts: []
+post_provision_scripts: []
+  # - "{{ playbook_dir }}/../examples/scripts/configure-solr.sh"
+
+# MySQL Configuration.
+mysql_slow_query_log_enabled: true
+mysql_slow_query_time: 2
+mysql_wait_timeout: 300
+
+# Other configuration.
+dashboard_install_dir: /var/www/dashboard
+known_hosts_path: ~/.ssh/known_hosts
+hostname_configure: true
+hostname_fqdn: "{{ vagrant_hostname }}"
+ssh_home: "{{ drupal_core_path }}"

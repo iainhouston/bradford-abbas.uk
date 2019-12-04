@@ -1,11 +1,11 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "iainhouston/bradford-abbas.uk",
+    "description": "Project Drupal build file for Bradford Abbas Parish Council",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "",
+            "name": "Iain Houston",
             "role": ""
         }
     ],
@@ -13,6 +13,10 @@
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "drupal-vm": {
+            "type": "git",
+            "url": "https://github.com/iainhouston/drupal-vm.git"
         },
         "dropzone": {
             "type": "git",
@@ -88,7 +92,7 @@
     },
     "require-dev": {
         "drupal/devel": "^1.0",
-        "geerlingguy/drupal-vm": "4.8.0"
+        "iainhouston/drupal-vm": "~6.0"
     },
     "conflict": {
         "drupal/drupal": "*"

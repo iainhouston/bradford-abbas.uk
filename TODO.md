@@ -1,5 +1,7 @@
 # To Do
 
+**Look at the end of the list for open iems.**
+
 Please ~~strike through a completed item~~ when done.
 
 1. ~~Automate ssh keys and config to allow remote AWS servers acccess to private git repos **or** rationalise composer repo URIs.~~
@@ -38,3 +40,9 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
     1. Re-order; review; re-organise
 
     2. ~~ansible-vault cert files (already in certs/README.txt)~~
+    
+16. Symbolic link to site=specific `drush`
+
+    ```
+    ln -s /var/www/drupalvm/vendor/drush/drush/drush /home/vagrant/.composer/vendor/bin/drush
+    ```

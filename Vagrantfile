@@ -5,7 +5,7 @@ ENV['DRUPALVM_PROJECT_ROOT'] = "#{__dir__}"
 ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 
 # The relative path from the project root to the Drupal VM directory.
-ENV['DRUPALVM_DIR'] = "vendor/geerlingguy/drupal-vm"
+ENV['DRUPALVM_DIR'] = "vendor/iainhouston/drupal-vm"
 
 # Added after initial provisioning of VM and adding `vm/secrets.yml` for prod
 ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass --skip-tags=prod_only'

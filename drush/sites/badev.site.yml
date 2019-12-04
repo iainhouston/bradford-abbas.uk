@@ -3,6 +3,6 @@ badev:
   ssh:
     tty: 0
     options: '-i ~/.vagrant.d/insecure_private_key'
-  root: /var/www/drupal/web
+  root: /var/www/drupalvm/web
   uri: vagrant.bradford-abbas.uk
   user: vagrant
