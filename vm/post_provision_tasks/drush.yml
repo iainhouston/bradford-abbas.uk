@@ -1,11 +1,6 @@
 ---
-- name: Make sure local bin directory exists 
-  file:
-    path: "/home/{{vagrant_user}}/.composer/vendor/bin"
-    state: directory
-
-- name: Make local drush executable to vagrant_user
+- name: Make local drush executable globally
   file:
     src: /var/www/drupalvm/vendor/drush/drush/drush
-    dest: "/home/{{vagrant_user}}/.composer/vendor/bin/drush"
+    dest: "/usr/local/bin/drush"
     state: link

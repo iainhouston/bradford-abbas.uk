@@ -3,7 +3,7 @@
   template:
     src: "{{ config_dir }}/saved_default_settings/settings.php.j2"
     dest: "{{ drupal_core_path }}/sites/default/settings.php"
-    mode: u=r,g=r,o=rw
+    mode: u=r,g=r,o-rw
     
 - name: Configure Dev Settings
   blockinfile:
@@ -20,9 +20,11 @@
   copy:
     src: "{{ config_dir }}/saved_default_settings/services.yml"
     dest: "{{ drupal_core_path }}/sites/default/services.yml"
+    mode: u=r,g=r,o-rw
     
 - name: Copy settings.local file
   copy:
     src: "{{ config_dir }}/saved_default_settings/settings.local.php"
     dest: "{{ drupal_core_path }}/sites/default/settings.local.yml"
+    mode: u=r,g=r,o-rw
   tags: ['test_only']
