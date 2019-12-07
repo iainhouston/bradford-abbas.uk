@@ -79,6 +79,7 @@
         "drupal/webform": "^5.0",
         "drush/drush": "~9.0",
         "iainhouston/dropzone": "dev-master",
+        "iainhouston/drupal-vm": "^6.0",
         "iainhouston/imagesloaded": "dev-master",
         "iainhouston/masonry": "dev-master",
         "iainhouston/pellucid_agenda": "dev-master",
@@ -91,8 +92,6 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "drupal/devel": "^1.0",
-        "iainhouston/drupal-vm": "~6.0"
     },
     "conflict": {
         "drupal/drupal": "*"
