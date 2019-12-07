@@ -7,8 +7,8 @@ ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 # The relative path from the project root to the Drupal VM directory.
 ENV['DRUPALVM_DIR'] = "vendor/iainhouston/drupal-vm"
 
-# Added after initial provisioning of VM and adding `vm/secrets.yml` for prod
-ENV['DRUPALVM_ANSIBLE_ARGS'] = '--ask-vault-pass --skip-tags=prod_only'
+# When provisioning VM, skip live-only tasks
+ENV['DRUPALVM_ANSIBLE_ARGS'] = '--skip-tags=prod_only'
 
 # Load the real Vagrantfile
 load "#{__dir__}/#{ENV['DRUPALVM_DIR']}/Vagrantfile"

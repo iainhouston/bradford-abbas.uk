@@ -1,0 +1,28 @@
+---
+- name: Template Drupal settings file 
+  template:
+    src: "{{ config_dir }}/saved_default_settings/settings.php.j2"
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    mode: u=r,g=r,o=rw
+    
+- name: Configure Dev Settings
+  blockinfile:
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    block: |
+      if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+        include $app_root . '/' . $site_path . '/settings.local.php';
+      }
+  tags: ['test_only']
+    
+# TODO: Permissions for settings.php
+
+- name: Copy services file
+  copy:
+    src: "{{ config_dir }}/saved_default_settings/services.yml"
+    dest: "{{ drupal_core_path }}/sites/default/services.yml"
+    
+- name: Copy settings.local file
+  copy:
+    src: "{{ config_dir }}/saved_default_settings/settings.local.php"
+    dest: "{{ drupal_core_path }}/sites/default/settings.local.yml"
+  tags: ['test_only']

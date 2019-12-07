@@ -12,7 +12,6 @@ vagrant_hostname: "{{ drupal_domain }}"
 
 
 # setup DKIM; Place certs etc.
-# path relative to current playbook.yml
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 
@@ -52,3 +51,6 @@ drupalvm_cron_jobs:
     minute: "06"
     hour: "{{ ba_cron_hour }}"
     job: "/usr/bin/s3cmd put  /var/www/drupal/bradford-abbas.uk.sql s3://bradford-abbas.uk.db > /dev/null"
+
+- name: Include encrypted Drupal settings variables.
+  include_vars:  "{{ config_dir }}/prod_secrets.yml"

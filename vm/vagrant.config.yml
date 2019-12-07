@@ -4,6 +4,7 @@
 vagrant_box: geerlingguy/ubuntu1804
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: local-BAPC
+vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
 
 # Configure the synced folder.
@@ -20,7 +21,7 @@ vagrant_plugins:
   - name: vagrant-vbguest
   - name: vagrant-hostsupdater
   - name: vagrant-auto_network
-  
+
 # Minimum required versions.
 drupalvm_vagrant_version_min: '2.2.6'
 drupalvm_ansible_version_min: '2.9'
@@ -34,16 +35,7 @@ vagrant_cpus: 1
 # Dont allow Drupal VM to be accessed via a public network interface
 vagrant_public_ip: ""
 
-drupal_site_name: "My Development Website"
-drupal_core_path: "/var/www/drupalvm/web"
-drupal_install_site: false
-
-# Set 'drupal_build_makefile' to 'false' and this to 'true' if you are using a
-# composer based site deployment strategy.
-drupal_build_composer: true
-drupal_composer_path: "{{ config_dir }}/composer.json"
-drupal_composer_install_dir: "/var/www/drupalvm/web"
-drupal_composer_dependencies: []
+drupal_site_name: "BAPC Development Website"
 
 php_date_timezone: "Europe/London"
 php_sendmail_path: "/opt/mailhog/mhsendmail"
@@ -54,7 +46,6 @@ installed_extras:
   - pimpmylog
   # - xdebug
 
-php_xdebug_default_enable: 0
 php_xdebug_default_enable: 0
 php_xdebug_coverage_enable: 0
 php_xdebug_cli_disable: yes
@@ -78,7 +69,7 @@ firewall_log_dropped_packets: false
 firewall_disable_firewalld: true
 firewall_disable_ufw: true
 
-# Apache VirtualHosts. 
+# Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
@@ -103,7 +94,11 @@ apache_vhosts:
     documentroot: "{{ dashboard_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-
+# For production we use Ansible Vaukt-encrypted secrets.yml
+drupal_account_pass: admin
+drupal_db_user: drupal
+drupal_db_name: drupal
+drupal_db_password: drupal
 mysql_root_password: root
 
 adminer_install_filename: index.php
@@ -111,4 +106,5 @@ adminer_install_filename: index.php
 pimpmylog_install_dir: /usr/share/php/pimpmylog
 pimpmylog_grant_all_privs: true
 
-post_provision_tasks_dir: "{{ config_dir }}/local_tasks/*"
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"

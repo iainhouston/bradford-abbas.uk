@@ -7,7 +7,7 @@
     group: root
     mode: a-w,o-r,ug+r
   become: yes
-  tags: ['drupal']
+  tags: ['drupal', 'prod_only']
 
 - name: copy SSL key
   copy:
@@ -17,4 +17,4 @@
     group: ssl-cert
     mode: a-w,o-r,ug+r
   become: yes
-  tags: ['drupal']
+  tags: ['drupal', 'prod_only']
