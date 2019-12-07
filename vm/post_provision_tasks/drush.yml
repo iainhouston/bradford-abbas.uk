@@ -1,4 +1,9 @@
 ---
+- name: Make sure local bin directory exists 
+  file:
+    path: "/home/{{vagrant_user}}/.composer/vendor/bin"
+    state: directory
+
 - name: Make local drush executable to vagrant_user
   file:
     src: /var/www/drupalvm/vendor/drush/drush/drush
