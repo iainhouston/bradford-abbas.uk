@@ -13,11 +13,8 @@ drupal_build_makefile: false
 
 # We are using a "composer based site deployment strategy"
 # i.e we are intalling Drupal by means of our own composer.json
-drupal_build_composer: true
-# We are using our composer.json in situ; no copy required
-drupal_composer_path: false
+drupal_build_composer: false
 drupal_composer_dependencies: []
-#  See iainhouston/drupal-vm/docs/deployment
 
 # We are not using Composer's create-project as a site deployment strategy.
 drupal_build_composer_project: false

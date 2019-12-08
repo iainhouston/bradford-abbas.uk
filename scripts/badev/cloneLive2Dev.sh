@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
 # Dump remote database to local sql
 NOW=$(date +"%a-%H%M-%d%b%y")

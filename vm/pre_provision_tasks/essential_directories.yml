@@ -1,6 +1,18 @@
 ---
-  
 # Both testing and production environments
+- name: settings.php is present from composer install
+  stat:
+    path: "{{ drupal_core_path }}/sites/default/settings.php"
+  register: composed_settings
+
+- fail:
+    msg: "{{ drupal_core_path }}/sites/default/settings.php isn't defined (path doesn't exist)"
+  when: composed_settings.stat.exists is not defined
+
+- debug:
+    msg: "{{ drupal_core_path }}/sites/default/settings.php is defined OK"
+  when: composed_settings.stat.exists is  defined
+
 - name: Ensure Private file directory is present
   file:
     path: "{{ drupal_core_path }}/../private_files"
@@ -12,13 +24,13 @@
     path: "{{ drupal_core_path }}/../tmp"
     state: directory
   become: no
-  
+
 - name: Ensure Drupal's configuration directory is present
   file:
     path: "{{ drupal_core_path }}/../config"
     state: directory
   become: no
-  
+
 # The following two steps are only used on the dev server
 
 - name: Ensure Dev sql-dump target directory is present
@@ -42,7 +54,6 @@
 # Both for initial provisioning and 
 # ... for updating live code (tag: drupal)
 
-# This step will ensure .../sites/default/ exists too
 - name: Ensure public files directory is writable by http server
   file:
     path: "{{ drupal_core_path }}/sites/default/files"

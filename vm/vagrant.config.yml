@@ -81,10 +81,6 @@ apache_vhosts:
     documentroot: "{{ adminer_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-  - servername: "xhprof.{{ vagrant_hostname }}"
-    documentroot: "{{ php_xhprof_html_dir }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
-
   - servername: "pimpmylog.{{ vagrant_hostname }}"
     documentroot: "{{ pimpmylog_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"

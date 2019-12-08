@@ -1,0 +1,19 @@
+---
+- name: Ensure required s3cmd package is installed
+  apt: name=s3cmd state=present
+  tags: ['drupal', 'prod_only']
+
+- name: Place .s3cg file
+  copy:
+    src: "{{ config_dir }}/templates/s3cmd_config"
+    dest: "~/.s3cfg"
+    mode: u+rw
+  tags: ['drupal', 'prod_only']
+  become: no
+
+- name: Place .s3ignore file to exclude some dirs from backup to Amazon S3
+  copy:
+    src: "{{ config_dir }}/templates/s3ignore"
+    dest: "{{ drupal_core_path }}/../.s3ignore"
+    mode: u+rw
+  tags: ['drupal', 'prod_only']

@@ -1,6 +1,0 @@
----
-- name: Make local drush executable globally
-  file:
-    src: /var/www/drupalvm/vendor/drush/drush/drush
-    dest: "/usr/local/bin/drush"
-    state: link
