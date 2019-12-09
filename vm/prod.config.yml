@@ -4,6 +4,8 @@ drupal_deploy: true
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
 
+drupal_site_install_extra_args: [ “—config-dir=?/config/sync”]
+
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
 # nginx vhost template needs punctuation escaped
@@ -23,14 +25,6 @@ extra_packages:
   - opendkim-tools
   - s3cmd
 
-nginx_remove_default_vhost: true
-nginx_ppa_use: true
-nginx_vhost_template: "{{ config_dir }}/templates/nginx-ssl-vhost.j2"
-nginx_hosts:
-  - server_name: "{{ drupal_domain }}"
-    state: "present"
-    filename: "{{ drupal_domain }}.conf"
-
 ba_cron_hour: "05"
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
@@ -39,15 +33,18 @@ drupalvm_cron_jobs:
 
   - name: "Drupal SQL dump"
     minute: "01"
+    weekday: "6"
     hour: "{{ ba_cron_hour }}"
     job: "{{ drush_path }} -r {{ drupal_core_path }} sql:dump --result-file=../bradford-abbas.uk.sql > /dev/null"
 
   - name: "Sync Drupal files"
     minute: "04"
+    weekday: "6"
     hour: "{{ ba_cron_hour }}"
     job: "/usr/bin/s3cmd sync  {{ drupal_core_path }}/sites/default/files/ s3://bradford-abbas.uk.files --exclude-from={{ drupal_core_path }}/../.s3ignore > /dev/null"
 
   - name: "Backup Drupal SQL"
+    weekday: "6"
     minute: "06"
     hour: "{{ ba_cron_hour }}"
     job: "/usr/bin/s3cmd put  /var/www/drupal/bradford-abbas.uk.sql s3://bradford-abbas.uk.db > /dev/null"

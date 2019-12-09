@@ -35,6 +35,9 @@ vagrant_cpus: 1
 # Dont allow Drupal VM to be accessed via a public network interface
 vagrant_public_ip: ""
 
+# Composer-project installs a basic site for us on the Dev VM
+drupal_install_site: false
+
 drupal_site_name: "BAPC Development Website"
 
 php_date_timezone: "Europe/London"
@@ -44,16 +47,17 @@ installed_extras:
   - mailhog
   - adminer
   - pimpmylog
-  # - xdebug
+  - xdebug
 
-php_xdebug_default_enable: 0
+php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
+php_xdebug_version: "2.8.1"
 php_xdebug_cli_disable: yes
 php_xdebug_remote_enable: 1
 php_xdebug_remote_connect_back: 1
 php_xdebug_max_nesting_level: 256
 php_xdebug_remote_host: "{{ ansible_default_ipv4.gateway }}"
-php_xdebug_idekey: xdebug-atom
+php_xdebug_idekey: PHPSTORM
 
 dashboard_install_dir: /var/www/dashboard
 extra_security_enabled: false
@@ -90,7 +94,7 @@ apache_vhosts:
     documentroot: "{{ dashboard_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-# For production we use Ansible Vaukt-encrypted secrets.yml
+# For production we use Ansible Vault-encrypted prod_secrets.yml
 drupal_account_pass: admin
 drupal_db_user: drupal
 drupal_db_name: drupal

@@ -5,7 +5,7 @@ vendor/
 # Ignore directories created by pre_provisioning_tasks
 # and DrupalProject\composer\ScriptHandler::createRequiredFiles:
 # Drupal docroot and all subdirectories
-web/
+web/*
 # Drupal temporary and private files
 tmp/
 private_files/

@@ -19,9 +19,9 @@ drupal_composer_dependencies: []
 # We are not using Composer's create-project as a site deployment strategy.
 drupal_build_composer_project: false
 
-# Set this to 'false' if you don't need to install drupal (using the drupal_*
-# settings below), but instead copy down a database (e.g. using drush sql-sync).
+# Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
+# But we need drush to install basic site on production server
 
 # Required Drupal settings.
 drupal_composer_install_dir: "/var/www/drupalvm"
