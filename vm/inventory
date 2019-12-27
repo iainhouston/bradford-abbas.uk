@@ -1,2 +1,2 @@
-[drupalvm]
+[drupal_prod]
 3.123.60.212 ansible_ssh_user=webmaster

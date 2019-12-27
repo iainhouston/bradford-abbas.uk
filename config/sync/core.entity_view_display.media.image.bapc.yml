@@ -1,8 +1,9 @@
-uuid: 35aa5658-5274-46d4-8012-3adc4de3b6af
+uuid: 5f2610b7-1d9d-4f1e-9b60-6567a9de500d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.bapc
     - field.field.media.image.field_media_image
     - image.style.large
     - media.type.image
@@ -10,10 +11,10 @@ dependencies:
     - image
 _core:
   default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
-id: media.image.default
+id: media.image.bapc
 targetEntityType: media
 bundle: image
-mode: default
+mode: bapc
 content:
   field_media_image:
     label: visually_hidden

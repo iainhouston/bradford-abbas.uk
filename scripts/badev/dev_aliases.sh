@@ -30,6 +30,7 @@ alias cdv="cd $BADEV/vendor/iainhouston/drupal-vm"
 echo "cloneLive2Dev  - Clone Live Database and Files to Dev site"
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
 alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
+alias sqldumpDev="sh $BADEVSCRIPTS/sqldumpDev.sh"
 
 # Safe export of configuration to ensure --dev modules are not enabled
 echo "safecex        - Safe export of Dev site's configuration"

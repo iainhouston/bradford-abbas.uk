@@ -2,9 +2,11 @@ uuid: eb081252-bdeb-4be3-9348-728097165f2b
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.bapc
   module:
     - editor
-    - entity_embed
+    - media
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -17,7 +19,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <u> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <u> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title><drupal-media data-entity-type, data-entity-uuid>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -44,12 +46,6 @@ filters:
     status: true
     weight: -45
     settings: {  }
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: true
-    weight: -46
-    settings: {  }
   filter_url:
     id: filter_url
     provider: filter
@@ -75,3 +71,14 @@ filters:
     status: false
     weight: -43
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes:
+        default: default
+        bapc: bapc
