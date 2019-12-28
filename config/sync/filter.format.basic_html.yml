@@ -22,7 +22,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <u> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title><drupal-media data-entity-type, data-entity-uuid alt data-align data-caption>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <u> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title><drupal-media data-entity-type data-entity-uuid alt data-align data-caption data-view-mode>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -80,7 +80,7 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
+      default_view_mode: bapc_large
       allowed_media_types: {  }
       allowed_view_modes:
         bapc: bapc
