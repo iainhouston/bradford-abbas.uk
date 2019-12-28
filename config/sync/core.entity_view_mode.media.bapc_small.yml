@@ -1,10 +1,10 @@
-uuid: b7f86946-52b6-4533-b8cf-c6c1d21eaa45
+uuid: 975249b2-4f28-4a55-adbd-a9f646b2b3a1
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.bapc
-label: 'BAPC Full'
+id: media.bapc_small
+label: 'BAPC Small'
 targetEntityType: media
 cache: true

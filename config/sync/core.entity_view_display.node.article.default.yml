@@ -43,7 +43,7 @@ content:
     region: content
     label: hidden
     settings:
-      view_mode: default
+      view_mode: bapc
       link: false
     third_party_settings: {  }
   field_tags:

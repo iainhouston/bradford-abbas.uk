@@ -1,0 +1,15 @@
+uuid: 9bdb7e44-4142-4354-bf99-cff667aea7dc
+langcode: en
+status: true
+dependencies: {  }
+name: bapc_medium
+label: 'BAPC Medium (W 220)'
+effects:
+  747d5c73-884e-437e-a35c-1d96a7a8f693:
+    uuid: 747d5c73-884e-437e-a35c-1d96a7a8f693
+    id: image_scale
+    weight: 1
+    data:
+      width: 220
+      height: null
+      upscale: true

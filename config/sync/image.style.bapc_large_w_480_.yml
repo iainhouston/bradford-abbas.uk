@@ -1,0 +1,15 @@
+uuid: ee9376ff-87c2-4f63-9016-175af3f9ad4c
+langcode: en
+status: true
+dependencies: {  }
+name: bapc_large_w_480_
+label: 'BAPC Large (W 480)'
+effects:
+  1720516e-40b2-44c6-b690-1592f3cadfe1:
+    uuid: 1720516e-40b2-44c6-b690-1592f3cadfe1
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: true
