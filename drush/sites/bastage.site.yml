@@ -1,0 +1,8 @@
+balive:
+  host: staging.bradford-abbas.uk
+  ssh:
+    tty: 0
+    options: '-i ~/.ssh/BAPC-2.pem'
+  root: /var/www/drupal/web
+  uri: staging.bradford-abbas.uk
+  user: webmaster

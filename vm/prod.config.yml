@@ -3,13 +3,15 @@
 drupal_deploy: true
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
+#  User ansible-playbook's --extra-args for:
+# drupal_deploy_version: refactorvm
+drupal_composer_install_dir: /var/www/drupal
+drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 
-drupal_site_install_extra_args: [ “—config-dir=?/config/sync”]
+drupal_site_install_extra_args: [ “—config-dir=./var/www/drupal/config/sync”]
 
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
-# nginx vhost template needs punctuation escaped
-drupal_domain_esc: "bradford-abbas\\.uk"
 vagrant_hostname: "{{ drupal_domain }}"
 
 
@@ -24,6 +26,16 @@ extra_packages:
   - opendkim
   - opendkim-tools
   - s3cmd
+
+extra_security_enabled: true
+
+# Apache VirtualHosts.
+# View the geerlingguy.apache Ansible Role README for more options.
+apache_vhosts:
+  - servername: "{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 ba_cron_hour: "05"
 drupalvm_cron_jobs:
