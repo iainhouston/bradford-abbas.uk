@@ -8,7 +8,10 @@ drupal_deploy_dir: /var/www/drupal
 drupal_composer_install_dir: /var/www/drupal
 drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 
-drupal_site_install_extra_args: [ “—config-dir=./var/www/drupal/config/sync”]
+drupal_install_site: false
+drupal_site_name: "BAPC Staging Website"
+drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”]
+# Other install args provided in prod.secrets.yml
 
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
