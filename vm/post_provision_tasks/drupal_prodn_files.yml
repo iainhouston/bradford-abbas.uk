@@ -1,0 +1,84 @@
+---
+# Both testing and production environments
+# - name: settings.php is present from composer install
+#   stat:
+#     path: "{{ drupal_core_path }}/sites/default/settings.php"
+#   register: composed_settings
+#
+# - fail:
+#     msg: "{{ drupal_core_path }}/sites/default/settings.php isn't defined (path doesn't exist)"
+#   when: not composed_settings.stat.exists
+#
+# - debug:
+#     msg: "{{ drupal_core_path }}/sites/default/settings.php is defined OK"
+#   when: composed_settings.stat.exists
+
+
+
+# The following steps are only used on the live server
+# Both for initial provisioning and
+# ... for updating live code (tag: drupal)
+
+- name: Harden sensitive sites files
+  file:
+    path: "{{ item }}"
+    state: file
+    mode: u=r,g=r,o-rwx
+  loop:
+    - "{{ drupal_core_path }}/sites/default/settings.php"
+    - "{{ drupal_core_path }}/sites/default/services.yml"
+    - "{{ drupal_core_path }}/sites/default/settings.local.yml"
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Harden access to sites/default
+  file:
+    path: "{{ drupal_core_path }}/sites/default"
+    state: directory
+    mode: ugo=rx
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Ensure public files directory is writable by http server
+  file:
+    path: "{{ drupal_core_path }}/sites/default/files"
+    recurse: yes
+    state: directory
+    owner: "{{webserver_user}}"
+    group: "{{webserver_group}}"
+    mode: ug+w
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Ensure private files directory is writable by http server
+  file:
+    path: "{{ drupal_core_path }}/../private_files"
+    recurse: yes
+    state: directory
+    owner: "{{webserver_user}}"
+    group: "{{webserver_group}}"
+    mode: ug+w
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Ensure tmp directory is writable by http server
+  file:
+    path: "{{ drupal_core_path }}/../tmp"
+    recurse: yes
+    state: directory
+    owner: "{{webserver_user}}"
+    group: "{{webserver_group}}"
+    mode: ug+w
+  become: yes
+  tags: ['drupal', 'prod_only']
+
+- name: Ensure config directory is writable by http server
+  file:
+    path: "{{ drupal_core_path }}/../config"
+    recurse: yes
+    state: directory
+    owner: "{{webserver_user}}"
+    group: "{{webserver_group}}"
+    mode: ug+w
+  become: yes
+  tags: ['drupal', 'prod_only']

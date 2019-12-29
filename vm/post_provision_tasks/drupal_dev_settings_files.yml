@@ -1,10 +1,30 @@
 ---
+# The following two steps are only used on the dev server
+# to initialise the development environment
+- name: Ensure Dev sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/dev"
+    state: directory
+  become: no
+  tags: ['test_only']
+
+- name: Ensure Live sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/live"
+    state: directory
+  become: no
+  tags: ['test_only']
+
+ # We write in our remembered site settings files
 - name: Temporarily allow write access to sites/default
   file:
     path: "{{ drupal_core_path }}/sites/default"
     state: directory
     mode: ugo=rwx
   become: yes
+  tags: ['test_only']
 
 - name: Temporarily allow write access to sensitive sites files
   file:
@@ -16,21 +36,13 @@
     - "{{ drupal_core_path }}/sites/default/services.yml"
     - "{{ drupal_core_path }}/sites/default/settings.local.yml"
   become: yes
+  tags: ['test_only']
 
 - name: Template Drupal settings file to sites/default/
   template:
     src: "{{ config_dir }}/saved_default_settings/settings.php.j2"
     dest: "{{ drupal_core_path }}/sites/default/settings.php"
-
-#- name: Ensure settings are protected is writable by http server
-#  file:
-#    path: "{{ drupal_core_path }}/sites/default/settings.php"
-#    state: file
-#    owner: "{{drupalvm_webserver_user}}"
-#    group: "{{drupalvm_webserver_user}}"
-#    mode: u=r,g=r,o-rwx
-#  become: yes
-#  tags: ['drupal', 'prod_only']
+  tags: ['test_only']
 
 - name: Copy Development services file to sites/
   copy:
@@ -51,30 +63,10 @@
   copy:
     src: "{{ config_dir }}/saved_default_settings/services.yml"
     dest: "{{ drupal_core_path }}/sites/default/services.yml"
+  tags: ['test_only']
 
 - name: Copy settings.local file to sites/default/
   copy:
     src: "{{ config_dir }}/saved_default_settings/settings.local.php"
     dest: "{{ drupal_core_path }}/sites/default/settings.local.yml"
-
-- name: Harden sensitive sites files
-  file:
-    path: "{{ item }}"
-    state: file
-    mode: u=r,g=r,o-rwx
-  loop:
-    - "{{ drupal_core_path }}/sites/default/settings.php"
-    - "{{ drupal_core_path }}/sites/default/services.yml"
-    - "{{ drupal_core_path }}/sites/default/settings.local.yml"
-  become: yes
-
-- name: Harden access to sites/default
-  file:
-    path: "{{ drupal_core_path }}/sites/default"
-    state: directory
-    mode: ugo=rx
-  become: yes
-
-
-
-
+  tags: ['test_only']

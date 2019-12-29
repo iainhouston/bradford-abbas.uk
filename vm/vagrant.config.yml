@@ -17,6 +17,12 @@ vagrant_synced_folders:
     type: nfs
     create: true
 
+# Not tested yet! On dev provisioning
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+webserver_user: vagrant
+webserver_group: dialout
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 vagrant_plugins:
   - name: vagrant-vbguest
   - name: vagrant-hostsupdater

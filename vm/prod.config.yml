@@ -14,18 +14,12 @@ drupal_site_install_extra_args: [ “—config-dir=./var/www/drupal/config/sync�
 drupal_domain: "bradford-abbas.uk"
 vagrant_hostname: "{{ drupal_domain }}"
 
+webserver_user: webmaster
+webserver_group: www-data
 
 # setup DKIM; Place certs etc.
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
-
-extra_packages:
-  - unzip
-  - emacs24-nox
-  - php-elisp
-  - opendkim
-  - opendkim-tools
-  - s3cmd
 
 extra_security_enabled: true
 
@@ -34,6 +28,11 @@ extra_security_enabled: true
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
+  - servername: "staging.{{ drupal_domain }}"
+    serveralias: "www.staging.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
@@ -60,6 +59,3 @@ drupalvm_cron_jobs:
     minute: "06"
     hour: "{{ ba_cron_hour }}"
     job: "/usr/bin/s3cmd put  /var/www/drupal/bradford-abbas.uk.sql s3://bradford-abbas.uk.db > /dev/null"
-
-- name: Include encrypted Drupal settings variables.
-  include_vars:  "{{ config_dir }}/prod_secrets.yml"
