@@ -35,6 +35,11 @@ apache_vhosts:
     documentroot: "{{ drupal_core_path }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
+  - servername: "staging.{{ drupal_domain }}"
+    serveralias: "www.staging.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
 ba_cron_hour: "05"
 drupalvm_cron_jobs:
   - name: "Drupal Cron"

@@ -1,2 +1,2 @@
 [drupal_prod]
-3.123.60.212 ansible_ssh_user=webmaster
+3.123.60.212 ansible_ssh_user=webmaster ansible_python_interpreter=python3
