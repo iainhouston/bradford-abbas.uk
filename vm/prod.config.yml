@@ -29,15 +29,14 @@ installed_extras: []
 
 # Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.
-apache_vhosts:
+apache_vhosts: []
+
+apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
-
-  - servername: "staging.{{ drupal_domain }}"
-    serveralias: "www.staging.{{ drupal_domain }}"
-    documentroot: "{{ drupal_core_path }}"
+    certificate_file: "/etc/ssl/certs/SSL.crt"
+    certificate_key_file: "/etc/ssl/private/SSL.key"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 ba_cron_hour: "05"
