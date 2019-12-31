@@ -29,11 +29,18 @@ installed_extras: []
 
 # Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+  NameVirtualHost *:80
+
+apache_vhost_redirect_parameters: |
+  Redirect permanent / https://bradford-abbas.uk/
+
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+    extra_parameters: "{{ apache_vhost_redirect_parameters }}"
 
 apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
@@ -56,13 +63,13 @@ drupalvm_cron_jobs:
     job: "{{ drush_path }} -r {{ drupal_core_path }} sql:dump --result-file=../bradford-abbas.uk.sql > /dev/null"
 
   - name: "Sync Drupal files"
-    minute: "04"
-    weekday: "6"
+    minute: "06"
     hour: "{{ ba_cron_hour }}"
+    weekday: "6"
     job: "/usr/bin/s3cmd sync  {{ drupal_core_path }}/sites/default/files/ s3://bradford-abbas.uk.files --exclude-from={{ drupal_core_path }}/../.s3ignore > /dev/null"
 
   - name: "Backup Drupal SQL"
-    weekday: "6"
-    minute: "06"
+    minute: "11"
     hour: "{{ ba_cron_hour }}"
+    weekday: "6"
     job: "/usr/bin/s3cmd put  /var/www/drupal/bradford-abbas.uk.sql s3://bradford-abbas.uk.db > /dev/null"
