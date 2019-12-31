@@ -1,0 +1,10 @@
+uuid: 975249b2-4f28-4a55-adbd-a9f646b2b3a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bapc_small
+label: 'BAPC Small'
+targetEntityType: media
+cache: true

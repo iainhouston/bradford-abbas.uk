@@ -1,49 +1,74 @@
 ---
 # Local Vagrant options.
+# ______________________
+vagrant_box: geerlingguy/ubuntu1804
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: local-BAPC
+vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
 
 # Configure the synced folder.
-vagrant_synced_folder_default_type: nfs
 vagrant_synced_folders:
+  # The first synced folder will be used for the default Drupal installation, if
+  # any of the build_* settings are 'true'. By default the folder is set to
+  # the drupal-vm folder.
   - local_path: .
-    destination: /var/www/drupal
+    destination: /var/www/drupalvm
     type: nfs
+    create: true
 
-drupal_site_name: "My Development Website"
-drupal_core_path: "/var/www/drupal/web"
-drupal_install_site: true
-# Undo some of the extra-hardened security settings in config.yml.
-drupal_account_pass: admin
-drupal_db_password: drupal
-mysql_root_password: root
+# Not tested yet! On dev provisioning
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+webserver_user: vagrant
+webserver_group: dialout
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+vagrant_plugins:
+  - name: vagrant-vbguest
+  - name: vagrant-hostsupdater
+  - name: vagrant-auto_network
+
+# Minimum required versions.
+drupalvm_vagrant_version_min: '2.2.6'
+drupalvm_ansible_version_min: '2.9'
+
+# Memory and CPU to use for this VM.
+vagrant_memory: 2048
+vagrant_cpus: 1
+
+# Local drupal site specs
+# _______________________
+# Dont allow Drupal VM to be accessed via a public network interface
+vagrant_public_ip: ""
+
+# Composer-project installs a basic site for us on the Dev VM
+drupal_install_site: false
+
+drupal_site_name: "BAPC Development Website"
 
 php_date_timezone: "Europe/London"
 php_sendmail_path: "/opt/mailhog/mhsendmail"
 installed_extras:
-  - drush
+  # - drush
   - mailhog
   - adminer
   - pimpmylog
   - xdebug
 
 php_xdebug_default_enable: 1
-php_xdebug_remote_enable: "true"
-php_xdebug_remote_connect_back: "true"
-php_xdebug_remote_port: "9009"
-php_xdebug_idekey: xdebug-atom
-# Xdebug 2.6.0 <==> PHP 7.2
-php_xdebug_version: 2.6.0
-
-extra_packages:
-  - unzip
-  - emacs24-nox
-  - php-elisp
+php_xdebug_coverage_enable: 0
+php_xdebug_version: "2.8.1"
+php_xdebug_cli_disable: yes
+php_xdebug_remote_enable: 1
+php_xdebug_remote_connect_back: 1
+php_xdebug_max_nesting_level: 256
+php_xdebug_remote_host: "{{ ansible_default_ipv4.gateway }}"
+php_xdebug_idekey: PHPSTORM
 
 dashboard_install_dir: /var/www/dashboard
 extra_security_enabled: false
 
+firewall_enabled: true
 firewall_allowed_tcp_ports:
   - "22"
   - "25"
@@ -51,38 +76,41 @@ firewall_allowed_tcp_ports:
   - "443"
   - "8025"
 firewall_log_dropped_packets: false
+firewall_disable_firewalld: true
+firewall_disable_ufw: true
 
-drupalvm_vagrant_version_min: '2.0.3'
-drupalvm_ansible_version_min: '2.4'
+# Apache VirtualHosts.
+# View the geerlingguy.apache Ansible Role README for more options.
+apache_vhosts:
+  - servername: "{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-nginx_hosts:
-  - server_name: "{{ drupal_domain }} www.{{ drupal_domain }}"
-    root: "{{ drupal_core_path }}"
-    is_php: true
+  - servername: "adminer.{{ vagrant_hostname }}"
+    documentroot: "{{ adminer_install_dir }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-  - server_name: "adminer.{{ vagrant_hostname }}"
-    root: "{{ adminer_install_dir }}"
-    is_php: true
+  - servername: "pimpmylog.{{ vagrant_hostname }}"
+    documentroot: "{{ pimpmylog_install_dir }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-  # - server_name: "xhprof.{{ vagrant_hostname }}"
-  #   root: "{{ php_xhprof_html_dir }}"
-  #   is_php: true
+  - servername: "{{ vagrant_ip }}"
+    serveralias: "dashboard.{{ vagrant_hostname }}"
+    documentroot: "{{ dashboard_install_dir }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-  - server_name: "pimpmylog.{{ vagrant_hostname }}"
-    root: "{{ pimpmylog_install_dir }}"
-    is_php: true
+# For production we use Ansible Vault-encrypted prod_secrets.yml
+drupal_account_pass: admin
+drupal_db_user: drupal
+drupal_db_name: drupal
+drupal_db_password: drupal
+mysql_root_password: root
 
-  - server_name: "{{ vagrant_ip }} dashboard.{{ vagrant_hostname }}"
-    root: "{{ dashboard_install_dir }}"
-    is_php: true
+adminer_install_filename: index.php
 
-nginx_remove_default_vhost: true
-nginx_ppa_use: true
-nginx_ppa_version: stable
+pimpmylog_install_dir: /usr/share/php/pimpmylog
+pimpmylog_grant_all_privs: true
 
-post_provision_tasks_dir: "{{ config_dir }}/local_tasks/*"
-
-vagrant_plugins:
-  - name: vagrant-vbguest
-  - name: vagrant-hostsupdater
-  - name: vagrant-auto_network
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"

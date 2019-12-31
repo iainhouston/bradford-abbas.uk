@@ -1,0 +1,72 @@
+---
+# The following two steps are only used on the dev server
+# to initialise the development environment
+- name: Ensure Dev sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/dev"
+    state: directory
+  become: no
+  tags: ['test_only']
+
+- name: Ensure Live sql-dump target directory is present
+  local_action:
+    module: file
+    path: "{{ config_dir }}/saved_sql/live"
+    state: directory
+  become: no
+  tags: ['test_only']
+
+ # We write in our remembered site settings files
+- name: Temporarily allow write access to sites/default
+  file:
+    path: "{{ drupal_core_path }}/sites/default"
+    state: directory
+    mode: ugo=rwx
+  become: yes
+  tags: ['test_only']
+
+- name: Temporarily allow write access to sensitive sites files
+  file:
+    path: "{{ item }}"
+    state: file
+    mode: ugo=rw
+  loop:
+    - "{{ drupal_core_path }}/sites/default/settings.php"
+    - "{{ drupal_core_path }}/sites/default/services.yml"
+    - "{{ drupal_core_path }}/sites/default/settings.local.yml"
+  become: yes
+  tags: ['test_only']
+
+- name: Template Drupal settings file to sites/default/
+  template:
+    src: "{{ config_dir }}/saved_default_settings/settings.php.j2"
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+  tags: ['test_only']
+
+- name: Copy Development services file to sites/
+  copy:
+    src: "{{ config_dir }}/saved_default_settings/development.services.yml"
+    dest: "{{ drupal_core_path }}/sites/development.services.yml"
+  tags: ['test_only']
+
+- name: Configure Dev Settings in sites/default
+  blockinfile:
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    block: |
+          if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+            include $app_root . '/' . $site_path . '/settings.local.php';
+           }
+  tags: ['test_only']
+
+- name: Copy services file to sites/default/
+  copy:
+    src: "{{ config_dir }}/saved_default_settings/services.yml"
+    dest: "{{ drupal_core_path }}/sites/default/services.yml"
+  tags: ['test_only']
+
+- name: Copy settings.local file to sites/default/
+  copy:
+    src: "{{ config_dir }}/saved_default_settings/settings.local.php"
+    dest: "{{ drupal_core_path }}/sites/default/settings.local.yml"
+  tags: ['test_only']

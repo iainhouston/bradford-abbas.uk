@@ -9,16 +9,25 @@
   copy:
     src: "{{ config_dir }}/certs/dkim.key"
     dest: /etc/postfix/dkim.key
-    mode: a-w,go-r
-    owner: opendkim
+    mode: a=r,go-rw
+    owner: root
+  become: yes
 
-- name: Configure OpenDKIM
+- name: Configure OpenDKIM - Comment out any pre-installed Socket spec
+  replace:
+    path: /etc/opendkim.conf
+    before: 'BEGIN ANSIBLE MANAGED BLOCK'
+    regexp: '^Socket'
+    replace: '# Socket'
+
+- name: Configure OpenDKIM - specify BA specifics
   blockinfile:
     dest: /etc/opendkim.conf
     block: |
       Domain                  {{ vagrant_hostname }}
       KeyFile                 /etc/postfix/dkim.key
       Selector                mail
+      Socket                  inet:8891@127.0.0.1
 
 - name: Configure Postfix MTA
   blockinfile:
@@ -28,12 +37,14 @@
       # Enable DKIM signing.
       milter_default_action = accept
       milter_protocol = 2
-      smtpd_milters = inet:localhost:8891
-      non_smtpd_milters = inet:localhost:8891
+      smtpd_milters = inet:127.0.0.1:8891
+      non_smtpd_milters = inet:127.0.0.1:8891
 
+# I suspect thus is redundant in Ubuntu 18.04
+# as "Socket inet:8891@127.0.0.1" is "required" in  /etc/opendkim.conf
 - name: Place file specifying DKIM Sockets
   copy:
-    content: 'SOCKET="inet:8891@localhost" '
+    content: 'SOCKET="inet:8891@127.0.0.1" '
     dest: /etc/default/opendkim
 
 

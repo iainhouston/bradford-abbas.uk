@@ -1,11 +1,11 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "iainhouston/bradford-abbas.uk",
+    "description": "Project Drupal build file for Bradford Abbas Parish Council",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "",
+            "name": "Iain Houston",
             "role": ""
         }
     ],
@@ -14,17 +14,9 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "dropzone": {
+        "drupal-vm": {
             "type": "git",
-            "url": "https://github.com/iainhouston/dropzone.git"
-        },
-        "imagesloaded": {
-            "type": "git",
-            "url": "https://github.com/iainhouston/imagesloaded.git"
-        },
-        "masonry": {
-            "type": "git",
-            "url": "https://github.com/iainhouston/masonry.git"
+            "url": "https://github.com/iainhouston/drupal-vm.git"
         },
         "jsjuicebox": {
             "type": "git",
@@ -59,24 +51,18 @@
         "drupal/cleantalk": "^3.0",
         "drupal/console": "^1.0.2",
         "drupal/contribute": "^5.0@beta",
-        "drupal/core": "^8.7.6",
+        "drupal/core": "~8.8",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
-        "drupal/embed": "^1.0",
-        "drupal/entity_browser": "^2.0",
-        "drupal/file_browser": "^1.1",
         "drupal/honeypot": "^1.29",
         "drupal/juicebox": "2.0-beta3",
         "drupal/mailsystem": "^4.1",
-        "drupal/pathauto": "^1.3",
+        "drupal/pathauto": "^1.6",
         "drupal/simplenews": "1.x-dev",
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "^1.5",
         "drupal/webform": "^5.0",
         "drush/drush": "~9.0",
-        "iainhouston/dropzone": "dev-master",
-        "iainhouston/imagesloaded": "dev-master",
-        "iainhouston/masonry": "dev-master",
         "iainhouston/pellucid_agenda": "dev-master",
         "iainhouston/pellucid_document": "dev-master",
         "iainhouston/pellucid_gallery": "dev-master",
@@ -87,8 +73,7 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "drupal/devel": "^1.0",
-        "geerlingguy/drupal-vm": "4.8.0"
+        "iainhouston/drupal-vm": "~6.0"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -1,0 +1,10 @@
+uuid: 5d9ae214-9cec-4e68-9d3b-a1de86add05b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bapc_large
+label: 'BAPC Large'
+targetEntityType: media
+cache: true

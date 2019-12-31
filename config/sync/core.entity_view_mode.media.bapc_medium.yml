@@ -1,0 +1,10 @@
+uuid: 497bf72a-2c88-499e-b1fa-a5a849697f39
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bapc_medium
+label: 'BAPC Medium'
+targetEntityType: media
+cache: true

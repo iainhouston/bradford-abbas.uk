@@ -1,0 +1,15 @@
+uuid: b188cb7d-9ecf-4161-958d-959668603f3f
+langcode: en
+status: true
+dependencies: {  }
+name: bapc_small_w_100_
+label: 'BAPC Small (W 100)'
+effects:
+  0e93ec5c-4742-4149-ad04-1b870e12e3ec:
+    uuid: 0e93ec5c-4742-4149-ad04-1b870e12e3ec
+    id: image_scale
+    weight: 1
+    data:
+      width: 100
+      height: null
+      upscale: false

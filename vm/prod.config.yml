@@ -3,34 +3,52 @@
 drupal_deploy: true
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
+#  User ansible-playbook's --extra-args for:
+# drupal_deploy_version: refactorvm
+drupal_composer_install_dir: /var/www/drupal
+drupal_core_path: "{{ drupal_composer_install_dir }}/web"
+
+drupal_install_site: false
+drupal_site_name: "BAPC Staging Website"
+drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”]
+# Other install args provided in prod.secrets.yml
 
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
-# nginx vhost template needs punctuation escaped
-drupal_domain_esc: "bradford-abbas\\.uk"
 vagrant_hostname: "{{ drupal_domain }}"
 
+webserver_user: webmaster
+webserver_group: www-data
 
 # setup DKIM; Place certs etc.
-# path relative to current playbook.yml
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 
-extra_packages:
-  - unzip
-  - emacs24-nox
-  - php-elisp
-  - opendkim
-  - opendkim-tools
-  - s3cmd
+extra_security_enabled: true
+installed_extras: []
 
-nginx_remove_default_vhost: true
-nginx_ppa_use: true
-nginx_vhost_template: "{{ config_dir }}/templates/nginx-ssl-vhost.j2"
-nginx_hosts:
-  - server_name: "{{ drupal_domain }}"
-    state: "present"
-    filename: "{{ drupal_domain }}.conf"
+# Apache VirtualHosts.
+# View the geerlingguy.apache Ansible Role README for more options.
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+  NameVirtualHost *:80
+
+apache_vhost_redirect_parameters: |
+  Redirect permanent / https://bradford-abbas.uk/
+
+apache_vhosts:
+  - servername: "{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_redirect_parameters }}"
+
+apache_vhosts_ssl:
+  - servername: "{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    certificate_file: "/etc/ssl/certs/SSL.crt"
+    certificate_key_file: "/etc/ssl/private/SSL.key"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 ba_cron_hour: "05"
 drupalvm_cron_jobs:
@@ -40,15 +58,18 @@ drupalvm_cron_jobs:
 
   - name: "Drupal SQL dump"
     minute: "01"
+    weekday: "6"
     hour: "{{ ba_cron_hour }}"
     job: "{{ drush_path }} -r {{ drupal_core_path }} sql:dump --result-file=../bradford-abbas.uk.sql > /dev/null"
 
   - name: "Sync Drupal files"
-    minute: "04"
+    minute: "06"
     hour: "{{ ba_cron_hour }}"
+    weekday: "6"
     job: "/usr/bin/s3cmd sync  {{ drupal_core_path }}/sites/default/files/ s3://bradford-abbas.uk.files --exclude-from={{ drupal_core_path }}/../.s3ignore > /dev/null"
 
   - name: "Backup Drupal SQL"
-    minute: "06"
+    minute: "11"
     hour: "{{ ba_cron_hour }}"
+    weekday: "6"
     job: "/usr/bin/s3cmd put  /var/www/drupal/bradford-abbas.uk.sql s3://bradford-abbas.uk.db > /dev/null"

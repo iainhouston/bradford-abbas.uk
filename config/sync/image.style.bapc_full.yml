@@ -1,0 +1,15 @@
+uuid: ecfeedd1-c49c-452f-b8a7-827db36cecd7
+langcode: en
+status: true
+dependencies: {  }
+name: bapc_full
+label: 'BAPC Full Width (W 1024)'
+effects:
+  a61372b1-239e-4c88-92fa-5d4776050694:
+    uuid: a61372b1-239e-4c88-92fa-5d4776050694
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: true
