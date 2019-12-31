@@ -29,7 +29,11 @@ installed_extras: []
 
 # Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.
-apache_vhosts: []
+apache_vhosts:
+  - servername: "{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
+    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
