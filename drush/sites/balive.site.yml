@@ -2,7 +2,8 @@ balive:
   host: bradford-abbas.uk
   ssh:
     tty: 0
-    options: '-i ~/.ssh/BAPC-2.pem'
   root: /var/www/drupal/web
   uri: bradford-abbas.uk
   user: webmaster
+# You'll need to have ssh-copy-id 'd your own ssh keys to webmaster@bradford-abbs.uk
+# if yours is not the Ansible controller that provisioned the BAPC server initially
