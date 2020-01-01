@@ -2,7 +2,7 @@
 - name: Make local drush executable globally
   file:
     src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
-    dest: "/usr/local/bin/drush"
+    dest: "{{ drush_path }}"
     state: link
 
 - name: Make local drupal console executable globally

@@ -39,7 +39,6 @@ apache_vhost_redirect_parameters: |
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }}"
-    documentroot: "{{ drupal_core_path }}"
     extra_parameters: "{{ apache_vhost_redirect_parameters }}"
 
 apache_vhosts_ssl:
@@ -51,6 +50,7 @@ apache_vhosts_ssl:
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 ba_cron_hour: "05"
+drush_path: /usr/local/bin/drush
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/15"

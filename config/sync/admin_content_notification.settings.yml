@@ -17,7 +17,15 @@ admin_content_notification_node_types:
 admin_content_notification_trigger_on_node_update: '1'
 admin_content_notification_allowed_roles:
   officer: officer
+  administrator: administrator
   anonymous: null
+  authenticated: null
   history_society_editor: null
-  administrator: null
-admin_content_notification_email: parishcouncilofficers@bradford-abbas.uk
+admin_content_notification_email: ''
+admin_content_notification_trigger_on_node_status: '0'
+admin_content_notification_email_limit: '50'
+admin_content_notification_roles_notified:
+  officer: officer
+  administrator: administrator
+  authenticated: null
+  history_society_editor: null
