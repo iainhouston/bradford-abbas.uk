@@ -3,8 +3,6 @@
   file:
     path: "{{ drupal_core_path }}/../private_files"
     state: directory
-    owner: "{{webserver_user}}"
-    group: "{{webserver_group}}"
     mode: ug+w
   become: yes
 
@@ -12,8 +10,6 @@
   file:
     path: "{{ drupal_core_path }}/../tmp"
     state: directory
-    owner: "{{webserver_user}}"
-    group: "{{webserver_group}}"
     mode: ug+w
   become: yes
 
@@ -21,7 +17,5 @@
   file:
     path: "{{ drupal_core_path }}/../config"
     state: directory
-    owner: "{{webserver_user}}"
-    group: "{{webserver_group}}"
     mode: ug+w
   become: yes

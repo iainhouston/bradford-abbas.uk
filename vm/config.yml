@@ -42,6 +42,7 @@ drupal_site_install_extra_args: []
 # (required), minute, hour, day, weekday, month, job (required), and state.
 drupalvm_cron_jobs: []
 
+drush_path: /usr/local/bin/drush
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: false

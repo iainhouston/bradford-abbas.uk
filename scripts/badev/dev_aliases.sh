@@ -2,7 +2,7 @@ export BADEV="$HOME/bradford-abbas.uk"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 export LIVE_SSH_ALIAS="wpbapc"
 export DEVALIAS="@badev"
-export DRUSH="$BADEV/vendor/bin/drush"
+export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"
 
 echo "updateLiveCode - Code and Config to Live site"

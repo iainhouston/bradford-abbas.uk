@@ -35,16 +35,17 @@ drupalvm_ansible_version_min: '2.9'
 # Memory and CPU to use for this VM.
 vagrant_memory: 2048
 vagrant_cpus: 1
+vagrant_public_ip: ""
 
 # Local drupal site specs
 # _______________________
 # Dont allow Drupal VM to be accessed via a public network interface
-vagrant_public_ip: ""
 
 # Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
 
 drupal_site_name: "BAPC Development Website"
+drush_path: /usr/local/bin/drush
 
 php_date_timezone: "Europe/London"
 php_sendmail_path: "/opt/mailhog/mhsendmail"

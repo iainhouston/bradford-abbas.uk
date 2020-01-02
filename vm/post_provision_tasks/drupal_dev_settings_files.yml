@@ -26,17 +26,17 @@
   become: yes
   tags: ['test_only']
 
-- name: Temporarily allow write access to sensitive sites files
-  file:
-    path: "{{ item }}"
-    state: file
-    mode: ugo=rw
-  loop:
-    - "{{ drupal_core_path }}/sites/default/settings.php"
-    - "{{ drupal_core_path }}/sites/default/services.yml"
-    - "{{ drupal_core_path }}/sites/default/settings.local.yml"
-  become: yes
-  tags: ['test_only']
+# - name: Temporarily allow write access to sensitive sites files
+#   file:
+#     path: "{{ item }}"
+#     state: file
+#     mode: ugo=rw
+#   loop:
+#     - "{{ drupal_core_path }}/sites/default/settings.php"
+#     - "{{ drupal_core_path }}/sites/default/services.yml"
+#     - "{{ drupal_core_path }}/sites/default/settings.local.yml"
+#   become: yes
+#   tags: ['test_only']
 
 - name: Template Drupal settings file to sites/default/
   template:
