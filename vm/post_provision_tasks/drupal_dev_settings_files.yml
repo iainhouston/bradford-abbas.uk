@@ -57,6 +57,7 @@
           if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
             include $app_root . '/' . $site_path . '/settings.local.php';
            }
+          ini_set('error_reporting', !E_NOTICE & !E_WARNING);
   tags: ['test_only']
 
 - name: Copy services file to sites/default/
@@ -68,5 +69,5 @@
 - name: Copy settings.local file to sites/default/
   copy:
     src: "{{ config_dir }}/saved_default_settings/settings.local.php"
-    dest: "{{ drupal_core_path }}/sites/default/settings.local.yml"
+    dest: "{{ drupal_core_path }}/sites/default/settings.local.php"
   tags: ['test_only']
