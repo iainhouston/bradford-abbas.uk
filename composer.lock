@@ -2546,6 +2546,10 @@
                     "homepage": "https://www.drupal.org/user/1962106"
                 },
                 {
+                    "name": "develCuy",
+                    "homepage": "https://www.drupal.org/user/125473"
+                },
+                {
                     "name": "jrockowitz",
                     "homepage": "https://www.drupal.org/user/371407"
                 }
@@ -3159,7 +3163,7 @@
             "description": "Provides an integration between the Juicebox HTML5 responsive gallery library and Drupal.",
             "homepage": "https://www.drupal.org/project/juicebox",
             "support": {
-                "source": "http://cgit.drupalcode.org/juicebox"
+                "source": "https://git.drupalcode.org/project/juicebox"
             }
         },
         {
@@ -3201,6 +3205,10 @@
                 {
                     "name": "Pol",
                     "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
                     "name": "rjacobs",

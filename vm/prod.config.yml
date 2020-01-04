@@ -15,7 +15,7 @@ drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”
 
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
-vagrant_hostname: "{{ drupal_domain }}"
+vagrant_hostname: "webserver.{{ drupal_domain }}"
 
 webserver_user: webmaster
 webserver_group: www-data
