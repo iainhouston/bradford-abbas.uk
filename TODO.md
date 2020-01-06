@@ -1,8 +1,22 @@
 # To Do
 
-**Look at the end of the list for open iems.**
+**Look at the end of this list for completed iems.**
 
 Please ~~strike through a completed item~~ when done.
+
+1. README.md:
+
+    1. Re-order; review; re-organise
+
+    2. ~~ansible-vault cert files (already in certs/README.txt)~~
+    
+1. Symbolic link to site=specific `drush`
+
+    ```
+    ln -s /var/www/drupalvm/vendor/drush/drush/drush /home/vagrant/.composer/vendor/bin/drush
+    ```
+
+**Completed items**
 
 1. ~~Automate ssh keys and config to allow remote AWS servers acccess to private git repos **or** rationalise composer repo URIs.~~
 
@@ -31,18 +45,5 @@ Not reproduced. Seemingly `.emacs.d` was  installed as root.
 
 12. ~~Raise issue with drush 9 rsync %files~~
 
-13. ~~Raise issue with drush 9 rsync %files~~
+13. ~~Place `~./ssh/config` to workaround drush alias bug not recognising `-i` argument~~ [See](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml)
 
-14. ~~Place `~./ssh/config` to workaround drush alias bug not recognising `-i` argument~~ [See](https://github.com/drush-ops/drush/blob/master/examples/example.site.yml)
-
-15. README.md:
-
-    1. Re-order; review; re-organise
-
-    2. ~~ansible-vault cert files (already in certs/README.txt)~~
-    
-16. Symbolic link to site=specific `drush`
-
-    ```
-    ln -s /var/www/drupalvm/vendor/drush/drush/drush /home/vagrant/.composer/vendor/bin/drush
-    ```
