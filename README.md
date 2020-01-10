@@ -15,11 +15,12 @@ Quick start
 
 4. `$ cdbadev` =>
 
-  ```
-  updateLiveCode - Code and Config to Live site
-  rsyncp2dfiles  - Get latest files from live site
-  sqldumpLive    - Get latest SQL from live site
-  ```
+    ```sh
+	updateLiveCode - Code and Config to Live site
+	cloneLive2Dev  - Clone Live Database and Files to Dev site
+	safecex        - Safe export of Dev site's configuration
+	endev          - Enable development modules in Dev site
+	```
 
 Regular maintenance
 ===============
@@ -31,7 +32,7 @@ Pushing updated stuff to the live site
 
 ```
 DRUPALVM_ENV=prod \
-ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+ansible-playbook vendor/iainhouston/drupal-vm/provisioning/playbook.yml \
 --inventory-file=vm/inventory \
 --tags=drupal   \
 --extra-vars="config_dir=$(pwd)/vm" \
@@ -47,7 +48,7 @@ This doesn't re-provision the live server, it does just those playbook tasks - t
 
 So you run `updateLiveCode` when any of these have been updated and tested on the local development site.
 
-More important detail can be found in my blog post ["DrupalVM in use"](https://iainhouston.com/drupalbapc/)
+Exhaustive detail can be found in my web log document ["DrupalVM in use"](https://iainhouston.com/drupalbapc/)
 
 
 TO DO items

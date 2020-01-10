@@ -1,6 +1,6 @@
 ---
 # Deploy from the project's Git repository.
-drupal_deploy: true
+drupal_deploy: false
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
 #  User ansible-playbook's --extra-args for:
@@ -16,9 +16,6 @@ drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
 vagrant_hostname: "webserver.{{ drupal_domain }}"
-
-webserver_user: webmaster
-webserver_group: www-data
 
 # setup DKIM; Place certs etc.
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
@@ -43,7 +40,7 @@ apache_vhosts:
 
 apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
-    serveralias: "www.{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
     certificate_file: "/etc/ssl/certs/SSL.crt"
     certificate_key_file: "/etc/ssl/private/SSL.key"

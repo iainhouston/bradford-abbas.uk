@@ -24,7 +24,7 @@
   blockinfile:
     dest: /etc/opendkim.conf
     block: |
-      Domain                  {{ vagrant_hostname }}
+      Domain                  {{ drupal_domain }}
       KeyFile                 /etc/postfix/dkim.key
       Selector                mail
       Socket                  inet:8891@127.0.0.1
