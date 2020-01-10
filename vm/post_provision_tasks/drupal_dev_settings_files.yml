@@ -71,3 +71,19 @@
     src: "{{ config_dir }}/saved_default_settings/settings.local.php"
     dest: "{{ drupal_core_path }}/sites/default/settings.local.php"
   tags: ['test_only']
+
+- name: Create a new database with name 'drupal'
+  mysql_db:
+    name: drupal
+    login_password: "{{mysql_root_password}}"
+    login_user: root
+    state: present
+  tags: ['test_only']
+  
+- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+  mysql_user:
+    name: "{{drupal_db_user}}"
+    password: "{{drupal_db_password}}"
+    priv: '*.*:ALL,GRANT'
+    state: present
+  tags: ['test_only']

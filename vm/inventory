@@ -1,2 +1,2 @@
 [drupal_prod]
-91.211.152.225 ansible_ssh_user=cloudadmin ansible_python_interpreter=/usr/bin/python3
+webserver.bradford-abbas.uk ansible_ssh_user=cloudadmin ansible_python_interpreter=/usr/bin/python3

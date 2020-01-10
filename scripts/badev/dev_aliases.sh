@@ -1,6 +1,6 @@
 export BADEV="$HOME/bradford-abbas.uk"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
-export LIVE_SSH_ALIAS="wpbapc"
+export LIVE_SSH_ALIAS="cloudadmin"
 export DEVALIAS="@badev"
 export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"

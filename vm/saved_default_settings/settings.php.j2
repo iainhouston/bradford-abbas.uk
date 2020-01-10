@@ -89,6 +89,16 @@
  * @endcode
  */
 $databases = [];
+$databases['default']['default'] = [
+  'database' => "{{ drupal_db_name }}",
+  'username' => "{{ drupal_db_user }}",
+  'password' => "{{ drupal_db_password }}",
+  'host' => 'localhost',
+  'port' => '3306',
+  'driver' => 'mysql',
+  'prefix' => '',
+  'collation' => 'utf8mb4_general_ci',
+];
 
 /**
  * Customizing database settings.
@@ -225,14 +235,7 @@ $databases = [];
  *   ];
  * @endcode
  */
-$databases['default']['default'] = [
-  'driver' => 'mysql',
-  'database' => "{{ drupal_db_name }}",
-  'username' => "{{ drupal_db_user }}",
-  'password' => "{{ drupal_db_password }}",
-  'host' => 'localhost',
-  'prefix' => '',
-];
+
 
 /**
  * Location of the site configuration files.
