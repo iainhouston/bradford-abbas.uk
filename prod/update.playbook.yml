@@ -1,0 +1,47 @@
+---
+-   hosts: all
+    become: no
+    
+    tasks:    
+
+        -   name: Put website into maintenance mode
+            shell:
+                cmd: |
+                    drush state:set system.maintenance_mode 1 --input-format=integer
+                    drush cache:rebuild
+                chdir: /var/www/drupal/web
+                
+        -   name: checkout the latest committed program code
+            git:
+                repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
+                dest: /var/www/drupal
+                force: yes
+            become: no 
+            
+        -   name: install the latest code
+            composer:
+                command: install
+                working_dir: /var/www/drupal
+            
+        -   name: Synch configs of the control machine to configs on the remote hosts
+            synchronize:
+                src: /Users/iain/bradford-abbas.uk/config/
+                dest: /var/www/drupal/config/           
+                delete: yes
+            
+        -   name: Import latest configuration 
+            shell:
+                cmd: drush config:import -y 
+                chdir: /var/www/drupal/web
+                
+        -   name: Update Drupal database 
+            shell:
+                cmd: drush updatedb -y 
+                chdir: /var/www/drupal/web                
+
+        -   name: Get website out of maintenance mode
+            shell:
+                cmd: |
+                    drush state:set system.maintenance_mode 0 --input-format=integer
+                    drush cache:rebuild
+                chdir: /var/www/drupal/web
