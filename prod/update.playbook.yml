@@ -2,6 +2,11 @@
 -   hosts: all
     become: no
     
+    vars_files:
+    
+        -   ../vm/config.yml
+        -   ../vm/prod.config.yml
+    
     tasks:    
 
         -   name: Put website into maintenance mode
@@ -9,39 +14,39 @@
                 cmd: |
                     drush state:set system.maintenance_mode 1 --input-format=integer
                     drush cache:rebuild
-                chdir: /var/www/drupal/web
+                chdir: "{{ drupal_core_path }}"
                 
         -   name: checkout the latest committed program code
             git:
                 repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-                dest: /var/www/drupal
+                dest: "{{ drupal_core_path }}"
                 force: yes
             become: no 
             
         -   name: install the latest code
             composer:
                 command: install
-                working_dir: /var/www/drupal
+                working_dir: "{{drupal_composer_install_dir}}"
             
-        -   name: Synch configs of the control machine to configs on the remote hosts
+        -   name: Synch dev configs from the control machine to configs on the remote live hosts
             synchronize:
-                src: /Users/iain/bradford-abbas.uk/config/
-                dest: /var/www/drupal/config/           
+                src: "{{ project_dir }}/config/"
+                dest: "{{drupal_composer_install_dir}}/config/"           
                 delete: yes
             
         -   name: Import latest configuration 
             shell:
                 cmd: drush config:import -y 
-                chdir: /var/www/drupal/web
+                chdir: "{{ drupal_core_path }}"
                 
         -   name: Update Drupal database 
             shell:
                 cmd: drush updatedb -y 
-                chdir: /var/www/drupal/web                
+                chdir: "{{ drupal_core_path }}"                
 
         -   name: Get website out of maintenance mode
             shell:
                 cmd: |
                     drush state:set system.maintenance_mode 0 --input-format=integer
                     drush cache:rebuild
-                chdir: /var/www/drupal/web
+                chdir: "{{ drupal_core_path }}"

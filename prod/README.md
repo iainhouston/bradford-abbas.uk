@@ -27,7 +27,9 @@ Method of achieving the Objectives
 +	provide shortcut / alias `updateLiveCode` to invoke the playbook properly  
 
 	```
-	ansible-playbook prod/update.playbook.yml --inventory-file=vm/inventory
+	ansible-playbook prod/update.playbook.yml \
+	--inventory-file=vm/inventory \
+	--extra-vars="project_dir=$(pwd)"
 	```
 
 
