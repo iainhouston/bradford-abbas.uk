@@ -34,7 +34,7 @@ drupal_db_name: drupal
 drupal_db_host: localhost
 
 drupal_domain: "{{ vagrant_hostname }}"
-
+drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
 # Additional arguments or options to pass to `drush site-install`.
 drupal_site_install_extra_args: []
 

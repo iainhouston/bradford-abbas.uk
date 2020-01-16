@@ -718,8 +718,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = [
-   '^bradford-abbas\.uk$',
-   '^.+\.bradford-abbas\.uk$',
+   "^{{ drupal_domain_regex }}",
+   "^.+\.{{ drupal_domain_regex }}",
  ];
 
 /**
