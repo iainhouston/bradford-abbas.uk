@@ -1,0 +1,2 @@
+[drupal_staging]
+staging.bradford-abbas.uk ansible_ssh_user=cloudadmin ansible_python_interpreter=/usr/bin/python3

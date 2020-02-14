@@ -65,6 +65,7 @@ apache_mods_enabled:
   - proxy_fcgi.load
 
 # MySQL databases and users.
+mysql_root_password_update: true
 mysql_databases:
   - name: "{{ drupal_db_name }}"
     encoding: utf8mb4
@@ -91,7 +92,9 @@ extra_security_enabled: false
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
 php_version: "7.4"
 php_install_recommends: no
-php_memory_limit: "192M"
+php_memory_limit: "356M"
+php_post_max_size: "256M"
+php_upload_max_filesize: "256M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"

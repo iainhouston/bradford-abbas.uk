@@ -4,18 +4,18 @@
     path: "{{ drupal_core_path }}/../private_files"
     state: directory
     mode: ug+w
-  become: yes
+  become: no
 
 - name: Ensure Drupal's temporary directory is present
   file:
     path: "{{ drupal_core_path }}/../tmp"
     state: directory
     mode: ug+w
-  become: yes
+  become: no
 
 - name: Ensure Drupal's configuration directory is present
   file:
     path: "{{ drupal_core_path }}/../config"
     state: directory
     mode: ug+w
-  become: yes
+  become: no
