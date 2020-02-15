@@ -8,7 +8,7 @@ ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 ENV['DRUPALVM_DIR'] = "vendor/iainhouston/drupal-vm"
 
 # When provisioning VM, skip live-only tasks
-ENV['DRUPALVM_ANSIBLE_ARGS'] = '--skip-tags=prod_only --vault-password-file="~/.vaultpw"'
+ENV['DRUPALVM_ANSIBLE_ARGS'] = '--skip-tags=prod_only --ask-vault-pass'
 
 # Load the real Vagrantfile
 load "#{__dir__}/#{ENV['DRUPALVM_DIR']}/Vagrantfile"

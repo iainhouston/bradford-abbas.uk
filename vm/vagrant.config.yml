@@ -2,8 +2,7 @@
 # Local Vagrant options.
 # ______________________
 vagrant_box: geerlingguy/ubuntu1804
-webserver_name: vagrant
-vagrant_hostname: "{{ webserver_name }}.{{ drupal_domain }}"
+vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: local-BAPC
 vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
@@ -108,5 +107,5 @@ adminer_install_filename: index.php
 pimpmylog_install_dir: /usr/share/php/pimpmylog
 pimpmylog_grant_all_privs: true
 
-# pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
