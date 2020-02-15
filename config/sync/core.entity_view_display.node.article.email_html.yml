@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image_media
     - field.field.node.article.field_news_teaser
+    - field.field.node.article.field_remote_video
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
     - node.type.article
@@ -37,8 +38,16 @@ content:
       link: true
       view_mode: default
     third_party_settings: {  }
-  links:
+  field_remote_video:
+    type: entity_reference_label
     weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

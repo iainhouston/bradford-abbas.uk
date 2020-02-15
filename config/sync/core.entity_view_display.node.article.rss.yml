@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_expires
     - field.field.node.article.field_image_media
     - field.field.node.article.field_news_teaser
+    - field.field.node.article.field_remote_video
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
     - node.type.article
@@ -31,5 +32,6 @@ hidden:
   field_expires: true
   field_image_media: true
   field_news_teaser: true
+  field_remote_video: true
   field_tags: true
   simplenews_issue: true
