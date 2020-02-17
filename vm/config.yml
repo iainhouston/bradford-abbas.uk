@@ -81,6 +81,7 @@ extra_packages:
   - unzip
   - emacs-nox
   - php-elisp
+  - yaml-mode
   - opendkim
   - opendkim-tools
   - s3cmd
