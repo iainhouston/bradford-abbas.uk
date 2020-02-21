@@ -42,16 +42,15 @@
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_agenda.git"
         }
-    },
+    ],
     "require": {
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
-        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.8"
         "drupal/admin_content_notification": "^3.1",
         "drupal/cleantalk": "^3.0",
         "drupal/console": "^1.0.2",
-        "drupal/contribute": "^5.0@beta",
-        "drupal/core": "~8.8",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
         "drupal/honeypot": "^1.29",
@@ -69,8 +68,6 @@
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
         "iainhouston/pellucid_monoset": "^1.1",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "iainhouston/drupal-vm": "~6.0"
@@ -83,46 +80,21 @@
     "config": {
         "sort-packages": true
     },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
     "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
         "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/contrib/{$name}": [
-                "type:drupal-drush"
-            ]
-        }
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
     }
 }
