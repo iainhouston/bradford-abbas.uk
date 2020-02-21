@@ -1,44 +1,84 @@
 {
-    "name": "iainhouston/bradford-abbas.uk",
-    "description": "Project Drupal build file for Bradford Abbas Parish Council",
-    "type": "project",
-    "license": "GPL-2.0+",
     "authors": [
         {
             "name": "Iain Houston",
             "role": ""
         }
     ],
-    "repositories": {
-        "0": {
+    "config": {
+        "sort-packages": true
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "description": "Project Drupal build file for Bradford Abbas Parish Council",
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        }
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "name": "iainhouston/bradford-abbas.uk",
+    "prefer-stable": true,
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "drupal-vm": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/drupal-vm.git"
         },
-        "jsjuicebox": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_gallery.git"
         },
-        "monoset": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_monoset.git"
         },
-        "minutes": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_minutes.git"
         },
-        "meeting": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_meeting.git"
         },
-        "document": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_document.git"
         },
-        "agenda": {
+        {
             "type": "git",
             "url": "https://github.com/iainhouston/pellucid_agenda.git"
         }
@@ -46,11 +86,11 @@
     "require": {
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8"
         "drupal/admin_content_notification": "^3.1",
         "drupal/cleantalk": "^3.0",
         "drupal/console": "^1.0.2",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.8",
         "drupal/diff": "1.x-dev",
         "drupal/draggableviews": "^1.0",
         "drupal/honeypot": "^1.29",
@@ -67,34 +107,10 @@
         "iainhouston/pellucid_gallery": "dev-master",
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
-        "iainhouston/pellucid_monoset": "^1.1",
+        "iainhouston/pellucid_monoset": "^1.1"
     },
     "require-dev": {
         "iainhouston/drupal-vm": "~6.0"
     },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
-        },
-    }
+    "type": "project"
 }
