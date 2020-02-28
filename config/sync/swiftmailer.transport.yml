@@ -1,4 +1,4 @@
-transport: sendmail
+transport: native
 smtp_host: leo.misfits-server.net
 smtp_port: 25
 smtp_encryption: tls

@@ -1,0 +1,32 @@
+uuid: ba70eab8-154b-4a74-a535-d34a0a8bb5b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.bapc_email_hero_mode
+    - field.field.media.image.field_media_image
+    - image.style.bapc_email_hero_580_w_
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.bapc_email_hero_mode
+targetEntityType: media
+bundle: image
+mode: bapc_email_hero_mode
+content:
+  field_media_image:
+    label: hidden
+    settings:
+      image_style: bapc_email_hero_580_w_
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -97,7 +97,7 @@
         "drupal/juicebox": "2.0-beta3",
         "drupal/mailsystem": "^4.1",
         "drupal/pathauto": "^1.6",
-        "drupal/simplenews": "1.x-dev",
+        "drupal/simplenews": "^2.0",
         "drupal/swiftmailer": "1.x-dev",
         "drupal/token": "^1.5",
         "drupal/webform": "^5.0",
@@ -110,6 +110,7 @@
         "iainhouston/pellucid_monoset": "^1.1"
     },
     "require-dev": {
+        "drupal/devel": "^3.0",
         "iainhouston/drupal-vm": "~6.0"
     },
     "type": "project"

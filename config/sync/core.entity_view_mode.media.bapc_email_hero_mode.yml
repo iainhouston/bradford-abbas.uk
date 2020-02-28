@@ -1,0 +1,10 @@
+uuid: 4435d9b8-595d-4ba5-98a5-9012f0c17a70
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bapc_email_hero_mode
+label: 'BAPC Email Hero mode'
+targetEntityType: media
+cache: true

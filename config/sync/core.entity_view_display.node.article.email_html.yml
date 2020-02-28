@@ -35,8 +35,8 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: bapc_email_hero_mode
+      link: false
     third_party_settings: {  }
   field_remote_video:
     type: entity_reference_label
