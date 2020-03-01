@@ -16,7 +16,8 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            }
+            },
+             "omit-defaults": true
         },
         "patches": {
             "drupal/swiftmailer": {
