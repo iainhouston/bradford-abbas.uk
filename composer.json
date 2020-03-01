@@ -18,6 +18,11 @@
                 "web-root": "web/"
             }
         },
+        "patches": {
+            "drupal/swiftmailer": {
+                "Inline CSS": "https://www.drupal.org/files/issues/2019-05-03/swiftmailer.css_inliner.2843327-83.patch"
+            }
+        },
         "installer-paths": {
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
@@ -107,7 +112,8 @@
         "iainhouston/pellucid_gallery": "dev-master",
         "iainhouston/pellucid_meeting": "dev-master",
         "iainhouston/pellucid_minutes": "dev-master",
-        "iainhouston/pellucid_monoset": "^1.1"
+        "iainhouston/pellucid_monoset": "^1.1",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
     },
     "require-dev": {
         "drupal/devel": "^3.0",
