@@ -11,7 +11,7 @@ _core:
 id: pellucid_monoset_help
 theme: pellucid_monoset
 region: content_top
-weight: -10
+weight: -14
 provider: null
 plugin: help_block
 settings:
