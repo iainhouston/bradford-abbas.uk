@@ -9,7 +9,7 @@ _core:
 id: pellucid_monoset_local_actions
 theme: pellucid_monoset
 region: content_top
-weight: -15
+weight: -11
 provider: null
 plugin: local_actions_block
 settings:
