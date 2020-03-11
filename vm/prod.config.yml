@@ -56,6 +56,11 @@ drupalvm_cron_jobs:
     minute: "*/15"
     job: "{{ drush_path }} -r {{ drupal_core_path }} core-cron --quiet"
 
+  - name: "Drupal Clear Views Cache"
+    minute: "20"
+    hour: "{{ ba_cron_hour }}"
+    job: "{{ drush_path }} cache:clear views  > /dev/null"
+
   - name: "Drupal SQL dump"
     minute: "01"
     weekday: "{{ ba_cron_day }}"
