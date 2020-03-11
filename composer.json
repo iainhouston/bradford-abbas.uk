@@ -1,124 +1,133 @@
 {
-    "authors": [
-        {
-            "name": "Iain Houston",
-            "role": ""
-        }
-    ],
-    "config": {
-        "sort-packages": true
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "description": "Project Drupal build file for Bradford Abbas Parish Council",
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            },
-             "omit-defaults": true
-        },
-        "patches": {
-            "drupal/swiftmailer": {
-                "Inline CSS": "https://www.drupal.org/files/issues/2019-05-03/swiftmailer.css_inliner.2843327-83.patch"
-            }
-        },
-        "installer-paths": {
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
-        }
-    },
-    "license": "GPL-2.0+",
-    "minimum-stability": "dev",
-    "name": "iainhouston/bradford-abbas.uk",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/drupal-vm.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_gallery.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_monoset.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_minutes.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_meeting.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_document.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/iainhouston/pellucid_agenda.git"
-        }
-    ],
-    "require": {
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6",
-        "drupal/admin_content_notification": "^3.1",
-        "drupal/cleantalk": "^3.0",
-        "drupal/console": "^1.0.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/diff": "1.x-dev",
-        "drupal/draggableviews": "^1.0",
-        "drupal/honeypot": "^1.29",
-        "drupal/juicebox": "2.0-beta3",
-        "drupal/mailsystem": "^4.1",
-        "drupal/pathauto": "^1.6",
-        "drupal/simplenews": "^2.0",
-        "drupal/swiftmailer": "1.x-dev",
-        "drupal/token": "^1.5",
-        "drupal/webform": "^5.0",
-        "drush/drush": "~9.0",
-        "iainhouston/pellucid_agenda": "dev-master",
-        "iainhouston/pellucid_document": "dev-master",
-        "iainhouston/pellucid_gallery": "dev-master",
-        "iainhouston/pellucid_meeting": "dev-master",
-        "iainhouston/pellucid_minutes": "dev-master",
-        "iainhouston/pellucid_monoset": "^1.1",
-        "tijsverkoyen/css-to-inline-styles": "^2.2"
-    },
-    "require-dev": {
-        "drupal/devel": "^3.0",
-        "iainhouston/drupal-vm": "~6.0"
-    },
-    "type": "project"
+	"authors": [{
+		"name": "Iain Houston",
+		"role": ""
+	}],
+	"config": {
+		"sort-packages": true
+	},
+	"conflict": {
+		"drupal/drupal": "*"
+	},
+	"description": "Project Drupal build file for Bradford Abbas Parish Council",
+	"extra": {
+		"drupal-scaffold": {
+			"file-mapping": {
+				"[web-root]/sites/default/default.services.yml": {
+					"mode": "replace",
+					"path": "web/core/assets/scaffold/files/default.services.yml",
+					"overwrite": false
+				},
+				"[web-root]/sites/default/default.settings.php": {
+					"mode": "replace",
+					"path": "web/core/assets/scaffold/files/default.settings.php",
+					"overwrite": false
+				}
+			},
+			"locations": {
+				"web-root": "web/"
+			},
+			"omit-defaults": true
+		},
+		"patches": {
+			"drupal/swiftmailer": {
+				"Inline CSS": "https://www.drupal.org/files/issues/2019-05-03/swiftmailer.css_inliner.2843327-83.patch"
+			}
+		},
+		"installer-paths": {
+			"drush/Commands/contrib/{$name}": [
+				"type:drupal-drush"
+			],
+			"web/core": [
+				"type:drupal-core"
+			],
+			"web/libraries/{$name}": [
+				"type:drupal-library"
+			],
+			"web/modules/contrib/{$name}": [
+				"type:drupal-module"
+			],
+			"web/modules/custom/{$name}": [
+				"type:drupal-custom-module"
+			],
+			"web/profiles/contrib/{$name}": [
+				"type:drupal-profile"
+			],
+			"web/themes/contrib/{$name}": [
+				"type:drupal-theme"
+			],
+			"web/themes/custom/{$name}": [
+				"type:drupal-custom-theme"
+			]
+		}
+	},
+	"license": "GPL-2.0+",
+	"minimum-stability": "dev",
+	"name": "iainhouston/bradford-abbas.uk",
+	"prefer-stable": true,
+	"repositories": [{
+			"type": "composer",
+			"url": "https://packages.drupal.org/8"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/drupal-vm.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_gallery.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_monoset.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_minutes.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_meeting.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_document.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_agenda.git"
+		}
+	],
+	"require": {
+		"composer/installers": "^1.2",
+		"cweagans/composer-patches": "^1.6",
+		"drupal/admin_content_notification": "^3.1",
+		"drupal/cleantalk": "^3.0",
+		"drupal/console": "^1.0.2",
+		"drupal/core-composer-scaffold": "^8.8",
+		"drupal/core-recommended": "^8.8",
+		"drupal/diff": "1.x-dev",
+		"drupal/draggableviews": "^1.0",
+		"drupal/honeypot": "^1.29",
+		"drupal/juicebox": "2.0-beta3",
+		"drupal/mailsystem": "^4.1",
+		"drupal/pathauto": "^1.6",
+		"drupal/simplenews": "^2.0",
+		"drupal/swiftmailer": "1.x-dev",
+		"drupal/token": "^1.5",
+		"drupal/webform": "^5.0",
+		"drush/drush": "~9.0",
+		"iainhouston/pellucid_agenda": "dev-master",
+		"iainhouston/pellucid_document": "dev-master",
+		"iainhouston/pellucid_gallery": "dev-master",
+		"iainhouston/pellucid_meeting": "dev-master",
+		"iainhouston/pellucid_minutes": "dev-master",
+		"iainhouston/pellucid_monoset": "^1.1",
+		"tijsverkoyen/css-to-inline-styles": "^2.2"
+	},
+	"require-dev": {
+		"drupal/devel": "^3.0",
+		"iainhouston/drupal-vm": "~6.0"
+	},
+	"type": "project"
 }
