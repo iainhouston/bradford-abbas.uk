@@ -4214,11 +4214,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.23",
+            "version": "V1.1.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "7f6b9c5bfe83712ddaddf77239ad4c1a5dfdd723"
+                "reference": "46764f81c588d93a52df9a8704361da1d86109e0"
             },
             "type": "drupal-theme",
             "license": [
@@ -4236,7 +4236,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2020-03-12T07:40:45+00:00"
+            "time": "2020-03-13T06:45:54+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
