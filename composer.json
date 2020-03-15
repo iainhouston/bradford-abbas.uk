@@ -18,8 +18,7 @@
 			},
 			"locations": {
 				"web-root": "web/"
-			},
-			"omit-defaults": true
+			}
 		},
 		"patches": {
 			"drupal/swiftmailer": {
@@ -104,7 +103,7 @@
 		"drupal/juicebox": "2.0-beta3",
 		"drupal/mailsystem": "^4.1",
 		"drupal/pathauto": "^1.6",
-		"drupal/simplenews": "^2.0",
+		"drupal/simplenews": "2.x-dev",
 		"drupal/swiftmailer": "1.x-dev",
 		"drupal/token": "^1.5",
 		"drupal/webform": "^5.0",

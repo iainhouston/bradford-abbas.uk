@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5337779eb212e661f2646c11d538995b",
+    "content-hash": "1abaa963700545fd12db191336f4e913",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3120,17 +3120,11 @@
         },
         {
             "name": "drupal/simplenews",
-            "version": "2.0.0-beta1",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simplenews.git",
-                "reference": "8.x-2.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simplenews-8.x-2.0-beta1.zip",
-                "reference": "8.x-2.0-beta1",
-                "shasum": "9c4587b32e99bf885590c54f53ab1a4aa70b92bb"
+                "reference": "762d391acd65f8cfa7ef7398b47b5e4eafd3be87"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -3144,11 +3138,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1",
-                    "datestamp": "1580749447",
+                    "version": "8.x-2.0-alpha2+21-dev",
+                    "datestamp": "1579871887",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3186,7 +3180,8 @@
             "homepage": "https://www.drupal.org/project/simplenews",
             "support": {
                 "source": "https://git.drupalcode.org/project/simplenews"
-            }
+            },
+            "time": "2020-01-24T13:08:53+00:00"
         },
         {
             "name": "drupal/swiftmailer",
@@ -7681,6 +7676,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/diff": 20,
+        "drupal/simplenews": 20,
         "drupal/swiftmailer": 20,
         "iainhouston/pellucid_agenda": 20,
         "iainhouston/pellucid_document": 20,
