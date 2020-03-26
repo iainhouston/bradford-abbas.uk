@@ -1,0 +1,19 @@
+uuid: 9edcd543-5545-4827-8a80-e49109f4207e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Webmaster test'
+id: webmaster_test
+description: 'A distribution list for testing the way the website sends emails'
+format: html
+priority: 0
+receipt: true
+from_name: 'Bradford Abbas Parish Council'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: webmaster@bradford-abbas.uk
+hyperlinks: true
+allowed_handlers:
+  simplenews_all: '0'
+new_account: none
+opt_inout: hidden
+weight: 0
