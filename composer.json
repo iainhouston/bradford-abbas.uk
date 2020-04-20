@@ -97,6 +97,7 @@
 		"drupal/honeypot": "^1.29",
 		"drupal/juicebox": "2.0-beta3",
 		"drupal/mailsystem": "^4.1",
+		"drupal/migrate_plus": "^5.0",
 		"drupal/pathauto": "^1.6",
 		"drupal/simplenews": "2.x-dev",
 		"drupal/swiftmailer": "2.0-alpha2",
