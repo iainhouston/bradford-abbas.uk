@@ -1,10 +1,10 @@
-transport: native
+transport: sendmail
 smtp_host: leo.misfits-server.net
 smtp_port: 25
 smtp_encryption: tls
 sendmail_path: /usr/sbin/sendmail
 sendmail_mode: bs
-spool_directory: ''
+spool_directory: /tmp/swiftmailer-spool
 _core:
   default_config_hash: 0SeYZshzgoabDrbz-junYqeQOQ9BypPv2gaFcnqKy0M
 smtp_credential_provider: swiftmailer

@@ -36,8 +36,6 @@ module:
   media_library: 0
   meeting: 0
   menu_ui: 0
-  migrate: 0
-  migrate_drupal: 0
   minutes: 0
   node: 0
   options: 0

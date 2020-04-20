@@ -20,11 +20,6 @@
 				"web-root": "web/"
 			}
 		},
-		"patches": {
-			"drupal/swiftmailer": {
-				"Inline CSS": "https://www.drupal.org/files/issues/2019-05-03/swiftmailer.css_inliner.2843327-83.patch"
-			}
-		},
 		"installer-paths": {
 			"drush/Commands/contrib/{$name}": [
 				"type:drupal-drush"
@@ -104,7 +99,7 @@
 		"drupal/mailsystem": "^4.1",
 		"drupal/pathauto": "^1.6",
 		"drupal/simplenews": "2.x-dev",
-		"drupal/swiftmailer": "1.x-dev",
+		"drupal/swiftmailer": "2.0-alpha2",
 		"drupal/token": "^1.5",
 		"drupal/webform": "^5.0",
 		"drush/drush": "~9.0",
