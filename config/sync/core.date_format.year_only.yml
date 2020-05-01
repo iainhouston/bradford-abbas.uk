@@ -1,0 +1,8 @@
+uuid: c72b325e-3de2-4462-b9da-3c0ef16f7d75
+langcode: en
+status: true
+dependencies: {  }
+id: year_only
+label: 'Year only'
+locked: false
+pattern: 'Y'
