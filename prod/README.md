@@ -9,13 +9,15 @@ Objectives of updating the live server
 
 1.	Use `drush` to put the website into maintenance mode
 
-1.	Use `git` to checkout the latest committed `git@github.com:iainhouston/bradford-abbas.uk.git`
+1.	Copy the SSL Certificate and Private key
 
-1.	Use `drush` to import the latest configuration settings from `config/sync` 
+1.	Use `git` to checkout the latest committed `git@github.com:iainhouston/bradford-abbas.uk.git`
 
 1.	Use `drush` to update the Drupal database
 
 1.	Use `drush` to rebuild the Drupal system (cache)
+
+1.	Use `drush` to import the latest configuration settings from `config/sync`
 
 1.	Use `drush` to take the website out of maintenance mode
 
@@ -29,7 +31,6 @@ Method of achieving the Objectives
 	```
 	ansible-playbook prod/update.playbook.yml \
 	--inventory-file=vm/inventory \
-	--extra-vars="project_dir=$(pwd)"
+	--extra-vars="project_dir=$(pwd)" \
+	--ask-become-pass --ask-vault-pass
 	```
-
-

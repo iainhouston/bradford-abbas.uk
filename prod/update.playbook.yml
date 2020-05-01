@@ -11,12 +11,30 @@
 
         -   name: Put website into maintenance mode
             shell:
-                cmd: |
-                    drush state:set system.maintenance_mode 1 --input-format=integer
-                    drush cache:rebuild
-                chdir: "{{ drupal_core_path }}"
+              cmd: |
+                  drush state:set system.maintenance_mode 1 --input-format=integer
+                  drush cache:rebuild
+              chdir: "{{ drupal_core_path }}"
 
-        -   name: checkout the latest committed program code
+        -   name: copy SSL certificate
+            copy:
+              src: "{{ project_dir }}/vm/certs/SSL.crt"
+              dest: /etc/ssl/certs/SSL.crt
+              owner: root
+              group: root
+              mode: a-w,o-r,ug+r
+            become: yes
+
+        -   name: copy SSL key
+            copy:
+              src: "{{ project_dir }}/vm/certs/SSL.key"
+              dest: /etc/ssl/private/SSL.key
+              owner: root
+              group: ssl-cert
+              mode: a-w,o-r,ug+r
+            become: yes
+
+        -   name: checkout the latest committed program code and config settings
             git:
                 repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
                 dest: "{{ drupal_deploy_dir }}"
@@ -28,16 +46,15 @@
                 command: install
                 working_dir: "{{ drupal_deploy_dir }}"
 
-        -   name: Synch dev configs from the control machine to configs on the remote live hosts
-            synchronize:
-                src: "{{ project_dir }}/config/"
-                dest: "{{  drupal_deploy_dir }}/config/"
-                delete: yes
+        -   name: Rebuild Drupal into PHP cache
+            shell:
+              cmd: drush cache:rebuild
+              chdir: "{{ drupal_core_path }}"
 
         -   name: Update Drupal database
             shell:
-                cmd: drush updatedb -y
-                chdir: "{{ drupal_core_path }}"
+              cmd: drush updatedb -y
+              chdir: "{{ drupal_core_path }}"
 
         -   name: Import latest configuration
             shell:
