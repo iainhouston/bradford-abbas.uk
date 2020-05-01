@@ -12,7 +12,7 @@ dependencies:
 id: villagehalltaxonomyheader
 theme: pellucid_monoset
 region: content
-weight: -15
+weight: -16
 provider: null
 plugin: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
 settings:
