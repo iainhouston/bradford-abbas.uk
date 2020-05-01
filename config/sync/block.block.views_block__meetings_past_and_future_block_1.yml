@@ -10,8 +10,8 @@ dependencies:
     - pellucid_monoset
 id: views_block__meetings_past_and_future_block_1
 theme: pellucid_monoset
-region: front_seven
-weight: -11
+region: front_six
+weight: -15
 provider: null
 plugin: 'views_block:meetings_past_and_future-block_1'
 settings:
