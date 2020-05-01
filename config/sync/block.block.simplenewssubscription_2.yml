@@ -4,13 +4,12 @@ status: true
 dependencies:
   module:
     - simplenews
-    - system
   theme:
     - pellucid_monoset
 id: simplenewssubscription_2
 theme: pellucid_monoset
-region: content_top
-weight: -12
+region: front_five
+weight: -14
 provider: null
 plugin: simplenews_subscription_block
 settings:
@@ -22,9 +21,4 @@ settings:
     regular_news: regular_news
   message: 'Stay informed - subscribe to our newsletter.'
   unique_id: 144c2b10-571d-48eb-8873-e2667978de3b
-visibility:
-  request_path:
-    id: request_path
-    pages: /allnews
-    negate: false
-    context_mapping: {  }
+visibility: {  }

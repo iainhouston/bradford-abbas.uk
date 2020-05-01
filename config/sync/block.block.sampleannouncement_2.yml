@@ -7,7 +7,7 @@ dependencies:
 id: sampleannouncement_2
 theme: pellucid_monoset
 region: front_five
-weight: -14
+weight: -15
 provider: null
 plugin: 'block_content:3d5256cc-175b-408a-8d08-8b71f30faab5'
 settings:
