@@ -21,7 +21,7 @@
                 repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
                 dest: "{{ drupal_deploy_dir }}"
             # Ignore "unable to write default.services.yml etc."
-            ignore_errors: True
+            # ignore_errors: True
 
         -   name: install the latest code
             composer:
