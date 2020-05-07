@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75c6f5746543857239c2c485ebdd7024",
+    "content-hash": "07605bef36d2f01f698a5c0277a9e99c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4205,11 +4205,11 @@
         },
         {
             "name": "iainhouston/pellucid_agenda",
-            "version": "dev-master",
+            "version": "V1.1.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_agenda.git",
-                "reference": "6b85baf60c81fd03bf9ffa007ade0d0ed9f164b2"
+                "reference": "c8b6bb667a26e053d4f782686d4790fb9897bd20"
             },
             "type": "drupal-module",
             "extra": {
@@ -4230,7 +4230,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2016-04-01T11:54:54+00:00"
+            "time": "2020-05-07T16:26:18+00:00"
         },
         {
             "name": "iainhouston/pellucid_document",
@@ -4349,11 +4349,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.26",
+            "version": "V1.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "8dea001f8f2bb61c3bc0e8408f0e2612e4cc5923"
+                "reference": "b4b299c58d7f3f965d2dcccab7e67bd739f05e7c"
             },
             "type": "drupal-theme",
             "license": [
@@ -4371,7 +4371,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2020-05-02T15:33:40+00:00"
+            "time": "2020-05-07T16:27:55+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -8272,7 +8272,6 @@
     "stability-flags": {
         "drupal/diff": 20,
         "drupal/simplenews": 20,
-        "iainhouston/pellucid_agenda": 20,
         "iainhouston/pellucid_document": 20,
         "iainhouston/pellucid_gallery": 20,
         "iainhouston/pellucid_meeting": 20,

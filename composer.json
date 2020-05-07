@@ -105,7 +105,7 @@
 		"drupal/upgrade_status": "^2.5",
 		"drupal/webform": "^5.0",
 		"drush/drush": "~9.0",
-		"iainhouston/pellucid_agenda": "dev-master",
+		"iainhouston/pellucid_agenda": "^1.1",
 		"iainhouston/pellucid_document": "dev-master",
 		"iainhouston/pellucid_gallery": "dev-master",
 		"iainhouston/pellucid_meeting": "dev-master",
