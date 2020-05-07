@@ -12,10 +12,13 @@ field_name: field_news_teaser
 entity_type: node
 bundle: article
 label: 'News Teaser'
-description: "This text will appear as a summary on the front page.\r\nIt won't appear on the main Body Page or in the email'd newsletter article"
+description: "This text will appear as a summary on the front page.\r\nIt won't appear on the main Body Page or in the emailed Newsletter Article"
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: "<p>Please replace this sentence with text for the Teaser that will appear on the front page.</p>\r\n"
+    format: basic_html
 default_value_callback: ''
 settings: {  }
 field_type: text_long

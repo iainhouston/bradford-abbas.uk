@@ -102,6 +102,7 @@
 		"drupal/simplenews": "2.x-dev",
 		"drupal/swiftmailer": "2.0-alpha2",
 		"drupal/token": "^1.5",
+		"drupal/upgrade_status": "^2.5",
 		"drupal/webform": "^5.0",
 		"drush/drush": "~9.0",
 		"iainhouston/pellucid_agenda": "dev-master",

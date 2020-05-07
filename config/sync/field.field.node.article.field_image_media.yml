@@ -11,7 +11,7 @@ field_name: field_image_media
 entity_type: node
 bundle: article
 label: 'Image Media'
-description: ''
+description: "<p>This optional field is for a \"banner\" image that will appear at the top of the full Article.</p>\r\n<p>By  clicking the <em>Add Media</em> button you can either upload a photo, or re-use one from the website's Media Library of previously uploaded photos</p>"
 required: false
 translatable: true
 default_value: {  }
@@ -21,4 +21,8 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
