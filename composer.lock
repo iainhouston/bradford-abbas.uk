@@ -4346,11 +4346,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.27",
+            "version": "V1.1.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "b4b299c58d7f3f965d2dcccab7e67bd739f05e7c"
+                "reference": "e564b9e336ccd1ffd7f11a957cf16c418882bfc1"
             },
             "type": "drupal-theme",
             "license": [
@@ -4368,7 +4368,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2020-05-07T16:27:55+00:00"
+            "time": "2020-05-14T21:26:35+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
