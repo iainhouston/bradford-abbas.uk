@@ -110,7 +110,7 @@
 		"iainhouston/pellucid_gallery": "dev-master",
 		"iainhouston/pellucid_meeting": "^1.1",
 		"iainhouston/pellucid_minutes": "^1.1",
-		"iainhouston/pellucid_monoset": "^1.1",
+		"iainhouston/pellucid_monoset": "~2.0",
 		"tijsverkoyen/css-to-inline-styles": "^2.2"
 	},
 	"require-dev": {

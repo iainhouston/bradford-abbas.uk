@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf29c22616efc067bd72003c4cef6f81",
+    "content-hash": "b5a80a1d2403bf7a3b3d47000b1f12c9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4326,11 +4326,11 @@
         },
         {
             "name": "iainhouston/pellucid_monoset",
-            "version": "V1.1.28",
+            "version": "V2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_monoset.git",
-                "reference": "e564b9e336ccd1ffd7f11a957cf16c418882bfc1"
+                "reference": "34c6b64c7e9b29dd8d228668e293801357581938"
             },
             "type": "drupal-theme",
             "license": [
@@ -4348,7 +4348,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2020-05-14T21:26:35+00:00"
+            "time": "2020-05-16T10:01:20+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
