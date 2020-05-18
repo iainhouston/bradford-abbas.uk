@@ -1,0 +1,30 @@
+uuid: 5f3066af-7ff1-4867-9774-2fa34caab68f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.meetings_past_and_future
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: views_block__meetings_past_and_future_block_1_2
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:meetings_past_and_future-block_1'
+settings:
+  id: 'views_block:meetings_past_and_future-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /meetings
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,24 @@
+uuid: e1d35c38-e31d-48bf-a11e-090edd549602
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+  theme:
+    - olivero
+id: simplenewssubscription_3
+theme: olivero
+region: sidebar
+weight: -6
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: Subscribe
+  provider: simplenews
+  label_display: visible
+  newsletters:
+    regular_news: regular_news
+  message: 'Stay informed - subscribe to our newsletter.'
+  unique_id: f89e6e76-655a-4c83-a53c-3132b5a09709
+visibility: {  }

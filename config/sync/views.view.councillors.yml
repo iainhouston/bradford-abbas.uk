@@ -11,6 +11,7 @@ dependencies:
     - field.storage.user.field_notes
     - field.storage.user.user_picture
     - image.style.thumbnail
+    - system.menu.secondary-navigation
     - taxonomy.vocabulary.councillor_s_function
   content:
     - 'taxonomy_term:councillor_s_function:1af55a18-7d69-4990-9d05-5f02e9392d69'
@@ -91,8 +92,8 @@ display:
           summary: ''
           description: ''
           columns:
-            user_picture: user_picture
-            field_first_name: field_first_name
+            user_picture: field_last_name
+            field_first_name: field_last_name
             field_last_name: field_last_name
             field_function: field_function
             field_external_bodies: field_external_bodies
@@ -105,7 +106,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: ''
             field_first_name:
               sortable: false
               default_sort_order: asc
@@ -124,20 +125,26 @@ display:
               sortable: true
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: ' : '
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_external_bodies:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: priority-medium
             field_notes:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: priority-low
             field_dpi:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -281,7 +288,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: sort
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -344,7 +351,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Role
           exclude: false
           alter:
             alter_text: false
@@ -407,7 +414,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'External bodies'
+          label: 'External*'
           exclude: false
           alter:
             alter_text: false
@@ -717,8 +724,14 @@ display:
       display_extenders: {  }
       path: councillors-responsibilities
       menu:
-        enabled: true
+        type: normal
+        title: 'Councillors'' responsibilities'
+        description: ''
         expanded: false
+        parent: ''
+        weight: -48
+        context: '0'
+        menu_name: secondary-navigation
     cache_metadata:
       max-age: -1
       contexts:

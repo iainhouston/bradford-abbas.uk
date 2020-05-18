@@ -1,0 +1,25 @@
+uuid: bb1295cc-a920-4e3c-ae64-6b2011888355
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary-navigation
+  module:
+    - system
+  theme:
+    - olivero
+id: secondarynavigation
+theme: olivero
+region: sidebar
+weight: -7
+provider: null
+plugin: 'system_menu_block:secondary-navigation'
+settings:
+  id: 'system_menu_block:secondary-navigation'
+  label: 'Where to go next'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

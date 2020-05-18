@@ -7,9 +7,8 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-      - tools
-    parent: 'main:'
+      - secondary-navigation
+    parent: 'secondary-navigation:'
 _core:
   default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
 name: 'Basic page'

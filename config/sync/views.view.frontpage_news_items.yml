@@ -285,7 +285,12 @@ display:
           default_row_class: true
           uses_fields: false
       title: 'News items'
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
       footer: {  }
       relationships: {  }
       fields: {  }
@@ -324,13 +329,37 @@ display:
         link_display: false
         link_url: false
         title: false
-      footer: {  }
+        header: false
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<strong>Click on the link above to see <em>all</em> recent News Articles</strong>'
+          plugin_id: text_custom
       use_more: true
       use_more_always: false
       use_more_text: 'See all news items'
       link_display: page_1
       link_url: ''
       title: 'Latest News items'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: 'Click on a Title to see the full News Article'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
@@ -381,15 +410,33 @@ display:
       display_extenders: {  }
       path: allnews
       pager:
-        type: none
+        type: full
         options:
+          items_per_page: 10
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       defaults:
         pager: false
         title: false
         style: false
         row: false
-      title: 'All News items'
+        header: false
+      title: 'Latest News items'
       style:
         type: default
         options:
@@ -400,10 +447,23 @@ display:
         type: 'entity:node'
         options:
           view_mode: teaser
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<h2>Latest News</h2>\r\n<h3>Click on a Title to see the full News Article</h3>"
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

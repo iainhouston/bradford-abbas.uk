@@ -1,0 +1,8 @@
+uuid: cf50c97d-791e-443d-a185-db331dba8a69
+langcode: en
+status: true
+dependencies: {  }
+id: secondary-navigation
+label: 'Secondary Navigation'
+description: 'To go in sidebar - usually'
+locked: false
