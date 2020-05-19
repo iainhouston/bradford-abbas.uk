@@ -1,6 +1,6 @@
 uuid: ed80b99d-ab6e-4310-9b39-377f377b4b84
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.upcoming_events
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__upcoming_events_block_1_2
 theme: olivero
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: 'views_block:upcoming_events-block_1'
 settings:

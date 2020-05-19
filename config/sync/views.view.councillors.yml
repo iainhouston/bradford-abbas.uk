@@ -96,7 +96,6 @@ display:
             field_function: field_function
             field_external_bodies: field_external_bodies
             field_notes: field_notes
-            field_dpi: field_dpi
           info:
             user_picture:
               sortable: false
@@ -116,7 +115,7 @@ display:
               sortable: true
               default_sort_order: asc
               align: views-align-left
-              separator: ''
+              separator: ' : '
               empty_column: false
               responsive: ''
             field_function:
@@ -134,13 +133,6 @@ display:
               empty_column: false
               responsive: priority-medium
             field_notes:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-low
-            field_dpi:
               sortable: false
               default_sort_order: asc
               align: ''

@@ -1,0 +1,31 @@
+uuid: 8eb33c63-1fda-47bd-8a2b-8152ecd55b37
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8de18bb4-6311-44a3-a94a-9561a9e16b49'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: villagehalltaxonomyheader_2
+theme: olivero
+region: content_above
+weight: -9
+provider: null
+plugin: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
+settings:
+  id: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
+  label: 'Village Hall Taxonomy header'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /term/meeting-place/bradford-abbas-village-hall
+    negate: false
+    context_mapping: {  }

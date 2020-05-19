@@ -12,7 +12,7 @@ dependencies:
 id: views_block__meetings_past_and_future_block_1_2
 theme: olivero
 region: content
-weight: -6
+weight: -9
 provider: null
 plugin: 'views_block:meetings_past_and_future-block_1'
 settings:

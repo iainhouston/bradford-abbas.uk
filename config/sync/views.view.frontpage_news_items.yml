@@ -358,7 +358,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: 'Click on a Title to see the full News Article'
+          content: '<h3>Click on a Title to see the full News Article</h3>'
           plugin_id: text_custom
     cache_metadata:
       max-age: -1

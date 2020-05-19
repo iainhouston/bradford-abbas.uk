@@ -1,0 +1,31 @@
+uuid: dab9a288-12de-4b16-a9d0-a1c68d97de16
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:870a4a1f-8996-4ffd-bd10-1529b349e5c9'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: heroimage
+theme: olivero
+region: highlighted
+weight: -8
+provider: null
+plugin: 'block_content:870a4a1f-8996-4ffd-bd10-1529b349e5c9'
+settings:
+  id: 'block_content:870a4a1f-8996-4ffd-bd10-1529b349e5c9'
+  label: 'Hero Image'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
