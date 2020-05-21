@@ -115,7 +115,7 @@ display:
               sortable: true
               default_sort_order: asc
               align: views-align-left
-              separator: ' : '
+              separator: ' '
               empty_column: false
               responsive: ''
             field_function:

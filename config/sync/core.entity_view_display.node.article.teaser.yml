@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_expires
     - field.field.node.article.field_image_media
-    - field.field.node.article.field_news_teaser
     - field.field.node.article.field_remote_video
     - field.field.node.article.field_tags
     - field.field.node.article.simplenews_issue
@@ -22,12 +21,13 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  field_news_teaser:
-    type: text_default
+  body:
+    type: text_summary_or_trimmed
     weight: 0
     region: content
-    label: hidden
-    settings: {  }
+    label: visually_hidden
+    settings:
+      trim_length: 500
     third_party_settings: {  }
   links:
     weight: 1
@@ -35,7 +35,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
   field_expires: true
   field_image_media: true
   field_remote_video: true
