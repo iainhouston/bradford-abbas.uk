@@ -1,4 +1,3 @@
-uuid: 49aed516-5b27-4428-8a37-33e3bca71987
 langcode: en
 status: open
 dependencies: {  }
@@ -54,6 +53,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
   submission_views: {  }
@@ -182,3 +186,4 @@ access:
     permissions: {  }
 handlers: {  }
 variants: {  }
+uuid: 49aed516-5b27-4428-8a37-33e3bca71987

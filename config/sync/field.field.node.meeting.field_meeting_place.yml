@@ -13,7 +13,7 @@ field_name: field_meeting_place
 entity_type: node
 bundle: meeting
 label: 'Meeting place'
-description: "<p>Please select the Meeting Place from the drop-down list.</p>\r\n<p>If you want to create a new Meeting Place that is not in the list, then go to <em>Manage >> Structure >> Taxonomy Terms</em></p> \r\n<p><strong>The remaining fields on this form can be added at a later time</strong></p>\r\n<p><strong>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</strong></p>"
+description: "<p>Please select the Meeting Place from the drop-down list.</p>\r\n<p><strong>The remaining fields on this form can be added at a later time</strong></p>"
 required: true
 translatable: false
 default_value:
@@ -28,4 +28,5 @@ settings:
     sort:
       field: _none
     auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

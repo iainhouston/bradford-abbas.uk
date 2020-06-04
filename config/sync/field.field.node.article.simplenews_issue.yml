@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.simplenews_issue
     - node.type.article
-    - simplenews.newsletter.regular_news
   module:
     - simplenews
 id: node.article.simplenews_issue
@@ -16,15 +15,7 @@ label: Issue
 description: 'Choose the "mailing list" if you will also be sending this out as an email.'
 required: false
 translatable: true
-default_value:
-  -
-    handler: null
-    handler_settings: null
-    status: 0
-    sent_count: 0
-    error_count: null
-    subscribers: 0
-    target_uuid: 7d11c97f-0e5b-4b8f-a2bd-10c44b192336
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:simplenews_newsletter'
