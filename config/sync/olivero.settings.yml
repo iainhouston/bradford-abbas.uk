@@ -12,7 +12,7 @@ logo:
 favicon:
   use_default: true
 mobile_menu_all_widths: 0
-site_branding_bg_color: blue
+site_branding_bg_color: gray
 debug: 0
 _core:
   default_config_hash: '-gib02VeSGWjGP5WLnwZMm_Vr-moS8mvuzvEw0g0Xbo'

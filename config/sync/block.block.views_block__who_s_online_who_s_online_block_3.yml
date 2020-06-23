@@ -1,6 +1,6 @@
 uuid: 20169bd8-e7f4-4bc8-87cd-ffca8627580e
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.who_s_online
@@ -11,7 +11,7 @@ dependencies:
     - olivero
 id: views_block__who_s_online_who_s_online_block_3
 theme: olivero
-region: footer_second
+region: header
 weight: 0
 provider: null
 plugin: 'views_block:who_s_online-who_s_online_block'

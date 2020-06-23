@@ -1,6 +1,6 @@
 uuid: cc79b977-787b-40b5-95f2-c6c78e505dd3
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -11,7 +11,7 @@ dependencies:
     - olivero
 id: tools_2
 theme: olivero
-region: footer_first
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
