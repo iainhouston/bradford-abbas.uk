@@ -69,6 +69,10 @@
 		},
 		{
 			"type": "git",
+			"url": "https://github.com/iainhouston/pellucid_olivero.git"
+		},
+		{
+			"type": "git",
 			"url": "https://github.com/iainhouston/pellucid_minutes.git"
 		},
 		{
@@ -113,6 +117,7 @@
 		"iainhouston/pellucid_meeting": "^1.1",
 		"iainhouston/pellucid_minutes": "^1.1",
 		"iainhouston/pellucid_monoset": "~2.0",
+		"iainhouston/pellucid_olivero": "^1.0",
 		"tijsverkoyen/css-to-inline-styles": "^2.2"
 	},
 	"require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70a5dd257024f22c6716792219bbae11",
+    "content-hash": "80406392b4dac1f369636e056222e43f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4518,6 +4518,32 @@
                 "php"
             ],
             "time": "2020-05-16T10:01:20+00:00"
+        },
+        {
+            "name": "iainhouston/pellucid_olivero",
+            "version": "V1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iainhouston/pellucid_olivero.git",
+                "reference": "d487ab3f69fd3c8abc465444f36f18f1197c2f17"
+            },
+            "require": {
+                "drupal/olivero": "1.0.*"
+            },
+            "type": "library",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Iain Houston",
+                    "email": "webmaster@bradford-abbas.uk",
+                    "homepage": "https://iainhouston.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Drupal 8 Theme  for pellucid_build",
+            "time": "2020-06-24T08:30:13+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
