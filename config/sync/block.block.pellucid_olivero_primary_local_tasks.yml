@@ -1,0 +1,22 @@
+uuid: d22befef-3e9d-4df5-b92b-2519d4b19d93
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pellucid_olivero
+_core:
+  default_config_hash: ra6f6AXShbzKP9r6uPc9cfCx2KuomlPqmt1WWPUuDf0
+id: pellucid_olivero_primary_local_tasks
+theme: pellucid_olivero
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

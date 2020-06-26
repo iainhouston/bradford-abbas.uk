@@ -1,17 +1,17 @@
-uuid: 7407093d-78dc-407a-8647-715a14a0c30e
+uuid: 7818728b-9d68-4472-b768-d5e86260251d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
-    - pellucid_monoset
+    - pellucid_olivero
 _core:
-  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: pellucid_monoset_branding
-theme: pellucid_monoset
-region: content
-weight: -7
+  default_config_hash: 350nGQzvFBtTwZvihMaMT-laz0UZOOpibzt_Ie5C7pc
+id: pellucid_olivero_sitebranding
+theme: pellucid_olivero
+region: header
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:
@@ -21,5 +21,5 @@ settings:
   label_display: '0'
   use_site_logo: true
   use_site_name: true
-  use_site_slogan: true
+  use_site_slogan: false
 visibility: {  }

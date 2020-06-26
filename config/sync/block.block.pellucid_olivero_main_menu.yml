@@ -1,4 +1,4 @@
-uuid: 24729909-e82e-4da0-9700-e71b968db635
+uuid: de08da7c-f5b3-4feb-9733-be48842ad28c
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - system
   theme:
-    - pellucid_monoset
+    - pellucid_olivero
 _core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: pellucid_monoset_main_menu
-theme: pellucid_monoset
-region: nav
-weight: -6
+  default_config_hash: 9rMeB9hFDDKsbKpqVK67NJiM0cbgSl2FUJYVmp5bfGc
+id: pellucid_olivero_main_menu
+theme: pellucid_olivero
+region: primary_menu
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -22,6 +22,6 @@ settings:
   provider: system
   label_display: '0'
   level: 1
-  depth: 1
-  expand_all_items: false
+  depth: 2
+  expand_all_items: true
 visibility: {  }

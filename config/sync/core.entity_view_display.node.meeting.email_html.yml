@@ -32,7 +32,7 @@ content:
     region: content
   field_agenda:
     weight: 2
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }

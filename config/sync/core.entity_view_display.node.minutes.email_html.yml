@@ -1,0 +1,38 @@
+uuid: 836839f4-362b-4581-8dc6-808871b69756
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.minutes.body
+    - field.field.node.minutes.field_minutes_meeting
+    - field.field.node.minutes.field_minutes_status
+    - field.field.node.minutes.simplenews_issue
+    - node.type.minutes
+  module:
+    - text
+    - user
+id: node.minutes.email_html
+targetEntityType: node
+bundle: minutes
+mode: email_html
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_minutes_status:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_minutes_meeting: true
+  links: true
+  simplenews_issue: true

@@ -1,4 +1,4 @@
-uuid: 6c859aa0-a6da-41a1-a4ab-060570570609
+uuid: 2ac96d93-008d-4505-9b56-422e38fdac42
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - block_content
     - system
   theme:
-    - pellucid_monoset
-id: villagehalltaxonomyheader
-theme: pellucid_monoset
-region: content
-weight: -16
+    - pellucid_olivero
+id: pellucid_olivero_villagehalltaxonomyheader_2
+theme: pellucid_olivero
+region: content_above
+weight: -9
 provider: null
 plugin: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
 settings:

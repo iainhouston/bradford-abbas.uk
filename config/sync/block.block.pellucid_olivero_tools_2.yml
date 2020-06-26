@@ -1,4 +1,4 @@
-uuid: edb033f6-4e94-4770-9300-b781521d3270
+uuid: 2088ed46-06ab-4f94-8276-d6b72405c979
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - system
     - user
   theme:
-    - pellucid_monoset
-id: tools
-theme: pellucid_monoset
-region: front_eight
-weight: -12
+    - pellucid_olivero
+id: pellucid_olivero_tools_2
+theme: pellucid_olivero
+region: footer_top
+weight: -9
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

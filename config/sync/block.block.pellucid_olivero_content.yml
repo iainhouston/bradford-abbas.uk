@@ -1,17 +1,17 @@
-uuid: d31a0cc2-fd9e-47bd-8a52-82f999e34fc9
+uuid: 28842f23-5399-4ca0-8d98-e5e98fe09d44
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - pellucid_monoset
+    - pellucid_olivero
 _core:
-  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: pellucid_monoset_content
-theme: pellucid_monoset
+  default_config_hash: BL6Gcw5Us0zai1ADadlNYLxlEblMedc_3C3lF0PjtCE
+id: pellucid_olivero_content
+theme: pellucid_olivero
 region: content
-weight: -14
+weight: -10
 provider: null
 plugin: system_main_block
 settings:

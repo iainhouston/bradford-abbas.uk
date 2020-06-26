@@ -1,17 +1,18 @@
-uuid: 43aed38e-5ab0-4427-a25b-910473b24896
+uuid: c05e26b6-e5a1-40d3-8219-10f0bb994e00
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.meetings_past_and_future
   module:
+    - system
     - views
   theme:
-    - pellucid_monoset
-id: views_block__meetings_past_and_future_block_1
-theme: pellucid_monoset
-region: front_six
-weight: -15
+    - pellucid_olivero
+id: pellucid_olivero_views_block__meetings_past_and_future_block_1_2
+theme: pellucid_olivero
+region: content
+weight: -9
 provider: null
 plugin: 'views_block:meetings_past_and_future-block_1'
 settings:
@@ -21,4 +22,9 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /meetings
+    negate: false
+    context_mapping: {  }

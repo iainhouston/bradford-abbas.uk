@@ -1,4 +1,4 @@
-uuid: cd89d278-32e3-42df-bfa6-a3c1cb72f8ab
+uuid: 0f5bdf7f-2ee9-4d19-95bf-6e7eeee998f5
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - user
     - views
   theme:
-    - pellucid_monoset
-id: views_block__who_s_online_who_s_online_block_2
-theme: pellucid_monoset
-region: content_bottom
-weight: 0
+    - pellucid_olivero
+id: pellucid_olivero_views_block__who_s_online_who_s_online_block_3
+theme: pellucid_olivero
+region: footer_top
+weight: -10
 provider: null
 plugin: 'views_block:who_s_online-who_s_online_block'
 settings:

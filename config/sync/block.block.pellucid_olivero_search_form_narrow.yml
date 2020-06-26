@@ -1,0 +1,23 @@
+uuid: 15e5e28f-abd7-4557-a714-dac120584d0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - pellucid_olivero
+_core:
+  default_config_hash: 4kRuucCt4vcJ_pVJlVPquWuttF8Sendj4XbTi0sizq0
+id: pellucid_olivero_search_form_narrow
+theme: pellucid_olivero
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }

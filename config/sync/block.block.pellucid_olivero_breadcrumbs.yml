@@ -1,0 +1,22 @@
+uuid: b41b0b03-6cb5-4e0c-9620-729239b8af95
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pellucid_olivero
+_core:
+  default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
+id: pellucid_olivero_breadcrumbs
+theme: pellucid_olivero
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 6ea20a24-c061-4cce-b9b2-8df2d0daa094
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary-navigation
+  module:
+    - system
+  theme:
+    - pellucid_olivero
+id: pellucid_olivero_secondarynavigation
+theme: pellucid_olivero
+region: sidebar
+weight: -7
+provider: null
+plugin: 'system_menu_block:secondary-navigation'
+settings:
+  id: 'system_menu_block:secondary-navigation'
+  label: 'Where to go next'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

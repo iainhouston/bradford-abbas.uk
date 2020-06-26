@@ -1,17 +1,17 @@
-uuid: 01750111-ca56-4b0d-b517-23e4e45f6941
+uuid: 8d737910-718d-4c95-9dff-a60d16896e73
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - pellucid_monoset
+    - pellucid_olivero
 _core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: pellucid_monoset_messages
-theme: pellucid_monoset
-region: front_one
-weight: -15
+  default_config_hash: KfyaTPRJEcAyy2e5AxEfWQnuHcn4WrfvcWek7lSmHZQ
+id: pellucid_olivero_messages
+theme: pellucid_olivero
+region: highlighted
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:

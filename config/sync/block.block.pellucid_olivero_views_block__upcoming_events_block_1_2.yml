@@ -1,4 +1,4 @@
-uuid: d769d521-a6c0-440f-80d8-e5b410cf6287
+uuid: 8d276111-0484-483c-b975-4f787cca7a08
 langcode: en
 status: true
 dependencies:
@@ -8,23 +8,23 @@ dependencies:
     - system
     - views
   theme:
-    - pellucid_monoset
-id: views_block__upcoming_events_block_2
-theme: pellucid_monoset
+    - pellucid_olivero
+id: pellucid_olivero_views_block__upcoming_events_block_1_2
+theme: pellucid_olivero
 region: content
-weight: -13
+weight: -6
 provider: null
-plugin: 'views_block:upcoming_events-block_2'
+plugin: 'views_block:upcoming_events-block_1'
 settings:
-  id: 'views_block:upcoming_events-block_2'
+  id: 'views_block:upcoming_events-block_1'
   label: ''
   provider: views
   label_display: visible
   views_label: ''
-  items_per_page: none
+  items_per_page: '5'
 visibility:
   request_path:
     id: request_path
-    pages: /history_society
+    pages: /latest-news
     negate: false
     context_mapping: {  }

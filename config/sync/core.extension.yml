@@ -43,7 +43,6 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
-  rules: 0
   search: 0
   shortcut: 0
   simplenews: 0
@@ -55,7 +54,6 @@ module:
   token: 0
   toolbar: 0
   tour: 0
-  tr_rulez: 0
   typed_data: 0
   update: 0
   user: 0
@@ -72,8 +70,8 @@ theme:
   classy: 0
   bartik: 0
   seven: 0
-  pellucid_monoset: 0
   olivero: 0
+  pellucid_olivero: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 profile: standard
