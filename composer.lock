@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df1dfc0d703a9e841bb9e282cc457714",
+    "content-hash": "7cb23d17c28634401afee487897bf188",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3532,11 +3532,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V1.0.7",
+            "version": "V2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "77d1c279d74945590b348db7c12a6326ca5e564b"
+                "reference": "76fafa0309228096b6c570b83fee0e08f1204a22"
             },
             "require": {
                 "drupal/olivero": "1.0.*"
@@ -3554,7 +3554,7 @@
                 }
             ],
             "description": "Drupal 8 Theme  for pellucid_build",
-            "time": "2020-06-25T10:58:47+00:00"
+            "time": "2020-06-27T19:01:08+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -7571,7 +7571,8 @@
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6",
                 "docs": "https://www.drupal.org/docs/8/modules/devel"
-            }
+            },
+            "time": "2020-04-25T12:53:02+00:00"
         },
         {
             "name": "iainhouston/drupal-vm",

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.photo_gallery.field_photo
+    - image.style.bapc_medium
     - node.type.photo_gallery
   module:
     - image
@@ -17,8 +18,8 @@ content:
     weight: 1
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: bapc_medium
+      image_link: file
     third_party_settings: {  }
     type: image
     region: content
