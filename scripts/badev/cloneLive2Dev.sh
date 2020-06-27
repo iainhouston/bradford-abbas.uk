@@ -13,9 +13,9 @@ gunzip $FILE.gz
 # drush uses rsync -t flag which writes extraneous text
 # sed -i '' 's/^Connection to/-- Connection to/' $FILE
 
-$DRUSH @badev sql:drop -y
+$DRUSH $DEVALIAS sql:drop -y
 echo "Loading replica of Live database"
-$DRUSH @badev sql:cli < $FILE
+$DRUSH $DEVALIAS sql:cli < $FILE
 # $DRUSH @badev cr
 
 echo "Syncing files from Live to Dev machine"

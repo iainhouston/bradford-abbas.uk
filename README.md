@@ -5,13 +5,13 @@ Quick start
 
 1. Clone this repo to `~/bradford-abbas.uk`
 
-2. Add the following alias to your `~/.bashrc` (or `~/.bash_aliases` as appropriate):
+2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
   ```
   alias cdbadev="cd ~/bradford-abbas.uk && source ./scripts/badev/.dev_aliases"
   ```
 
-3. `$ source ~/.bashrc`
+3. `$ source ~/.zshrc`
 
 4. `$ cdbadev` =>
 

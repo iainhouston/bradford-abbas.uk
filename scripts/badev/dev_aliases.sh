@@ -1,7 +1,7 @@
-export BADEV="$HOME/bradford-abbas.uk"
+export BADEV="$HOME/bapc-drupal9"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 export LIVE_SSH_ALIAS="cloudadmin"
-export DEVALIAS="@badev"
+export DEVALIAS="@ba9dev"
 export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"
 
