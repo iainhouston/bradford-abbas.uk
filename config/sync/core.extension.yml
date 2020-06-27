@@ -27,8 +27,6 @@ module:
   history: 0
   honeypot: 0
   image: 0
-  juicebox: 0
-  libraries: 0
   link: 0
   mailsystem: 0
   media: 0

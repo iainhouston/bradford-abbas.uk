@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.photo_gallery.field_photo
     - node.type.photo_gallery
   module:
-    - juicebox
+    - image
     - user
 id: node.photo_gallery.default
 targetEntityType: node
@@ -14,31 +14,13 @@ bundle: photo_gallery
 mode: default
 content:
   field_photo:
-    weight: 0
-    label: hidden
+    weight: 1
+    label: above
     settings:
       image_style: ''
-      thumb_style: juicebox_square_thumb
-      caption_source: ''
-      title_source: alt
-      jlib_galleryWidth: 100%
-      jlib_galleryHeight: 87%
-      jlib_backgroundColor: '#222222'
-      jlib_textColor: 'rgba(255,255,255,1)'
-      jlib_thumbFrameColor: 'rgba(255,255,255,.5)'
-      jlib_showOpenButton: true
-      jlib_showExpandButton: true
-      jlib_showThumbsButton: true
-      manual_config: "showAutoPlayButton=\"TRUE\"\nimagePadding=\"15px\"\nenableLooping=\"TRUE\"\nautoPlayOnLoad=\"TRUE\"\nenableAutoPlay=\"TRUE\""
-      incompatible_file_action: show_icon_and_link
-      linkurl_source: ''
-      linkurl_target: _blank
-      custom_parent_classes: ''
-      jlib_useFullscreenExpand: '0'
-      jlib_useThumbDots: false
-      apply_markup_filter: true
+      image_link: ''
     third_party_settings: {  }
-    type: juicebox_formatter
+    type: image
     region: content
 hidden:
   links: true
