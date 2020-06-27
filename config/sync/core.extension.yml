@@ -27,6 +27,10 @@ module:
   history: 0
   honeypot: 0
   image: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_tabs: 0
+  jquery_ui_tooltip: 0
   link: 0
   mailsystem: 0
   media: 0
@@ -64,8 +68,6 @@ module:
   views: 10
   standard: 1000
 theme:
-  stable: 0
-  classy: 0
   bartik: 0
   seven: 0
   olivero: 0
