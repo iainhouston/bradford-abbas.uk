@@ -1,0 +1,25 @@
+uuid: ba0b4397-46d3-4b16-bede-366494a61a22
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fc4d4ba7-8459-4273-8de1-0094c3826342'
+  module:
+    - block_content
+  theme:
+    - pellucid_olivero
+id: builtbythecommunity
+theme: pellucid_olivero
+region: footer_bottom
+weight: -11
+provider: null
+plugin: 'block_content:fc4d4ba7-8459-4273-8de1-0094c3826342'
+settings:
+  id: 'block_content:fc4d4ba7-8459-4273-8de1-0094c3826342'
+  label: 'Built by the community'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
