@@ -16,10 +16,10 @@ Quick start
 4. `$ cdbadev` =>
 
     ```sh
-	updateLiveCode - Code and Config to Live site
-	cloneLive2Dev  - Clone Live Database and Files to Dev site
-	safecex        - Safe export of Dev site's configuration
-	endev          - Enable development modules in Dev site
+	  updateLiveCode - Code and Config to Live site
+	  cloneLive2Dev  - Clone Live Database and Files to Dev site
+	  safecex        - Safe export of Dev site's configuration
+	  endev          - Enable development modules in Dev site
 	```
 
 Regular maintenance
