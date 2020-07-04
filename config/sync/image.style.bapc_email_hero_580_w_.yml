@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: bapc_email_hero_580_w_
-label: 'BAPC Email Hero (580 W)'
+label: 'BAPC Email Hero (600 W)'
 effects:
   9c3f2247-9e20-4023-8818-3343c083d948:
     uuid: 9c3f2247-9e20-4023-8818-3343c083d948
     id: image_scale
     weight: 1
     data:
-      width: 580
+      width: 600
       height: null
       upscale: false

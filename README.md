@@ -3,17 +3,17 @@
 Quick start
 ========
 
-1. Clone this repo to `~/bradford-abbas.uk`
+1. Clone this repo to `~/bapc-drupal9`
 
 2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
   ```
-  alias cdbadev="cd ~/bradford-abbas.uk && source ./scripts/badev/.dev_aliases"
+  alias cdba9dev="cd ${HOME}/bapc-drupal9 && source ./scripts/badev/dev_aliases.sh"
   ```
 
 3. `$ source ~/.zshrc`
 
-4. `$ cdbadev` =>
+4. `$ cdba9dev` =>
 
     ```sh
 	  updateLiveCode - Code and Config to Live site

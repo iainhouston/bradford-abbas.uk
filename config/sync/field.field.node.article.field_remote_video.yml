@@ -10,7 +10,7 @@ id: node.article.field_remote_video
 field_name: field_remote_video
 entity_type: node
 bundle: article
-label: 'Remote Video'
+label: 'Video Clips'
 description: "<p>This optional field is for embedding a Vimeo or YouTube video at the end of the Article.</p>\r\n<p>Visitors to the web page you are creating will be be able to play the video without leaving the Article.</p>\r\n<p>Recipients of an emailed News Article will be able to click on a link to see the video.</p>\r\n<p>By  clicking the <em>Add Media</em> button you can either add a link to a Vimeo or YouTube video (copied from its <em>Share</em> button), or re-use one from the website's Media Library of previously linked videos.</p>"
 required: false
 translatable: false
