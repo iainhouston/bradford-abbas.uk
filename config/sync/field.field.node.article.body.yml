@@ -20,7 +20,7 @@ translatable: true
 default_value:
   -
     summary: ''
-    value: "<p>Please replace this sentence and the following text with the full text of your Article.</p>\r\n\r\n<p>Usually, the first 500 characters of this field will appear as the Teaser on the front page, unless you explicitly provide a short Summary.</p>\r\n\r\n<p>Use the <em>Media</em> button in the toolbar above, to embed photos in the body of your Article.</p>\r\n\r\n<p>Use the <em>Link</em> button in the toolbar above to create a clickable link to another web page.</p>\r\n"
+    value: "<p>Please replace this sentence and the following text with the full text of your Article.</p>\r\n\r\n<p>Usually, the first 500 characters of this field will appear as the Teaser on the front page, unless you explicitly provide a short Summary.</p>\r\n\r\n<h3>Menu bar</h3>\r\n\r\n<ul>\r\n\t<li>Hover over the icons in the toolbar above to see what they do.</li>\r\n\t<li>Use the<em> Insert from Media Library</em> button in the toolbar above, to embed photos in the body of your Article.</li>\r\n\t<li>Use the <em>Link</em> button in the toolbar above to create a clickable link to another web page.</li>\r\n</ul>\r\n"
     format: basic_html
 default_value_callback: ''
 settings:
