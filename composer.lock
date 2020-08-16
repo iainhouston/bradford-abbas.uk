@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf6b7c95951722e56a3c2053a55a3b66",
+    "content-hash": "fdb3a75eaa81dec8c71c6d92b38092f4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1414,16 +1414,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.0.1",
+            "version": "9.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "1cd5f38665c789df215b0f145798b44bd88fdab2"
+                "reference": "883018fe0aa16cee450bb043fcb4893c05438283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/1cd5f38665c789df215b0f145798b44bd88fdab2",
-                "reference": "1cd5f38665c789df215b0f145798b44bd88fdab2",
+                "url": "https://api.github.com/repos/drupal/core/zipball/883018fe0aa16cee450bb043fcb4893c05438283",
+                "reference": "883018fe0aa16cee450bb043fcb4893c05438283",
                 "shasum": ""
             },
             "require": {
@@ -1654,7 +1654,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2020-06-17T17:56:46+00:00"
+            "time": "2020-08-05T21:47:03+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -1705,16 +1705,16 @@
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.0.1",
+            "version": "9.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "032550bef2acd2c356a47e98065ce11969facd69"
+                "reference": "50da17643f7192fb2771f9fbb7b55fc2b22d8be1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/032550bef2acd2c356a47e98065ce11969facd69",
-                "reference": "032550bef2acd2c356a47e98065ce11969facd69",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/50da17643f7192fb2771f9fbb7b55fc2b22d8be1",
+                "reference": "50da17643f7192fb2771f9fbb7b55fc2b22d8be1",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1723,7 @@
                 "doctrine/annotations": "1.10.3",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.1",
-                "drupal/core": "9.0.1",
+                "drupal/core": "9.0.3",
                 "egulias/email-validator": "2.1.17",
                 "guzzlehttp/guzzle": "6.5.4",
                 "guzzlehttp/promises": "v1.3.1",
@@ -1783,7 +1783,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
-            "time": "2020-06-17T17:56:46+00:00"
+            "time": "2020-08-05T21:47:03+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -2404,17 +2404,17 @@
         },
         {
             "name": "drupal/olivero",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/olivero.git",
-                "reference": "8.x-1.0-alpha3"
+                "reference": "8.x-1.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/olivero-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
-                "shasum": "596232057b7b3db7305420ad7fd19eafd43b775b"
+                "url": "https://ftp.drupal.org/files/projects/olivero-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "3fbaa8fd3d46d34a8afc4974d4e1df69a7f1ebce"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -2422,8 +2422,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha3",
-                    "datestamp": "1592335654",
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1597332018",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3535,11 +3535,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V2.0.15",
+            "version": "V2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "320600fbea94e5d86047822f748c28426ba7dee9"
+                "reference": "8863facc07d38704125c0abca6e6c544514974a7"
             },
             "require": {
                 "drupal/olivero": "1.0.*"
@@ -3557,7 +3557,7 @@
                 }
             ],
             "description": "Drupal 9 Theme  for pellucid_build",
-            "time": "2020-07-23T17:10:13+00:00"
+            "time": "2020-08-16T16:34:32+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
