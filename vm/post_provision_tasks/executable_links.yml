@@ -5,9 +5,3 @@
     dest: /usr/local/bin/drush
     state: link
     force: yes
-
-- name: Make local drupal console executable globally
-  file:
-    src: "{{ drupal_composer_install_dir }}/vendor/drupal/console/bin/drupal"
-    dest: "/usr/local/bin/drupal"
-    state: link
