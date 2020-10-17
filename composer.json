@@ -90,8 +90,7 @@
 	],
 	"require": {
 		"composer/installers": "^1.2",
-		"cweagans/composer-patches": "^1.6",
-		"drupal/cleantalk": "^9.1",
+		"drupal/cleantalk": "^4.1",
 		"drupal/core-composer-scaffold": "^9.0",
 		"drupal/core-recommended": "^9.0",
 		"drupal/diff": "^1.0",
