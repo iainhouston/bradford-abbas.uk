@@ -6,9 +6,10 @@ FILE="$BADEV/vm/saved_sql/live/$NOW.sql"
 echo "Clearing caches before dumping Live database"
 $DRUSH @balive cr
 echo "Dumping Live database"
-$DRUSH @balive sql:dump --result-file=/var/www/drupal/temp.sql --gzip
+echo "-- Ignore mysqldump error --"
+$DRUSH @balive sql:dump --result-file=/tmp/devtemp.sql --gzip
 echo "Copying compressed SQL file to Dev machine"
-scp $LIVE_SSH_ALIAS:/var/www/drupal/temp.sql.gz $FILE.gz
+scp $LIVE_SSH_ALIAS:/tmp/devtemp.sql.gz $FILE.gz
 gunzip $FILE.gz
 
 # drush uses rsync -t flag which writes extraneous text
