@@ -22,7 +22,6 @@ drupal_build_composer_project: false
 
 # Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
-# But we need drush to install basic site on production server
 
 # Required Drupal settings.
 drupal_composer_install_dir: "/var/www/drupalvm"
@@ -36,14 +35,11 @@ drupal_db_host: localhost
 
 drupal_domain: "{{ vagrant_hostname }}"
 drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
-# Additional arguments or options to pass to `drush site-install`.
-drupal_site_install_extra_args: []
 
 # Cron jobs are added to the vagrant user's crontab. Keys include name
 # (required), minute, hour, day, weekday, month, job (required), and state.
 drupalvm_cron_jobs: []
 
-drush_path: /usr/local/bin/drush
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: false

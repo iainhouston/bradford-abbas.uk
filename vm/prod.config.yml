@@ -24,7 +24,21 @@ pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 
 extra_security_enabled: true
-installed_extras: []
+installed_extras:
+  - drush
+
+drush_launcher_install: false
+# Install Drush via Composer globally.
+# Install from source (git clone + composer-based install).
+drush_install_from_source: true
+drush_source_install_bin_path: /usr/local/bin/drush
+drush_source_install_path: /usr/local/share/drush
+drush_source_install_version: "10.x"
+drush_keep_updated: false
+drush_force_update: false
+drush_force_composer_install: false
+drush_composer_cli_options: "--prefer-dist --no-interaction"
+drush_clone_depth: 1
 
 # Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.
@@ -50,22 +64,21 @@ apache_vhosts_ssl:
 
 ba_cron_day: "3"
 ba_cron_hour: "05"
-drush_path: /usr/local/bin/drush
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/45"
-    job: "{{ drush_path }} -r {{ drupal_core_path }} core-cron --quiet"
+    job: "{{ drush_source_install_bin_path }}/drush -r {{ drupal_core_path }} core-cron --quiet"
 
   - name: "Drupal Clear Views Cache"
     minute: "20"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ drush_path }} cache:clear views   > /dev/null 2>&1"
+    job: "{{ drush_source_install_bin_path }}/drush cache:clear views   > /dev/null 2>&1"
 
   - name: "Drupal SQL dump"
     minute: "01"
     weekday: "{{ ba_cron_day }}"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ drush_path }} -r {{ drupal_core_path }} sql:dump --result-file=/tmp/bradford-abbas.uk.sql "
+    job: "{{ drush_source_install_bin_path }}/drush -r {{ drupal_core_path }} sql:dump --result-file=/tmp/bradford-abbas.uk.sql "
 
   - name: "Compress Drupal files"
     minute: "06"
