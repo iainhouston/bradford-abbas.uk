@@ -1,11 +1,13 @@
 ---
 # Local Vagrant options.
 # ______________________
-vagrant_box: geerlingguy/ubuntu1804
+vagrant_box: geerlingguy/drupal-vm
 vagrant_hostname: vagrant.bapc-drupal9.uk
 vagrant_machine_name: local-BAPC9
 vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
+vagrant_synced_folder_default_type: nfs
+vagrant_gui: false
 
 # Configure the synced folder.
 vagrant_synced_folders:
@@ -23,7 +25,7 @@ vagrant_plugins:
   - name: vagrant-auto_network
 
 # Minimum required versions.
-drupalvm_vagrant_version_min: '2.2.6'
+drupalvm_vagrant_version_min: '2.2.10'
 drupalvm_ansible_version_min: '2.9'
 
 # Memory and CPU to use for this VM.
@@ -42,17 +44,19 @@ drupal_site_name: "BAPC Development Website"
 drush_path: /usr/local/bin/drush
 
 php_date_timezone: "Europe/London"
-php_sendmail_path: "/opt/mailhog/mhsendmail"
+
+# installed_extras are web / server utilities (and not Ubuntu / Linux ones)
 installed_extras:
   # - drush
-  - mailhog
   - adminer
   - pimpmylog
   - xdebug
+  - mailhog
+php_sendmail_path: "/opt/mailhog/mhsendmail"
 
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
-php_xdebug_version: "2.8.1"
+php_xdebug_version: "2.9.5"
 php_xdebug_cli_disable: yes
 php_xdebug_remote_enable: 1
 php_xdebug_remote_connect_back: 1
@@ -96,6 +100,7 @@ apache_vhosts:
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 # For production we use Ansible Vault-encrypted prod_secrets.yml
+drupal_account_name: admin
 drupal_account_pass: admin
 drupal_db_user: drupal
 drupal_db_name: drupal

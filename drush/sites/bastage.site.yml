@@ -1,0 +1,9 @@
+balive:
+  host: server.bradford-abbas.uk
+  ssh:
+    tty: 0
+  root: /var/www/drupal/web
+  uri: staging.bradford-abbas.uk
+  user: drupaladmin
+# You'll need to have ssh-copy-id 'd your own ssh keys to drupaladmin@server.bradford-abbs.uk
+# if yours is not the Ansible controller that provisioned the BAPC server initially

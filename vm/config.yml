@@ -13,6 +13,7 @@ drupal_build_makefile: false
 
 # We are using a "composer based site deployment strategy"
 # i.e we are intalling Drupal by means of our own composer.json
+composer_global_packages: []
 drupal_build_composer: false
 drupal_composer_dependencies: []
 
@@ -77,6 +78,7 @@ mysql_users:
     password: "{{ drupal_db_password }}"
     priv: "{{ drupal_db_name }}.*:ALL"
 
+# extra_packages are apt-installed packages for Ubuntu Linux
 extra_packages:
   - unzip
   - emacs-nox

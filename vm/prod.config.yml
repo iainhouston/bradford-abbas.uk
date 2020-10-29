@@ -16,11 +16,11 @@ drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
 drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
-webserver_name: webserver
+webserver_name: server
 vagrant_hostname: "{{ webserver_name }}.{{ drupal_domain }}"
 
 # setup DKIM; Place certs etc.
-# pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 
 extra_security_enabled: true
@@ -53,7 +53,7 @@ ba_cron_hour: "05"
 drush_path: /usr/local/bin/drush
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
-    minute: "*/15"
+    minute: "*/45"
     job: "{{ drush_path }} -r {{ drupal_core_path }} core-cron --quiet"
 
   - name: "Drupal Clear Views Cache"

@@ -5,7 +5,7 @@ ENV['DRUPALVM_PROJECT_ROOT'] = "#{__dir__}"
 ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 
 # The relative path from the project root to the Drupal VM directory.
-ENV['DRUPALVM_DIR'] = "vendor/iainhouston/drupal-vm"
+ENV['DRUPALVM_DIR'] = "vendor/geerlingguy/drupal-vm"
 
 # When provisioning VM, skip live-only tasks
 ENV['DRUPALVM_ANSIBLE_ARGS'] = '--skip-tags=prod_only --vault-password-file="${HOME}/.vaultpw"'

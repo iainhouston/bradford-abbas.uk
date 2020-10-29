@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99b1afc55d2607dc412918aa70da5508",
+    "content-hash": "58fbf56a5f833b0fa87d9feb0cf893cc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8395,31 +8395,21 @@
             }
         },
         {
-            "name": "iainhouston/drupal-vm",
-            "version": "6.0.0",
+            "name": "geerlingguy/drupal-vm",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/iainhouston/drupal-vm.git",
-                "reference": "cdc7f4da6d111a69f6d4b29177c660b1216f495e"
+                "url": "https://github.com/geerlingguy/drupal-vm.git",
+                "reference": "013c2a0098779ade442cc23db57636006de381d6"
             },
-            "replace": {
-                "geerlingguy/drupal-vm": "5.0.2"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/013c2a0098779ade442cc23db57636006de381d6",
+                "reference": "013c2a0098779ade442cc23db57636006de381d6",
+                "shasum": ""
             },
             "type": "vm",
-            "scripts": {
-                "run-tests": [
-                    "./tests/run-tests.sh"
-                ],
-                "docker-bake": [
-                    "./provisioning/docker/bake.sh"
-                ],
-                "docker-save-image": [
-                    "./provisioning/docker/save-image.sh"
-                ],
-                "docker-load-image": [
-                    "./provisioning/docker/load-image.sh"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8442,11 +8432,21 @@
                 "vm"
             ],
             "support": {
+                "docs": "http://docs.drupalvm.com",
                 "issues": "https://github.com/geerlingguy/drupal-vm/issues",
-                "source": "https://github.com/geerlingguy/drupal-vm",
-                "docs": "http://docs.drupalvm.com"
+                "source": "https://github.com/geerlingguy/drupal-vm"
             },
-            "time": "2019-12-03T12:46:10+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/geerlingguy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/geerlingguy",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-09-30T03:26:27+00:00"
         }
     ],
     "aliases": [],

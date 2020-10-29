@@ -1,8 +1,0 @@
----
-- name: Replace persistently localhost with our own
-  lineinfile:
-    path: /etc/cloud/templates/hosts.debian.tmpl
-    regexp: '^127\.0\.0\.1'
-    line: "127.0.0.1 {{ vagrant_hostname }} localhost {{ webserver_name }}"
-  become: yes
-  tags: ['prod_only']

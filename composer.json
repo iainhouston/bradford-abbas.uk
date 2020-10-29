@@ -113,7 +113,7 @@
 	},
 	"require-dev": {
 		"drupal/devel": "^3.0",
-		"iainhouston/drupal-vm": "~6.0"
+		"geerlingguy/drupal-vm": "^6.0"
 	},
 	"type": "project"
 }
