@@ -1,7 +1,9 @@
 export BADEV="$HOME/bapc-drupal9"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 export LIVE_SSH_ALIAS="cloudadmin"
+export STAGING_SSH_ALIAS="webadmin"
 export DEVALIAS="@ba9dev"
+export STAGEALIAS="@bastage"
 export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"
 
@@ -29,6 +31,7 @@ alias cdv="cd $BADEV/vendor/iainhouston/drupal-vm"
 # echo "sqldumpLive    - Get latest SQL from live site"
 echo "cloneLive2Dev  - Clone Live Database and Files to Dev site"
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
+alias cloneLive2Stage="sh $BADEVSCRIPTS/cloneLive2Stage.sh"
 alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
 alias sqldumpDev="sh $BADEVSCRIPTS/sqldumpDev.sh"
 
