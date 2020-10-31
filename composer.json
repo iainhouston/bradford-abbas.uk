@@ -57,10 +57,6 @@
 		},
 		{
 			"type": "git",
-			"url": "https://github.com/iainhouston/drupal-vm.git"
-		},
-		{
-			"type": "git",
 			"url": "https://github.com/iainhouston/pellucid_gallery.git"
 		},
 		{
