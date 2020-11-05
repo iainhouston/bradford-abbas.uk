@@ -1,6 +1,6 @@
 export BADEV="$HOME/bapc-drupal9"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
-export LIVE_SSH_ALIAS="cloudadmin"
+export LIVE_SSH_ALIAS="webadmin"
 export STAGING_SSH_ALIAS="webadmin"
 export DEVALIAS="@ba9dev"
 export STAGEALIAS="@bastage"

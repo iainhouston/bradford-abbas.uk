@@ -1,9 +1,9 @@
 balive:
-  host: webserver.bradford-abbas.uk
+  host: server.bradford-abbas.uk
   ssh:
     tty: 0
   root: /var/www/drupal/web
   uri: bradford-abbas.uk
-  user: cloudadmin
-# You'll need to have ssh-copy-id 'd your own ssh keys to cloudadmin@webserver.bradford-abbs.uk
+  user: webadmin
+# You'll need to have ssh-copy-id 'd your own ssh keys to webadmin@server.bradford-abbs.uk
 # if yours is not the Ansible controller that provisioned the BAPC server initially

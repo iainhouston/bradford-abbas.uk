@@ -41,19 +41,16 @@ vagrant_public_ip: ""
 drupal_install_site: false
 
 drupal_site_name: "BAPC Development Website"
-drush_path: /usr/local/bin/drush
-
-php_date_timezone: "Europe/London"
 
 # installed_extras are web / server utilities (and not Ubuntu / Linux ones)
 installed_extras:
-  # - drush
+  - drush
   - adminer
   - pimpmylog
   - xdebug
   - mailhog
 php_sendmail_path: "/opt/mailhog/mhsendmail"
-
+php_date_timezone: "Europe/London"
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
 php_xdebug_version: "2.9.5"

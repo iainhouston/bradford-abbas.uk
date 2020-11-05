@@ -40,9 +40,25 @@ drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.')
 # (required), minute, hour, day, weekday, month, job (required), and state.
 drupalvm_cron_jobs: []
 
+installed_extras:
+  - drush
+
+drush_launcher_install: false
+# Install Drush via Composer globally.
+# Install from source (git clone + composer-based install).
+drush_install_from_source: true
+drush_source_install_bin_path: /usr/local/bin/drush
+drush_source_install_path: /usr/local/share/drush
+drush_source_install_version: "10.x"
+drush_keep_updated: false
+drush_force_update: false
+drush_force_composer_install: false
+drush_composer_cli_options: "--prefer-dist --no-interaction"
+drush_clone_depth: 1
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: false
+
 
 # Helper variable to configure the PHP-FPM connection for each Apache
 # VirtualHost in the `apache_vhosts` list.
