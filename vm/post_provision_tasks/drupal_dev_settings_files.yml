@@ -54,10 +54,13 @@
   blockinfile:
     dest: "{{ drupal_core_path }}/sites/default/settings.php"
     block: |
+          # mailhog needs the mailsystem to use default PHP sender
+          $config['mailsystem.settings']['defaults']['sender'] = 'php_mail';
+          # settings.local.php disables CSS aggregation and disables Internal Page Cache etc.
           if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
             include $app_root . '/' . $site_path . '/settings.local.php';
            }
-          ini_set('error_reporting', !E_NOTICE & !E_WARNING);
+          # ini_set('error_reporting', !E_NOTICE & !E_WARNING);
   tags: ['test_only']
 
 - name: Copy services file to sites/default/
@@ -79,7 +82,7 @@
     login_user: root
     state: present
   tags: ['test_only']
-  
+
 - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
   mysql_user:
     name: "{{drupal_db_user}}"
