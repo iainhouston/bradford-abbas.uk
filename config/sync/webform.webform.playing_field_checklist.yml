@@ -1,6 +1,13 @@
+uuid: 49aed516-5b27-4428-8a37-33e3bca71987
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -11,7 +18,7 @@ id: playing_field_checklist
 title: 'Playing Field checklist'
 description: ''
 category: ''
-elements: "name_of_inspector:\n  '#type': webform_entity_select\n  '#title': 'Name of inspector'\n  '#help': 'Select your name from this list of website users'\n  '#select2': true\n  '#target_type': user\n  '#selection_handler': 'default:user'\n  '#selection_settings':\n    include_anonymous: false\n    filter:\n      type: _none\n  '#required': true\ndate_and_time_of_inspection:\n  '#type': datetime\n  '#title': 'Date and time of inspection'\n  '#date_time_step': '1800'\n  '#required': true\ncontainer:\n  '#type': container\n  is_fencing_secure_:\n    '#type': webform_toggle\n    '#title': 'Is fencing secure?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_gates_functioning_correctly_:\n    '#type': webform_toggle\n    '#title': 'Are gates functioning correctly?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  has_all_litter_and_debris_been_removed_from_site_:\n    '#type': webform_toggle\n    '#title': 'Has all litter and debris been removed from site?'\n    '#help': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"section\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Pay particular attention to sharp objects (eg: glass) in loose fill safety surfacing</span></p>\\n</div>\\n</div>\\n</div>\\n</div>\"\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  no_obvious_damage_vandalism_:\n    '#type': webform_toggle\n    '#title': 'No obvious damage/vandalism?'\n    '#help': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"section\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Has each item of equipment been visually inspected to ensure that there is no obvious damage/vandalism?</span></p>\\n</div>\\n</div>\\n</div>\\n</div>\"\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_fixings_and_fittings_secure_:\n    '#type': webform_toggle\n    '#title': 'Are all fixings and fittings secure?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_nuts_and_bolts_etc_secure_:\n    '#type': webform_toggle\n    '#title': 'Are all nuts and bolts etc secure?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_moving_parts_free_and_move_correctly_:\n    '#type': webform_toggle\n    '#title': 'Are all moving parts free and move correctly?'\n    '#help': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"section\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Inspect ALL moving parts to ensure free and correct movement</span></p>\\n</div>\\n</div>\\n</div>\\n</div>\"\n    '#on_text': 'Yes'\n    '#off_text': 'No'\nflexbox:\n  '#type': webform_flexbox\n  faults:\n    '#type': textarea\n    '#title': Faults\n    '#help': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Identify reason(s) for failure and report to Manager</span></p>\\n</div>\\n</div>\\n</div>\"\n    '#description': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Identify reason(s) for failure and report to Manager</span></p>\\n</div>\\n</div>\\n</div>\"\n  action:\n    '#type': textarea\n    '#title': Action\n    '#help': \"<div class=\\\"page\\\" title=\\\"Page 1\\\">\\n<div class=\\\"layoutArea\\\">\\n<div class=\\\"column\\\">\\n<p><span style=\\\"font-family:'ArialMT'; font-size:11.000000pt\\\">Identify reason(s) for failure and report to Manager</span></p>\\n</div>\\n</div>\\n</div>\"\n"
+elements: "name_of_inspector:\n  '#type': webform_entity_select\n  '#title': 'Name of inspector'\n  '#help': 'Select your name from this list of website users'\n  '#select2': true\n  '#target_type': user\n  '#selection_handler': 'default:user'\n  '#selection_settings':\n    include_anonymous: false\n    filter:\n      type: _none\n  '#required': true\ndate_and_time_of_inspection:\n  '#type': datetime\n  '#title': 'Date and time of inspection'\n  '#date_time_step': '1800'\n  '#required': true\ncontainer:\n  '#type': container\n  is_fencing_secure_:\n    '#type': checkbox\n    '#title': ' Does all fencing appear to be secure?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_gates_functioning_correctly_:\n    '#type': checkbox\n    '#title': 'Are gates functioning correctly?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  has_all_litter_and_debris_been_removed_from_site_:\n    '#type': checkbox\n    '#title': 'Has all litter and debris been removed from site?'\n    '#help': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"section\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Pay particular attention to sharp objects (eg: glass) in loose fill safety surfacing</span></p>\n      </div>\n      </div>\n      </div>\n      </div>\n      \n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  no_obvious_damage_vandalism_:\n    '#type': checkbox\n    '#title': 'No obvious damage/vandalism?'\n    '#help': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"section\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Has each item of equipment been visually inspected to ensure that there is no obvious damage/vandalism?</span></p>\n      </div>\n      </div>\n      </div>\n      </div>\n      \n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_fixings_and_fittings_secure_:\n    '#type': checkbox\n    '#title': 'Do all fixings and fittings appear to be secure as far as you can see ?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_nuts_and_bolts_etc_secure_:\n    '#type': checkbox\n    '#title': 'Do all nuts and bolts etc.appear to be secure as far as you can see?'\n    '#on_text': 'Yes'\n    '#off_text': 'No'\n  are_all_moving_parts_free_and_move_correctly_:\n    '#type': checkbox\n    '#title': 'Do all moving parts seem to allow free and correct movement?'\n    '#help': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"section\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Inspect ALL moving parts to ensure free and correct movement</span></p>\n      </div>\n      </div>\n      </div>\n      </div>\n      \n    '#on_text': 'Yes'\n    '#off_text': 'No'\nflexbox:\n  '#type': webform_flexbox\n  faults:\n    '#type': textarea\n    '#title': Faults\n    '#help': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Identify reason(s) for failure and report to Manager</span></p>\n      </div>\n      </div>\n      </div>\n      \n    '#description': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Identify reason(s) for failure and report to Manager</span></p>\n      </div>\n      </div>\n      </div>\n      \n  action:\n    '#type': textarea\n    '#title': Action\n    '#help': |\n      <div class=\"page\" title=\"Page 1\">\n      <div class=\"layoutArea\">\n      <div class=\"column\">\n      <p><span style=\"font-family:'ArialMT'; font-size:11.000000pt\">Identify reason(s) for failure and report to Manager</span></p>\n      </div>\n      </div>\n      </div>"
 css: ''
 javascript: ''
 settings:
@@ -21,15 +28,15 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /
-  page_confirm_path: /
+  page_submit_path: /playing-field-checklist
+  page_confirm_path: /playing_field_checklist
   page_theme_name: ''
   form_title: both
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -63,7 +70,7 @@ settings:
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
-  submission_user_duplicate: false
+  submission_user_duplicate: true
   submission_access_denied: default
   submission_access_denied_title: ''
   submission_access_denied_message: ''
@@ -84,6 +91,8 @@ settings:
   wizard_progress_link: false
   wizard_progress_states: false
   wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
@@ -139,6 +148,8 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -190,6 +201,42 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    notes: ''
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: bradfordabbas@dorset-aptc.gov.uk
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
-uuid: 49aed516-5b27-4428-8a37-33e3bca71987

@@ -29,8 +29,6 @@ module:
   image: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
-  jquery_ui_tabs: 0
-  jquery_ui_tooltip: 0
   link: 0
   mailsystem: 0
   media: 0

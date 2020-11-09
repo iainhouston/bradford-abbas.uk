@@ -1,3 +1,4 @@
+uuid: b0b43553-00a0-4b4b-a319-49845439dce0
 langcode: en
 status: open
 dependencies:
@@ -24,8 +25,8 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /
-  page_confirm_path: /
+  page_submit_path: ''
+  page_confirm_path: ''
   page_theme_name: ''
   form_title: both
   form_submit_once: false
@@ -87,6 +88,8 @@ settings:
   wizard_progress_link: false
   wizard_progress_states: false
   wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
@@ -142,6 +145,8 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
 access:
   create:
     roles:
@@ -193,6 +198,7 @@ handlers:
   email_confirmation:
     id: email
     label: 'Email confirmation'
+    notes: ''
     handler_id: email_confirmation
     status: true
     conditions: {  }
@@ -229,6 +235,7 @@ handlers:
   email_notification:
     id: email
     label: 'Email notification'
+    notes: ''
     handler_id: email_notification
     status: true
     conditions: {  }
@@ -263,6 +270,5 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
-uuid: b0b43553-00a0-4b4b-a319-49845439dce0
 _core:
   default_config_hash: QCxQeKi6Joed6MGWIBdsYhCEgQGsu4kKTZGzxlbHJKs
