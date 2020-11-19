@@ -14,7 +14,7 @@
     src: "{{ config_dir }}/certs/SSL.key"
     dest: /etc/ssl/private/SSL.key
     owner: root
-    group: ssl-cert
+    group: root
     mode: a-w,o-r,ug+r
   become: yes
   tags: ['drupal', 'prod_only']

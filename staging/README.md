@@ -1,4 +1,37 @@
-How to set up the administrator account prior to provisioning the live server
+
+TODO
+-----
+Quite a bit!
+
+This file is about moving the production *old* server to a *new* machine.
+
+You'll need to inspect and be prepared to alter the variables in `./init.yml`, `../scripts/badev/dev_aliases`, `../drush/sites/bastage.site.yml`, and `~/.ssh/config`
+
+How to create a virtual staging machine
+---------------------------------------
+
+You may like to do this to practice provisioning the new server by setting up and provisioning this virtual staging server first
+
+ - Create a new directory;
+  say `~/VirtualBox\ VMs/staging.bradford-abbas.uk`
+  and `cd ~/VirtualBox\ VMs/staging.bradford-abbas.uk`
+
+      vagrant box add geerlingguy/ubuntu2004
+
+  - copy `Vagrantfile.rb` in this (`staging`) directory to `vagrant.bapc-staging.uk/Vagrantfile` (NB: no `.rb` file extension)
+
+  - `vagrant up` and then `vagrant ssh` into the guest virtual machine (not quite sure why the next step fails if we forget to do this `vagrant ssh` first), have a look around, and then `exit` back to the host machine
+
+  - So, with `~/.ssh/config` having:
+
+        Host stageadmin
+            User vagrant
+            Hostname vagrant.bapc-staging.uk
+            PreferredAuthentications publickey
+
+  we can `ssh stageadmin`
+
+How to set up the administrator account prior to provisioning the new staging server
 -----------------------------------------------------------------------------
 
 Instructions for generating, and information about the user names and passwords
@@ -11,18 +44,28 @@ From the project directory:
 
 Run the `init.yml` playbook:
 
-    ansible-playbook -i staging/inventory \
-    staging/init.yml -e "ansible_ssh_user=root" \
-    --vault-password-file="~/.vaultpw"
+From the project directory:
+
+    ansible-playbook staging/init.yml \
+        --inventory-file=staging/inventory \
+        --extra-vars="ansible_ssh_user=vagrant" \
+        --vault-password-file="~/.vaultpw"
 
  Now you are ready to provision the staging server.
+
+ Provisioning the new staging server
+ ---------------
+
+ The vault and superuser "become" passwords are both identical and listed in `../staging/secrets.yml` as the input to `openssl passwd -1 <input pw>`
 
      DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
      --inventory-file=staging/inventory \
      --vault-password-file="~/.vaultpw" \
      --extra-vars="config_dir=$(pwd)/vm" \
      --skip-tags=test_only \
-     --extra-vars="ansible_ssh_user=webadmin" \
+     --extra-vars="ansible_ssh_user=vagrant" \
      --ask-become-pass
+
+
 
 

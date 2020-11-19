@@ -16,6 +16,7 @@
         password: "{{ admin_password }}"
         groups: "{{ admin_group }},www-data"
         shell: /bin/bash
+      become: yes
 
     - name: Add local SSH public key to admin account authorized_keys.
       authorized_key:
@@ -23,6 +24,7 @@
         key: "{{ lookup('file', admin_pubkey) }}"
         manage_dir: yes
       when: admin_copy_ssh_pubkey
+      become: yes
 
     - name: Disable requiretty.
       lineinfile:
@@ -30,3 +32,4 @@
         regexp: '^Defaults.+requiretty'
         line: 'Defaults    !requiretty'
         state: present
+      become: yes

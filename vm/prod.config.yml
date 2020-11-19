@@ -1,6 +1,6 @@
 ---
 # Deploy from the project's Git repository.
-drupal_deploy: false
+drupal_deploy: true
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
 #  User ansible-playbook's --extra-args for:
@@ -9,14 +9,14 @@ drupal_composer_install_dir: /var/www/drupal
 drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 
 drupal_install_site: false
-drupal_site_name: "BAPC Staging Website"
+drupal_site_name: "BAPC Website"
 drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”]
 # Other install args provided in prod.secrets.yml
 
 # Set the domain for this site appropriately.
 drupal_domain: "bradford-abbas.uk"
 drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
-webserver_name: server
+webserver_name: webserver
 vagrant_hostname: "{{ webserver_name }}.{{ drupal_domain }}"
 
 # setup DKIM; Place certs etc.
@@ -36,7 +36,7 @@ apache_vhost_redirect_parameters: |
 
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
-    serveralias: "www.{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
     extra_parameters: "{{ apache_vhost_redirect_parameters }}"
 
 apache_vhosts_ssl:
