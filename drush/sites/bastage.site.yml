@@ -3,7 +3,7 @@ balive:
   ssh:
     tty: 0
   root: /var/www/drupal/web
-  uri: staging.bradford-abbas.uk
-  user: webadmin
+  uri: https://staging.bradford-abbas.uk
+  user: vagrant
 # You'll need to have ssh-copy-id 'd your own ssh keys to webadmin@vagrant.bapc-staging.uk
 # if yours is not the Ansible controller that provisioned the BAPC server initially

@@ -1,7 +1,7 @@
 export BADEV="$HOME/bapc-drupal9"
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 export LIVE_SSH_ALIAS="webadmin"
-export STAGING_SSH_ALIAS="webadmin"
+export STAGING_SSH_ALIAS="stageadmin"
 export DEVALIAS="@ba9dev"
 export STAGEALIAS="@bastage"
 export DRUSH="$BADEV/vendor/drush/drush/drush"

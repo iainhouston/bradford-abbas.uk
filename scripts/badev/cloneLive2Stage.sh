@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-set -o xtrace
-
 # Dump remote database to local sql
 NOW=$(date +"%a-%H%M-%d%b%y")
 FILE="$BADEV/vm/saved_sql/live/$NOW.sql"

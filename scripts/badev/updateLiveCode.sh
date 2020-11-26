@@ -5,4 +5,5 @@ ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
 --inventory-file=vm/inventory \
 --tags=drupal   \
 --extra-vars="config_dir=$(pwd)/vm" \
---become --ask-become-pass --ask-vault-pass
+--vault-password-file="~/.vaultpw" \
+--become --ask-become-pass
