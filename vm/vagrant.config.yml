@@ -2,7 +2,7 @@
 # Local Vagrant options.
 # ______________________
 vagrant_box: geerlingguy/drupal-vm
-vagrant_hostname: vagrant.bapc-drupal9.uk
+vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: local-BAPC9
 vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
@@ -96,7 +96,7 @@ apache_vhosts:
     documentroot: "{{ dashboard_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-# For production we use Ansible Vault-encrypted prod_secrets.yml
+# For production we use Ansible Vault-encrypted `secrets.yml`
 drupal_account_name: admin
 drupal_account_pass: admin
 drupal_db_user: drupal

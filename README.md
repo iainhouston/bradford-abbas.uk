@@ -7,7 +7,7 @@ Quick start
 
 2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
-  ```
+  ```sh 
   alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./scripts/badev/dev_aliases.sh"
   ```
 
@@ -21,11 +21,15 @@ Quick start
 	  safecex        - Safe export of Dev site's configuration
 	  endev          - Enable development modules in Dev site
 	```
+	
+5.  `composer install`. 
 
-Regular maintenance
+6.  `vagrant up`
+
+Website evelopment and maintenance stategy
 ===============
 
-Further information  can be found in my web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
+Now you'll need to look in the web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
 
 
 TO DO items

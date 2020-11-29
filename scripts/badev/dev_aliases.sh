@@ -1,36 +1,43 @@
-export BADEV="$HOME/bapc-drupal9"
-export BADEVSCRIPTS="$BADEV/scripts/badev"
-export LIVE_SSH_ALIAS="webadmin"
-export STAGING_SSH_ALIAS="stageadmin"
-export DEVALIAS="@ba9dev"
-export STAGEALIAS="@bastage"
-export DRUSH="$BADEV/vendor/drush/drush/drush"
-alias drush="$DRUSH"
+# Project directory; created when cloned from GitHub
+export BADEV="$HOME/bradford-abbas.uk"
 
-echo "updateLiveCode - Code and Config to Live site"
-alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
-
-# Production to Development
-# echo "rsyncp2dfiles  - Get latest files from live site"
-alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
-
-# exceptionally - bring dev Drupal Config settings in line with live ones
-alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
-
-# Development change directory
-alias cdc="cd $BADEV/"
-alias cdd="cd $BADEV/web/"
+# Convenience commands change directory
+alias cdp="cd $BADEV/"
+alias cdw="cd $BADEV/web/"
 alias cdl="cd $BADEV/web/libraries/ && ls $BADEV/web/libraries/"
 alias cdm="cd $BADEV/web/modules/contrib/ && ls $BADEV/web/modules/contrib/"
 alias cdt="cd $BADEV/web/themes/contrib/pellucid_olivero/ && ls ./"
 alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
-alias cdv="cd $BADEV/vendor/iainhouston/drupal-vm"
+alias cdv="cd $BADEV/vendor/geerlingguy/drupal-vm"
 
-# Dumps: SQL
-# echo "sqldumpLive    - Get latest SQL from live site"
+# the following aliases must have corresponding `Host` settings in `~/.ssh/config`
+export LIVE_SSH_ALIAS="webadmin"
+export STAGING_SSH_ALIAS="stageadmin"
+
+# the following aliases must have corresponding `.yml` files in `drush/sites`
+export DEVALIAS="@badev"
+export STAGEALIAS="@bastage"
+
+export DRUSH="$BADEV/vendor/drush/drush/drush"
+alias drush="$DRUSH"
+
+# convenience commands for running utility scripts live here
+export BADEVSCRIPTS="$BADEV/scripts/badev"
+
+echo "updateLiveCode - Code and Config to Live site"
+alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
+
+# Production to Development
+alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
+# exceptionally - bring dev Drupal Config settings in line with live ones
+alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
+
+# Dumps: SQL and Static files
 echo "cloneLive2Dev  - Clone Live Database and Files to Dev site"
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
+
+# Dumps: SQL
 alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
 alias sqldumpDev="sh $BADEVSCRIPTS/sqldumpDev.sh"
 
