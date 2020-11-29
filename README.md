@@ -3,17 +3,17 @@
 Quick start
 ========
 
-1. Clone this repo to `~/bapc-drupal9`
+1. `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 
 2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
   ```
-  alias cdba9dev="cd ${HOME}/bapc-drupal9 && source ./scripts/badev/dev_aliases.sh"
+  alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./scripts/badev/dev_aliases.sh"
   ```
 
 3. `$ source ~/.zshrc`
 
-4. `$ cdba9dev` =>
+4. `$ cdbadev` =>
 
     ```sh
 	  updateLiveCode - Code and Config to Live site
@@ -25,7 +25,7 @@ Quick start
 Regular maintenance
 ===============
 
-Exhaustive detail can be found in my web log document ["DrupalVM in use"](https://iainhouston.com/drupalbapc/)
+Further information  can be found in my web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
 
 
 TO DO items
