@@ -12,24 +12,16 @@ How to create a virtual staging machine
 
 You may like to do this to practice provisioning the new server by setting up and provisioning this virtual staging server first
 
- - Create a new directory;
-  say `~/VirtualBox\ VMs/staging.bradford-abbas.uk`
-  and `cd ~/VirtualBox\ VMs/staging.bradford-abbas.uk`
+ -  Create a new directory:  
+ 
+    	cd && mkdir staging.bradford-abbas.uk
+    	cd ~/staging.bradford-abbas.uk && vagrant box add geerlingguy/ubuntu2004
 
-      vagrant box add geerlingguy/ubuntu2004
+  - copy `Vagrantfile.rb` in this (`staging`) directory to `~/staging.bradford-abbas.uk/Vagrantfile` (NB: no `.rb` file extension)
 
-  - copy `Vagrantfile.rb` in this (`staging`) directory to `vagrant.bapc-staging.uk/Vagrantfile` (NB: no `.rb` file extension)
+  - `vagrant up` and then `vagrant ssh` into the guest virtual machine ~~~(not quite sure why the next step fails if we forget to do this `vagrant ssh` first); have a look around, and then `exit` back to the host machine~~~
 
-  - `vagrant up` and then `vagrant ssh` into the guest virtual machine (not quite sure why the next step fails if we forget to do this `vagrant ssh` first), have a look around, and then `exit` back to the host machine
-
-  - So, with `~/.ssh/config` having:
-
-        Host stageadmin
-            User vagrant
-            Hostname vagrant.bapc-staging.uk
-            PreferredAuthentications publickey
-
-  we can `ssh stageadmin`
+  
 
 How to set up the administrator account prior to provisioning the new staging server
 -----------------------------------------------------------------------------
@@ -52,11 +44,23 @@ From the project directory:
         --vault-password-file="~/.vaultpw"
 
  Now you are ready to provision the staging server.
+ 
+ But first, just check; with `~/.ssh/config` having:
+
+        Host stageadmin
+            User webadmin
+            Hostname staging.bradford-abbas.uk
+            PreferredAuthentications publickey
+
+we can `ssh stageadmin`
 
  Provisioning the new staging server
  ---------------
 
- The vault and superuser "become" passwords are both identical and listed in `../staging/secrets.yml` as the input to `openssl passwd -1 <input pw>`
+ The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw`.  
+ 
+ **Important** The origin of this password is documented in `../staging/secrets.yml`.  
+ It is generated from `openssl passwd -1 <origin>`
 
      DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
      --inventory-file=staging/inventory \
