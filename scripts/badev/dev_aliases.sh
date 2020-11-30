@@ -72,5 +72,5 @@ export NC='\x1B[0m' # No Colour
 alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ruby --version && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
 alias devSoftwareVersions='(checkVersions 2>&1) | tee  checkVersions.txt'
 
-echo "${GREEN}drush alias ${DEVALIAS} for the Development Server at ${RED}http${DEVSITE}${NC}"
-echo "${GREEN}drush alias ${STAGEALIAS} for the Staging Server at ${RED}https${STAGESITE}${NC}"
+echo "${GREEN}drush alias ${RED}${DEVALIAS}${GREEN} for the Development Server at ${RED}http://${DEVSITE}${NC}"
+echo "${GREEN}drush alias ${RED}${STAGEALIAS}${GREEN} for the Staging Server at ${RED}https://${STAGESITE}${NC}"
