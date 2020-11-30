@@ -1,3 +1,7 @@
+# Important!
+# 
+# You must check this PARAMETERS section against what names you wish to work with
+# These symmbols parameterise several other scripts and provisioning tasks
 # Project directory; created when cloned from GitHub
 export BADEV="$HOME/bradford-abbas.uk"
 
@@ -5,6 +9,17 @@ export BADEV="$HOME/bradford-abbas.uk"
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
 export DEVSITE="vagrant.bradford-abbas.uk"
 export STAGESITE="staging.bradford-abbas.uk"
+
+# the following aliases must have corresponding `.yml` files in `drush/sites`
+export DEVALIAS="@badev"
+export STAGEALIAS="@bastage"
+
+# the following aliases must have corresponding `Host` settings in `~/.ssh/config`
+export LIVE_SSH_ALIAS="webadmin"
+export STAGING_SSH_ALIAS="stageadmin"
+
+# End of main PARAMETERS section
+# ______________________________
 
 # Convenience commands change directory
 alias cdp="cd $BADEV/"
@@ -16,18 +31,11 @@ alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
 alias cdv="cd $BADEV/vendor/geerlingguy/drupal-vm"
 
-# the following aliases must have corresponding `Host` settings in `~/.ssh/config`
-export LIVE_SSH_ALIAS="webadmin"
-export STAGING_SSH_ALIAS="stageadmin"
-
-# the following aliases must have corresponding `.yml` files in `drush/sites`
-export DEVALIAS="@badev"
-export STAGEALIAS="@bastage"
-
+# The `drush` we use for this project is installed locally with composer
 export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"
 
-# convenience commands for running utility scripts live here
+# convenience commands for running utility scripts 
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 
 echo "updateLiveCode - Code and Config to Live site"
@@ -60,6 +68,9 @@ export RED='\x1B[0;31m'
 export GREEN='\x1B[0;32m'
 export NC='\x1B[0m' # No Colour
 
-# Check versions of software required on this machine
+# Check versions of software required on this host machine
 alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ruby --version && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
 alias devSoftwareVersions='(checkVersions 2>&1) | tee  checkVersions.txt'
+
+echo "${GREEN}drush alias ${DEVALIAS} for the Development Server at ${RED}http${DEVSITE}${NC}"
+echo "${GREEN}drush alias ${STAGEALIAS} for the Staging Server at ${RED}https${STAGESITE}${NC}"

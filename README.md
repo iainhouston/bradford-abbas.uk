@@ -10,6 +10,8 @@ Quick start
   ```sh 
   alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./scripts/badev/dev_aliases.sh"
   ```
+  
+  `./scripts/badev/dev_aliases.sh` is a key file that is central in helping parameterise variables in files dotted around this directory sructure.
 
 3. `$ source ~/.zshrc`
 
@@ -26,7 +28,7 @@ Quick start
 
 6.  `vagrant up`
 
-Website evelopment and maintenance stategy
+Website development and maintenance stategy
 ===============
 
 Now you'll need to look in the web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
