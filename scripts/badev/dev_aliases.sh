@@ -1,9 +1,10 @@
 # Project directory; created when cloned from GitHub
 export BADEV="$HOME/bradford-abbas.uk"
 
-# URL of Development site
-# Used, besides others, by gulp tasks in theme toolchain
+# URL of Virtual Development and Staging sites
+# Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
 export DEVSITE="vagrant.bradford-abbas.uk"
+export STAGESITE="staging.bradford-abbas.uk"
 
 # Convenience commands change directory
 alias cdp="cd $BADEV/"

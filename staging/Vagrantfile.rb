@@ -18,11 +18,9 @@ Vagrant.configure("2") do |config|
   # VirtualBox.
   config.vm.define "virtualbox" do |virtualbox|
 	# the virtual hostname
-    virtualbox.vm.hostname = "vagrant.bradford-abbas.uk"
+    virtualbox.vm.hostname = ENV["STAGESITE"]
     virtualbox.vm.box = "geerlingguy/ubuntu2004"
     virtualbox.vm.network "private_network", :auto_network => true
-    virtualbox.hostsupdater.aliases = ["staging.bradford-abbas.uk"]
-
 
     config.vm.provider :virtualbox do |v|
       v.gui = false
