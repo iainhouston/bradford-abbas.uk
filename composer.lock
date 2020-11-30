@@ -3544,11 +3544,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V2.1.0",
+            "version": "V2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "6cd365243782535dde19ce9b79f95ad3a663cb97"
+                "reference": "9da22f7cd0cd7e4dd06ff0c39c55b60da5397f39"
             },
             "require": {
                 "drupal/olivero": "1.0.*"
@@ -3566,7 +3566,7 @@
                 }
             ],
             "description": "Drupal 9 Theme  for pellucid_build",
-            "time": "2020-11-29T16:03:59+00:00"
+            "time": "2020-11-30T16:11:58+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
