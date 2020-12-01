@@ -4,10 +4,10 @@
 NOW=$(date +"%a-%H%M-%d%b%y")
 FILE="$BADEV/vm/saved_sql/live/$NOW.sql"
 echo "Clearing caches before dumping Live database"
-$DRUSH @balive cr
+$DRUSH ${LIVEALIAS} cr
 echo "Dumping Live database"
-echo "-- Ignore mysqldump error --"
-$DRUSH @balive sql:dump --result-file=/tmp/devtemp.sql --gzip
+echo "${GREEN}-- Ignore mysqldump error --${NC}"
+$DRUSH ${LIVEALIAS} sql:dump --result-file=/tmp/devtemp.sql --gzip
 echo "Copying compressed SQL file to Dev machine"
 scp $LIVE_SSH_ALIAS:/tmp/devtemp.sql.gz $FILE.gz
 gunzip $FILE.gz

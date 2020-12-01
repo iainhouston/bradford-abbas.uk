@@ -2,17 +2,21 @@
 # 
 # You must check this PARAMETERS section against what names you wish to work with
 # These symmbols parameterise several other scripts and provisioning tasks
-# Project directory; created when cloned from GitHub
+#
+# Project directory; created when cloned from GitHub thus:
+# `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 export BADEV="$HOME/bradford-abbas.uk"
 
-# URL of Virtual Development and Staging sites
+# URL of Live, and Virtual Development and Staging sites
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
-export DEVSITE="vagrant.bradford-abbas.uk"
+export LIVESITE="bradford-abbas.uk"
 export STAGESITE="staging.bradford-abbas.uk"
+export DEVSITE="vagrant.bradford-abbas.uk"
 
 # the following aliases must have corresponding `.yml` files in `drush/sites`
-export DEVALIAS="@badev"
+export LIVEALIAS="@balive"
 export STAGEALIAS="@bastage"
+export DEVALIAS="@badev"
 
 # the following aliases must have corresponding `Host` settings in `~/.ssh/config`
 export LIVE_SSH_ALIAS="webadmin"

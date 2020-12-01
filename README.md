@@ -8,10 +8,10 @@ Quick start
 2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
   ```sh 
-  alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./scripts/badev/dev_aliases.sh"
+  alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./SYMBOLS.sh"
   ```
   
-  `./scripts/badev/dev_aliases.sh` is a key file that is central in helping parameterise variables in files dotted around this directory sructure.
+  `SYMBOLS.sh` is an essential file defining symbols used in other files dotted around this directory sructure 
 
 3. `$ source ~/.zshrc`
 
