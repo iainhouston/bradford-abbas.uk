@@ -14,10 +14,8 @@ drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”
 # Other install args provided in prod.secrets.yml
 
 # Set the domain for this site appropriately.
-drupal_domain: "bradford-abbas.uk"
-drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
-webserver_name: webserver
-vagrant_hostname: "{{ webserver_name }}.{{ drupal_domain }}"
+vagrant_hostname: lookup('env','LIVESITE')
+drupal_domain_regex: "{{ vagrant_hostname | regex_findall('([^.]+)')  | join('\\.') }}"
 
 # setup DKIM; Place certs etc.
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"

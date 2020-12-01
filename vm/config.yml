@@ -34,6 +34,7 @@ drupal_db_name: drupal
 drupal_db_host: localhost
 
 drupal_domain: "{{ vagrant_hostname }}"
+# regexp for allowed sites in `settings.php`
 drupal_domain_regex: "{{ drupal_domain | regex_findall('([^.]+)')  | join('\\.') }}"
 
 # Cron jobs are added to the vagrant user's crontab. Keys include name

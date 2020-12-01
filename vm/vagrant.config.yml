@@ -5,7 +5,7 @@
 # Local Vagrant options.
 # ______________________
 vagrant_box: geerlingguy/drupal-vm
-# DEVSITE is defined in `scripts/badev/dev_aliases.sh` and is 
+# DEVSITE is defined in `SYMBOLS.sh` and is 
 # most likely something like `vagrant.bradford-abbas.uk`
 vagrant_hostname: lookup('env','DEVSITE')
 vagrant_machine_name: local-BAPC9

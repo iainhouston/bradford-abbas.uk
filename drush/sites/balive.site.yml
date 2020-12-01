@@ -1,5 +1,5 @@
 balive:
-  host: server.bradford-abbas.uk
+  host: bradford-abbas.uk
   ssh:
     tty: 0
   root: /var/www/drupal/web
