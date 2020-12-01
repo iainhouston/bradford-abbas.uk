@@ -12,7 +12,6 @@
 # -  vm/inventory
 # -  vm/vagrant.config.yml
 # -  vm/prod.config.yml
-# -  drush/sites/*
 
 # Project directory; created when cloned from GitHub thus:
 # `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`

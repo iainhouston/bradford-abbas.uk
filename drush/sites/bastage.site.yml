@@ -1,9 +1,9 @@
 balive:
-  host: staging.bradford-abbas.uk
+  host: "${env.STAGESITE}"
   ssh:
     tty: 0
   root: /var/www/drupal/web
-  uri: https://staging.bradford-abbas.uk
+  uri: "https://${env.STAGESITE}"
   user: webadmin
-# You'll need to have ssh-copy-id 'd your own ssh keys to webadmin@vagrant.bapc-staging.uk
+# You'll need to have ssh-copy-id 'd your own ssh keys to webadmin@${env.DEVSITE}
 # if yours is not the Ansible controller that provisioned the BAPC server initially
