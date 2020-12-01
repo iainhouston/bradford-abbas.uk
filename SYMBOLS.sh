@@ -2,7 +2,18 @@
 # 
 # You must check this PARAMETERS section against what names you wish to work with
 # These symmbols parameterise several other scripts and provisioning tasks
-#
+# ... but not completely yet ...
+
+# The idea is to have this repo apply to any Parish Council website
+# Unfortunately, we have not yet completed the total parameterisation of the
+# naming of the website domain names created. 
+# So domain names are still hard-coded into the following files:
+# -  staging/inventory
+# -  vm/inventory
+# -  vm/vagrant.config.yml
+# -  vm/prod.config.yml
+# -  drush/sites/*
+
 # Project directory; created when cloned from GitHub thus:
 # `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 export BADEV="$HOME/bradford-abbas.uk"
