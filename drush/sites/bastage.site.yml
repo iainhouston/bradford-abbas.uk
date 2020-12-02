@@ -1,5 +1,5 @@
 balive:
-  host: "${env.STAGESITE}"
+  host: "${env.STAGESITE}" 
   ssh:
     tty: 0
   root: /var/www/drupal/web

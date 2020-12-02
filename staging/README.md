@@ -14,36 +14,37 @@ You may like to do this to practice provisioning the new server by setting up an
 
  -  Create a new directory:  
  
+    	cabadev # assign parameterisation symbols
     	cd && mkdir staging.bradford-abbas.uk
     	cd ~/staging.bradford-abbas.uk && vagrant box add geerlingguy/ubuntu2004
 
-  - copy `Vagrantfile.rb` in this (`staging`) directory to `~/staging.bradford-abbas.uk/Vagrantfile` (NB: no `.rb` file extension)
+  - copy `~/bradford-abbas.uk/staging/Vagrantfile.rb` to `~/staging.bradford-abbas.uk/Vagrantfile` (NB: no target `.rb` file extension)
 
-  - `vagrant up` and then `vagrant ssh` into the guest virtual machine ~~~(not quite sure why the next step fails if we forget to do this `vagrant ssh` first); have a look around, and then `exit` back to the host machine~~~
+  - `vagrant up` and then `vagrant ssh` into the guest virtual machine ~~~(do we really need to do this `vagrant ssh` first?); have a look around, and then `exit` back to the host machine~~~. 
+  
+  -  `ssh-copy-id vagrant@staging.bradford-abbas.uk` using password `vagrant` so that the following  Ansible playbook can access the virtual Staging Server without further need for a password. 
 
   
 
 How to set up the administrator account prior to provisioning the new staging server
 -----------------------------------------------------------------------------
 
-Instructions for generating, and information about the user names and passwords
-are encrypted in `staging/secrets.yml`
+Instructions for generating, and information about the user names and passwords 
+are encrypted in `staging/secrets.yml`. The 
 
-From the project directory:
+From the project directory `~/bradford-abbas.uk`:
 
     ansible-vault view  staging/secrets.yml
     ansible-vault edit  staging/secrets.yml
 
-Run the `init.yml` playbook:
-
-From the project directory:
+From the project directory `~/bradford-abbas.uk` run the `init.yml` playbook:
 
     ansible-playbook staging/init.yml \
         --inventory-file=staging/inventory \
         --extra-vars="ansible_ssh_user=vagrant" \
         --vault-password-file="~/.vaultpw"
 
- Now you are ready to provision the staging server.
+ Now we are ready to provision the staging server.
  
  But first, just check; with `~/.ssh/config` having:
 
@@ -67,7 +68,7 @@ we can `ssh stageadmin`
      --vault-password-file="~/.vaultpw" \
      --extra-vars="config_dir=$(pwd)/vm" \
      --skip-tags=test_only \
-     --extra-vars="ansible_ssh_user=vagrant" \
+     --extra-vars="ansible_ssh_user=webadmin" \
      --ask-become-pass
 
 
