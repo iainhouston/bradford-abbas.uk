@@ -52,7 +52,6 @@ alias drush="$DRUSH"
 # convenience commands for running utility scripts 
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 
-echo "updateLiveCode - Code and Config to Live site"
 alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
 
 # Production to Development
@@ -61,7 +60,6 @@ alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
 alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
 
 # Dumps: SQL and Static files
-echo "cloneLive2Dev  - Clone Live Database and Files to Dev site"
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
 
 # Dumps: SQL
@@ -69,11 +67,9 @@ alias sqldumpLive="sh $BADEVSCRIPTS/sqldumpLive.sh"
 alias sqldumpDev="sh $BADEVSCRIPTS/sqldumpDev.sh"
 
 # Safe export of configuration to ensure --dev modules are not enabled
-echo "safecex        - Safe export of Dev site's configuration"
 alias safecex="sh $BADEVSCRIPTS/safecex.sh"
 
 # Enable development modules
-echo "endev          - Enable development modules in Dev site"
 alias endev="sh $BADEVSCRIPTS/endev.sh"
 
 # For pretty printing
@@ -86,7 +82,3 @@ export NC='\x1B[0m' # No Colour
 alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ruby --version && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
 alias devSoftwareVersions='(checkVersions 2>&1) | tee  checkVersions.txt'
 
-
-echo "${GREEN}drush alias ${RED}${LIVEALIAS}${GREEN} for the Live Server at ${RED}https://${LIVESITE}${NC}"
-echo "${GREEN}drush alias ${RED}${STAGEALIAS}${GREEN} for the Staging Server at ${RED}https://${STAGESITE}${NC}"
-echo "${GREEN}drush alias ${RED}${DEVALIAS}${GREEN} for the Development Server at ${RED}http://${DEVSITE}${NC}"
