@@ -8,7 +8,7 @@ Quick start
 2. Add the following alias to your `~/.zshrc`;  `~/.bashrc` (or `~/.bash_aliases` as appropriate):
 
   ```sh 
-  alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./SYMBOLS.sh"
+  alias cdbadev="cd ${HOME}/bradford-abbas.uk && source ./SYMBOLS.sh && source ./scripts/badev/motd.sh"
   ```
   
   `SYMBOLS.sh` is an essential file defining symbols used in other files dotted around this directory sructure 
@@ -22,6 +22,8 @@ Quick start
 	  cloneLive2Dev  - Clone Live Database and Files to Dev site
 	  safecex        - Safe export of Dev site's configuration
 	  endev          - Enable development modules in Dev site
+	  ...
+	  MOTD message
 	```
 	
 5.  `composer install`. 

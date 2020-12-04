@@ -26,11 +26,6 @@ Method of achieving the Objectives
 
 +	Create a completely new `ansible-playbook` playbook in this directory
 
-+	provide shortcut / alias `updateLiveCode` to invoke the playbook properly  
++	Provide shortcut / alias `updateLiveCode` to invoke the playbook properly  
 
-	```
-	ansible-playbook prod/update.playbook.yml \
-	--inventory-file=vm/inventory \
-	--extra-vars="project_dir=$(pwd)" \
-	--ask-become-pass --ask-vault-pass
-	```
+	+ see `scripts/badev/updateLiveCode.sh`
