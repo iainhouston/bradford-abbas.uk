@@ -1,4 +1,4 @@
----   
+---
 # Ansible variables file for provisioning the Development Server
 
 #
@@ -6,14 +6,14 @@
 # ______________________
 vagrant_box: geerlingguy/drupal-vm
 
-# DEVSITE is defined in `SYMBOLS.sh` and is 
+# DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
 
 # Unfortunately, the following does not work, so we hard-coded vagrant_hostname
-# vagrant_hostname: lookup('env','DEVSITE')
+#vagrant_hostname: "{{ lookup('env', 'DEVSITE') }}"
 
 # Even though the following DOES work as expected:
-# ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}" 
+# ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}"
 
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: local-BAPC9
