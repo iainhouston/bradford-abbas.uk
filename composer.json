@@ -16,8 +16,7 @@
 				"Thanks for installing this project.",
 				"More messages to follow"
 				]
-			}
-		},
+			},
 		"drupal-scaffold": {
 			"file-mapping": {
 				"[web-root]/sites/default/default.services.yml": false,
