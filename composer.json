@@ -11,6 +11,13 @@
 	},
 	"description": "Project Drupal build file for Bradford Abbas Parish Council",
 	"extra": {
+		"drupal-core-project-message": {
+			"post-install-cmd-message": [
+				"Thanks for installing this project.",
+				"More messages to follow"
+				]
+			}
+		},
 		"drupal-scaffold": {
 			"file-mapping": {
 				"[web-root]/sites/default/default.services.yml": false,
@@ -83,8 +90,9 @@
 	"require": {
 		"composer/installers": "^1.2",
 		"drupal/cleantalk": "^9.1",
-		"drupal/core-composer-scaffold": "^9.0",
-		"drupal/core-recommended": "^9.1",
+		"drupal/core-composer-scaffold": "^9.2",
+		"drupal/core-recommended": "^9.2",
+		"drupal/core-project-message": "^9.2",
 		"drupal/diff": "^1.0",
 		"drupal/draggableviews": "^2.0",
 		"drupal/honeypot": "^2.0",
