@@ -92,7 +92,7 @@
 		"drupal/mailsystem": "^4.3",
 		"drupal/pathauto": "^1.8",
 		"drupal/simplenews": "2.x-dev",
-		"drupal/swiftmailer": "2.0-beta1",
+		"drupal/swiftmailer": "^2.0",
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0@alpha",
 		"drush/drush": "^10.3",
