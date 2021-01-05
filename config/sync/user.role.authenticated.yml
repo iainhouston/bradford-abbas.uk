@@ -58,6 +58,7 @@ permissions:
   - 'use advanced search'
   - 'use text format basic_html'
   - 'view all media revisions'
+  - 'view any webform submission'
   - 'view article revisions'
   - 'view document revisions'
   - 'view media'

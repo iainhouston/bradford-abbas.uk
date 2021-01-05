@@ -12,19 +12,19 @@ definitions:
     expanded: false
     enabled: true
   node__add_page:
+    weight: -50
+    menu_name: tools
+    parent: ''
+    expanded: false
+    enabled: true
+  filter__tips_all:
     weight: -49
     menu_name: tools
     parent: ''
-    enabled: true
     expanded: false
-  filter__tips_all:
-    weight: -48
-    menu_name: tools
-    parent: ''
     enabled: false
-    expanded: false
   search__view:
-    weight: -47
+    weight: -45
     menu_name: tools
     parent: ''
     expanded: false

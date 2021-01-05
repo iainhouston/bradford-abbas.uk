@@ -3,7 +3,7 @@ newsletter:
   format: html
   priority: 0
   receipt: true
-  from_address: clerk@bradford-abbas.uk
+  from_address: webmaster@bradford-abbas.uk
   from_name: 'Bradford Abbas Parish Council'
 subscriber:
   sync_fields: true

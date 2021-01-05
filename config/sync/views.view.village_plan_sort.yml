@@ -480,7 +480,7 @@ display:
         description: 'Drag and drop the Village Plan pages into the order you require'
         expanded: false
         parent: ''
-        weight: -46
+        weight: -44
         context: '0'
         menu_name: tools
     cache_metadata:
