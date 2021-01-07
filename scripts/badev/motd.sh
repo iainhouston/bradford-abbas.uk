@@ -1,5 +1,6 @@
 echo "checkVersions  - Review  software required fot development"
 echo "cloneLive2Dev  - Sync live database and static files to Dev server"
+echo "reload_db      - Reload Dev database with most recently downloaded live database"
 echo "endev          - Enable development modules in Dev site"
 echo "safecex        - Safe export of Dev site's configuration"
 echo "updateLiveCode - Code and Config to Live site"

@@ -1,12 +1,12 @@
 # Important!
-# 
+#
 # You must check this PARAMETERS section against what names you wish to work with
 # These symmbols parameterise several other scripts and provisioning tasks
 # ... but not completely yet ...
 
 # The idea is to have this repo apply to any Parish Council website
 # Unfortunately, we have not yet completed the total parameterisation of the
-# naming of the website domain names created. 
+# naming of the website domain names created.
 # So domain names are still hard-coded into the following files:
 # -  staging/inventory
 # -  vm/inventory
@@ -49,7 +49,7 @@ alias cdv="cd $BADEV/vendor/geerlingguy/drupal-vm"
 export DRUSH="$BADEV/vendor/drush/drush/drush"
 alias drush="$DRUSH"
 
-# convenience commands for running utility scripts 
+# convenience commands for running utility scripts
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 
 alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
@@ -72,6 +72,9 @@ alias safecex="sh $BADEVSCRIPTS/safecex.sh"
 # Enable development modules
 alias endev="sh $BADEVSCRIPTS/endev.sh"
 
+# Reload database
+alias reload_db="sh $BADEVSCRIPTS/reload_db.sh"
+
 # For pretty printing
 # See https://en.wikipedia.org/wiki/ANSI_escape_code
 export RED='\x1B[0;31m'
@@ -81,4 +84,3 @@ export NC='\x1B[0m' # No Colour
 # Check versions of software required on this host machine
 alias checkVersions='php --version && composer --version && vagrant --version && echo "VirtualBox `vboxmanage --version`" && ruby --version && ansible --version && echo "NodeJS Version `node --version`" && echo "npm Version `npm --version`" && vagrant plugin list && echo "Developer Edition of `/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox --version`"'
 alias devSoftwareVersions='(checkVersions 2>&1) | tee  checkVersions.txt'
-
