@@ -15,7 +15,6 @@ drupal_build_makefile: false
 # i.e we are intalling Drupal by means of our own composer.json
 composer_global_packages: []
 drupal_build_composer: false
-drupal_composer_dependencies: []
 
 # We are not using Composer's create-project as a site deployment strategy.
 drupal_build_composer_project: false
@@ -45,17 +44,7 @@ installed_extras:
   - drush
 
 drush_launcher_install: false
-# Install Drush via Composer globally.
-# Install from source (git clone + composer-based install).
-drush_install_from_source: true
-drush_source_install_bin_path: /usr/local/bin/drush
-drush_source_install_path: /usr/local/share/drush
-drush_source_install_version: "10.x"
-drush_keep_updated: false
-drush_force_update: false
-drush_force_composer_install: false
-drush_composer_cli_options: "--prefer-dist --no-interaction"
-drush_clone_depth: 1
+
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: false
@@ -94,7 +83,7 @@ mysql_users:
 # extra_packages are apt-installed packages for Ubuntu Linux
 extra_packages:
   - unzip
-  - emacs-nox
+  - emacs25-nox
   - php-elisp
   - yaml-mode
   - opendkim

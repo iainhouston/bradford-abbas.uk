@@ -52,7 +52,7 @@ vagrant_public_ip: ""
 
 # Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
-
+  
 drupal_site_name: "BAPC Development Website"
 
 # installed_extras are web / server utilities (and not Ubuntu / Linux ones)
