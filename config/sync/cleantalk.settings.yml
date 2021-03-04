@@ -23,7 +23,7 @@ cleantalk_check_register: false
 cleantalk_check_webforms: true
 cleantalk_check_contact_forms: true
 cleantalk_check_forum_topics: false
-cleantalk_check_ccf: false
+cleantalk_check_ccf: true
 cleantalk_check_search_form: false
 cleantalk_search_noindex: false
 cleantalk_url_exclusions: ''
@@ -31,5 +31,7 @@ cleantalk_url_regexp: false
 cleantalk_fields_exclusions: ''
 cleantalk_roles_exclusions:
   administrator: administrator
+  officer: officer
 cleantalk_set_cookies: true
 cleantalk_alternative_cookies_session: false
+cleantalk_check_external: 0
