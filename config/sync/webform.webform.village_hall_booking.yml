@@ -12,7 +12,83 @@ id: village_hall_booking
 title: 'Village Hall Booking'
 description: ''
 category: ''
-elements: "hirer_name:\n  '#type': webform_name\n  '#title': 'Name of Hirer'\n  '#title_display': before\n  '#required': true\n  '#format_items': ol\n  '#first__required': true\n  '#middle__access': false\n  '#last__required': true\n  '#suffix__access': false\n  '#degree__access': false\ncontact:\n  '#type': webform_contact\n  '#title': 'Contact details'\n  '#title_display': before\n  '#required': true\n  '#format_items': ol\n  '#name__access': false\n  '#company__access': false\n  '#phone__title': 'Mobile number'\n  '#phone__title_display': before\n  '#phone__required': true\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__title': 'Post Code'\n  '#country__access': false\nmobile_number_to_be_used_during_hire:\n  '#type': tel\n  '#title': 'Mobile number to be used during hire'\n  '#description': 'If different from Mobile number above.'\n  '#title_display': before\n  '#format_items': comma\npurpose_of_hire:\n  '#type': textarea\n  '#title': 'Purpose of hire'\n  '#title_display': before\n  '#required': true\n  '#format_items': comma\nwill_alcohol_be_served_at_this_meeting_event_:\n  '#type': checkbox\n  '#title': 'Will alcohol be served at this meeting / event?'\n  '#description': 'If checked &quot;yes&quot;, please complete the<em> Serve or Sell Alcohol</em> request form which can be downloaded <a href=\"/document/19122018-1312\">from here</a>.'\nhiring_date_and_times:\n  '#type': fieldset\n  '#title': 'Hiring Date and Times'\n  '#description': 'Please note that the start and end times must be the time that you initially enter and finally exit the hall.'\n  '#required': true\n  date_and_time_of_hire:\n    '#type': datetime\n    '#title': 'Date and time of hire'\n    '#title_display': before\n    '#format_items': comma\n    '#date_date_datepicker_button': false\n    '#required': true\n  end_time_of_hire:\n    '#type': webform_time\n    '#title': 'End time of hire'\n    '#title_display': before\n    '#format_items': comma\n    '#required': true\nterms_and_conditions:\n  '#type': fieldset\n  '#title': 'Terms and Conditions'\n  '#description': '<p>A deposit of &pound;50 (Bradford Abbas resident) to &pound;100 (Non Bradford Abbas resident) is required in order to finalise the booking of the hall.</p>'\n  '#description_display': before\n  '#required': true\n  i_have_read_the_terms_and_conditions:\n    '#type': checkbox\n    '#title': 'I have read the terms and conditions'\n    '#description': '<p>Tterms and conditions are <a href=\"/document/19122018-1312\">published on the website</a></p>'\n    '#required': true\n  i_understand_that_all_rubbish_must_be_removed_from_the_premises:\n    '#type': checkbox\n    '#title': 'I understand that all rubbish must be removed from the premises'\n    '#description': '<p>I understand that <strong>all rubbish&nbsp;</strong>must be removed from the premises at the end of the hire and the hall is left clean &amp; tidy.&nbsp; I understand that I am responsible for making sure all the doors are locked and all the lights are turned off at the end of the hire.</p>'\n    '#required': true"
+elements: |-
+  hirer_name:
+    '#type': webform_name
+    '#title': 'Name of Hirer'
+    '#title_display': before
+    '#required': true
+    '#format_items': ol
+    '#first__required': true
+    '#middle__access': false
+    '#last__required': true
+    '#suffix__access': false
+    '#degree__access': false
+  contact:
+    '#type': webform_contact
+    '#title': 'Contact details'
+    '#title_display': before
+    '#required': true
+    '#format_items': ol
+    '#name__access': false
+    '#company__access': false
+    '#phone__title': 'Mobile number'
+    '#phone__title_display': before
+    '#phone__required': true
+    '#city__access': false
+    '#state_province__access': false
+    '#postal_code__title': 'Post Code'
+    '#country__access': false
+  mobile_number_to_be_used_during_hire:
+    '#type': tel
+    '#title': 'Mobile number to be used during hire'
+    '#description': 'If different from Mobile number above.'
+    '#title_display': before
+    '#format_items': comma
+  purpose_of_hire:
+    '#type': textarea
+    '#title': 'Purpose of hire'
+    '#title_display': before
+    '#required': true
+    '#format_items': comma
+  will_alcohol_be_served_at_this_meeting_event_:
+    '#type': checkbox
+    '#title': 'Will alcohol be served at this meeting / event?'
+    '#description': 'If checked &quot;yes&quot;, please complete the<em> Serve or Sell Alcohol</em> request form which can be downloaded <a href="/document/19122018-1312">from here</a>.'
+  hiring_date_and_times:
+    '#type': fieldset
+    '#title': 'Hiring Date and Times'
+    '#description': 'Please note that the start and end times must be the time that you initially enter and finally exit the hall.'
+    '#required': true
+    date_and_time_of_hire:
+      '#type': datetime
+      '#title': 'Date and time of hire'
+      '#title_display': before
+      '#format_items': comma
+      '#date_date_datepicker_button': false
+      '#required': true
+    end_time_of_hire:
+      '#type': webform_time
+      '#title': 'End time of hire'
+      '#title_display': before
+      '#format_items': comma
+      '#required': true
+  terms_and_conditions:
+    '#type': fieldset
+    '#title': 'Terms and Conditions'
+    '#description': '<p>A deposit of &pound;50 (Bradford Abbas resident) to &pound;100 (Non Bradford Abbas resident) is required in order to finalise the booking of the hall.</p>'
+    '#description_display': before
+    '#required': true
+    i_have_read_the_terms_and_conditions:
+      '#type': checkbox
+      '#title': 'I have read the terms and conditions'
+      '#description': '<p>Tterms and conditions are <a href="/document/19122018-1312">published on the website</a></p>'
+      '#required': true
+    i_understand_that_all_rubbish_must_be_removed_from_the_premises:
+      '#type': checkbox
+      '#title': 'I understand that all rubbish must be removed from the premises'
+      '#description': '<p>I understand that <strong>all rubbish&nbsp;</strong>must be removed from the premises at the end of the hire and the hall is left clean &amp; tidy.&nbsp; I understand that I am responsible for making sure all the doors are locked and all the lights are turned off at the end of the hire.</p>'
+      '#required': true
 css: ''
 javascript: ''
 settings:

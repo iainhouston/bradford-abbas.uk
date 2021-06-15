@@ -249,7 +249,9 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<p>Drag and drop the grey handle to re-order the Village Plan pages under the Category under which they've been filed.<br>\nNote that the Categories themselves (<em>File Under</em>) can only be re-ordered by a site Administrator.</p>"
+            value: |-
+              <p>Drag and drop the grey handle to re-order the Village Plan pages under the Category under which they've been filed.<br>
+              Note that the Categories themselves (<em>File Under</em>) can only be re-ordered by a site Administrator.</p>
             format: basic_html
           plugin_id: text
       footer: {  }

@@ -398,7 +398,9 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<p>Click on the Document <em>Title</em> to see the document</p>\n<p>Click on the <em>Document type</em> to see a list of all documents of that type</p>\n"
+            value: |
+              <p>Click on the Document <em>Title</em> to see the document</p>
+              <p>Click on the <em>Document type</em> to see a list of all documents of that type</p>
             format: basic_html
           plugin_id: text
       footer: {  }
@@ -461,7 +463,10 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<p>Click on a Document <em>Title</em> to see the document\n<br>Click on a <em>Document type</em> to see a list of all documents of that type\n<br>Click on a column heading to re-sort the table.</p>\n"
+            value: |
+              <p>Click on a Document <em>Title</em> to see the document
+              <br>Click on a <em>Document type</em> to see a list of all documents of that type
+              <br>Click on a column heading to re-sort the table.</p>
             format: basic_html
           plugin_id: text
       defaults:

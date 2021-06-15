@@ -12,7 +12,43 @@ id: self_isolating_help
 title: 'Self-isolating help'
 description: 'Form to register helpers for those who have to self-isolate because of the COVID-19 pandemic'
 category: ''
-elements: "my_name_is:\n  '#type': textfield\n  '#title': 'My name is'\n  '#format_items': comma\ni_live_locally_at:\n  '#type': textfield\n  '#title': 'I live locally at'\n  '#format_items': comma\nmy_telephone_number_is:\n  '#type': tel\n  '#title': 'My telephone number is'\n  '#format_items': comma\nhorizontal_rule:\n  '#type': webform_horizontal_rule\nif_you_are_self_isolating_because_of_covid_19_i_can_help_with_:\n  '#type': fieldset\n  '#title': 'If you are self-isolating because of COVID-19 I can help with:'\n  '#description': |\n    Just call or text me and I&#39;ll do my best to help.<br />\n    <br />\n    <strong>Coronavirus is contagious. Please take every precaution to ensure that spreading only kindness. Avoid physical contact (kepp distant 2m). Wash your hands regularly. Items should be left on your doorstep.</strong>\n    \n  picking_up_shopping:\n    '#type': checkbox\n    '#title': 'Picking up shopping'\n  posting_mail:\n    '#type': checkbox\n    '#title': 'Posting mail'\n  a_friendly_phone_call:\n    '#type': checkbox\n    '#title': 'A friendly phone call'\n  urgent_supplies:\n    '#type': checkbox\n    '#title': 'Urgent supplies'\nhorizontal_rule_01:\n  '#type': webform_horizontal_rule"
+elements: |-
+  my_name_is:
+    '#type': textfield
+    '#title': 'My name is'
+    '#format_items': comma
+  i_live_locally_at:
+    '#type': textfield
+    '#title': 'I live locally at'
+    '#format_items': comma
+  my_telephone_number_is:
+    '#type': tel
+    '#title': 'My telephone number is'
+    '#format_items': comma
+  horizontal_rule:
+    '#type': webform_horizontal_rule
+  if_you_are_self_isolating_because_of_covid_19_i_can_help_with_:
+    '#type': fieldset
+    '#title': 'If you are self-isolating because of COVID-19 I can help with:'
+    '#description': |
+      Just call or text me and I&#39;ll do my best to help.<br />
+      <br />
+      <strong>Coronavirus is contagious. Please take every precaution to ensure that spreading only kindness. Avoid physical contact (kepp distant 2m). Wash your hands regularly. Items should be left on your doorstep.</strong>
+      
+    picking_up_shopping:
+      '#type': checkbox
+      '#title': 'Picking up shopping'
+    posting_mail:
+      '#type': checkbox
+      '#title': 'Posting mail'
+    a_friendly_phone_call:
+      '#type': checkbox
+      '#title': 'A friendly phone call'
+    urgent_supplies:
+      '#type': checkbox
+      '#title': 'Urgent supplies'
+  horizontal_rule_01:
+    '#type': webform_horizontal_rule
 css: ''
 javascript: ''
 settings:
