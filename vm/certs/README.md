@@ -22,31 +22,24 @@ sudo opendkim-testkey −d bradford-abbas.uk −s mail −k /etc/postfix/dkim.ke
 
 # Renewing the SSL Certificate
 
-1. LCN will notify us when the SSL Certificate is due for renewal.
-    By email to bradfordabbaspc@hotmail.com
+1. We make the Domain / CA bunndle [per these instructions](https://iainhouston.com/devops/drupal/parish%20councils/2019/06/15/Annual_SSL_Renewal.html)
 
-2. We renew the SSL Certificate at [LCN's website](https://www.lcn.com/my_account/ssl_certificates) if autorenew is not set up.
-
-3. `webmaster@bradford-abbas.uk` receives an email from `geotrust` asking for aproval of the renewal
-
-4. `webmaster@bradford-abbas.uk` receives an email from `sslorders@geotrust.com` containing the new SSL Certificate together with the CA's Intermediate Certificate.
-
-5. Decrypt the old Certificates:
+1. Decrypt the old Certificates:
     ```
     ansible-vault decrypt vm/certs/SSL.crt
     ```
 
-6. Copy and paste in both new SSL Certificates from step 4 above into `SSL.crt`
+1. Copy bundle from step 1 above into `SSL.crt`
 
-7. Encrypt the new Certificates:
+1. Encrypt the new Certificates:
     ```
     ansible-vault encrypt vm/certs/SSL.crt
     ```
 
-8. Git add; commit; push above changes to our  `bradford-abbas.uk` repo on GitHub
+1. Git add; commit; push above changes to our  `bradford-abbas.uk` repo on GitHub
 
-9. `updateLiveCode` to re-configure the live server
+1. `updateLiveCode` to re-configure the live server
 
-10. Empty browser caches.
+1. Empty browser caches.
 
-11. Use the browser to check the validity and expiry date of the https connec tion to [bradford-abbas.uk](https://bradford-abbas.uk/)
+1. Use the browser to check the validity and expiry date of the https connec tion to [bradford-abbas.uk](https://bradford-abbas.uk/)
