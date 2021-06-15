@@ -39,7 +39,7 @@
                 cmd: |
                     systemctl restart php7.4-fpm
                     systemctl restart apache2.service
-                become: yes
+            become: yes
 
         -   name: checkout the latest committed program code and config settings
             git:
