@@ -29,4 +29,4 @@ $BADEV/web/sites/default/files/ \
 osascript -e 'display notification "Dev Database and Files in sync with Live system" with title "Task complete" sound name "Basso"'
 
 Elapsed_time=$(($SECONDS - $Start_time))
-echo "${GREEN}Update attempt completed in ${RED}${Elapsed_time}${GREEN} seconds${NC}"
+echo "${GREEN}Cloning Live to Dev system completed in ${RED}${Elapsed_time}${GREEN} seconds${NC}"
