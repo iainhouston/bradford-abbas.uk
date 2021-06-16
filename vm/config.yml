@@ -27,10 +27,15 @@ drupal_composer_install_dir: "/var/www/drupalvm"
 drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 drupal_core_owner: "{{ drupalvm_user }}"
 
-# These are / can be overridden in secrets.yml
+# secrets.yml is encrypted using ansible-vault
+#
+# composer_github_oauth_token is defined in `secrets.yml`
+#
+# These values are / can be overridden in secrets.yml
 drupal_db_user: drupal
 drupal_db_name: drupal
 drupal_db_host: localhost
+# End of secrets
 
 drupal_domain: "{{ vagrant_hostname }}"
 # regexp for allowed sites in `settings.php`
