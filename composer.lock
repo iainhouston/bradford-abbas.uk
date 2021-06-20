@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fc131ab89ad685bb465abc7e214735f",
+    "content-hash": "583a708333808ed03aaf4d7f04e52e08",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3543,11 +3543,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V2.1.2",
+            "version": "V2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "adf15544ded91c87e9476831f9e7d97591a13e3f"
+                "reference": "ca79635f7a83e5e9792f366c5bfc9281d9cf80c5"
             },
             "type": "drupal-theme",
             "license": [
@@ -3562,7 +3562,7 @@
                 }
             ],
             "description": "Drupal 9 Theme  for pellucid_build",
-            "time": "2020-12-08T20:23:55+00:00"
+            "time": "2021-06-20T14:48:06+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -8661,5 +8661,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
