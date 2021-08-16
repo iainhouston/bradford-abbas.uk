@@ -7,6 +7,7 @@ dependencies:
     - node.type.village_plan_page
     - taxonomy.vocabulary.village_plan_topic
   module:
+    - draggableviews
     - node
     - taxonomy
     - user
@@ -214,6 +215,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: weight_1
           entity_type: taxonomy_term
           entity_field: weight
           plugin_id: standard
@@ -222,6 +224,8 @@ display:
           table: draggableviews_structure
           field: weight
           plugin_id: standard
+          expose:
+            field_identifier: weight
       title: 'Village Plan index'
       header:
         area:

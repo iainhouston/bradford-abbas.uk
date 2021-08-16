@@ -1,7 +1,28 @@
 uuid: 1b523df7-ba6b-4d02-9f1f-31f5dbc60105
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.agenda
+    - node.type.article
+    - node.type.document
+    - node.type.item_of_expense
+    - node.type.meeting
+    - node.type.minutes
+    - node.type.page
+  module:
+    - file
+    - filter
+    - node
+    - path
+    - quickedit
+    - shortcut
+    - simplenews
+    - system
+    - toolbar
+    - tour
+    - webform
 id: officer
 label: Officer
 weight: -7

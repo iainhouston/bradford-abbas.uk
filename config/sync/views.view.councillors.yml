@@ -593,6 +593,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: field_last_name_value
           plugin_id: standard
       title: 'Councillors'' responsibilities'
       header:

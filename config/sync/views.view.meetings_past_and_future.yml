@@ -305,6 +305,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: field_meeting_date_value
           granularity: hour
           plugin_id: datetime
       title: 'Future Council meetings'
@@ -367,6 +368,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: field_meeting_date_value
           granularity: hour
           plugin_id: datetime
       filters:
