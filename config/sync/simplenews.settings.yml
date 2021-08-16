@@ -2,7 +2,7 @@ hash_expiration: 86400
 newsletter:
   format: html
   priority: 0
-  receipt: true
+  receipt: false
   from_address: webmaster@bradford-abbas.uk
   from_name: 'Bradford Abbas Parish Council'
 subscriber:
@@ -13,7 +13,7 @@ subscription:
   confirm_combined_body_unchanged: 'We have received a request to subscribe [simplenews-subscriber:mail] at [site:url]. No confirmation necessary because you are already subscribed.'
   confirm_subscribe_page: /page/thank-you-subscribing
   confirm_unsubscribe_page: /page/un-subscribe-successful
-  tidy_unconfirmed: 0
+  tidy_unconfirmed: 10
   skip_verification: false
   validate_subject: 'Manage your subscriptions at [site:name]'
   validate_body: "We have received a request to manage your subscriptions for [simplenews-subscriber:mail] at [site:url]. To proceed please use the link below.\r\n\r\n[simplenews-subscriber:manage-url]"
