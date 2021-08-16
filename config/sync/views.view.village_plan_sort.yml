@@ -237,8 +237,6 @@ display:
           table: draggableviews_structure
           field: weight
           plugin_id: standard
-          expose:
-            field_identifier: weight
       title: 'Village Plan index'
       header:
         area:

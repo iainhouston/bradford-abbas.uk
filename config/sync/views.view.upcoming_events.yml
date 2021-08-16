@@ -267,7 +267,6 @@ display:
           exposed: false
           expose:
             label: ''
-            field_identifier: field_meeting_date_value
           granularity: minute
           plugin_id: datetime
       title: 'Upcoming events'

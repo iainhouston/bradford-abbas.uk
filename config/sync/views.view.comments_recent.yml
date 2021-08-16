@@ -213,7 +213,6 @@ display:
           exposed: false
           expose:
             label: ''
-            field_identifier: created
           plugin_id: date
           entity_type: comment
           entity_field: created
@@ -229,8 +228,6 @@ display:
           plugin_id: field
           entity_type: comment
           entity_field: cid
-          expose:
-            field_identifier: cid
       title: 'Recent comments'
       empty:
         area_text_custom:

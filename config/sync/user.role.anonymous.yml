@@ -1,17 +1,7 @@
 uuid: 59a71c7a-1500-4457-bc36-54f19e0a39bf
 langcode: en
 status: true
-dependencies:
-  config:
-    - filter.format.restricted_html
-  module:
-    - comment
-    - contact
-    - filter
-    - media
-    - search
-    - simplenews
-    - system
+dependencies: {  }
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous

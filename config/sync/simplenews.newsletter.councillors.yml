@@ -12,6 +12,7 @@ from_name: 'Bradford Abbas Parish Clerk'
 subject: '[[simplenews-newsletter:name]] [node:title]'
 from_address: clerk@bradford-abbas.uk
 hyperlinks: true
+allowed_handlers: {  }
 new_account: 'off'
-opt_inout: double
+access: default
 weight: 0

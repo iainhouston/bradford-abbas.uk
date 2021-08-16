@@ -1,15 +1,7 @@
 uuid: 6402561f-89bf-46ed-a7cd-30c60f93dc8b
 langcode: en
 status: true
-dependencies:
-  config:
-    - filter.format.basic_html
-    - node.type.history_society_event
-  module:
-    - filter
-    - node
-    - simplenews
-    - system
+dependencies: {  }
 id: history_society_editor
 label: 'History society editor'
 weight: -8

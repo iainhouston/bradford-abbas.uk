@@ -650,7 +650,6 @@ display:
           exposed: false
           expose:
             label: ''
-            field_identifier: wid
           plugin_id: standard
       title: 'Recent log messages'
       header: {  }

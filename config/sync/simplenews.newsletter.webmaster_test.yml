@@ -15,5 +15,5 @@ hyperlinks: true
 allowed_handlers:
   simplenews_all: '0'
 new_account: none
-opt_inout: hidden
+access: hidden
 weight: 0

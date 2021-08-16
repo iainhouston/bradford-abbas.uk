@@ -1,29 +1,7 @@
 uuid: f650edf5-88a1-48b3-b806-06bb71ebe891
 langcode: en
 status: true
-dependencies:
-  config:
-    - filter.format.basic_html
-    - media.type.audio
-    - media.type.file
-    - media.type.image
-    - media.type.remote_video
-    - media.type.video
-    - node.type.article
-    - node.type.document
-    - node.type.village_plan_page
-  module:
-    - comment
-    - contact
-    - draggableviews
-    - filter
-    - media
-    - node
-    - search
-    - shortcut
-    - simplenews
-    - system
-    - webform
+dependencies: {  }
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
@@ -31,6 +9,7 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access browser_for_images entity browser pages'
   - 'access comments'
   - 'access content'
   - 'access draggableviews'
@@ -59,6 +38,7 @@ permissions:
   - 'delete own remote_video media'
   - 'delete own village_plan_page content'
   - 'delete village_plan_page revisions'
+  - 'dropzone upload files'
   - 'edit any audio media'
   - 'edit any document content'
   - 'edit any file media'
