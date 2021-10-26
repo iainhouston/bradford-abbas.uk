@@ -112,7 +112,7 @@
 	},
 	"require-dev": {
 		"drupal/devel": "@beta",
-		"geerlingguy/drupal-vm": "6.0.2"
+		"geerlingguy/drupal-vm": "6.0.4"
 	},
 	"type": "project"
 }

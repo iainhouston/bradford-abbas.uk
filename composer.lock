@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a45d8b977b79ffed10a61b3d4140a411",
+    "content-hash": "fffc440bc33b5ba46e8ed46de1c70453",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8486,16 +8486,16 @@
         },
         {
             "name": "geerlingguy/drupal-vm",
-            "version": "6.0.2",
+            "version": "6.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "edf73dd6d2508cb70095876c0d86b2b7fe47207d"
+                "reference": "01545c37d96d4973b57ec6e842e54c40d0988207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/edf73dd6d2508cb70095876c0d86b2b7fe47207d",
-                "reference": "edf73dd6d2508cb70095876c0d86b2b7fe47207d",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/01545c37d96d4973b57ec6e842e54c40d0988207",
+                "reference": "01545c37d96d4973b57ec6e842e54c40d0988207",
                 "shasum": ""
             },
             "type": "vm",
@@ -8536,7 +8536,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-27T21:38:23+00:00"
+            "time": "2021-05-28T20:26:07+00:00"
         }
     ],
     "aliases": [],
