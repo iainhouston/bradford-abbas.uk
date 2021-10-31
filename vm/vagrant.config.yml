@@ -4,7 +4,8 @@
 #
 # Local Vagrant options.
 # ______________________
-vagrant_box: geerlingguy/drupal-vm
+# vagrant_box: geerlingguy/drupal-vm
+vagrant_box: bento/ubuntu-18.04
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
@@ -52,7 +53,7 @@ vagrant_public_ip: ""
 
 # Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
-  
+
 drupal_site_name: "BAPC Development Website"
 
 # installed_extras are web / server utilities (and not Ubuntu / Linux ones)
