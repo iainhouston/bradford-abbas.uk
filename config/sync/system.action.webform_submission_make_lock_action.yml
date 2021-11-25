@@ -1,0 +1,11 @@
+uuid: f0870ec4-9554-49e3-a0a0-c14e461ee668
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: webform_submission_make_lock_action
+label: 'Lock submission'
+type: webform_submission
+plugin: webform_submission_make_lock_action
+configuration: {  }
