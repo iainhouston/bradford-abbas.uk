@@ -91,7 +91,7 @@
 		"drupal/cleantalk": "^9.1",
 		"drupal/core-composer-scaffold": "^9.2",
 		"drupal/core-project-message": "^9.2",
-		"drupal/core-recommended": "^9.2",
+		"drupal/core-recommended": "^9.3",
 		"drupal/diff": "^1.0",
 		"drupal/draggableviews": "^2.0",
 		"drupal/honeypot": "^2.0",
