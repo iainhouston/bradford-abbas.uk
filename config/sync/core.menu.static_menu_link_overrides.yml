@@ -1,10 +1,12 @@
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
 definitions:
   contact__site_page:
-    enabled: true
     menu_name: footer
     parent: ''
     weight: 0
     expanded: false
+    enabled: true
   standard__front_page:
     menu_name: main
     parent: ''
@@ -12,22 +14,20 @@ definitions:
     expanded: false
     enabled: true
   node__add_page:
-    weight: -50
     menu_name: tools
     parent: ''
+    weight: -50
     expanded: false
     enabled: true
   filter__tips_all:
-    weight: -49
     menu_name: tools
     parent: ''
+    weight: -49
     expanded: false
     enabled: false
   search__view:
-    weight: -45
     menu_name: tools
     parent: ''
+    weight: -45
     expanded: false
     enabled: false
-_core:
-  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

@@ -17,8 +17,8 @@ plugin: 'block_content:fc4d4ba7-8459-4273-8de1-0094c3826342'
 settings:
   id: 'block_content:fc4d4ba7-8459-4273-8de1-0094c3826342'
   label: 'Built by the community'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

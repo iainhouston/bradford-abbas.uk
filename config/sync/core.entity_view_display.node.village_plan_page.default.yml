@@ -17,14 +17,14 @@ bundle: village_plan_page
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_back_to_index:
-    weight: 103
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -33,12 +33,12 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 103
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   field_file_under: true

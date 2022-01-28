@@ -17,32 +17,32 @@ bundle: agenda
 mode: default
 content:
   body:
-    label: visually_hidden
     type: text_default
-    weight: 2
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: content
   field_agenda_meeting:
-    weight: 0
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 0
     region: content
   field_agenda_status:
-    weight: 1
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   links:
-    weight: 3
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   field_agenda_time_stamp: true

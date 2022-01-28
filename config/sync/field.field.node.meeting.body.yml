@@ -17,8 +17,8 @@ required: false
 translatable: true
 default_value:
   -
-    summary: ''
     value: "<p>You can click on the Agenda title to see the complete Agenda page for printing etc.</p>\r\n"
+    summary: ''
     format: basic_html
 default_value_callback: ''
 settings:

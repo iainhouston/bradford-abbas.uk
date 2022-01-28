@@ -11,12 +11,12 @@ pattern: 'document/[node:created:short]'
 selection_criteria:
   af633418-a96a-4270-8308-8f5aeba840de:
     id: node_type
-    bundles:
-      document: document
     negate: false
+    uuid: af633418-a96a-4270-8308-8f5aeba840de
     context_mapping:
       node: node
-    uuid: af633418-a96a-4270-8308-8f5aeba840de
+    bundles:
+      document: document
 selection_logic: and
 weight: -5
 relationships: {  }

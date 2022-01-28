@@ -81,9 +81,9 @@ filters:
     weight: 100
     settings:
       default_view_mode: bapc_large
-      allowed_media_types: {  }
       allowed_view_modes:
         bapc: bapc
         bapc_large: bapc_large
         bapc_medium: bapc_medium
         bapc_small: bapc_small
+      allowed_media_types: {  }

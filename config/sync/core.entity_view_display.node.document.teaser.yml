@@ -19,24 +19,24 @@ bundle: document
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 0
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 0
     region: content
   field_uploaded_files:
     type: file_default
-    weight: 1
     label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   links:
-    weight: 2
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_document_type: true

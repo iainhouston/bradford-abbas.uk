@@ -17,12 +17,12 @@ bundle: image
 mode: bapc_large
 content:
   field_media_image:
+    type: image
     label: hidden
     settings:
-      image_style: bapc_large_w_480_
       image_link: file
+      image_style: bapc_large_w_480_
     third_party_settings: {  }
-    type: image
     weight: 1
     region: content
 hidden:

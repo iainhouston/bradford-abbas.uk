@@ -1,0 +1,14 @@
+uuid: eac7a572-6f90-42c2-b952-7614756247a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.document_editor
+  module:
+    - user
+id: user_remove_role_action.document_editor
+label: 'Remove the Document Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: document_editor

@@ -22,17 +22,17 @@ mode: teaser
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 0
-    region: content
     label: visually_hidden
     settings:
       trim_length: 500
     third_party_settings: {  }
-  links:
-    weight: 1
+    weight: 0
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_expires: true
   field_image_media: true

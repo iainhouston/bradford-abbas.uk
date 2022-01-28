@@ -18,24 +18,24 @@ mode: teaser
 content:
   field_agenda_meeting:
     type: entity_reference_label
-    weight: 0
     label: inline
     settings:
       link: true
     third_party_settings: {  }
+    weight: 0
     region: content
   field_agenda_status:
     type: entity_reference_label
-    weight: 1
     label: inline
     settings:
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
   links:
-    weight: 2
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   body: true

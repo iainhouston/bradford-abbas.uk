@@ -11,12 +11,12 @@ pattern: 'gallery/[node:title]'
 selection_criteria:
   3b9da045-8046-4aee-ba05-0525c0b731ff:
     id: node_type
-    bundles:
-      photo_gallery: photo_gallery
     negate: false
+    uuid: 3b9da045-8046-4aee-ba05-0525c0b731ff
     context_mapping:
       node: node
-    uuid: 3b9da045-8046-4aee-ba05-0525c0b731ff
+    bundles:
+      photo_gallery: photo_gallery
 selection_logic: and
 weight: -5
 relationships: {  }

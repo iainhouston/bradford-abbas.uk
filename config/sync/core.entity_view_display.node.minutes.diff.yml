@@ -18,35 +18,35 @@ bundle: minutes
 mode: diff
 content:
   body:
-    label: inline
     type: text_default
-    weight: 2
+    label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: content
   field_minutes_meeting:
-    weight: 0
+    type: entity_reference_label
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 0
     region: content
   field_minutes_status:
-    weight: 1
+    type: entity_reference_label
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   simplenews_issue:
     type: entity_reference_label
-    weight: 3
     label: inline
     settings:
       link: false
     third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   links: true

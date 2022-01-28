@@ -11,12 +11,12 @@ pattern: 'agenda/[node:title]'
 selection_criteria:
   d71f3ea3-dc66-4c7d-8204-4bbb3b10f51a:
     id: node_type
-    bundles:
-      agenda: agenda
     negate: false
+    uuid: d71f3ea3-dc66-4c7d-8204-4bbb3b10f51a
     context_mapping:
       node: node
-    uuid: d71f3ea3-dc66-4c7d-8204-4bbb3b10f51a
+    bundles:
+      agenda: agenda
 selection_logic: and
 weight: -5
 relationships: {  }

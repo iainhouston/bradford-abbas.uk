@@ -1,0 +1,14 @@
+uuid: 47d0fef8-5294-40ff-a5b3-542e81fb582c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.document_editor
+  module:
+    - user
+id: user_add_role_action.document_editor
+label: 'Add the Document Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: document_editor

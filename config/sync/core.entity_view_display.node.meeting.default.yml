@@ -22,60 +22,60 @@ bundle: meeting
 mode: default
 content:
   body:
-    label: above
     type: text_default
-    weight: 4
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 4
     region: content
   field_agenda:
-    weight: 3
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: email_html
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 3
     region: content
   field_meeting_date:
-    weight: 0
+    type: datetime_default
     label: inline
     settings:
       timezone_override: ''
       format_type: ba_kind
     third_party_settings: {  }
-    type: datetime_default
+    weight: 0
     region: content
   field_meeting_minutes:
-    weight: 2
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 2
     region: content
   field_meeting_place:
-    weight: 1
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 1
     region: content
   field_supporting_documents:
-    weight: 5
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   links:
-    weight: 6
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 6
+    region: content
 hidden:
   field_meeting_type: true
   simplenews_issue: true

@@ -18,14 +18,14 @@ plugin: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
 settings:
   id: 'block_content:8de18bb4-6311-44a3-a94a-9561a9e16b49'
   label: 'Village Hall Taxonomy header'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /term/meeting-place/bradford-abbas-village-hall
     negate: false
     context_mapping: {  }
+    pages: /term/meeting-place/bradford-abbas-village-hall

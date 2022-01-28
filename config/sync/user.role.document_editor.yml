@@ -1,0 +1,30 @@
+uuid: 2fe1b882-7ad4-4996-a2e4-760027cadfa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.document
+  module:
+    - filter
+    - node
+    - simplenews
+    - system
+id: document_editor
+label: 'Document Editor'
+weight: -5
+is_admin: null
+permissions:
+  - 'access content'
+  - 'create document content'
+  - 'delete any document content'
+  - 'delete document revisions'
+  - 'delete own document content'
+  - 'edit any document content'
+  - 'edit own document content'
+  - 'revert document revisions'
+  - 'send newsletter'
+  - 'use text format basic_html'
+  - 'view all revisions'
+  - 'view document revisions'
+  - 'view own unpublished content'

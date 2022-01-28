@@ -18,26 +18,26 @@ bundle: history_society_event
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 1
     region: content
   field_meeting_date:
     type: datetime_custom
-    weight: 2
     label: above
     settings:
-      date_format: 'Y-m-d\TH:i:s'
       timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
+    weight: 2
     region: content
   links:
-    weight: 0
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   simplenews_issue: true

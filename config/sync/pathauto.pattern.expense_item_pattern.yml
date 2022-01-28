@@ -11,12 +11,12 @@ pattern: 'expense/[node:created:short]'
 selection_criteria:
   02b701b4-2c2b-41ad-9a06-6be14fbeb8f6:
     id: node_type
-    bundles:
-      item_of_expense: item_of_expense
     negate: false
+    uuid: 02b701b4-2c2b-41ad-9a06-6be14fbeb8f6
     context_mapping:
       node: node
-    uuid: 02b701b4-2c2b-41ad-9a06-6be14fbeb8f6
+    bundles:
+      item_of_expense: item_of_expense
 selection_logic: and
 weight: -5
 relationships: {  }

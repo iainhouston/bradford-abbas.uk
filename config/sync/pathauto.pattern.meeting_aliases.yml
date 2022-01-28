@@ -11,12 +11,12 @@ pattern: 'meeting/[node:field_meeting_date]'
 selection_criteria:
   9b770d1e-645e-4b32-a100-a499d7c2d845:
     id: node_type
-    bundles:
-      meeting: meeting
     negate: false
+    uuid: 9b770d1e-645e-4b32-a100-a499d7c2d845
     context_mapping:
       node: node
-    uuid: 9b770d1e-645e-4b32-a100-a499d7c2d845
+    bundles:
+      meeting: meeting
 selection_logic: and
 weight: -5
 relationships: {  }

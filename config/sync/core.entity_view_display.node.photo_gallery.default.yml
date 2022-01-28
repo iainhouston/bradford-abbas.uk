@@ -15,13 +15,13 @@ bundle: photo_gallery
 mode: default
 content:
   field_photo:
-    weight: 1
+    type: image
     label: above
     settings:
-      image_style: bapc_medium
       image_link: file
+      image_style: bapc_medium
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
 hidden:
   links: true

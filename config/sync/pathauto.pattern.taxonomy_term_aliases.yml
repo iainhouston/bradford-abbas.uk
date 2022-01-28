@@ -12,6 +12,10 @@ pattern: 'term/[term:vocabulary]/[term:name]'
 selection_criteria:
   7367f3e3-4473-42d1-ac00-e7b177a6b549:
     id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 7367f3e3-4473-42d1-ac00-e7b177a6b549
+    context_mapping:
+      taxonomy_term: taxonomy_term
     bundles:
       councillor_s_function: councillor_s_function
       document_status: document_status
@@ -19,10 +23,6 @@ selection_criteria:
       meeting_place: meeting_place
       meeting_type: meeting_type
       tags: tags
-    negate: false
-    context_mapping:
-      taxonomy_term: taxonomy_term
-    uuid: 7367f3e3-4473-42d1-ac00-e7b177a6b549
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -11,12 +11,12 @@ pattern: 'village_plan/[node:field_file_under]/[node:title]'
 selection_criteria:
   dab559b1-5826-4e78-b77b-0b6a077ecaeb:
     id: node_type
-    bundles:
-      village_plan_page: village_plan_page
     negate: false
+    uuid: dab559b1-5826-4e78-b77b-0b6a077ecaeb
     context_mapping:
       node: node
-    uuid: dab559b1-5826-4e78-b77b-0b6a077ecaeb
+    bundles:
+      village_plan_page: village_plan_page
 selection_logic: and
 weight: -5
 relationships: {  }
