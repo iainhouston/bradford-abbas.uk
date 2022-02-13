@@ -63,7 +63,7 @@ installed_extras:
   - pimpmylog
   - xdebug
   - mailhog
-php_sendmail_path: "/opt/mailhog/mhsendmail"
+php_sendmail_path: "/opt/mailhog/mhsendmail  -t -i"
 php_date_timezone: "Europe/London"
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
