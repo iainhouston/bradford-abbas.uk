@@ -101,7 +101,6 @@ extra_security_enabled: false
 # PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
 php_version: "7.4"
-php_sendmail_path: "/usr/sbin/sendmail -t -i"
 php_install_recommends: no
 php_memory_limit: "356M"
 php_post_max_size: "256M"
