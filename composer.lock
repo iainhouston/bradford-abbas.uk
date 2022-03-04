@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17594bfe2793e59887075ba65de26664",
+    "content-hash": "59a3dba77cdb404ca982926be2eeedf8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2448,11 +2448,17 @@
         },
         {
             "name": "drupal/simplenews",
-            "version": "dev-3.x",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simplenews.git",
-                "reference": "8725bdef497e6cdac18e23e7899f790d729d95c0"
+                "reference": "3.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simplenews-3.0.0-beta2.zip",
+                "reference": "3.0.0-beta2",
+                "shasum": "7ba47a7da9edac676e58b668709ae4d252b9da26"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -2462,15 +2468,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
-                    "version": "3.x-dev",
-                    "datestamp": "1638283018",
+                    "version": "3.0.0-beta2",
+                    "datestamp": "1637315634",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -8518,66 +8521,12 @@
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
             }
-        },
-        {
-            "name": "geerlingguy/drupal-vm",
-            "version": "6.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "01545c37d96d4973b57ec6e842e54c40d0988207"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/01545c37d96d4973b57ec6e842e54c40d0988207",
-                "reference": "01545c37d96d4973b57ec6e842e54c40d0988207",
-                "shasum": ""
-            },
-            "type": "vm",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeff Geerling",
-                    "homepage": "https://www.jeffgeerling.com"
-                },
-                {
-                    "name": "Oskar Schöldström",
-                    "homepage": "http://oxy.fi"
-                }
-            ],
-            "description": "A VM for local Drupal development, built with Vagrant + Ansible",
-            "homepage": "https://www.drupalvm.com",
-            "keywords": [
-                "drupal",
-                "vagrant",
-                "virtual machine",
-                "vm"
-            ],
-            "support": {
-                "docs": "http://docs.drupalvm.com",
-                "issues": "https://github.com/geerlingguy/drupal-vm/issues",
-                "source": "https://github.com/geerlingguy/drupal-vm"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/geerlingguy",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/geerlingguy",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-05-28T20:26:07+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drupal/simplenews": 20,
+        "drupal/simplenews": 10,
         "drupal/devel": 10
     },
     "prefer-stable": true,

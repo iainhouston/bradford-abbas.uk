@@ -99,7 +99,7 @@
 		"drupal/mailsystem": "^4.3",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
-		"drupal/simplenews": "3.x-dev@dev",
+		"drupal/simplenews": "^3.0@beta",
 		"drupal/swiftmailer": "^2.0",
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0",
@@ -112,8 +112,7 @@
 		"tijsverkoyen/css-to-inline-styles": "^2.2"
 	},
 	"require-dev": {
-		"drupal/devel": "@beta",
-		"geerlingguy/drupal-vm": "6.0.4"
+		"drupal/devel": "@beta"
 	},
 	"type": "project"
 }
