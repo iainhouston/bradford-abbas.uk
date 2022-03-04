@@ -21,7 +21,7 @@ export BADEV="$HOME/bradford-abbas.uk"
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
 export LIVESITE="bradford-abbas.uk"
 export STAGESITE="staging.bradford-abbas.uk"
-export DEVSITE="vagrant.bradford-abbas.uk"
+export DEVSITE="vagrant2.bradford-abbas.uk"
 
 # the following aliases must have corresponding `.yml` files in `drush/sites`
 export LIVEALIAS="@balive"
@@ -43,7 +43,7 @@ alias cdm="cd $BADEV/web/modules/contrib/ && ls $BADEV/web/modules/contrib/"
 alias cdt="cd $BADEV/web/themes/contrib/pellucid_olivero/ && ls ./"
 alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
-alias cdv="cd $BADEV/vendor/geerlingguy/drupal-vm"
+alias cdv="cd $BADEV/library/geerlingguy/drupal-vm"
 
 # The `drush` we use for this project is installed locally with composer
 export DRUSH="$BADEV/vendor/drush/drush/drush"

@@ -88,7 +88,7 @@ mysql_users:
 # extra_packages are apt-installed packages for Ubuntu Linux
 extra_packages:
   - unzip
-  - emacs25-nox
+  - emacs-nox
   - php-elisp
   - yaml-mode
   - opendkim
@@ -98,14 +98,15 @@ extra_packages:
 # You can configure almost anything else on the server in the rest of this file.
 extra_security_enabled: false
 
-# PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
+# PHP Configuration.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.4"
+php_version: "8.1"
 php_install_recommends: no
 php_memory_limit: "356M"
 php_post_max_size: "256M"
 php_upload_max_filesize: "256M"
 php_display_errors: "On"
+php_date_timezone: "Europe/London"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"
 php_opcache_enabled_in_ini: true

@@ -5,7 +5,7 @@
 # Local Vagrant options.
 # ______________________
 # vagrant_box: geerlingguy/drupal-vm
-vagrant_box: bento/ubuntu-18.04
+vagrant_box: bento/ubuntu-20.04
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
@@ -16,8 +16,8 @@ vagrant_box: bento/ubuntu-18.04
 # Even though the following DOES work as expected:
 # ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}"
 
-vagrant_hostname: vagrant.bradford-abbas.uk
-vagrant_machine_name: local-BAPC9
+vagrant_hostname: vagrant2.bradford-abbas.uk
+vagrant_machine_name: BAPC9-2
 vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
 vagrant_synced_folder_default_type: nfs
@@ -63,10 +63,9 @@ installed_extras:
   - pimpmylog
   - xdebug
   - mailhog
-php_date_timezone: "Europe/London"
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
-php_xdebug_version: "2.9.5"
+php_xdebug_version: "3.1.3"
 php_xdebug_cli_disable: yes
 php_xdebug_remote_enable: 1
 php_xdebug_remote_connect_back: 1
