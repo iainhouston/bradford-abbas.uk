@@ -1,8 +1,15 @@
 # This directory
 
-This `prod` directory is for use after all the setting up and provisioning of dev and live servers; development and testing of new and existing features and when the tested code and configurations need to be deployed to the live (`prod`) server.
+This `prod` directory has two purposes:  
 
-I kept this separate from the `vm` directory because that is quite complicated enough and I thought the task of updating code needed to be as simple, reliable and foolproof as I could make it and the method suggested in Jeff Geerlings "From Soup to Nuts" blog is so embedded in the general provisioning tasks and rôles that it became unnecessarily  complicated - and Jeff has added a pragraph to this blog stating that he will no longer support it; that he's not convinced its really mainstream, which echoes the fact that Drupal-VM is really about provisioning servers?
+1. Most commonly for use after all the setting up and provisioning of dev and live servers; development and testing of new and existing features and when the tested code and configurations need to be deployed to the live (`prod`) server.
+
+	I kept this separate from the `vm` directory because that is quite complicated enough and I thought the task of updating code needed to be as simple, reliable and foolproof as I could make it and the method suggested in Jeff Geerlings "From Soup to Nuts" blog is so embedded in the general provisioning tasks and rôles that it became unnecessarily  complicated - and Jeff has added a pragraph to this blog stating that he will no longer support it; that he's not convinced its really mainstream, which echoes the fact that Drupal-VM is really about provisioning servers?
+	
+1. Occasionally to provision a fresh Ubuntu image when, for instance, we upgrade to a more recent Ubuntu LTS release.
+
+Updating
+--------
 
 Objectives of updating the live server
 ======================================
@@ -29,3 +36,8 @@ Method of achieving the Objectives
 +	Provide shortcut / alias `updateLiveCode` to invoke the playbook properly  
 
 	+ see `scripts/badev/updateLiveCode.sh`
+	
+Initialising the server
+-----------------------
+
+TODO *copy and edit from staging README*
