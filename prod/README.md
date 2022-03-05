@@ -8,7 +8,7 @@ This `prod` directory has two purposes:
 	
 1. Occasionally to provision a fresh Ubuntu image when, for instance, we upgrade to a more recent Ubuntu LTS release.
 
-Updating
+(1) Updating
 --------
 
 Objectives of updating the live server
@@ -37,7 +37,58 @@ Method of achieving the Objectives
 
 	+ see `scripts/badev/updateLiveCode.sh`
 	
-Initialising the server
+(2) Initialising the server
 -----------------------
 
 TODO *copy and edit from staging README*
+
+How to set up the administrator account prior to provisioning the new live server
+=================================================================================
+
+We use *live* and *prod*uction interchangeably here.
+
+User names and passwords are encrypted in `prod/secrets.yml`. The
+
+From the project directory `~/bradford-abbas.uk`:
+
+    ansible-vault view  prod/secrets.yml
+    ansible-vault edit  prod/secrets.yml
+
+From the project directory `~/bradford-abbas.uk` run the `init.yml` playbook:
+
+(This assumes that the host provider initialises the Linux image with `root` access.)
+
+    ansible-playbook prod/init.yml \
+        --inventory-file=prod/inventory \
+        --extra-vars="ansible_ssh_user=root" \
+        --vault-password-file="~/.vaultpw"
+		
+The step above will create admin user `webadmin` per contents of `prod/secrets.yml`
+
+ Now we are ready to provision the prod server.
+
+ But first, just check; with `~/.ssh/config` having:
+
+        Host stageadmin
+            User webadmin
+            Hostname prod.bradford-abbas.uk
+            PreferredAuthentications publickey
+
+we can `ssh stageadmin`
+
+ Provisioning the new prod server
+ ---------------
+
+ This step is run from the project directory.
+
+ The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw` but you'll also be asked to enter it when running the provisionuing playbook next.
+
+ **Important** The origin of this password is documented in `../prod/secrets.yml`.
+ It is generated from `openssl passwd -1 <origin>`
+
+     DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+     --inventory-file=prod/inventory \
+     --vault-password-file="~/.vaultpw" \
+     --extra-vars="config_dir=$(pwd)/vm" \
+     --skip-tags=test_only \
+     --ask-become-pass
