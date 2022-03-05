@@ -1,4 +1,4 @@
-# This directory
+## About this directory
 
 This `prod` directory has two purposes:  
 
@@ -8,11 +8,10 @@ This `prod` directory has two purposes:
 	
 1. Occasionally to provision a fresh Ubuntu image when, for instance, we upgrade to a more recent Ubuntu LTS release.
 
-(1) Updating
---------
+#1. Updating
 
-Objectives of updating the live server
-======================================
+
+##Objectives of updating the live server
 
 1.	Use `drush` to put the website into maintenance mode
 
@@ -28,8 +27,7 @@ Objectives of updating the live server
 
 1.	Use `drush` to take the website out of maintenance mode
 
-Method of achieving the Objectives
-==================================
+##Method of achieving the Objectives
 
 +	Create a completely new `ansible-playbook` playbook in this directory
 
@@ -37,47 +35,43 @@ Method of achieving the Objectives
 
 	+ see `scripts/badev/updateLiveCode.sh`
 	
-(2) Initialising the server
------------------------
+#2. Initialising the server
 
-TODO *copy and edit from staging README*
 
-How to set up the administrator account prior to provisioning the new live server
-=================================================================================
+##How to set up the administrator account prior to provisioning the new live server
 
 We use *live* and *prod*uction interchangeably here.
 
-User names and passwords are encrypted in `prod/secrets.yml`. The
+User names and passwords are encrypted in `prod/secrets.yml`.  
 
 From the project directory `~/bradford-abbas.uk`:
 
-    ansible-vault view  prod/secrets.yml
-    ansible-vault edit  prod/secrets.yml
+	    ansible-vault view  prod/secrets.yml
+	    ansible-vault edit  prod/secrets.yml
 
 From the project directory `~/bradford-abbas.uk` run the `init.yml` playbook:
 
-(This assumes that the host provider initialises the Linux image with `root` access.)
+(This assumes that the host provider initialises the Linux image with `root` access or that you have temporarily enabled `root`access.)
 
-    ansible-playbook prod/init.yml \
-        --inventory-file=prod/inventory \
-        --extra-vars="ansible_ssh_user=root" \
-        --vault-password-file="~/.vaultpw"
+	    ansible-playbook prod/init.yml \
+	        --inventory-file=prod/inventory \
+	        --extra-vars="ansible_ssh_user=root" \
+	        --vault-password-file="~/.vaultpw"
 		
 The step above will create admin user `webadmin` per contents of `prod/secrets.yml`
 
- Now we are ready to provision the prod server.
+Now we are ready to provision the prod server.
 
- But first, just check; with `~/.ssh/config` having:
+But first, just check; with `~/.ssh/config` having:
 
-        Host stageadmin
+        Host webadmin
             User webadmin
-            Hostname prod.bradford-abbas.uk
+            Hostname bradford-abbas.uk
             PreferredAuthentications publickey
 
-we can `ssh stageadmin`
+we can `ssh webadmin`
 
- Provisioning the new prod server
- ---------------
+##Provisioning the new prod server
 
  This step is run from the project directory.
 
@@ -86,9 +80,24 @@ we can `ssh stageadmin`
  **Important** The origin of this password is documented in `../prod/secrets.yml`.
  It is generated from `openssl passwd -1 <origin>`
 
-     DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
-     --inventory-file=prod/inventory \
-     --vault-password-file="~/.vaultpw" \
-     --extra-vars="config_dir=$(pwd)/vm" \
-     --skip-tags=test_only \
-     --ask-become-pass
+	     DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+	     --inventory-file=prod/inventory \
+	     --vault-password-file="~/.vaultpw" \
+	     --extra-vars="config_dir=$(pwd)/vm" \
+	     --skip-tags=test_only \
+	     --ask-become-pass
+		 
+
+##Ensure postfix is working correctly
+
+Look at `TryPostfix.md` in this directory.
+
+##Copy static data to the live server
+
+*TBD*
+
+##Restore MYSql database data to the live server
+
+*TBD*
+
+
