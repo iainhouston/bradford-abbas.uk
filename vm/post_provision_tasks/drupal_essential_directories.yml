@@ -26,10 +26,19 @@
     dest: "{{ drupal_deploy_dir }}"
     force: yes
 
+- name: pull latest changes
+  shell: git pull 
+  args:
+    chdir: "{{ drupal_deploy_dir }}"
+
+- name: install the code
+  shell: composer install
+  args:
+    chdir: "{{ drupal_deploy_dir }}"
+
 - name: Make local drush executable globally
   file:
     src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
     dest: /usr/local/bin/drush
     state: link
     force: yes
-  tags: ['test_only']

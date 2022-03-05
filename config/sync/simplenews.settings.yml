@@ -2,6 +2,7 @@ _core:
   default_config_hash: cy-hJPYCnfCsuUZA7VDoAwssKhRJCa8N88iJTaWiims
 hash_expiration: 86400
 newsletter:
+  issue_tokens: false
   format: html
   priority: 0
   receipt: false
