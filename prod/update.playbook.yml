@@ -37,7 +37,7 @@
         -   name: Restart web server
             shell:
                 cmd: |
-                    systemctl restart php7.4-fpm
+                    "systemctl restart php{{ php_version }}-fpm"
                     systemctl restart apache2.service
             become: yes
 
