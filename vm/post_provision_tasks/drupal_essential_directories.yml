@@ -24,3 +24,12 @@
   git:
     repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
     dest: "{{ drupal_deploy_dir }}"
+	force: yes
+
+- name: Make local drush executable globally
+  file:
+    src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
+    dest: /usr/local/bin/drush
+    state: link
+    force: yes
+	tags: ['test_only']

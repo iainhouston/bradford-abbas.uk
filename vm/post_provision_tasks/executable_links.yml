@@ -1,8 +1,0 @@
----
-- name: Make local drush executable globally
-  file:
-    src: "{{ drupal_composer_install_dir }}/vendor/drush/drush/drush"
-    dest: /usr/local/bin/drush
-    state: link
-    force: yes
-  tags: ['test_only']
