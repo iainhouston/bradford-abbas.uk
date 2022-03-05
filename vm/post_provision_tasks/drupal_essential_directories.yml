@@ -19,3 +19,8 @@
     state: directory
     mode: ug+w
   become: no
+  
+- name: checkout the latest committed program code and config settings
+  git:
+    repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
+    dest: "{{ drupal_deploy_dir }}"
