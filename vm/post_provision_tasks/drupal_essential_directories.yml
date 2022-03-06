@@ -20,39 +20,25 @@
     mode: ug+w
   become: no
   
+# on the dev system we are working in the directory that already has the repo as we like it  
+# we don't want to overwrite any git changes we've made on the dev sysytem
+# but we do want to populate the live system with latest code pushed to the repo
 - name: checkout the latest committed program code and config settings
   git:
     repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-    dest: "{{ drupal_deploy_dir }}"
+    dest: "{{ drupal_core_path }}/.."
     force: yes
-  
-- name: pull latest changes
-  shell: git pull 
-  args:
-    chdir: "{{ drupal_deploy_dir }}"
-  become: no
+    tags: ['drupal', 'prod_only']
   
 - name: install the code
   shell: composer install
   args:
-    chdir: "{{ drupal_deploy_dir }}"
-  become: no
-
-- name: pull latest changes
-  shell: git pull 
-  args:
-    chdir: "{{ drupal_deploy_dir }}"
-  become: no
-
-- name: install the code
-  shell: composer install
-  args:
-    chdir: "{{ drupal_deploy_dir }}"
+    chdir: "{{ drupal_core_path }}/.."
   become: no
 
 - name: Make local drush executable globally
   file:
-    src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
+    src: "{{ drupal_core_path }}/../vendor/drush/drush/drush"
     dest: /usr/local/bin/drush
     state: link
     force: yes
