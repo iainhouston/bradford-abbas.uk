@@ -29,6 +29,7 @@
     dest: "{{ drupal_core_path }}/.."
     force: yes
   tags: ['drupal', 'prod_only']
+  become: no
   
 - name: install the code
   shell: composer install
