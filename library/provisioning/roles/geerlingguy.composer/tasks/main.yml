@@ -62,16 +62,6 @@
     group: "{{ composer_home_group }}"
     mode: 0644
   when: composer_github_oauth_token | length > 0
-  
-- name: Add config.json for Composer >2.2 to allow plugins to run
-  become: true
-  become_user: "{{ composer_home_owner }}"
-  template:
-    src: "conf.json.j2"
-    dest: "{{ composer_home_path }}/conf.json"
-    owner: "{{ composer_home_owner }}"
-    group: "{{ composer_home_group }}"
-    mode: 0644
 
 - include_tasks: global-require.yml
   when: composer_global_packages | length > 0
