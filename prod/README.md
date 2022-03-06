@@ -38,11 +38,11 @@ This `prod` directory has two purposes:
 #2. Initialising the server
 
 
-##How to set up the administrator account prior to provisioning the new live server
+##How to set up the administrator account `webadmin` prior to provisioning the new live server
 
 We use *live* and *prod*uction interchangeably here.
 
-User names and passwords are encrypted in `prod/secrets.yml`.  
+Linux user names and passwords are encrypted in `prod/secrets.yml`.  
 
 From the project directory `~/bradford-abbas.uk`:
 
@@ -51,7 +51,7 @@ From the project directory `~/bradford-abbas.uk`:
 
 From the project directory `~/bradford-abbas.uk` run the `init.yml` playbook:
 
-(This assumes that the host provider initialises the Linux image with `root` access or that you have temporarily enabled `root`access.)
+(This assumes that the host provider initialises the Linux image with `root` access or that you have temporarily enabled `root` access.)
 
 	    ansible-playbook prod/init.yml \
 	        --inventory-file=prod/inventory \
@@ -62,25 +62,25 @@ The step above will create admin user `webadmin` per contents of `prod/secrets.y
 
 Now we are ready to provision the prod server.
 
-But first, just check; with `~/.ssh/config` having:
+But first, just check, with `~/.ssh/config` having:
 
         Host webadmin
             User webadmin
             Hostname bradford-abbas.uk
             PreferredAuthentications publickey
 
-we can `ssh webadmin`
+that we can `ssh webadmin`
 
-##Provisioning the new prod server
+##Provisioning the new Live server
 
- This step is run from the project directory.
+This step is run from the project directory.
 
- The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw` but you'll also be asked to enter it when running the provisionuing playbook next.
+The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw` but you'll also be asked to enter it when running the provisionuing playbook next.
 
- **Important** The origin of this password is documented in `../prod/secrets.yml`.
- It is generated from `openssl passwd -1 <origin>`
+**Important** The origin of this Linux password is documented in `../prod/secrets.yml`.
+It is generated from `openssl passwd -1 <origin>`
 
-	     DRUPALVM_ENV=prod ansible-playbook vendor/geerlingguy/drupal-vm/provisioning/playbook.yml \
+	     DRUPALVM_ENV=prod ansible-playbook library/geerlingguy/drupal-vm/provisioning/playbook.yml \
 	     --inventory-file=prod/inventory \
 	     --vault-password-file="~/.vaultpw" \
 	     --extra-vars="config_dir=$(pwd)/vm" \
