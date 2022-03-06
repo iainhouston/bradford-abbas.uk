@@ -25,7 +25,7 @@
     repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
     dest: "{{ drupal_deploy_dir }}"
     force: yes
-	
+  
 - name: pull latest changes
   shell: git pull 
   args:
