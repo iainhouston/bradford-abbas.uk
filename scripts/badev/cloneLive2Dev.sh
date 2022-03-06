@@ -19,7 +19,8 @@ gunzip $FILE.gz
 $DRUSH $DEVALIAS sql:drop -y
 echo "Loading replica of Live database"
 $DRUSH $DEVALIAS sql:cli < $FILE
-# $DRUSH @badev cr
+echo "Setting alias mostRecentLive.sql to ${GREEN}${FILE}${NC}"
+ln -sf mostRecentLive.sql ${FILE}
 
 echo "Syncing files from Live to Dev machine"
 rsync -avz $LIVE_SSH_ALIAS:/var/www/drupal/web/sites/default/files/ \
