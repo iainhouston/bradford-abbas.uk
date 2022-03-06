@@ -28,7 +28,7 @@
     repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
     dest: "{{ drupal_core_path }}/.."
     force: yes
-    tags: ['drupal', 'prod_only']
+  tags: ['drupal', 'prod_only']
   
 - name: install the code
   shell: composer install
