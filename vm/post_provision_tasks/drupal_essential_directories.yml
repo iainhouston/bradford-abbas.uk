@@ -42,11 +42,13 @@
   shell: git pull 
   args:
     chdir: "{{ drupal_deploy_dir }}"
+  become: no
 
 - name: install the code
   shell: composer install
   args:
     chdir: "{{ drupal_deploy_dir }}"
+  become: no
 
 - name: Make local drush executable globally
   file:
