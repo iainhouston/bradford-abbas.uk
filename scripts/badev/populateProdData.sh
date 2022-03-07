@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+echo "${RED}Do you really want to do this?"
+echo "${GREEN}(Please choose a number in reply)${NC}"
+select choice in "Yes" "No"; do
+    case $choice in
+        Yes ) echo "It's a yes. Here goes!"; break;;
+        No ) exit 3;;
+    esac
+done
+
 Start_time=$SECONDS
 
 if [ -e mostRecentLive.sql ]
