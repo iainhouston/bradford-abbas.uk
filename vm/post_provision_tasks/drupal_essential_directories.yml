@@ -19,16 +19,3 @@
     state: directory
     mode: ug+w
   become: no
-  
-- name: install the code
-  shell: composer install
-  args:
-    chdir: "{{ drupal_core_path }}/.."
-  become: no
-
-- name: Make local drush executable globally
-  file:
-    src: "{{ drupal_core_path }}/../vendor/drush/drush/drush"
-    dest: /usr/local/bin/drush
-    state: link
-    force: yes

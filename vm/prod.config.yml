@@ -1,6 +1,7 @@
 ---
 # Deploy from the project's Git repository.
-drupal_deploy: true
+drupal_deploy: false
+# We'll do this ourselves in a post-provision task
 drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: /var/www/drupal
 #  User ansible-playbook's --extra-args for:
