@@ -89,7 +89,6 @@
   copy:
     src: "{{ config_dir }}/saved_default_settings/services.yml"
     dest: "{{ drupal_core_path }}/sites/default/services.yml"
-  tags: ['test_only']
 
 - name: Copy settings.local file to sites/default/
   copy:
