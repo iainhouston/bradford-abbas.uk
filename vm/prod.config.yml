@@ -26,7 +26,9 @@ post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 extra_security_enabled: true
 
 # Apache VirtualHosts.
-# View the geerlingguy.apache Ansible Role README for more options.
+ssl_key_dest: "/etc/ssl/private/bradford-abbas.uk.key"
+ssl_crt_dest: "/etc/ssl/certs/bradford-abbas.uk.crt"
+
 apache_global_vhost_settings: |
   DirectoryIndex index.php index.html
   NameVirtualHost *:80
@@ -43,8 +45,8 @@ apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
-    certificate_file: "/etc/ssl/certs/bradford-abbas.uk.crt"
-    certificate_key_file: "/etc/ssl/private/bradford-abbas.uk.key"
+    certificate_file: "{{ ssl_crt_dest }}"
+    certificate_key_file: "{{ ssl_key_dest }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
 ba_cron_day: "3"
