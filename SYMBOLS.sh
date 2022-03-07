@@ -59,6 +59,9 @@ alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
 # exceptionally - bring dev Drupal Config settings in line with live ones
 alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
 
+# Development to Production !!
+alias populateProdData="sh $BADEVSCRIPTS/populateProdData.sh"
+
 # Dumps: SQL and Static files
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
 
