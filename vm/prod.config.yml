@@ -42,7 +42,7 @@ apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
     documentroot: "{{ drupal_core_path }}"
-    certificate_file: "/etc/ssl/certs/bradford-abbas.ca-bundle"
+    certificate_file: "/etc/ssl/certs/bradford-abbas.uk.crt"
     certificate_key_file: "/etc/ssl/private/bradford-abbas.uk.key"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
@@ -62,7 +62,7 @@ drupalvm_cron_jobs:
     minute: "01"
     weekday: "{{ ba_cron_day }}"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ drush_source_install_bin_path }}/drush -r {{ drupal_core_path }} sql:dump --result-file=/tmp/bradford-abbas.uk.sql "
+    job: "{{ drush_source_install_bin_path }}/drush -r {{ drupal_core_path }} sql:dump --extra-dump=--no-tablespaces --result-file=/tmp/bradford-abbas.uk.sql "
 
   - name: "Compress Drupal files"
     minute: "06"

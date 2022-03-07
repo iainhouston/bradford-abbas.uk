@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 echo "${RED}Do you really want to do this?"
+echo "${GREEN}mostRecentLive.sql${NC} is expected to contain the most recent Live SQL"
 echo "${GREEN}(Please choose a number in reply)${NC}"
 select choice in "Yes" "No"; do
     case $choice in
@@ -42,5 +43,5 @@ then
 
 else
     echo "${RED}Couldn't find ${GREEN}$BADEV/web/sites/default/files/{NC}"
-    exit 2   
+    exit 2
 fi

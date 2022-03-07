@@ -20,17 +20,6 @@
     mode: ug+w
   become: no
   
-# on the dev system we are working in the directory that already has the repo as we like it  
-# we don't want to overwrite any git changes we've made on the dev sysytem
-# but we do want to populate the live system with latest code pushed to the repo
-- name: checkout the latest committed program code and config settings
-  git:
-    repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-    dest: "{{ drupal_core_path }}/.."
-    force: yes
-  tags: ['drupal', 'prod_only']
-  become: no
-  
 - name: install the code
   shell: composer install
   args:

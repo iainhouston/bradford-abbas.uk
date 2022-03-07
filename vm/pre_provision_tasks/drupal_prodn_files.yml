@@ -1,0 +1,48 @@
+---
+# Note that dest: "{{ drupal_core_path }}/.." is also "{{ drupal_deploy_dir}}"
+# since {{ drupal_core_path }} is {{ drupal_deploy_dir}}/web
+- name: Ensure Drupal deploy directory can be created by git and accessible to http server
+  file:
+    path: "{{ drupal_deploy_dir }}/.."
+    state: directory
+    mode: ug+w
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  tags: ['drupal', 'prod_only']
+  become: yes
+
+#  !!! This will destroy your static files !!!
+#
+# - name: Ensure Drupal deploy directory is NOT present yet
+#   file:
+#     path: "{{ drupal_deploy_dir }}"
+#     state: absent
+#   tags: ['drupal', 'prod_only']
+#   become: yes
+
+# on the dev system we are working in the directory that already has the repo as we like it
+# we don't want to overwrite any git changes we've made on the dev sysytem
+# but we do want to populate the live system with latest code pushed to the repo
+- name: Create and populate Drupal deploy directory
+  git:
+    repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
+    dest: "{{ drupal_deploy_dir }}"
+  tags: ['drupal', 'prod_only']
+  become: no
+
+- name: Ensure key directories are writable by http server
+  file:
+    path: "{{ item }}"
+    recurse: yes
+    state: directory
+    mode: ug+w
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  loop:
+      - "{{ drupal_deploy_dir }}"
+      - "{{ drupal_deploy_dir }}/private_files"
+      - "{{ drupal_deploy_dir }}/tmp"
+      - "{{ drupal_deploy_dir }}/config"
+      - "{{ drupal_core_path }}/sites/default"
+  tags: ['drupal', 'prod_only']
+  become: yes

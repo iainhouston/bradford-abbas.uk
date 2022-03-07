@@ -5,7 +5,7 @@ This `prod` directory has two purposes:
 1. Most commonly for use after all the setting up and provisioning of dev and live servers; development and testing of new and existing features and when the tested code and configurations need to be deployed to the live (`prod`) server.
 
 	I kept this separate from the `vm` directory because that is quite complicated enough and I thought the task of updating code needed to be as simple, reliable and foolproof as I could make it and the method suggested in Jeff Geerlings "From Soup to Nuts" blog is so embedded in the general provisioning tasks and rôles that it became unnecessarily  complicated - and Jeff has added a pragraph to this blog stating that he will no longer support it; that he's not convinced its really mainstream, which echoes the fact that Drupal-VM is really about provisioning servers?
-	
+
 1. Occasionally to provision a fresh Ubuntu image when, for instance, we upgrade to a more recent Ubuntu LTS release.
 
 #1. Updating
@@ -34,7 +34,7 @@ This `prod` directory has two purposes:
 +	Provide shortcut / alias `updateLiveCode` to invoke the playbook properly  
 
 	+ see `scripts/badev/updateLiveCode.sh`
-	
+
 #2. Initialising the server
 
 
@@ -57,7 +57,7 @@ From the project directory `~/bradford-abbas.uk` run the `init.yml` playbook:
 	        --inventory-file=prod/inventory \
 	        --extra-vars="ansible_ssh_user=root" \
 	        --vault-password-file="~/.vaultpw"
-		
+
 The step above will create admin user `webadmin` per contents of `prod/secrets.yml`
 
 Now we are ready to provision the prod server.
@@ -80,13 +80,13 @@ The vault and superuser "become" passwords are both identical; this password mus
 **Important** The origin of this Linux password is documented in `../prod/secrets.yml`.
 It is generated from `openssl passwd -1 <origin>`
 
-	     DRUPALVM_ENV=prod ansible-playbook library/geerlingguy/drupal-vm/provisioning/playbook.yml \
+	     DRUPALVM_ENV=prod ansible-playbook library/provisioning/playbook.yml \
 	     --inventory-file=prod/inventory \
 	     --vault-password-file="~/.vaultpw" \
 	     --extra-vars="config_dir=$(pwd)/vm" \
 	     --skip-tags=test_only \
 	     --ask-become-pass
-		 
+
 
 ##Ensure postfix is working correctly
 
@@ -99,5 +99,3 @@ Look at `TryPostfix.md` in this directory.
 ##Restore MYSql database data to the live server
 
 *TBD*
-
-
