@@ -53,7 +53,8 @@
   file:
     path: "{{ drupal_core_path }}/sites/default/settings.php"
     state: file
-    mode: u=r,g=r,o-rwx
+    mode: ug=r
+    group: www-data
   become: yes
   tags: ['drupal', 'prod_only']
 
@@ -62,6 +63,7 @@
     path: "{{ drupal_core_path }}/sites/default"
     state: directory
     mode: ugo=rx
+    group: www-data
   become: yes
   tags: ['drupal', 'prod_only']
 
@@ -89,6 +91,8 @@
   copy:
     src: "{{ config_dir }}/saved_default_settings/services.yml"
     dest: "{{ drupal_core_path }}/sites/default/services.yml"
+    group: www-data
+    mode: ug=r
 
 - name: Copy settings.local file to sites/default/
   copy:
