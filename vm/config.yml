@@ -89,6 +89,7 @@ mysql_users:
 extra_packages:
   - unzip
   - emacs-nox
+  - mailutils
   - php-elisp
   - yaml-mode
   - opendkim
