@@ -22,9 +22,9 @@ subscription:
   validate_body: "We have received a request to manage your subscriptions for [simplenews-subscriber:mail] at [site:url]. To proceed please use the link below.\r\n\r\n[simplenews-subscriber:manage-url]"
 mail:
   use_cron: false
-  textalt: true
+  textalt: false
   throttle: 1000
   spool_progress_expiration: 3600
   spool_expire: 0
-  debug: true
+  debug: false
   source_cache: null

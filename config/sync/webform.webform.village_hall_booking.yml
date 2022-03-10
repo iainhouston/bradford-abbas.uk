@@ -76,7 +76,7 @@ elements: |-
   terms_and_conditions:
     '#type': fieldset
     '#title': 'Terms and Conditions'
-    '#description': '<p>A deposit of &pound;50 (Bradford Abbas resident) to &pound;100 (Non Bradford Abbas resident) is required in order to finalise the booking of the hall.</p>'
+    '#description': '<p>A deposit of between &pound;100 (Bradford Abbas resident) to &pound;200 (Non Bradford Abbas resident) is required in order to finalise the booking of the hall.</p>'
     '#description_display': before
     '#required': true
     i_have_read_the_terms_and_conditions:

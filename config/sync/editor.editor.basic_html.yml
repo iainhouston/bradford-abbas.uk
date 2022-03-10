@@ -1,63 +1,69 @@
-uuid: e12f705e-c92b-4cd2-a600-b1f1f3dc92b2
+uuid: 9f5eba9f-ff8d-458f-9a49-74b7a77cb567
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+    - ckeditor5
 format: basic_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-        -
-          name: Linking
-          items:
-            - DrupalLink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-            - Outdent
-            - Indent
-        -
-          name: Media
-          items:
-            - Table
-            - DrupalMediaLibrary
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-            - Blockquote
-            - PasteFromWord
-        -
-          name: Tools
-          items:
-            - '-'
-            - Source
-            - Maximize
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - '|'
+      - drupalMedia
+      - '|'
+      - sourceEditing
+      - '|'
+      - heading
+      - underline
+      - code
+      - insertTable
+      - textPartLanguage
   plugins:
-    stylescombo:
-      styles: ''
-    language:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+        - '<caption>'
+        - '<drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<a hreflang>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol start type>'
+        - '<drupal-media data-view-mode title>'
+    ckeditor5_language:
       language_list: un
 image_upload:
-  status: true
+  status: false
   scheme: public
   directory: inline-images
-  max_size: '8 MB'
+  max_size: ''
   max_dimensions:
-    width: 1024
-    height: 512
+    width: 0
+    height: 0

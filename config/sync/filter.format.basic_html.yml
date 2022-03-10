@@ -22,7 +22,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <u> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title><drupal-media data-entity-type data-entity-uuid alt data-align data-caption data-view-mode>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <caption> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title> <a hreflang href> <blockquote cite> <ul type> <ol start type> <drupal-media data-view-mode title data-entity-type data-entity-uuid alt data-caption data-align> <strong> <em> <u> <code> <li> <table> <tr> <td> <th> <thead> <tbody> <tfoot> <span lang dir>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -46,7 +46,7 @@ filters:
   editor_file_reference:
     id: editor_file_reference
     provider: editor
-    status: true
+    status: false
     weight: -45
     settings: {  }
   filter_url:
@@ -86,4 +86,5 @@ filters:
         bapc_large: bapc_large
         bapc_medium: bapc_medium
         bapc_small: bapc_small
-      allowed_media_types: {  }
+      allowed_media_types:
+        image: image
