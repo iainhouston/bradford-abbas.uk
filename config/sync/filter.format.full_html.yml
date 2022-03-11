@@ -2,8 +2,14 @@ uuid: 8d24a2da-049e-4a41-ae1a-26e84f15c30c
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.bapc
+    - core.entity_view_mode.media.bapc_large
+    - core.entity_view_mode.media.bapc_medium
+    - core.entity_view_mode.media.bapc_small
   module:
     - editor
+    - media
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
@@ -40,6 +46,19 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <u>'
       filter_html_help: true
       filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        bapc: bapc
+        bapc_large: bapc_large
+        bapc_medium: bapc_medium
+        bapc_small: bapc_small
+      allowed_media_types: {  }

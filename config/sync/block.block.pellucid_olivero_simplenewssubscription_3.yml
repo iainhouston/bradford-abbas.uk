@@ -17,10 +17,12 @@ settings:
   label: Subscribe
   label_display: visible
   provider: simplenews
-  newsletters: {  }
-  message: 'Stay informed - subscribe to our newsletter.'
-  unique_id: f89e6e76-655a-4c83-a53c-3132b5a09709
+  newsletters:
+    history_society: history_society
+    regular_news: regular_news
   default_newsletters:
     regular_news: regular_news
+  message: 'Stay informed - subscribe to our newsletters.'
   show_manage: true
+  unique_id: f89e6e76-655a-4c83-a53c-3132b5a09709
 visibility: {  }
