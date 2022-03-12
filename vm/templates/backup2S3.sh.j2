@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+{{ drush_source_install_bin_path }} -r {{ drupal_core_path }} sql:dump --extra-dump=--no-tablespaces --result-file=/tmp/bradford-abbas.uk.sql
+
+/bin/tar -czf /tmp/BAPC_files.tar.gz  {{ drupal_core_path }}/sites/default/files
+/usr/bin/s3cmd put  /tmp/bradford-abbas.uk.sql s3://bradford-abbas.uk.db 
+/usr/bin/s3cmd put  /tmp/BAPC_files.tar.gz s3://bradford-abbas.uk.files-compressed 
+    
