@@ -11,3 +11,9 @@
   tags: ['drupal', 'prod_only']
   become: no
 
+- name: Template Drupal settings file to sites/default/
+  template:
+    src: "{{ config_dir }}/templates/backup2S3.sh.j2"
+    dest: /usr/local/sbin/backup2S3
+    mode: ugo=rx
+  tags: ['drupal', 'prod_only']
