@@ -31,7 +31,7 @@ vagrant_synced_folders:
   # any of the build_* settings are 'true'. By default the folder is set to
   # the drupal-vm folder.
   - local_path: .
-    destination: /var/www/drupalvm
+    destination: "{{ drupal_deploy_dir }}"
     type: nfs
     create: true
 

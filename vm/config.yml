@@ -17,10 +17,11 @@ drupal_deploy: false
 
 # Essential Drupal settings.
 drupal_composer_install_dir: "/var/www/drupal"
-# our post-provision task will need repo URL
-drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 drupal_deploy_dir: "{{ drupal_composer_install_dir }}"
 drupal_core_path: "{{ drupal_deploy_dir }}/web"
+
+# our post-provision task will need repo URL
+drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
 
 drupal_core_owner: "{{ drupalvm_user }}"
 
