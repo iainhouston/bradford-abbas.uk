@@ -1,30 +1,27 @@
 ---
-# Force use of ansible_local provisioner, even if Ansible is installed on host.
-force_ansible_local: false
-
 # The web server software to use. Can be either 'apache' or 'nginx'.
 drupalvm_webserver: apache
 
 # The database system to use. Can be either 'mysql' or 'pgsql'.
 drupal_db_backend: mysql
 
-# Not using a makefile to build Drupal
-drupal_build_makefile: false
-
-# We are using a "composer based site deployment strategy"
-# i.e we are intalling Drupal by means of our own composer.json
+# Skip Jeff Geerling's Drupal installtion tasks
+# We are installing Drupal by means of our own composer.json
+# We'll do this ourselves in a post-provision task
 composer_global_packages: []
 drupal_build_composer: false
-
-# We are not using Composer's create-project as a site deployment strategy.
 drupal_build_composer_project: false
-
-# Composer-project installs a basic site for us on the Dev VM
 drupal_install_site: false
+drupal_build_makefile: false
+drupal_deploy: false
 
-# Required Drupal settings.
-drupal_composer_install_dir: "/var/www/drupalvm"
-drupal_core_path: "{{ drupal_composer_install_dir }}/web"
+# Essential Drupal settings.
+drupal_composer_install_dir: "/var/www/drupal"
+# our post-provision task will need repo URL
+drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
+drupal_deploy_dir: "{{ drupal_composer_install_dir }}"
+drupal_core_path: "{{ drupal_deploy_dir }}/web"
+
 drupal_core_owner: "{{ drupalvm_user }}"
 
 # secrets.yml is encrypted using ansible-vault
@@ -136,3 +133,10 @@ known_hosts_path: ~/.ssh/known_hosts
 hostname_configure: true
 hostname_fqdn: "{{ vagrant_hostname }}"
 ssh_home: "{{ drupal_core_path }}"
+
+pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
+post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
+
+# Force use of ansible_local provisioner, even if Ansible is installed on host.
+force_ansible_local: false
+

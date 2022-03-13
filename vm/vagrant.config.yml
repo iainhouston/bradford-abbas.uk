@@ -1,11 +1,13 @@
 ---
 # Ansible variables file for provisioning the Development Server
+# Ansible variables common to Live and Dev sites are in config.yml
 
 #
-# Local Vagrant options.
+# Virtual Mchine options.
 # ______________________
-# vagrant_box: geerlingguy/drupal-vm
 vagrant_box: bento/ubuntu-20.04
+# bento boxes know somehow that they are for Parallels virtual machines
+# and not Oracle Virtualbox machines
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
@@ -42,17 +44,9 @@ vagrant_plugins:
 drupalvm_vagrant_version_min: '2.2.10'
 drupalvm_ansible_version_min: '2.9'
 
-# Memory and CPU to use for this VM.
 vagrant_memory: 2048
 vagrant_cpus: 1
 vagrant_public_ip: ""
-
-# Local drupal site specs
-# _______________________
-# Dont allow Drupal VM to be accessed via a public network interface
-
-# Composer-project installs a basic site for us on the Dev VM
-drupal_install_site: false
 
 drupal_site_name: "BAPC Development Website"
 
@@ -120,6 +114,3 @@ adminer_install_filename: index.php
 
 pimpmylog_install_dir: /usr/share/php/pimpmylog
 pimpmylog_grant_all_privs: true
-
-pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
-post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"

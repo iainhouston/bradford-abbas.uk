@@ -1,28 +1,19 @@
 ---
-# Deploy from the project's Git repository.
-drupal_deploy: false
-# We'll do this ourselves in a post-provision task
-drupal_deploy_repo: "https://github.com/iainhouston/bradford-abbas.uk.git"
-drupal_deploy_dir: /var/www/drupal
-#  User ansible-playbook's --extra-args for:
-# drupal_deploy_version: refactorvm
-drupal_composer_install_dir: /var/www/drupal
-drupal_core_path: "{{ drupal_composer_install_dir }}/web"
-
-drupal_install_site: false
+# Ansible variables file for provisioning the Live Server
+# Ansible variables common to Live and Dev sites are in config.yml
 drupal_site_name: "BAPC Website"
+
+# I think this next line is redundant TODO: see where it's (not) used (anymore)
 drupal_site_install_extra_args: [ “--config-dir=/var/www/drupal/config/sync”]
 # Other install args provided in prod.secrets.yml
 
 # Set the domain for this site appropriately.
 # vagrant_hostname: lookup('env','LIVESITE')
 vagrant_hostname: "bradford-abbas.uk"
+# Yes, the above variable does record the Live hostname
 drupal_domain_regex: "{{ vagrant_hostname | regex_findall('([^.]+)')  | join('\\.') }}"
 
-# setup DKIM; Place certs etc.
-pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
-post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
-
+# mySQL security hardened on Live site
 extra_security_enabled: true
 
 # Apache VirtualHosts.
