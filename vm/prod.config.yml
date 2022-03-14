@@ -42,6 +42,7 @@ apache_vhosts_ssl:
 
 ba_cron_day: "3"
 ba_cron_hour: "05"
+backup_script_path: /usr/local/sbin/backup2S3
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/45"
@@ -50,28 +51,10 @@ drupalvm_cron_jobs:
   - name: "Drupal Clear Views Cache"
     minute: "20"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ drush_source_install_bin_path }} cache:clear views   > /dev/null 2>&1"
+    job: "{{ drush_source_install_bin_path }} cache:clear views > /dev/null 2>&1"
 
-  - name: "Drupal SQL dump"
+  - name: "Drupal SQL dump and BAPC Static Files dump"
     minute: "01"
     weekday: "{{ ba_cron_day }}"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ drush_source_install_bin_path }} -r {{ drupal_core_path }} sql:dump --extra-dump=--no-tablespaces --result-file=/tmp/bradford-abbas.uk.sql "
-
-  - name: "Compress Drupal files"
-    minute: "06"
-    hour: "{{ ba_cron_hour }}"
-    weekday: "{{ ba_cron_day }}"
-    job: "/bin/tar -czf /tmp/BAPC_files.tar.gz  {{ drupal_core_path }}/sites/default/files "
-
-  - name: "Backup Drupal SQL"
-    minute: "11"
-    hour: "{{ ba_cron_hour }}"
-    weekday: "{{ ba_cron_day }}"
-    job: "/usr/bin/s3cmd put  /tmp/bradford-abbas.uk.sql s3://bradford-abbas.uk.db "
-
-  - name: "Backup Drupal Files"
-    minute: "15"
-    hour: "{{ ba_cron_hour }}"
-    weekday: "{{ ba_cron_day }}"
-    job: "/usr/bin/s3cmd put  /tmp/BAPC_files.tar.gz s3://bradford-abbas.uk.files-compressed "
+    job: "{{ backup_script_path }} > /dev/null 2>&1"
