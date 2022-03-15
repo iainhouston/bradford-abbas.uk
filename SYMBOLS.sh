@@ -78,6 +78,10 @@ alias endev="sh $BADEVSCRIPTS/endev.sh"
 # Reload database
 alias reload_db="sh $BADEVSCRIPTS/reload_db.sh"
 
+# Provision Live Server
+# OK, you won't want to do this very often!
+alias provisionLiveServer="sh $BADEVSCRIPTS/provisionLiveServer.sh"
+
 # For pretty printing
 # See https://en.wikipedia.org/wiki/ANSI_escape_code
 export RED='\x1B[0;31m'
