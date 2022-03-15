@@ -25,10 +25,15 @@ Quick start
 	  ...
 	  MOTD message
 	```
-	
-5.  `composer install`. 
+    
+5.  `vagrant up`
 
-6.  `vagrant up`
+Web Server Provisioning
+=======================
+
+Step 5 above provisions the Development Server
+
+[This file](prod/README.md) describes provisioning the Live Server
 
 Website development and maintenance stategy
 ===============

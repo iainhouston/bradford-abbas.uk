@@ -1,6 +1,8 @@
 ## About this directory
 
-This `prod` directory has two purposes:  
+Before attempting to run any of the scripts described below, do not forget to `cdbadev` to ensure that you're in the project's working directory.
+
+Regarding this directory: it contains settings and variables that serve two purposes:  
 
 1. Most commonly for use after all the setting up and provisioning of dev and live servers; development and testing of new and existing features and when the tested code and configurations need to be deployed to the live (`prod`) server.
 
@@ -75,18 +77,25 @@ that we can `ssh webadmin`
 
 This step is run from the project directory.
 
-The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw` but you'll also be asked to enter it when running the provisionuing playbook next.
+The vault and superuser "become" passwords are both identical; this password must reside in `~/.vaultpw`.
 
 **Important** The origin of this Linux password is documented in `../prod/secrets.yml`.
 It is generated from `openssl passwd -1 <origin>`
+    
+`provisionLiveServer` is a utility script that will invoke an Ansible playbook that builds all the software on the Ubuntu Linux platform and install the Drupal PHP code and creates an empty SQL database.
 
-	     DRUPALVM_ENV=prod ansible-playbook library/provisioning/playbook.yml \
-	     --inventory-file=prod/inventory \
-	     --vault-password-file="~/.vaultpw" \
-	     --extra-vars="config_dir=$(pwd)/vm" \
-	     --skip-tags=test_only \
-	     --ask-become-pass
+##Populating the Live Server with Content and Configuration settings
 
+The  utility script `populateProdData` will poulate the Live Server with data previously backed up from a Live Server OR exceptionally bootstrap data for a completely new website starting from scratch.
+
+TODO: create a starting SQL file for possible creation of other Parish Councils' websites from scratch.
+
+###Database Content
+The  utility script `populateProdData` requires `mostRecentLive.sql` as the source for the Drupal datbase content
+        
+###Static Data Files
+
+The  utility script `populateProdData` requires a directory hierarchy at `./web/sites/default/files/` as the source of any static fiules to be uploaded to the Live Server
 
 ##Ensure postfix is working correctly
 
