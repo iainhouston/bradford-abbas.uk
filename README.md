@@ -45,13 +45,13 @@ On the development machine into which this repo is cloned, you'll need to have i
 
 +  Vagrant and vagrant plugins (to run the provisioning tasks)
 
-+  Ruby (available by default on MacOS)
++  Ruby (required by `vagrant`; available by default on MacOS)
 
 +  Ansible (to run the provisioning tasks). 
 
 +  NodeJS and npm (Required when developing the website's Appearance / Theme)  
 
-+  Firefox Developer Edition (favourite browser when developing the Theme)
++  Firefox Developer Edition (favourite browser when developing the Theme's CSS)
 
 Do `checkVersions` to list the versions of all the above required software. A typical out is incuded below.
 
