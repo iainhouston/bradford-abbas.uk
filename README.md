@@ -1,7 +1,6 @@
 # Development and maintenance of Bradford Abbas Parish Council website
 
-Quick start
-========
+##Quick start. 
 
 1. `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 
@@ -28,22 +27,39 @@ Quick start
         MOTD message
 	```
     
-5.  `vagrant up`
-
-Web Server Provisioning
-=======================
+    5.  `vagrant
+    
+##Provisioning
 
 Step 5 above provisions the **Development** Server
 
 You will find [detailed instructions](prod/README.md) to provision the **Live** Server
 
-Website development and maintenance stategy
-===============
+##Required software
 
-Now you'll need to look in the web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
+On the development machine into which this repo is cloned, you'll need to have installed:
+
++  PHP (to run drush)
+
++  Composer (to install Drupal and contributed modules and Themes) 
+
++  Vagrant and vagrant plugins (to run the provisioning tasks)
+
++  Ruby (available by default on MacOS)
+
++  Ansible(to run the provisioning tasks). 
+
++  NodeJS and npm (Required when developing the website's Appearance / Theme)  
+
++  Firefox Developer Edition (favourite browser when developing the Theme)
+
+Do `checkVersions` to list the versions of all the above required software
+
+##Website development and maintenance stategy
+
+Now you'll need to look in my web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
 
 
-TO DO items
------------
+##TO DO items
 
 See [here](TODO.md)
