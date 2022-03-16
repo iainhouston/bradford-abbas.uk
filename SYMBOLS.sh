@@ -59,9 +59,6 @@ alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
 # exceptionally - bring dev Drupal Config settings in line with live ones
 alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
 
-# Development to Production !!
-alias populateProdData="sh $BADEVSCRIPTS/populateProdData.sh"
-
 # Dumps: SQL and Static files
 alias cloneLive2Dev="sh $BADEVSCRIPTS/cloneLive2Dev.sh"
 
@@ -75,12 +72,14 @@ alias safecex="sh $BADEVSCRIPTS/safecex.sh"
 # Enable development modules
 alias endev="sh $BADEVSCRIPTS/endev.sh"
 
-# Reload database
-alias reload_db="sh $BADEVSCRIPTS/reload_db.sh"
+# Reload Dev database
+alias reloadDevDB="sh $BADEVSCRIPTS/reloadDevDB.sh"
 
-# Provision Live Server
+# Provision Live Server and Upload Live static Data and dynamic Content
 # OK, you won't want to do this very often!
+alias initialiseLiveServer="sh $BADEVSCRIPTS/initialiseLiveServer.sh"
 alias provisionLiveServer="sh $BADEVSCRIPTS/provisionLiveServer.sh"
+alias populateLiveData="sh $BADEVSCRIPTS/populateLiveData.sh"
 
 # For pretty printing
 # See https://en.wikipedia.org/wiki/ANSI_escape_code

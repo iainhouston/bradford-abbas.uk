@@ -18,12 +18,14 @@ Quick start
 4. `$ cdbadev` =>
 
     ```sh
-	  updateLiveCode - Code and Config to Live site
-	  cloneLive2Dev  - Clone Live Database and Files to Dev site
-	  safecex        - Safe export of Dev site's configuration
-	  endev          - Enable development modules in Dev site
-	  ...
-	  MOTD message
+        checkVersions  - Review  software required for development
+        cloneLive2Dev  - Sync live database and static files to Dev server
+        reload_db      - Reload Dev database with most recently downloaded live database
+        endev          - Enable development modules in Dev site
+        safecex        - Safe export of Dev site's configuration
+        updateLiveCode - Code and Config to Live site
+        	  ...
+        MOTD message
 	```
     
 5.  `vagrant up`
@@ -31,9 +33,9 @@ Quick start
 Web Server Provisioning
 =======================
 
-Step 5 above provisions the Development Server
+Step 5 above provisions the **Development** Server
 
-[This file](prod/README.md) describes provisioning the Live Server
+You will find [detailed instructions](prod/README.md) to provision the **Live** Server
 
 Website development and maintenance stategy
 ===============

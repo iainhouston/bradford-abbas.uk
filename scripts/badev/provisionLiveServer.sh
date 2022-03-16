@@ -1,4 +1,4 @@
-#!/bin/zsh -x
+#!/bin/zsh 
 
 echo "${RED}Do you really want to do this?"
 echo "${GREEN}(Please enter a number now)${NC}"
