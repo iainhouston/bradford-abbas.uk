@@ -39,6 +39,8 @@ You will find [detailed instructions](prod/README.md) to provision the **Live** 
 
 On the development machine into which this repo is cloned, you'll need to have installed:
 
++  Virtualisation software (I use Parallels, previously Oracle Virtualbox)
+
 +  PHP (to run drush)
 
 +  Composer (to install Drupal and contributed modules and Themes) 
@@ -54,6 +56,20 @@ On the development machine into which this repo is cloned, you'll need to have i
 +  Firefox Developer Edition (favourite browser when developing the Theme's CSS)
 
 Do `checkVersions` to list the versions of all the above required software. A typical out is incuded below.
+
+**Notes:**
+
++  I use `brew install ...` to install PHP, Ansible, and NodeJS.  
+
++  I purchased Parallels Desktop for other reasons. I used the free Oracle VirtualBox for many years but quite frequently came across issues of compatibility with other components. 
+
++  Different virtual boxes implicitly require different virtualisation software. `vagrant_box: bento/ubuntu-20.04` used in `vm/vagrant.conf.yml` is configured to require Parallels virtualisation
+
++  Vagrant is downloaded [per their website](https://www.vagrantup.com/docs/installation) 
+
++  Composer is installed [per their website](https://getcomposer.org/download/)  
+
++  Last but not least: ["Get the latest features, fast performance, and the development tools you need to build for the open web"](https://www.mozilla.org/en-GB/firefox/developer/)
 
 ## Website development and maintenance stategy
 
