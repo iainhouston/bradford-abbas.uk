@@ -27,7 +27,7 @@
         MOTD message
 	```
     
-    5.  `vagrant
+5.  `vagrant up` 
     
 ## Provisioning
 
