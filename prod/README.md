@@ -12,10 +12,10 @@ Regarding this subdirectory `prod`: it contains settings and variables that serv
 
 1. *Very* occasionally to **provision the Live server**; a fresh Ubuntu image when, for instance, we upgrade to a more recent Ubuntu LTS release.
 
-#1. Updating
+# 1. Updating
 
 
-##Objectives of updating the live server
+## Objectives of updating the live server
 
 1.	Use `drush` to put the website into maintenance mode
 
@@ -31,7 +31,7 @@ Regarding this subdirectory `prod`: it contains settings and variables that serv
 
 1.	Use `drush` to take the website out of maintenance mode
 
-##Method of achieving the Objectives
+## Method of achieving the Objectives
 
 +	Create a completely new `ansible-playbook` playbook in this directory
 
@@ -39,10 +39,10 @@ Regarding this subdirectory `prod`: it contains settings and variables that serv
 
 	+ see `scripts/badev/updateLiveCode.sh`
 
-#2. Initialising the server
+# 2. Initialising the server
 
 
-##How to set up the administrator account `webadmin` prior to provisioning the new live server
+## How to set up the administrator account `webadmin` prior to provisioning the new live server
 
 We use *live* and *prod*uction interchangeably here.
 
@@ -73,7 +73,7 @@ But first, just check that you can do `ssh webadmin`, with `~/.ssh/config` havin
             Hostname bradford-abbas.uk
             PreferredAuthentications publickey
 
-##Provisioning the new Live server
+## Provisioning the new Live server
 
 `provisionLiveServer` is run from the project directory.
 
@@ -85,7 +85,7 @@ But first, just check that you can do `ssh webadmin`, with `~/.ssh/config` havin
     
 1. `provisionLiveServer` is a utility script that will invoke an Ansible playbook that builds all the software on the Ubuntu Linux platform and will install the Drupal PHP code and creates an empty SQL database.
 
-##Populating the Live Server with dynamic and static Content and Configuration settings
+## Populating the Live Server with dynamic and static Content and Configuration settings
 
 `populateLiveData` is run from the project directory.
 
@@ -103,9 +103,9 @@ But first, just check that you can do `ssh webadmin`, with `~/.ssh/config` havin
 
 1. TODO: create a starting SQL file and `./web/sites/default/files/` hhierarchy for possible creation of other Parish Councils' websites from scratch.
 
-#Tasks post provisioning
+# Tasks post provisioning
 
-##Ensure postfix is working correctly
+## Ensure postfix is working correctly
 
 Look at `TryPostfix.md` in this directory.
 

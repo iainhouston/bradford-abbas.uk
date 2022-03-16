@@ -1,6 +1,6 @@
 # Development and maintenance of Bradford Abbas Parish Council website
 
-##Quick start. 
+## Quick start. 
 
 1. `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 
@@ -29,13 +29,13 @@
     
     5.  `vagrant
     
-##Provisioning
+## Provisioning
 
 Step 5 above provisions the **Development** Server
 
 You will find [detailed instructions](prod/README.md) to provision the **Live** Server
 
-##Required software
+## Required software
 
 On the development machine into which this repo is cloned, you'll need to have installed:
 
@@ -55,11 +55,11 @@ On the development machine into which this repo is cloned, you'll need to have i
 
 Do `checkVersions` to list the versions of all the above required software
 
-##Website development and maintenance stategy
+## Website development and maintenance stategy
 
 Now you'll need to look in my web log post [Overview of the Parish Council website](https://iainhouston.com/bapcoverview/)
 
 
-##TO DO items
+## TO DO items
 
 See [here](TODO.md)
