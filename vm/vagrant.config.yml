@@ -5,7 +5,7 @@
 #
 # Virtual Mchine options.
 # ______________________
-vagrant_box: bento/ubuntu-20.04
+  
 # bento boxes know somehow that they are for Parallels virtual machines
 # and not Oracle Virtualbox machines
 
@@ -68,18 +68,6 @@ php_xdebug_remote_host: "{{ ansible_default_ipv4.gateway }}"
 php_xdebug_idekey: PHPSTORM
 
 dashboard_install_dir: /var/www/dashboard
-extra_security_enabled: false
-
-firewall_enabled: true
-firewall_allowed_tcp_ports:
-  - "22"
-  - "25"
-  - "80"
-  - "443"
-  - "8025"
-firewall_log_dropped_packets: false
-firewall_disable_firewalld: true
-firewall_disable_ufw: true
 
 # Apache VirtualHosts.
 # View the geerlingguy.apache Ansible Role README for more options.

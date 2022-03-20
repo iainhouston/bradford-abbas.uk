@@ -97,6 +97,21 @@ extra_packages:
 # You can configure almost anything else on the server in the rest of this file.
 extra_security_enabled: false
 
+# Configure Jeff Geerling's simple iptables firewall service script
+firewall_enabled: true
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+  - "2222"
+firewall_log_dropped_packets: false
+firewall_enable_ipv6: true
+
+# These are platform-default firewalls (CentOS and Ubuntu)
+firewall_disable_firewalld: true
+firewall_disable_ufw: true
+
 # PHP Configuration.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
 php_version: "8.1"
