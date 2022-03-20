@@ -104,7 +104,7 @@ firewall_allowed_tcp_ports:
   - "25"
   - "80"
   - "443"
-  - "2222"
+
 firewall_log_dropped_packets: false
 firewall_enable_ipv6: true
 

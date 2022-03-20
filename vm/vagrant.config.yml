@@ -48,6 +48,14 @@ vagrant_memory: 2048
 vagrant_cpus: 1
 vagrant_public_ip: ""
 
+# Dev system requires port 8025 for Mailhog
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+  - "8025"
+
 drupal_site_name: "BAPC Development Website"
 
 # installed_extras are web / server utilities (and not Ubuntu / Linux ones)
