@@ -75,6 +75,8 @@ php_xdebug_max_nesting_level: 256
 php_xdebug_remote_host: "{{ ansible_default_ipv4.gateway }}"
 php_xdebug_idekey: PHPSTORM
 
+php_sendmail_path: "/opt/mailhog/mhsendmail"
+
 dashboard_install_dir: /var/www/dashboard
 
 # Apache VirtualHosts.
