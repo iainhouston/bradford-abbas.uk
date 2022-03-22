@@ -57,4 +57,4 @@ drupalvm_cron_jobs:
     minute: "01"
     weekday: "{{ ba_cron_day }}"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ backup_script_path }} > /dev/null 2>&1"
+    job: "{{ backup_script_path }}"
