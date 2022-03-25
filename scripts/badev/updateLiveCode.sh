@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
 
-echo "We'll need the file containig the Administrator's sudo password."
-echo "This is the same password that automatically unencrypts secrets.yml"
-echo "We're expecting to find this file here: ${HOME}/.vaultpw"
+echo "We're looking for the file containig the Administrator's sudo password."
 
 if [ -e ${HOME}/.vaultpw ]
 
 then
 
+    echo "The same password  automatically decrypts the secrets.yml"
+    echo "We found the password file here: ${HOME}/.vaultpw"
+
     echo "${GREEN}About to update ${RED}Live${GREEN} Server{NC}"
     Start_time=$SECONDS
-    
+
     becomepass=`cat ${HOME}/.vaultpw`
 
     ansible-playbook prod/update.playbook.yml \
         --inventory-file=prod/inventory \
         --extra-vars="project_dir=$(pwd)" \
         --extra-vars="ansible_become_pass=${becomepass}" \
-        --vault-password-file="~/.vaultpw" 
-    
+        --vault-password-file="~/.vaultpw"
+
     osascript -e 'display notification "Live system updated to latest code and configuration" with title "Task complete" sound name "Basso"'
 
     Elapsed_time=$(($SECONDS - $Start_time))
@@ -31,6 +32,5 @@ else
     echo "${RED}Couldn't find ${GREEN}${HOME}/.vaultpw{NC}"
     echo "Abandoning updating the Live Server"
     exit 1
-    
+
 fi
-    
