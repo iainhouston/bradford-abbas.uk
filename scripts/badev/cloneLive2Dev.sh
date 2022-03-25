@@ -16,6 +16,7 @@ gunzip $FILE.gz
 # drush uses rsync -t flag which writes extraneous text
 # sed -i '' 's/^Connection to/-- Connection to/' $FILE
 
+echo "Emptying Drupal database on Dev machine"
 $DRUSH $DEVALIAS sql:drop -y
 echo "Loading replica of Live database"
 $DRUSH $DEVALIAS sql:cli < $FILE
