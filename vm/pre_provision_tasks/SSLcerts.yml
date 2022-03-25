@@ -2,7 +2,7 @@
 - name: copy SSL certificate
   copy:
     src: "{{ config_dir }}/certs/SSL.crt"
-    dest: /etc/ssl/certs/bradford-abbas.uk.crt
+    dest: "{{ ssl_crt_dest }}"
     owner: root
     group: root
     mode: a-w,o-r,ug+r
@@ -12,7 +12,7 @@
 - name: copy SSL key
   copy:
     src: "{{ config_dir }}/certs/SSL.key"
-    dest: /etc/ssl/private/bradford-abbas.uk.key
+    dest: "{{ ssl_key_dest }}"
     owner: root
     group: root
     mode: a-w,o-r,ug+r
