@@ -20,11 +20,11 @@ definitions:
     expanded: false
     enabled: true
   filter__tips_all:
+    enabled: true
     menu_name: tools
     parent: ''
-    weight: -49
     expanded: false
-    enabled: false
+    weight: -49
   search__view:
     menu_name: tools
     parent: ''

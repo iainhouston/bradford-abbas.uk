@@ -106,6 +106,7 @@
 		"drupal/redirect": "^1.7",
 		"drupal/simplenews": "^3.0@beta",
 		"drupal/swiftmailer": "^2.0",
+		"drupal/symfony_mailer": "^1.0@alpha",
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0",
 		"drush/drush": "^10.3",

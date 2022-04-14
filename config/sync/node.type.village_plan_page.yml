@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Village Plan page'
+name: 'Neighbourhood Plan page'
 type: village_plan_page
-description: 'A page in our Village Plan'
+description: 'A page in our Neighbourhood Plan'
 help: ''
 new_revision: true
 preview_mode: 1

@@ -73,6 +73,7 @@ permissions:
   - 'edit any minutes content'
   - 'edit any page content'
   - 'edit own agenda content'
+  - 'edit own article content'
   - 'edit own document content'
   - 'edit own item_of_expense content'
   - 'edit own meeting content'

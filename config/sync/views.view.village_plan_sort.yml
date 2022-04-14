@@ -13,9 +13,9 @@ dependencies:
     - taxonomy
     - user
 id: village_plan_sort
-label: 'Village Plan sort'
+label: 'Neighbourhood Plan sort'
 module: views
-description: ''
+description: 'Drag the various NP pages into order'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -26,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Village Plan index'
+      title: 'Neighbourhood Plan index'
       fields:
         title:
           id: title
@@ -266,9 +266,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: |-
-              <p>Drag and drop the grey handle to re-order the Village Plan pages under the Category under which they've been filed.<br>
-              Note that the Categories themselves (<em>File Under</em>) can only be re-ordered by a site Administrator.</p>
+            value: "<p>Drag and drop the grey handle to re-order the Neighbourhood Plan pages under the Category under which they've been filed.<br>\r\nNote that the Categories themselves (<em>File Under</em>) can only be re-ordered by a site Administrator.</p>"
             format: basic_html
           tokenize: false
       footer: {  }
@@ -300,7 +298,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: 'This Village Plan Page'
+          label: 'This Neighbourhood Plan Page'
           exclude: false
           alter:
             alter_text: false
@@ -480,9 +478,10 @@ display:
       path: village-plan-sort
       menu:
         type: normal
-        title: 'Sort the Village Plan pages'
+        title: 'Sort the Neighbourhood Plan pages'
         description: 'Drag and drop the Village Plan pages into the order you require'
         weight: -44
+        enabled: true
         expanded: false
         menu_name: tools
         parent: ''

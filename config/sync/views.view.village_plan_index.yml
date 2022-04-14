@@ -7,11 +7,12 @@ dependencies:
     - node.type.village_plan_page
     - taxonomy.vocabulary.village_plan_topic
   module:
+    - draggableviews
     - node
     - taxonomy
     - user
 id: village_plan_index
-label: 'Village Plan index'
+label: 'Neighbourhood Plan index'
 module: views
 description: ''
 tag: ''
@@ -24,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Village Plan index'
+      title: 'Neighbourhood Plan index'
       fields:
         title:
           id: title
@@ -252,11 +253,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: |-
-              <p>The Parish Council are starting to put together a <em>Village Plan</em> in which we can document aspects of the village that we value and how the village might evolve over time.</p>
-              <p>At this time the <em>Village Plan</em> is a <em>work in progress</em> in which we are seeking your input to improve the content. Some sections are skeletons that need fleshing out.</p>
-              <p>If you would like to comment on what you see, or would like to add or amend a section, the please contact <a href="https://bradford-abbas.uk/user/21">Terry Hunt</a></p>
-              <p></p>
+            value: "<p>The people of Bradford Abbas are in the early stages of developing a <em>Neighbourhood Plan</em> in which the community can document aspects of the village that we value and how the village might evolve over time.</p>\r\n<p>At this time the <em>Neighbourhood Plan</em> section of this websiteis a <em>work in progress</em> which will require input from the Steering Committee to improve the content. Some sections are skeletons that need fleshing out.</p>\r\n<p>If you would like to comment on what you see, or would like to add or amend a section, the please contact <a href=\"https://bradford-abbas.uk/user/21\">Terry Hunt</a></p>\r\n<p></p>"
             format: basic_html
           tokenize: false
       footer: {  }

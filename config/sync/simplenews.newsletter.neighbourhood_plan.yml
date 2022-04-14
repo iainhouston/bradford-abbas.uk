@@ -1,0 +1,19 @@
+uuid: c2dc251c-6889-4cf5-95cf-7e4613b5baee
+langcode: en
+status: true
+dependencies: {  }
+name: 'Neighbourhood Plan'
+id: neighbourhood_plan
+description: 'News from the Neighbourhood Plan Steering Committee'
+format: html
+priority: 0
+receipt: false
+from_name: 'Bradford Abbas Neighbourhood Plan'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: webmaster@bradford-abbas.uk
+hyperlinks: true
+allowed_handlers:
+  simplenews_all: '0'
+new_account: none
+access: default
+weight: 0

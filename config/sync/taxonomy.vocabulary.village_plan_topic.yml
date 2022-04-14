@@ -2,7 +2,7 @@ uuid: 2e61d485-5570-4e71-9e5a-6f3f9449c0e6
 langcode: en
 status: true
 dependencies: {  }
-name: 'Village Plan Topic'
+name: 'Neighbourhood Plan Topic'
 vid: village_plan_topic
 description: ''
 weight: 0

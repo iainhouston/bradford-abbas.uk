@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.article
     - node.type.document
   module:
     - filter
@@ -16,6 +17,7 @@ weight: -5
 is_admin: null
 permissions:
   - 'access content'
+  - 'create article content'
   - 'create document content'
   - 'delete any document content'
   - 'delete document revisions'
