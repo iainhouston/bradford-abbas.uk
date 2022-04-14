@@ -19,6 +19,7 @@ settings:
   provider: simplenews
   newsletters:
     history_society: history_society
+    neighbourhood_plan: neighbourhood_plan
     regular_news: regular_news
   default_newsletters:
     regular_news: regular_news
