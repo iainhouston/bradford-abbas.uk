@@ -5,9 +5,10 @@
 #
 # Virtual Mchine options.
 # ______________________
-  
+
 # bento boxes know somehow that they are for Parallels virtual machines
 # and not Oracle Virtualbox machines
+vagrant_box: "bento/ubuntu-20.04"
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`

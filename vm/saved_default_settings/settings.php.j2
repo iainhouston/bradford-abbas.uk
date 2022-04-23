@@ -277,7 +277,7 @@ $settings['config_sync_directory'] = '../config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'eqrxbsnV8SKCM0rzQpqKUq32E1H4G8oJVahszof_QyCN16Tn30y_fxysQ_LdcAS_ILD4quKwKg';
+$settings['hash_salt'] = "{{ drupal_hash_salt }}";
 
 /**
  * Deployment identifier.
