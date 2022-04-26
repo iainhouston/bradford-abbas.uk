@@ -1,0 +1,13 @@
+uuid: fbe5b656-2856-4d49-b00a-8a461519be37
+langcode: en
+status: true
+dependencies:
+  config:
+    - simplenews.newsletter.history_society
+id: simplenews_newsletter.node.history_society
+configuration:
+  email_from:
+    addresses:
+      -
+        value: histsoc@bradford-abbas.uk
+        display: 'Bradford Abbas History Society'

@@ -78,8 +78,8 @@
     dest: "{{ drupal_core_path }}/sites/default/settings.php"
     block: |
           # mailhog needs the mailsystem to use default PHP sender
-          $config['mailsystem.settings']['defaults']['sender'] = 'php_mail';
-          $config['swiftmailer.transport']['sendmail_path'] = '/usr/sbin/mhsendmail';
+          # $config['mailsystem.settings']['defaults']['sender'] = 'php_mail';
+          # $config['swiftmailer.transport']['sendmail_path'] = '/usr/sbin/mhsendmail';
           # settings.local.php disables CSS aggregation and disables Internal Page Cache etc.
           if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
             include $app_root . '/' . $site_path . '/settings.local.php';

@@ -1,0 +1,12 @@
+uuid: a85ef385-17b4-46f5-b26b-93decb05aa41
+langcode: en
+status: true
+dependencies: {  }
+id: smtp
+label: SMTP
+plugin: smtp
+configuration:
+  user: ''
+  pass: ''
+  host: 127.0.0.1
+  port: 1025

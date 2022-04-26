@@ -1,0 +1,14 @@
+uuid: 310bd348-dc4b-4ba3-92da-613e0fd77dd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+_core:
+  default_config_hash: eS_mn5V1pRFDUx66hVOesANK1KjPtyMQBr8v0JEBp-A
+id: simplenews.subscribe
+configuration:
+  email_subject:
+    value: 'Confirmation for [site:name]'
+  email_body:
+    value: "We have received a request to subscribe [simplenews-subscriber:mail] at [site:url]. To confirm please use the link below.\r\n\r\n[simplenews-subscriber:combined-url]"

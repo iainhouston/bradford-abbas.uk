@@ -1,0 +1,13 @@
+uuid: 9b952dfc-9ea6-4b77-9de4-b43399f7fa28
+langcode: en
+status: true
+dependencies:
+  config:
+    - simplenews.newsletter.councillors
+id: simplenews_newsletter.node.councillors
+configuration:
+  email_from:
+    addresses:
+      -
+        value: clerk@bradford-abbas.uk
+        display: 'Bradford Abbas Parish Clerk'
