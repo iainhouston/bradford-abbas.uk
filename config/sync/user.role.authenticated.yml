@@ -12,6 +12,7 @@ dependencies:
   module:
     - comment
     - contact
+    - devel
     - draggableviews
     - filter
     - media
@@ -31,6 +32,7 @@ permissions:
   - 'access browser_for_images entity browser pages'
   - 'access comments'
   - 'access content'
+  - 'access devel information'
   - 'access draggableviews'
   - 'access media overview'
   - 'access shortcuts'
@@ -60,6 +62,7 @@ permissions:
   - 'send newsletter'
   - 'skip comment approval'
   - 'subscribe to newsletters'
+  - 'switch users'
   - 'update any media'
   - 'use advanced search'
   - 'use text format basic_html'
