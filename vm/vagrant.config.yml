@@ -66,15 +66,8 @@ installed_extras:
   - pimpmylog
   - xdebug
   - mailhog
-php_xdebug_default_enable: 1
-php_xdebug_coverage_enable: 0
-php_xdebug_version: "3.1.3"
-php_xdebug_cli_disable: yes
-php_xdebug_remote_enable: 1
-php_xdebug_remote_connect_back: 1
-php_xdebug_max_nesting_level: 256
-php_xdebug_remote_host: "{{ ansible_default_ipv4.gateway }}"
-php_xdebug_idekey: PHPSTORM
+
+# See role iainhouston.php-xdebug for default XDEBUG php.ini values 
 
 php_sendmail_path: "/opt/mailhog/mhsendmail"
 
