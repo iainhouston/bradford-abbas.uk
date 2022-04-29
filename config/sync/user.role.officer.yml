@@ -16,7 +16,6 @@ dependencies:
     - filter
     - node
     - path
-    - quickedit
     - shortcut
     - simplenews
     - system
@@ -31,7 +30,6 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
-  - 'access in-place editing'
   - 'access toolbar'
   - 'access tour'
   - 'administer nodes'
