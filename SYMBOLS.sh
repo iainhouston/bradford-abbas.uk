@@ -15,13 +15,13 @@
 
 # Project directory; created when cloned from GitHub thus:
 # `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
-export BADEV="$HOME/trymailer"
+export BADEV="$HOME/bradford-abbas.uk"
 
 # URL of Live, and Virtual Development and Staging sites
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
 export LIVESITE="bradford-abbas.uk"
 export STAGESITE="staging.bradford-abbas.uk"
-export DEVSITE="mailer.bradford-abbas.uk"
+export DEVSITE="vagrant.bradford-abbas.uk"
 
 # the following aliases must have corresponding `.yml` files in `drush/sites`
 export LIVEALIAS="@balive"

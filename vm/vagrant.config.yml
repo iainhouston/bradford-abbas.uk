@@ -19,8 +19,8 @@ vagrant_box: "bento/ubuntu-20.04"
 # Even though the following DOES work as expected:
 # ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}"
 
-vagrant_hostname: mailer.bradford-abbas.uk
-vagrant_machine_name: BAPC-Mailer
+vagrant_hostname: vagrant.bradford-abbas.uk
+vagrant_machine_name: BAPC-Dev
 vagrant_user: vagrant
 vagrant_ip: 0.0.0.0
 vagrant_synced_folder_default_type: nfs

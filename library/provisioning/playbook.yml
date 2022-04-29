@@ -56,16 +56,12 @@
     - { role: geerlingguy.drush, when: '"drush" in installed_extras' }
     - { role: geerlingguy.memcached, when: '"memcached" in installed_extras' }
     - { role: geerlingguy.php-memcached, when: '"memcached" in installed_extras', tags: ['php'] }
+    - { role: iainhouston.php-xdebug, when: '"xdebug" in installed_extras', tags: ['php'] }
 
     - role: geerlingguy.php-tideways
       workspace: "/root/php{{ php_version }}"
       when: '"tideways" in installed_extras'
       tags: ['php']
-
-    - role: iainhouston.php-xdebug
-      workspace: "/root/php{{ php_version }}"
-      when: '"xdebug" in installed_extras'
-      tags: ['php', 'xdebug']
 
     - role: geerlingguy.php-xhprof
       workspace: "/root/php{{ php_version }}"
