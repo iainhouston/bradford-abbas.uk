@@ -112,7 +112,7 @@
 		"iainhouston/pellucid_document": "^1.1",
 		"iainhouston/pellucid_meeting": "^1.1",
 		"iainhouston/pellucid_minutes": "^1.1",
-		"iainhouston/pellucid_olivero": "^2.1",
+		"iainhouston/pellucid_olivero": "^3.0",
 		"tijsverkoyen/css-to-inline-styles": "^2.2"
 	},
 	"require-dev": {
