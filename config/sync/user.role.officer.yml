@@ -15,6 +15,7 @@ dependencies:
     - file
     - filter
     - node
+    - password_policy
     - path
     - shortcut
     - simplenews
@@ -77,6 +78,7 @@ permissions:
   - 'edit own meeting content'
   - 'edit own minutes content'
   - 'edit own page content'
+  - 'manage password reset'
   - 'revert agenda revisions'
   - 'revert all revisions'
   - 'revert article revisions'

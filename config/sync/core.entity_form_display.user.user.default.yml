@@ -8,12 +8,16 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_function
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_last_password_reset
     - field.field.user.user.field_notes
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
     - field.field.user.user.field_postal_address
     - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - datetime
     - file
     - image
     - path
@@ -73,6 +77,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_last_password_reset:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_notes:
     type: string_textarea
     weight: 10
@@ -80,6 +90,13 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_password_expiration:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_postal_address:
     type: string_textfield
@@ -125,4 +142,5 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_pending_expire_sent: true
