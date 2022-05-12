@@ -21,8 +21,8 @@ content:
     weight: 31
     region: content
     settings:
-      rows: 9
-      summary_rows: 3
+      rows: 25
+      summary_rows: 5
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
@@ -86,5 +86,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

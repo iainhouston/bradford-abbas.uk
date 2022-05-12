@@ -42,6 +42,7 @@ permissions:
   - 'create item_of_expense content'
   - 'create meeting content'
   - 'create minutes content'
+  - 'create page content'
   - 'create url aliases'
   - 'customize shortcut links'
   - 'delete agenda revisions'
