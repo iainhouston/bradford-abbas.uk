@@ -22,7 +22,8 @@ vagrant_box: "bento/ubuntu-20.04"
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: BAPC-Dev
 vagrant_user: vagrant
-vagrant_ip: 0.0.0.0
+# or vagrant_ip: 0.0.0.0 then vagrant-auto_network will find a spare IP Address automatically
+vagrant_ip: 10.20.2.4
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
 
@@ -39,7 +40,7 @@ vagrant_synced_folders:
 vagrant_plugins:
   - name: vagrant-vbguest
   - name: vagrant-hostsupdater
-  - name: vagrant-auto_network
+  # - name: vagrant-auto_network
 
 # Minimum required versions.
 drupalvm_vagrant_version_min: '2.2.18'
@@ -67,7 +68,7 @@ installed_extras:
   - xdebug
   - mailhog
 
-# See role iainhouston.php-xdebug for default XDEBUG php.ini values 
+# See role iainhouston.php-xdebug for default XDEBUG php.ini values
 
 php_sendmail_path: "/opt/mailhog/mhsendmail"
 
