@@ -18,6 +18,8 @@ settings:
       - '|'
       - bulletedList
       - numberedList
+      - indent
+      - outdent
       - '|'
       - blockQuote
       - '|'
