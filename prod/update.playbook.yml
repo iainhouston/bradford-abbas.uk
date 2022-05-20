@@ -19,7 +19,7 @@
         -   name: copy SSL certificate
             copy:
               src: "{{ project_dir }}/vm/certs/SSL.crt"
-              dest: "{{ ssl_key_dest }}"
+              dest: "{{ ssl_crt_dest }}"
               owner: root
               group: root
               mode: a-w,o-r,ug+r
