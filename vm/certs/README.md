@@ -32,7 +32,7 @@ On MacOS:
 ansible-vault decrypt  SSL.key
 ansible-vault decrypt  SSL.csr
 
-openssl req -nodes -newkey rsa:2048 -keyout SSL.key -out SSL.csr% openssl req -nodes -newkey rsa:2048 -keyout SSL.key -out SSL.csr
+openssl req -nodes -newkey rsa:2048 -keyout SSL.key -out SSL.csr
 ```
 
 More details on what was required by LCN in May 2022:
@@ -185,6 +185,14 @@ cat AAACertificateServices.crt >> SSL.crt
 cat SSL.crt
 ```
 
+Check the key with the CRT.
+
+These two commands print out md5 checksums of the certificate and key; the checksums can be compared to verify that the certificate and key match.
+
+```
+openssl x509 -noout -modulus -in SSL.crt| openssl md5
+openssl rsa -noout -modulus -in SSL.key| openssl md5
+```
 
 The file is now ready for import.
 
