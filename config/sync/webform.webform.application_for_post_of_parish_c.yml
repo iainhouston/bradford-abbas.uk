@@ -45,7 +45,7 @@ elements: |-
     '#required': true
   match:
     '#type': textarea
-    '#title': Match
+    '#title': 'Match skills and experience'
     '#description': |-
       Tell us how your previous employment experience and your qualifications make you suitable for this role.<br />
       <br />
@@ -86,7 +86,10 @@ elements: |-
     '#type': webform_document_file
     '#title': 'Upload documents here.'
     '#multiple': true
+    '#help_title': Help
+    '#help': 'You can choose several files to upload at once. After you&#39;ve uploaded them you&#39;ll be able to upload additional ones.'
     '#file_placeholder': 'Don&#39;t forget to upload your CV. You can also send us any other supporting documents here.'
+    '#max_filesize': '20'
     '#sanitize': true
 css: ''
 javascript: ''
