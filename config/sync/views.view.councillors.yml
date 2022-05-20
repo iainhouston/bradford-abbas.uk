@@ -655,7 +655,7 @@ display:
         type: normal
         title: 'Councillors'' responsibilities'
         description: ''
-        weight: -47
+        weight: -46
         expanded: false
         menu_name: secondary-navigation
         parent: ''

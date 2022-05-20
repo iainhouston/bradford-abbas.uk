@@ -13,6 +13,15 @@ title: 'Application for post of Parish Clerk'
 description: ''
 category: ''
 elements: |-
+  privacy_information:
+    '#type': textarea
+    '#title': 'Privacy information'
+    '#placeholder': |-
+      Any personal information you provide to us through our contact form or any other form including your name, address, telephone number and e-mail address will not be released to any third parties.  
+      Please see our "About" page for further information
+    '#autocomplete': ''
+    '#readonly': true
+    '#format_items': comma
   your_name:
     '#type': textfield
     '#title': 'Your Name'
@@ -91,6 +100,12 @@ elements: |-
     '#file_placeholder': 'Don&#39;t forget to upload your CV. You can also send us any other supporting documents here.'
     '#max_filesize': '20'
     '#sanitize': true
+    '#button': true
+    '#button__title': 'Upload (more) files'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Submit job application'
 css: ''
 javascript: ''
 settings:
