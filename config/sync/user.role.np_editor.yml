@@ -8,7 +8,9 @@ dependencies:
     - media.type.image
     - node.type.article
     - node.type.village_plan_page
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - media
     - node
     - simplenews
@@ -20,10 +22,12 @@ weight: -4
 is_admin: null
 permissions:
   - 'access content'
+  - 'access content overview'
   - 'access media overview'
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission user'
+  - 'administer nodes'
   - 'administer simplenews subscriptions'
   - 'change own username'
   - 'create article content'
@@ -34,6 +38,7 @@ permissions:
   - 'create village_plan_page content'
   - 'delete all revisions'
   - 'delete any article content'
+  - 'delete any village_plan_page content'
   - 'delete any webform submission'
   - 'delete article revisions'
   - 'delete media'
@@ -52,8 +57,15 @@ permissions:
   - 'revert article revisions'
   - 'revert village_plan_page revisions'
   - 'update media'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view article revisions'
+  - 'view latest version'
   - 'view media'
   - 'view own unpublished content'
   - 'view own unpublished media'
