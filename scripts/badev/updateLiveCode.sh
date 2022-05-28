@@ -9,7 +9,7 @@ then
     echo "The same password  automatically decrypts the secrets.yml"
     echo "We found the password file here: ${HOME}/.vaultpw"
 
-    echo "${GREEN}About to update ${RED}Live${GREEN} Server{NC}"
+    echo "${GREEN}About to update ${RED}Live${GREEN} Server${NC}"
     Start_time=$SECONDS
 
     becomepass=`cat ${HOME}/.vaultpw`
