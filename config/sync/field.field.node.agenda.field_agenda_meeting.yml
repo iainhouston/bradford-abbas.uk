@@ -22,6 +22,8 @@ settings:
     target_bundles:
       meeting: meeting
     sort:
-      field: field_agenda_time_stamp
+      field: field_meeting_date
       direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
