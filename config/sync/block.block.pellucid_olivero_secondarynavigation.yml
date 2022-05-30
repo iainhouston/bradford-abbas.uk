@@ -11,7 +11,7 @@ dependencies:
 id: pellucid_olivero_secondarynavigation
 theme: pellucid_olivero
 region: sidebar
-weight: -7
+weight: -11
 provider: null
 plugin: 'system_menu_block:secondary-navigation'
 settings:

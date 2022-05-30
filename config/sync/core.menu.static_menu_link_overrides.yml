@@ -20,13 +20,13 @@ definitions:
     expanded: false
     weight: -50
   filter__tips_all:
-    weight: -42
+    weight: -40
     menu_name: tools
     parent: ''
     expanded: false
     enabled: false
   search__view:
-    weight: -37
+    weight: -35
     menu_name: tools
     parent: ''
     expanded: false
