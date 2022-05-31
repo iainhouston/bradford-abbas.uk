@@ -11,7 +11,7 @@ dependencies:
     - pellucid_olivero
 id: pellucid_olivero_heroimage
 theme: pellucid_olivero
-region: highlighted
+region: hero
 weight: 0
 provider: null
 plugin: 'block_content:90b40362-75ae-4011-ba1a-7ebf7cef57f2'
