@@ -12,7 +12,7 @@ dependencies:
 id: pellucid_olivero_heroimage
 theme: pellucid_olivero
 region: hero
-weight: 0
+weight: -12
 provider: null
 plugin: 'block_content:90b40362-75ae-4011-ba1a-7ebf7cef57f2'
 settings:
