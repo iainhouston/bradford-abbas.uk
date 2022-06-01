@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
     - media.type.audio
     - media.type.file
     - media.type.image
@@ -11,6 +12,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - filter
     - media
     - node
     - simplenews
@@ -62,6 +64,7 @@ permissions:
   - 'use editorial transition archived_published'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
+  - 'use text format basic_html'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view article revisions'

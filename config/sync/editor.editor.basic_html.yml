@@ -47,7 +47,6 @@ settings:
         - '<dt>'
         - '<dd>'
         - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
-        - '<caption>'
         - '<drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
         - '<h2 id>'
         - '<h3 id>'
@@ -59,8 +58,13 @@ settings:
         - '<ul type>'
         - '<ol start type>'
         - '<drupal-media data-view-mode title>'
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
     ckeditor5_language:
       language_list: un
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: false
   scheme: public
