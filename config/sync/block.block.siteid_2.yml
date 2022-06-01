@@ -1,0 +1,25 @@
+uuid: 07d6b802-c2d2-48ef-82b8-f510bc9be3ef
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ec2c0e02-5582-41ee-9181-cd093ce894ff'
+  module:
+    - block_content
+  theme:
+    - pellucid_olivero
+id: siteid_2
+theme: pellucid_olivero
+region: social
+weight: 0
+provider: null
+plugin: 'block_content:ec2c0e02-5582-41ee-9181-cd093ce894ff'
+settings:
+  id: 'block_content:ec2c0e02-5582-41ee-9181-cd093ce894ff'
+  label: 'Site ID'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
