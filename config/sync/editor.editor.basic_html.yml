@@ -64,7 +64,7 @@ settings:
     ckeditor5_language:
       language_list: un
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload:
   status: false
   scheme: public

@@ -22,6 +22,8 @@ content:
     settings:
       image_link: file
       image_style: bapc_email_hero_580_w_
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
