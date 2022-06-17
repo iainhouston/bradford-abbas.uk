@@ -10,3 +10,6 @@ $DRUSH $DEVALIAS sql:dump --extra-dump=--no-tablespaces > $FILE
 
 # $DRUSH uses rsync -t flag which writes extraneous text
 sed -i '' 's/^Connection to/-- Connection to/' $FILE
+
+echo "Setting alias mostRecentDev.sql to ${GREEN}${FILE}${NC}"
+ln -sf ${FILE} mostRecentDev.sql
