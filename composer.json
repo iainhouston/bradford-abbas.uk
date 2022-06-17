@@ -104,11 +104,11 @@
 		"drupal/password_policy": "^3.1",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
-		"drupal/simplenews": "3.x-dev@dev",
+		"drupal/simplenews": "^3.0@beta",
 		"drupal/symfony_mailer": "1.x-dev@dev",
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0",
-		"drush/drush": "^10.3",
+		"drush/drush": "^11.0",
 		"iainhouston/pellucid_agenda": "^1.1",
 		"iainhouston/pellucid_document": "^1.1",
 		"iainhouston/pellucid_meeting": "^1.1",
@@ -118,6 +118,7 @@
 	},
 	"require-dev": {
 		"drupal/devel": "^4.1",
+		"drupal/devel_entity_updates": "^4.0",
 		"drupal/devel_kint_extras": "^1.0"
 	},
 	"type": "project"
