@@ -110,7 +110,7 @@
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0",
 		"drush/drush": "^11.0",
-		"iainhouston/pellucid_agenda": "^1.1",
+		"iainhouston/pellucid_agenda": "^4.0",
 		"iainhouston/pellucid_document": "^1.1",
 		"iainhouston/pellucid_meeting": "^1.1",
 		"iainhouston/pellucid_minutes": "^1.1",

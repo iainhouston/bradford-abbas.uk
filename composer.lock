@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a258afa894b5c6a9c48c0adabc296d1",
+    "content-hash": "460562cc534b166f725354e7541b62a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3531,11 +3531,11 @@
         },
         {
             "name": "iainhouston/pellucid_agenda",
-            "version": "V1.1.26",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_agenda.git",
-                "reference": "c8b6bb667a26e053d4f782686d4790fb9897bd20"
+                "reference": "288a3da26cd18c25c3742225af80a1c5bb94d6d7"
             },
             "type": "drupal-module",
             "extra": {
@@ -3556,7 +3556,7 @@
                 "pellucid",
                 "php"
             ],
-            "time": "2020-05-07T16:26:18+00:00"
+            "time": "2022-06-19T14:31:04+00:00"
         },
         {
             "name": "iainhouston/pellucid_document",
