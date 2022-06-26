@@ -7,7 +7,10 @@ dependencies:
     - media.type.audio
     - media.type.file
     - media.type.image
+    - node.type.agenda
     - node.type.article
+    - node.type.document
+    - node.type.meeting
     - node.type.village_plan_page
     - workflows.workflow.editorial
   module:
@@ -20,7 +23,7 @@ dependencies:
     - webform
 id: np_editor
 label: 'NP Editor'
-weight: -4
+weight: -5
 is_admin: null
 permissions:
   - 'access content'
@@ -32,31 +35,43 @@ permissions:
   - 'administer nodes'
   - 'administer simplenews subscriptions'
   - 'change own username'
+  - 'create agenda content'
   - 'create article content'
   - 'create audio media'
   - 'create file media'
   - 'create image media'
   - 'create media'
+  - 'create meeting content'
   - 'create village_plan_page content'
+  - 'delete agenda revisions'
   - 'delete all revisions'
   - 'delete any article content'
   - 'delete any village_plan_page content'
   - 'delete any webform submission'
   - 'delete article revisions'
   - 'delete media'
+  - 'delete meeting revisions'
+  - 'delete own agenda content'
   - 'delete own article content'
   - 'delete own audio media'
+  - 'delete own document content'
   - 'delete own file media'
   - 'delete own image media'
+  - 'delete own meeting content'
   - 'delete own village_plan_page content'
   - 'delete village_plan_page revisions'
   - 'edit any article content'
   - 'edit any village_plan_page content'
   - 'edit any webform submission'
+  - 'edit own agenda content'
   - 'edit own article content'
+  - 'edit own document content'
+  - 'edit own meeting content'
   - 'edit own village_plan_page content'
+  - 'revert agenda revisions'
   - 'revert all revisions'
   - 'revert article revisions'
+  - 'revert meeting revisions'
   - 'revert village_plan_page revisions'
   - 'update media'
   - 'use editorial transition archive'
@@ -65,11 +80,13 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use text format basic_html'
+  - 'view agenda revisions'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view article revisions'
   - 'view latest version'
   - 'view media'
+  - 'view meeting revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view simplenews subscriptions'

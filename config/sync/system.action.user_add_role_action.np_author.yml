@@ -1,0 +1,14 @@
+uuid: 0977ae05-ad35-4628-b7bf-4cc0111e6efc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.np_author
+  module:
+    - user
+id: user_add_role_action.np_author
+label: 'Add the NP Author role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: np_author

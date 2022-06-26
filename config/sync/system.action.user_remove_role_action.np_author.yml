@@ -1,0 +1,14 @@
+uuid: a920d686-086f-4d56-a33d-150f731fe370
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.np_author
+  module:
+    - user
+id: user_remove_role_action.np_author
+label: 'Remove the NP Author role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: np_author

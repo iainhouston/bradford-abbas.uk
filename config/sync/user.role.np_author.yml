@@ -1,0 +1,26 @@
+uuid: 696baade-66de-436e-80c8-a6d5819525c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.document
+    - node.type.village_plan_page
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - node
+id: np_author
+label: 'NP Author'
+weight: -6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'create village_plan_page content'
+  - 'delete own document content'
+  - 'edit own document content'
+  - 'edit own village_plan_page content'
+  - 'revert village_plan_page revisions'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition create_new_draft'
+  - 'view latest version'
+  - 'view village_plan_page revisions'

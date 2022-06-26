@@ -13,7 +13,7 @@ dependencies:
     - system
 id: document_editor
 label: 'Document Editor'
-weight: -5
+weight: -7
 is_admin: null
 permissions:
   - 'access content'
