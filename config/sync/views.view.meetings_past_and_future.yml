@@ -472,7 +472,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'Including Agendas and other available supporting documents'
+            value: "<h2>Future Council Meetings</h2>\r\n<p>Including Agendas and other available supporting documents</p>"
             format: basic_html
           tokenize: false
       display_extenders: {  }
@@ -614,7 +614,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'Including Agendas; Minutes; and other available supporting documents.'
+            value: "<h2>Previous Council Meetings</h2>\r\n<p>Including Agendas, Minutes and other available supporting documents</p>"
             format: basic_html
           tokenize: false
       display_extenders: {  }

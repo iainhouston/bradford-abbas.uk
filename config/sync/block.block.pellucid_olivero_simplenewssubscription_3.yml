@@ -9,7 +9,7 @@ dependencies:
 id: pellucid_olivero_simplenewssubscription_3
 theme: pellucid_olivero
 region: sidebar
-weight: -10
+weight: -11
 provider: null
 plugin: simplenews_subscription_block
 settings:
