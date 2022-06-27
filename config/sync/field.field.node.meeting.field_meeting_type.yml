@@ -6,8 +6,6 @@ dependencies:
     - field.storage.node.field_meeting_type
     - node.type.meeting
     - taxonomy.vocabulary.meeting_type
-  content:
-    - 'taxonomy_term:meeting_type:57ad417e-f7ab-44da-ab00-ea04246e035d'
 id: node.meeting.field_meeting_type
 field_name: field_meeting_type
 entity_type: node
@@ -16,9 +14,7 @@ label: 'Meeting type'
 description: "<p>Please select the meeting type from the drop-down list.</p>\r\n<p>If you want to create a new Meeting Type that is not in the list, then go to <em>Manage >> Structure >> Taxonomy Terms</em></p> "
 required: true
 translatable: false
-default_value:
-  -
-    target_uuid: 57ad417e-f7ab-44da-ab00-ea04246e035d
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
@@ -27,5 +23,7 @@ settings:
       meeting_type: meeting_type
     sort:
       field: _none
+      direction: asc
     auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.simplenews_issue
     - node.type.meeting
-    - simplenews.newsletter.councillors
   module:
     - simplenews
 id: node.meeting.simplenews_issue
@@ -14,19 +13,13 @@ entity_type: node
 bundle: meeting
 label: 'Circulation list'
 description: "<p>When you want to send the <em>Meeting</em> as an email, this is the distribution</p>\r\n<p>When it's sent to the <em>Councillors</em> list it will be formatted as a Summons to the Meeting</p>"
-required: false
+required: true
 translatable: true
-default_value:
-  -
-    target_uuid: 581c5a46-8ef1-4bf2-b006-6e85f57ace10
-    handler: simplenews_all
-    handler_settings: null
-    status: 0
-    sent_count: 0
-    subscribers: 0
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:simplenews_newsletter'
   handler_settings:
     target_bundles: null
+    auto_create: false
 field_type: simplenews_issue
