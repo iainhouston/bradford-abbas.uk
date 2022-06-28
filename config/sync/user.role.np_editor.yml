@@ -11,6 +11,7 @@ dependencies:
     - node.type.article
     - node.type.document
     - node.type.meeting
+    - node.type.minutes
     - node.type.village_plan_page
     - workflows.workflow.editorial
   module:
@@ -42,6 +43,7 @@ permissions:
   - 'create image media'
   - 'create media'
   - 'create meeting content'
+  - 'create minutes content'
   - 'create village_plan_page content'
   - 'delete agenda revisions'
   - 'delete all revisions'
@@ -51,6 +53,7 @@ permissions:
   - 'delete article revisions'
   - 'delete media'
   - 'delete meeting revisions'
+  - 'delete minutes revisions'
   - 'delete own agenda content'
   - 'delete own article content'
   - 'delete own audio media'
@@ -58,6 +61,7 @@ permissions:
   - 'delete own file media'
   - 'delete own image media'
   - 'delete own meeting content'
+  - 'delete own minutes content'
   - 'delete own village_plan_page content'
   - 'delete village_plan_page revisions'
   - 'edit any article content'
@@ -67,11 +71,13 @@ permissions:
   - 'edit own article content'
   - 'edit own document content'
   - 'edit own meeting content'
+  - 'edit own minutes content'
   - 'edit own village_plan_page content'
   - 'revert agenda revisions'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert meeting revisions'
+  - 'revert minutes revisions'
   - 'revert village_plan_page revisions'
   - 'update media'
   - 'use editorial transition archive'
@@ -87,6 +93,7 @@ permissions:
   - 'view latest version'
   - 'view media'
   - 'view meeting revisions'
+  - 'view minutes revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view simplenews subscriptions'
