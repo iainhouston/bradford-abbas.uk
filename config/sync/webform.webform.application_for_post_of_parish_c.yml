@@ -299,7 +299,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'iainhouston@mac.com, clarkmeggs@outlook.com, dicklynnebennett@gmail.com'
+      to_mail: 'iainhouston@mac.com, clarkmeggs@outlook.com, dicklynnebennett@gmail.com, dianecoffin74@hotmail.com'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
