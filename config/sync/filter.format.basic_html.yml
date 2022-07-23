@@ -22,7 +22,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<cite> <dl> <dt> <dd> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a hreflang href> <blockquote cite> <ul type> <ol start type reversed> <drupal-media data-view-mode title data-entity-type data-entity-uuid alt data-caption data-align> <br> <p> <strong> <em> <u> <code> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <span lang dir>'
+      allowed_html: '<cite> <dl> <dt> <dd> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a hreflang href> <blockquote cite> <ul type> <ol start type reversed> <drupal-media data-view-mode title data-entity-type data-entity-uuid alt data-caption data-align> <br> <p> <strong> <em> <u> <code> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <span lang dir> <s> <hr>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -59,7 +59,7 @@ filters:
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
-    status: false
+    status: true
     weight: -41
     settings: {  }
   filter_html_escape:
