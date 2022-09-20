@@ -1,0 +1,18 @@
+uuid: c2aede66-c866-40d4-9bb9-d11f3fcda16a
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+_core:
+  default_config_hash: 5Oh2xuv7tqN5i5bnfKD00U_BBPkar6m2je0uO0SQNc4
+id: simplenews.validate
+configuration:
+  email_subject:
+    value: 'Manage your subscriptions at [site:name]'
+  email_body:
+    content:
+      value: |-
+        <p>We have received a request to manage your subscriptions for [simplenews-subscriber:mail] at <a href="[site:url]">[site:name]</a>.
+        Please use this link to <a href="[simplenews-subscriber:manage-url]">proceed</a>.</p>
+      format: email_html

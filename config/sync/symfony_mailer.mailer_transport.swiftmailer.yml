@@ -1,0 +1,12 @@
+uuid: da2f6dbf-c379-45b9-ad36-ef57cc50402e
+langcode: en
+status: true
+dependencies: {  }
+id: swiftmailer
+label: 'Imported from swiftmailer'
+plugin: smtp
+configuration:
+  user: ''
+  pass: ''
+  host: 127.0.0.1
+  port: 1025

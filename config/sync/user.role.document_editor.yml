@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - media.type.audio
+    - media.type.file
+    - media.type.image
     - node.type.article
     - node.type.document
   module:
     - filter
+    - media
     - node
     - simplenews
     - system
@@ -18,15 +22,28 @@ is_admin: null
 permissions:
   - 'access content'
   - 'create article content'
+  - 'create audio media'
   - 'create document content'
+  - 'create file media'
+  - 'create image media'
+  - 'create media'
   - 'delete any document content'
   - 'delete document revisions'
+  - 'delete media'
+  - 'delete own audio media'
   - 'delete own document content'
+  - 'delete own file media'
+  - 'delete own image media'
+  - 'edit any audio media'
   - 'edit any document content'
+  - 'edit any image media'
   - 'edit own document content'
   - 'revert document revisions'
   - 'send newsletter'
+  - 'update media'
   - 'use text format basic_html'
+  - 'view all media revisions'
   - 'view all revisions'
   - 'view document revisions'
+  - 'view media'
   - 'view own unpublished content'

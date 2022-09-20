@@ -480,11 +480,11 @@ display:
         type: normal
         title: 'Sort the Neighbourhood Plan pages'
         description: 'Drag and drop the Village Plan pages into the order you require'
-        weight: -37
+        weight: -48
         enabled: true
         expanded: false
         menu_name: tools
-        parent: ''
+        parent: 'menu_link_content:6b54b3ec-9fa1-4411-a967-c27d4b1dd95b'
         context: '0'
     cache_metadata:
       max-age: 0

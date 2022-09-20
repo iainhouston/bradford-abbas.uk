@@ -8,25 +8,25 @@ definitions:
     expanded: false
     enabled: true
   standard__front_page:
+    enabled: false
     menu_name: main
     parent: ''
-    weight: -50
     expanded: false
-    enabled: true
+    weight: -50
   node__add_page:
+    weight: -49
     enabled: false
     menu_name: tools
     parent: ''
-    expanded: false
-    weight: -50
+    expanded: true
   filter__tips_all:
-    weight: -40
+    weight: -44
     menu_name: tools
     parent: ''
     expanded: false
     enabled: false
   search__view:
-    weight: -35
+    weight: -42
     menu_name: tools
     parent: ''
     expanded: false

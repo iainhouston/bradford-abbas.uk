@@ -1,0 +1,26 @@
+uuid: 6d673402-4719-456b-9b87-68dc5715c254
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+_core:
+  default_config_hash: iAsCjNSy31hPBZKFujXTAkWR3ONLV4_t5cpqGdJuA9I
+id: simplenews_newsletter
+configuration:
+  email_body:
+    content:
+      value: |-
+        <div class="clearfix">
+          {{ body }}
+        </div>
+
+        {% if not opt_out_hidden %}
+          <p class="simplenews-unsubscribe"><a href="[simplenews-subscriber:unsubscribe-url]">Unsubscribe from this newsletter</a></p>
+        {% endif %}
+        {% if test %}
+          <p class="simplenews-test-message">This is a test version of the newsletter.</p>
+        {% endif %}
+      format: email_html
+  email_subject:
+    value: '[[simplenews-newsletter:name]] [node:title]'

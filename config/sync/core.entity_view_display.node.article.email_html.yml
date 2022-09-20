@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.simplenews_issue
     - node.type.article
   module:
+    - media
     - text
     - user
 _core:
@@ -28,11 +29,13 @@ content:
     weight: 1
     region: content
   field_image_media:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: bapc_email_hero_mode
-      link: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content

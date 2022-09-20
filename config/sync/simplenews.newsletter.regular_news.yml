@@ -7,12 +7,13 @@ id: regular_news
 description: 'The Regular News newsletter is distributed to all subscribers opting in using the form on the News section of the home page '
 format: html
 priority: 0
-receipt: true
+receipt: false
 from_name: 'Bradford Abbas Parish Council'
 subject: '[[simplenews-newsletter:name]] [node:title]'
 from_address: webmaster@bradford-abbas.uk
 hyperlinks: true
 allowed_handlers:
+  0: '0'
   simplenews_all: '0'
 new_account: none
 access: default
