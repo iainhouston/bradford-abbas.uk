@@ -1,0 +1,12 @@
+uuid: 26f66e26-9799-4eb3-a0b6-2ffb6a8da534
+langcode: en
+status: true
+dependencies:
+  config:
+    - simplenews.newsletter.councillors
+id: simplenews_newsletter.node.councillors
+configuration:
+  email_body:
+    content:
+      value: "<div class=\"clearfix\">\r\n  {{ body }}\r\n</div>\r\n\r\n<div class=\"simplenews-footer\"><!-- Footer stuff -->\r\n<p class=\"simplenews-para first-para\">\r\n  This email and any documents sent with it are intended solely for the named recipient and may be legally privileged and/or confidential.\r\n</p>\r\n<p class=\"simplenews-para\">\r\n  If you have received this email in error please destroy it and contact the sender <a href=\"mailto:webmaster@bradford-abbas.uk\">here</a>.\r\n \r\n</p>\r\n<p class=\"simplenews-para\">\r\n  You should not copy, or use the contents, attachments or information in\r\n  any way or pass them to a third party without prior permission from the\r\n  author. Any unauthorised use or disclosure may be unlawful. The Parish Council cannot guarantee the accuracy or completeness of this\r\n  email after it is sent from the originator over the Internet and accepts\r\n  no responsibility for changes made after it was sent.\r\n</p>\r\n\r\n{# Note: disabled unsubscribe for Councillors because in case we accidentally lose contact with each other!\r\n{% if not opt_out_hidden %}\r\n  <p class=\"simplenews-unsubscribe\"><a href=\"[simplenews-subscriber:unsubscribe-url]\">Unsubscribe from this newsletter</a></p>\r\n{% endif %}\r\n#}\r\n\r\n{% if test %}\r\n  <p class=\"simplenews-test-message\">This is a test version of the newsletter.</p>\r\n{% endif %}"
+      format: email_html
