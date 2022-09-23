@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d279e1403379df520c7d6bbc4f94b09",
+    "content-hash": "6315cc7f1f282a7e6f370dc3c9e5f9a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3608,11 +3608,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V4.0.4",
+            "version": "V5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "69c90a854ffd5453e7ecee0035748380a1b0aaf7"
+                "reference": "9772dc383510884cc38b642e831c08f82567c111"
             },
             "type": "drupal-theme",
             "license": [
@@ -3627,7 +3627,7 @@
                 }
             ],
             "description": "Drupal 9 Theme  for pellucid_build",
-            "time": "2022-06-28T09:20:29+00:00"
+            "time": "2022-09-23T18:31:58+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
