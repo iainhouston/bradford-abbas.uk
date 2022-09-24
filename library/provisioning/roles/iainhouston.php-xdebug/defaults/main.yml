@@ -3,11 +3,11 @@ php_xdebug_package: "php{{ php_version }}-xdebug"
 
 php_xdebug_max_nesting_level: 256
 
-php_xdebug_mode: debug
+php_xdebug_mode: off
 php_start_with_request: trigger
 php_xdebug_trigger_value: xdebug-atom
 php_xdebug_discover_client_host: true
-php_xdebug_client_port: 9000
+php_xdebug_client_port: 9003
 php_xdebug_log: "/tmp/xdebug.log"
 
 php_xdebug_cli_disable: true
