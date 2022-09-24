@@ -52,7 +52,11 @@ alias drush="$DRUSH"
 # convenience commands for running utility scripts
 export BADEVSCRIPTS="$BADEV/scripts/badev"
 
+# send all code changes to Live system; install them and sync Live config with Dev config
 alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
+
+# Put Live system into maintenance mode
+alias livemaint="sh $BADEVSCRIPTS/livemaint.sh"
 
 # Production to Development
 alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
