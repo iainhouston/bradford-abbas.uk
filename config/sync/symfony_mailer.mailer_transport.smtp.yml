@@ -1,9 +1,9 @@
-uuid: da2f6dbf-c379-45b9-ad36-ef57cc50402e
+uuid: ed7884a1-bcca-42b1-9c06-fbc32c7dff15
 langcode: en
 status: true
 dependencies: {  }
-id: swiftmailer
-label: 'Imported from swiftmailer'
+id: smtp
+label: SMTP
 plugin: smtp
 configuration:
   user: ''

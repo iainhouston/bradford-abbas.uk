@@ -78,10 +78,9 @@
     dest: "{{ drupal_core_path }}/sites/default/settings.php"
     block: |
           # mailhog needs symfony mailer to use SMTP Transport to port 1025
-          // $config['symfony_mailer.settings']['default_transport'] = 'smtp';
-          $config['swiftmailer.transport']['smtp_port'] = '1025';
-          // drush @badev config-get swiftmailer.transport ( --include-overridden )
-          // drush @badev config-get symfony_mailer.settings ( --include-overridden )
+          $config['symfony_mailer.settings']['default_transport'] = 'smtp';
+          $config['symfony_mailer.mailer_transport.smtp']['configuration.port'] = '1025';
+          // drush @badev config-get symfony_mailer.mailer_transport.smtp configuration.port --include-overridden
           # settings.local.php disables CSS aggregation and disables Internal Page Cache etc.
           if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
             include $app_root . '/' . $site_path . '/settings.local.php';
