@@ -68,7 +68,7 @@ installed_extras:
   - xdebug
   - mailhog
 
-# See role iainhouston.php-xdebug for default XDEBUG php.ini values
+# See role ../library/provisioning/roles/iainhouston.php-xdebug for default XDEBUG php.ini values
 
 php_sendmail_path: "/opt/mailhog/mhsendmail"
 
