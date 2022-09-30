@@ -3473,11 +3473,11 @@
         },
         {
             "name": "iainhouston/pellucid_olivero",
-            "version": "V5.0.0",
+            "version": "V5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iainhouston/pellucid_olivero.git",
-                "reference": "9772dc383510884cc38b642e831c08f82567c111"
+                "reference": "f80be59bd4335676bb6a290cc6167704a0549fa9"
             },
             "type": "drupal-theme",
             "license": [
@@ -3492,7 +3492,7 @@
                 }
             ],
             "description": "Drupal 9 Theme  for pellucid_build",
-            "time": "2022-09-23T18:31:58+00:00"
+            "time": "2022-09-30T14:47:52+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
