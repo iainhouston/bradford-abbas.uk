@@ -14,14 +14,10 @@ field_name: body
 entity_type: node
 bundle: article
 label: Body
-description: "<p>What you type in here will appear on the full page (after clicking \"Read More\") and in the emailed-out Newsletter Article.</p>\r\n<p>The first 500 characters of this field will appear as the Teaser on the front page, unless you explicitly provide a short Summary</p>"
+description: "<p>What you type in here will appear on the full page (after clicking \"Read More\") and in the emailed-out Newsletter Article.</p>\r\n<p>The first 500 characters of this field will appear as the Teaser on the front page, unless you explicitly provide a short Summary</p>\r\n<p>You can embed images in the body text by clicking the Media button in the toolbar</p>\r\n<p>You can add links to other web pages by clicking the Link button in the toolbar</p>"
 required: true
 translatable: true
-default_value:
-  -
-    value: "<p>Please replace this sentence and the following text with the full text of your Article.</p>\r\n\r\n<p>Usually, the first 500 characters of this field will appear as the Teaser on the front page, unless you explicitly provide a short Summary.</p>\r\n\r\n<h3>Menu bar</h3>\r\n\r\n<ul>\r\n\t<li>Hover over the icons in the toolbar above to see what they do.</li>\r\n\t<li>Use the<em> Insert from Media Library</em> button in the toolbar above, to embed photos in the body of your Article.</li>\r\n\t<li>Use the <em>Link</em> button in the toolbar above to create a clickable link to another web page.</li>\r\n</ul>\r\n"
-    summary: ''
-    format: basic_html
+default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true
