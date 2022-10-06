@@ -137,15 +137,16 @@ elements: |-
         </div>
     uploaded_images:
       '#type': webform_image_file
-      '#title': 'Uploaded images'
-      '#multiple': true
+      '#title': 'Uploaded photo'
+      '#format_items': comma
+      '#file_placeholder': 'Upload a photo if it will help identify and track issues with playground equipment'
       '#file_preview': 'bapc_medium:modal'
       '#max_filesize': '12'
       '#attachment_image_style': bapc_medium
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
@@ -157,7 +158,7 @@ settings:
   form_title: source_entity_webform
   form_submit_once: false
   form_open_message: ''
-  form_close_message: 'Temporarily unavailable - contact Iain.'
+  form_close_message: 'This form is temporarily unavailable - contact Iain.'
   form_exception_message: ''
   form_previous_submissions: false
   form_confidential: false
@@ -244,7 +245,7 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: message
+  confirmation_type: inline
   confirmation_url: ''
   confirmation_title: ''
   confirmation_message: ''
