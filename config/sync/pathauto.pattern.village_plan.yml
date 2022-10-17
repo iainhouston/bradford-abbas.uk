@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: 'village_plan/[node:field_file_under]/[node:title]'
 selection_criteria:
   dab559b1-5826-4e78-b77b-0b6a077ecaeb:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: dab559b1-5826-4e78-b77b-0b6a077ecaeb
     context_mapping:

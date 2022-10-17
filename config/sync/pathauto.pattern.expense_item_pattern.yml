@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: 'expense/[node:created:short]'
 selection_criteria:
   02b701b4-2c2b-41ad-9a06-6be14fbeb8f6:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 02b701b4-2c2b-41ad-9a06-6be14fbeb8f6
     context_mapping:
