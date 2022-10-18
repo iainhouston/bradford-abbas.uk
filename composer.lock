@@ -1269,26 +1269,34 @@
         },
         {
             "name": "drupal/cleantalk",
-            "version": "9.1.21",
+            "version": "9.1.24",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/cleantalk.git",
-                "reference": "9.1.21"
+                "reference": "9.1.24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cleantalk-9.1.21.zip",
-                "reference": "9.1.21",
-                "shasum": "16b53923fbf13a0495d3de5eb9f307bfdaf12bf8"
+                "url": "https://ftp.drupal.org/files/projects/cleantalk-9.1.24.zip",
+                "reference": "9.1.24",
+                "shasum": "30a6cd8ae08ddada612cd57c516ebb4da454176c"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
             },
+            "require-dev": {
+                "drupal/coder": "*",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "3.*",
+                "vimeo/psalm": "^4.8",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "9.1.21",
-                    "datestamp": "1648731948",
+                    "version": "9.1.24",
+                    "datestamp": "1665986993",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1296,6 +1304,14 @@
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit --configuration tests/phpunit.xml",
+                    "vendor/bin/phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/drupal/coder/coder_sniffer,vendor/slevomat/coding-standard/SlevomatCodingStandard",
+                    "vendor/bin/phpcs --standard=tests/.phpcs.xml",
+                    "vendor/bin/psalm --no-cache --config=psalm.xml"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
