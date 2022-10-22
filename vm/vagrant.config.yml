@@ -6,9 +6,10 @@
 # Virtual Mchine options.
 # ______________________
 
+# See vagrant_plugins below that specifies "vagrant plugin install vagrant-parallels"
 # bento boxes know somehow that they are for Parallels virtual machines
 # and not Oracle Virtualbox machines
-vagrant_box: "bento/ubuntu-20.04"
+vagrant_box: "bento/ubuntu-20.04-arm64"
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
@@ -40,6 +41,7 @@ vagrant_synced_folders:
 vagrant_plugins:
   - name: vagrant-vbguest
   - name: vagrant-hostsupdater
+  - name: vagrant-parallels
   # - name: vagrant-auto_network
 
 # Minimum required versions.

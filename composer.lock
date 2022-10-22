@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9c77ab895e9f13794b72c40296f972c",
+    "content-hash": "cd3321489f197bdb8725ba9898cd553b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1873,20 +1873,20 @@
         },
         {
             "name": "drupal/draggableviews",
-            "version": "2.0.1",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/draggableviews.git",
-                "reference": "2.0.1"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "e13a6c625fb8ca370a32b76dfd9f8bea9b2e27e9"
+                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "2f2d83ada95deb6b436a570df77c84d30717b139"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "require-dev": {
                 "drupal/draggableviews_demo": "*"
@@ -1894,8 +1894,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1620931210",
+                    "version": "2.1.1",
+                    "datestamp": "1666342521",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1917,7 +1917,7 @@
                     "name": "Andrii Podanenko (podarok)",
                     "homepage": "https://www.drupal.org/u/podarok",
                     "email": "podarokua@gmail.com",
-                    "role": "Drupal 7 to 8 Porter"
+                    "role": "Drupal 10+, maintenance."
                 },
                 {
                     "name": "Yuriy Gerasimov (ygerasimov)",
@@ -2420,17 +2420,17 @@
         },
         {
             "name": "drupal/symfony_mailer",
-            "version": "1.0.0-alpha11",
+            "version": "1.1.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/symfony_mailer.git",
-                "reference": "1.0.0-alpha11"
+                "reference": "1.1.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/symfony_mailer-1.0.0-alpha11.zip",
-                "reference": "1.0.0-alpha11",
-                "shasum": "3137d4ff1c58a809f61a2dd19af8b5f231ed4e94"
+                "url": "https://ftp.drupal.org/files/projects/symfony_mailer-1.1.0-beta1.zip",
+                "reference": "1.1.0-beta1",
+                "shasum": "82ef612b98ca38aa0b1c9b3c67f1860fa6e44000"
             },
             "require": {
                 "drupal/core": "^9.1",
@@ -2441,8 +2441,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-alpha11",
-                    "datestamp": "1660561290",
+                    "version": "1.1.0-beta1",
+                    "datestamp": "1666256375",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -8859,7 +8859,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/simplenews": 10,
-        "drupal/symfony_mailer": 15
+        "drupal/symfony_mailer": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -8,18 +8,29 @@
     state: directory
     mode: 0755
 
-- name: Download MailHog and mhsendmail binaries.
-  get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dest }}"
-    owner: root
-    group: root
-    mode: 0755
-  with_items:
-    - url: "{{ mailhog_binary_url }}"
-      dest: "{{ mailhog_install_dir }}/mailhog"
-    - url: "{{ mhsendmail_binary_url }}"
-      dest: "{{ mailhog_install_dir }}/mhsendmail"
+#- name: Download MailHog and mhsendmail binaries.
+#  get_url:
+#    url: "{{ item.url }}"
+#    dest: "{{ item.dest }}"
+#    owner: root
+#    group: root
+#    mode: 0755
+#  with_items:
+#    - url: "{{ mailhog_binary_url }}"
+#      dest: "{{ mailhog_install_dir }}/mailhog"
+#    - url: "{{ mhsendmail_binary_url }}"
+#      dest: "{{ mailhog_install_dir }}/mhsendmail"
+
+- name: Ensure Go language is installed
+  apt:
+    name: golang-go
+    state: present
+
+- name: compile the Mailhog code
+  ansible.builtin.shell: go get  github.com/mailhog/MailHog
+
+- name: move the Mailhog code to its install directory
+  shell:  cp go/bin/MailHog "{{ mailhog_install_dir }}/mailhog"
 
 - name: Copy mailhog init script into place.
   template:

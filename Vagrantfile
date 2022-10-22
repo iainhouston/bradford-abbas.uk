@@ -4,7 +4,7 @@ ENV['DRUPALVM_PROJECT_ROOT'] = "#{__dir__}"
 # The relative path from the project root to the VM config directory.
 ENV['DRUPALVM_CONFIG_DIR'] = "vm"
 
-# The relative path from the project root to the Drupal VM directory.
+# The relative path from the project root to the directory of our Drupal VM  clone.
 ENV['DRUPALVM_DIR'] = "library"
 
 # When provisioning VM, skip live-only tasks
