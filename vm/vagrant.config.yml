@@ -23,7 +23,7 @@ vagrant_box: "bento/ubuntu-20.04-arm64"
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: BAPC-Dev
 vagrant_user: vagrant
-# or vagrant_ip: 0.0.0.0 then vagrant-auto_network will find a spare IP Address automatically
+# or vagrant_ip: 0.0.0.0 then plugin vagrant-auto_network will find a spare IP Address automatically
 vagrant_ip: 10.20.2.4
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
@@ -66,13 +66,11 @@ drupal_site_name: "BAPC Development Website"
 installed_extras:
   - drush
   - adminer
-  - pimpmylog
   - xdebug
   - mailhog
+  - upload-progress
 
 # See role ../library/provisioning/roles/iainhouston.php-xdebug for default XDEBUG php.ini values
-
-php_sendmail_path: "/opt/mailhog/mhsendmail"
 
 dashboard_install_dir: /var/www/dashboard
 
@@ -86,10 +84,6 @@ apache_vhosts:
 
   - servername: "adminer.{{ vagrant_hostname }}"
     documentroot: "{{ adminer_install_dir }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
-
-  - servername: "pimpmylog.{{ vagrant_hostname }}"
-    documentroot: "{{ pimpmylog_install_dir }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
   - servername: "{{ vagrant_ip }}"
@@ -107,5 +101,3 @@ mysql_root_password: root
 
 adminer_install_filename: index.php
 
-pimpmylog_install_dir: /usr/share/php/pimpmylog
-pimpmylog_grant_all_privs: true
