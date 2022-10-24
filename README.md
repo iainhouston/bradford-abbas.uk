@@ -1,5 +1,9 @@
 # Development and maintenance of Bradford Abbas Parish Council website
 
+## Development system hardware architecture
+
+As of October 24th 2022 the *dev* system will now work on Apple Silicon (ARM64) hardware but should also work on an Intel hardware platform just by choosing the appropriate Bento box and editing it into `vm/vagrant.config.yml`
+
 ## Quick start. 
 
 1. `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
@@ -59,15 +63,11 @@ Do `checkVersions` to list the versions of all the above required software. A ty
 
 **Notes:**
 
-+  I use `brew install ...` to install PHP, Ansible, and NodeJS.  
++  I use `brew install ...` to install PHP, Composer, Vagrant, Ansible, and NodeJS (node). Very convenient. 
 
 +  I purchased Parallels Desktop for other reasons. I used the free Oracle VirtualBox for many years but quite frequently came across issues of compatibility with other components. 
 
 +  Different virtual boxes implicitly require different virtualisation software. `vagrant_box: bento/ubuntu-20.04` used in `vm/vagrant.conf.yml` is configured to require Parallels virtualisation
-
-+  Vagrant is downloaded [per their website](https://www.vagrantup.com/docs/installation) 
-
-+  Composer is installed [per their website](https://getcomposer.org/download/)  
 
 +  Last but not least: ["Get the latest features, fast performance, and the development tools you need to build for the open web"](https://www.mozilla.org/en-GB/firefox/developer/)
 
@@ -82,33 +82,30 @@ See [here](TODO.md)
 
 ## Typical versions for required software  
 
-+ `% checkVersions` =>  
+2`% checkVersions` =>  
   
-    ```sh
+    ```sh 
         √ bradford-abbas.uk % checkVersions
-        PHP 8.0.16 (cli) (built: Mar  1 2022 09:59:14) ( NTS )
+        PHP 8.1.11 (cli) (built: Sep 29 2022 19:44:28) (NTS)
         Copyright (c) The PHP Group
-        Zend Engine v4.0.16, Copyright (c) Zend Technologies
-            with Zend OPcache v8.0.16, Copyright (c), by Zend Technologies
-        Composer version 2.1.3 2021-06-09 16:31:20
-        Vagrant 2.2.18
-        ruby 2.6.8p205 (2021-07-07 revision 67951) [universal.x86_64-darwin21]
-        ansible [core 2.12.2]
+        Zend Engine v4.1.11, Copyright (c) Zend Technologies
+            with Zend OPcache v8.1.11, Copyright (c), by Zend Technologies
+        Composer version 2.4.3 2022-10-14 16:56:41
+        Vagrant 2.3.2
+        ruby 2.6.8p205 (2021-07-07 revision 67951) [universal.arm64e-darwin21]
+        ansible [core 2.13.5]
           config file = /Users/iainhouston/bradford-abbas.uk/ansible.cfg
           configured module search path = ['/Users/iainhouston/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-          ansible python module location = /usr/local/Cellar/ansible/5.3.0/libexec/lib/python3.10/site-packages/ansible
+          ansible python module location = /opt/homebrew/Cellar/ansible/6.5.0/libexec/lib/python3.10/site-packages/ansible
           ansible collection location = /Users/iainhouston/.ansible/collections:/usr/share/ansible/collections
-          executable location = /usr/local/bin/ansible
-          python version = 3.10.2 (main, Feb  2 2022, 06:19:27) [Clang 13.0.0 (clang-1300.0.29.3)]
-          jinja version = 3.0.3
+          executable location = /opt/homebrew/bin/ansible
+          python version = 3.10.8 (main, Oct 13 2022, 09:48:40) [Clang 14.0.0 (clang-1400.0.29.102)]
+          jinja version = 3.1.2
           libyaml = True
-        NodeJS Version v17.7.1
-        npm Version 8.5.2
-        vagrant-auto_network (1.0.3, global)
+        NodeJS Version v18.11.0
+        npm Version 8.19.2
         vagrant-hostsupdater (1.2.4, global)
-        vagrant-parallels (2.2.4, global)
-        vagrant-vbguest (0.30.0, global)
-        Developer Edition of Mozilla Firefox 99.0b2
+        vagrant-parallels (2.2.5, global)
     ```  
     
 Fin
