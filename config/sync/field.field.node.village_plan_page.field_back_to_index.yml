@@ -18,7 +18,7 @@ translatable: false
 default_value:
   -
     attributes: {  }
-    uri: 'internal:/village-plan-index'
+    uri: 'internal:/neighbourhood-plan-index'
     title: 'Back to Village Plan Index'
     options: {  }
 default_value_callback: ''

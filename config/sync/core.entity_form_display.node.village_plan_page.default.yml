@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.village_plan_page.field_back_to_index
     - field.field.node.village_plan_page.field_file_under
     - node.type.village_plan_page
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - path
     - text
 id: node.village_plan_page.default
@@ -34,6 +36,12 @@ content:
   field_file_under:
     type: options_select
     weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -81,6 +89,11 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_back_to_index: true

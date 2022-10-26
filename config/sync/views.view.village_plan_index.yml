@@ -25,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Neighbourhood Plan index'
+      title: 'Neighbourhood Plan'
       fields:
         title:
           id: title
@@ -467,7 +467,7 @@ display:
           vids:
             - village_plan_topic
       display_extenders: {  }
-      path: village-plan-index
+      path: neighbourhood-plan-index
     cache_metadata:
       max-age: -1
       contexts:
