@@ -17,3 +17,10 @@
     dest: "{{ backup_script_path }}"
     mode: ugo=rx
   tags: ['drupal', 'prod_only']
+
+- name: Template mailcount script to a location in administrator's $PATH
+  template:
+    src: "{{ config_dir }}/templates/mailcount.sh.j2"
+    dest: "{{ mailcount_script_path }}"
+    mode: ugo=rx
+  tags: ['drupal', 'prod_only']

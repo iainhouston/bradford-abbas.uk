@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mailq_count="$(/usr/bin/mailq | /usr/bin/tail -n1 | /usr/bin/gawk '{print $5}')"
+
+# If variable is empty, then the queue is empty -> set count to zero
+if [ -z "$mailq_count" ]; then
+  mailq_count=0
+fi
+
+message="Mail count is ${mailq_count}"
+/usr/bin/logger "${message}" -p mail.alert
+echo ${message}
+
+if [ "$mailq_count" -gt {{ mailcount_ceiling }} ]; then
+    echo ${message}  | /usr/bin/mail -s "${message} on server $(hostname -f)"  {{ mailcount_recipient }}

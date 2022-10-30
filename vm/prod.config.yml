@@ -42,7 +42,16 @@ apache_vhosts_ssl:
 
 ba_cron_day: "3"
 ba_cron_hour: "05"
+
+# Every so often (Wednesdays) thr DB and all public and private files are backed up to AWS S3 buckets
 backup_script_path: /usr/local/sbin/backup2S3
+
+# `mailcount` lets us know if there is an excessive number of emails on the mail queue
+mailcount_ceiling: 10
+mailcount_recipient: iainhouston@me.com
+mailcount_script_path: /usr/local/sbin/mailcount
+
+
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/45"
@@ -53,8 +62,13 @@ drupalvm_cron_jobs:
     hour: "{{ ba_cron_hour }}"
     job: "{{ drush_source_install_bin_path }} cache:clear views > /dev/null 2>&1"
 
+  - name: "Monitor postfix mail queue"
+    minute: "25"
+    hour: "{{ ba_cron_hour }}"
+    job: "{{ mailcount_script_path }} > /dev/null 2>&1"
+
   - name: "Drupal SQL dump and BAPC Static Files dump"
     minute: "01"
     weekday: "{{ ba_cron_day }}"
     hour: "{{ ba_cron_hour }}"
-    job: "{{ backup_script_path }}"
+    job: "{{ backup_script_path }} > /dev/null 2>&1"
