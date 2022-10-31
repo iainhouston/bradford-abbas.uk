@@ -40,8 +40,18 @@
       milter_protocol = 2
       smtpd_milters = inet:127.0.0.1:8891
       non_smtpd_milters = inet:127.0.0.1:8891
+      # please see https://anandarajpandey.com/2019/12/30/postfix-how-to-prevent-open-relay/
+      smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
+      # for info on postfix queues please see http://www.postfix.org/QSHAPE_README.html
+      smtpd_recipient_restrictions = reject_non_fqdn_recipient  reject_unlisted_reciepient  permit_sasl_authenticated reject_invalid_hostname
 
-# I suspect thus is redundant in Ubuntu 18.04
+- name: Ensure unauthorized relay attempts are rejected
+  ansible.builtin.lineinfile:
+    path: /etc/postfix/main.cf
+    regexp: '^smtpd_relay_restrictions'
+    line: smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination
+
+# I suspect this is redundant in Ubuntu 18.04
 # as "Socket inet:8891@127.0.0.1" is "required" in  /etc/opendkim.conf
 - name: Place file specifying DKIM Sockets
   copy:
