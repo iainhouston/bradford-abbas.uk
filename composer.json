@@ -99,6 +99,7 @@
 		"drupal/core-recommended": "^9.3",
 		"drupal/diff": "^1.0",
 		"drupal/draggableviews": "^2.1",
+		"drupal/exif_orientation": "^1.1",
 		"drupal/honeypot": "^2.1",
 		"drupal/jquery_ui_datepicker": "^1.2",
 		"drupal/password_policy": "^3.1",

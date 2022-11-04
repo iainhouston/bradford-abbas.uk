@@ -44,6 +44,8 @@
       smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
       # for info on postfix queues please see http://www.postfix.org/QSHAPE_README.html
       smtpd_recipient_restrictions = reject_non_fqdn_recipient  reject_unlisted_reciepient  permit_sasl_authenticated reject_invalid_hostname
+      #bounce_queue_lifetime = 8h
+      maximal_queue_lifetime = 2h
 
 - name: Ensure unauthorized relay attempts are rejected
   ansible.builtin.lineinfile:
