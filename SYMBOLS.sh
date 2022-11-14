@@ -55,6 +55,9 @@ export BADEVSCRIPTS="$BADEV/scripts/badev"
 # send all code changes to Live system; install them and sync Live config with Dev config
 alias updateLiveCode="sh $BADEVSCRIPTS/updateLiveCode.sh"
 
+# Restore all files and database from the S3 backups and sync to DEV system
+alias restoreFromS3="sh $BADEVSCRIPTS/restoreFromS3.sh"
+
 # Put Live system into maintenance mode
 alias livemaint="sh $BADEVSCRIPTS/livemaint.sh"
 
