@@ -2,6 +2,15 @@
 
 Start_time=$SECONDS
 
+
+if [[ ! $( vagrant status | grep "is running") ]]
+then
+    echo "VM is NOT running"
+    exit 1
+fi
+
+echo "VM IS running"
+
 echo "Retrieving database as SQL from most recent Amazon S3 bucket"
 NOW=$(date +"%a-%H%M-%d%b%y")
 FILE="${BADEV}/vm/saved_sql/live/${NOW}.sql"
@@ -9,6 +18,7 @@ s3cmd get --recursive s3://bradford-abbas.uk.db ${FILE}
 echo "Emptying Drupal database on Dev machine"
 $DRUSH ${DEVALIAS} sql:drop -y
 echo "Restoring replica of Live database to DEV system"
+echo "${GREEN}Restoring the Database may take some time ${NC}"
 $DRUSH ${DEVALIAS} sql:cli < ${FILE}
 
 echo "Setting alias mostRecentS3Backup.sql to ${GREEN}${FILE}${NC}"
@@ -30,4 +40,5 @@ osascript -e 'display notification "Dev Database and Files in sync with those mo
 
 Elapsed_time=$(($SECONDS - $Start_time))
 echo "${GREEN}Restoring S3 buckets to Dev system completed in ${RED}${Elapsed_time}${GREEN} seconds${NC}"
+echo "VM ${RED}VERY${NC} sluggish after restore (NFS Shares?). ${GREEN} Recommend shutting down and restarting VM${NC} "
 
