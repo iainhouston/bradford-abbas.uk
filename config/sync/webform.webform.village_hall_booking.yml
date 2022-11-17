@@ -65,7 +65,6 @@ elements: |-
       '#title': 'Date and time of hire'
       '#title_display': before
       '#format_items': comma
-      '#date_date_datepicker_button': false
       '#required': true
     end_time_of_hire:
       '#type': webform_time
