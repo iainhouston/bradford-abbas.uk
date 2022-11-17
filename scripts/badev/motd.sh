@@ -4,6 +4,8 @@ echo "reloadDevDB    - Reload Dev database with most recently downloaded live da
 echo "endev          - Enable development modules in Dev site"
 echo "safecex        - Safe export of Dev site's configuration"
 echo "updateLiveCode - Code and Config to Live site"
+echo "livemaint      - Put Live system into maintenance mode"
+echo "liveumaint     - Take Live system out of maintenance mode"
 echo "_________________________________________________________________________________"
 echo "There are other utilty scripts aliased in ${GREEN}SYMBOLS.sh${NC}"
 echo " "
