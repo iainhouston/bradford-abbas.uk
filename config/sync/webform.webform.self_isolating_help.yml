@@ -1,6 +1,6 @@
 uuid: 2896208d-f1d3-4e62-ae20-fb2ffa501163
 langcode: en
-status: open
+status: closed
 dependencies: {  }
 weight: 0
 open: null
@@ -34,7 +34,6 @@ elements: |-
       Just call or text me and I&#39;ll do my best to help.<br />
       <br />
       <strong>Coronavirus is contagious. Please take every precaution to ensure that spreading only kindness. Avoid physical contact (kepp distant 2m). Wash your hands regularly. Items should be left on your doorstep.</strong>
-      
     picking_up_shopping:
       '#type': checkbox
       '#title': 'Picking up shopping'
@@ -61,7 +60,7 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_open_message: ''
   form_close_message: ''
@@ -133,7 +132,7 @@ settings:
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0

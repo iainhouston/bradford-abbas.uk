@@ -7,10 +7,12 @@ dependencies:
     - node.type.agenda
     - node.type.article
     - node.type.document
+    - node.type.history_society_event
     - node.type.item_of_expense
     - node.type.meeting
     - node.type.minutes
     - node.type.page
+    - node.type.photo_gallery
   module:
     - file
     - filter
@@ -29,16 +31,20 @@ weight: -4
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access content'
   - 'access content overview'
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
+  - 'access user profiles'
   - 'administer nodes'
   - 'administer simplenews subscriptions'
   - 'administer users'
+  - 'administer webform submission'
   - 'create agenda content'
   - 'create article content'
   - 'create document content'
+  - 'create history_society_event content'
   - 'create item_of_expense content'
   - 'create meeting content'
   - 'create minutes content'
@@ -50,10 +56,15 @@ permissions:
   - 'delete any agenda content'
   - 'delete any article content'
   - 'delete any document content'
+  - 'delete any history_society_event content'
   - 'delete any item_of_expense content'
   - 'delete any meeting content'
+  - 'delete any minutes content'
+  - 'delete any page content'
+  - 'delete any photo_gallery content'
   - 'delete article revisions'
   - 'delete document revisions'
+  - 'delete history_society_event revisions'
   - 'delete item_of_expense revisions'
   - 'delete meeting revisions'
   - 'delete minutes revisions'
@@ -64,11 +75,14 @@ permissions:
   - 'delete own meeting content'
   - 'delete own minutes content'
   - 'delete page revisions'
+  - 'delete photo_gallery revisions'
   - 'edit any agenda content'
   - 'edit any article content'
   - 'edit any document content'
+  - 'edit any history_society_event content'
   - 'edit any item_of_expense content'
   - 'edit any meeting content'
+  - 'edit any minutes content'
   - 'edit any page content'
   - 'edit own agenda content'
   - 'edit own article content'
@@ -77,25 +91,33 @@ permissions:
   - 'edit own meeting content'
   - 'edit own minutes content'
   - 'edit own page content'
+  - 'edit own photo_gallery content'
   - 'manage password reset'
   - 'revert agenda revisions'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert document revisions'
+  - 'revert history_society_event revisions'
   - 'revert item_of_expense revisions'
   - 'revert meeting revisions'
   - 'revert minutes revisions'
   - 'revert page revisions'
+  - 'revert photo_gallery revisions'
   - 'send newsletter'
+  - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'view agenda revisions'
   - 'view all revisions'
   - 'view any webform submission'
   - 'view article revisions'
   - 'view document revisions'
+  - 'view history_society_event revisions'
   - 'view item_of_expense revisions'
   - 'view meeting revisions'
   - 'view minutes revisions'
   - 'view own unpublished content'
   - 'view page revisions'
+  - 'view photo_gallery revisions'
+  - 'view simplenews subscriptions'
   - 'view the administration theme'
+  - 'view user email addresses'
