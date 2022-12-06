@@ -2,7 +2,7 @@ badev:
   host: "${env.DEVSITE}"
   ssh:
     tty: 0
-    options: '-i ~/.vagrant.d/insecure_private_key'
+    options: '-i ~/.vagrant.d/insecure_private_key -o StrictHostKeyChecking=no'
   root: /var/www/drupal/web
   uri: "http://${env.DEVSITE}"
   user: vagrant
