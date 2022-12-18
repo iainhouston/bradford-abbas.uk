@@ -65,7 +65,7 @@ drupal_site_name: "BAPC Development Website"
 # installed_extras are web / server utilities (and not Ubuntu / Linux ones)
 installed_extras:
   - drush
-  - adminer
+#  - adminer
   - xdebug
   - mailhog
   - upload-progress
@@ -82,9 +82,9 @@ apache_vhosts:
     documentroot: "{{ drupal_core_path }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-  - servername: "adminer.{{ vagrant_hostname }}"
-    documentroot: "{{ adminer_install_dir }}"
-    extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+  # - servername: "adminer.{{ vagrant_hostname }}"
+  #   documentroot: "{{ adminer_install_dir }}"
+  #   extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
   - servername: "{{ vagrant_ip }}"
     serveralias: "dashboard.{{ vagrant_hostname }}"

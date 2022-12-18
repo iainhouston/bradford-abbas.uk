@@ -17,7 +17,7 @@
   ansible.builtin.shell: go get  github.com/mailhog/MailHog
 
 - name: move the Mailhog code to its install directory
-  shell:  cp -f go/bin/MailHog "{{ mailhog_install_dir }}/mailhog"
+  shell:  cp -f /root/go/bin/MailHog "{{ mailhog_install_dir }}/mailhog"
 
 - name: Copy mailhog systemd unit file into place (for systemd systems like Ubuntu).
   template:
