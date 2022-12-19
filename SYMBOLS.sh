@@ -15,7 +15,7 @@
 
 # Project directory; created when cloned from GitHub thus:
 # `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
-export BADEV="$HOME/bradford-abbas.uk"
+export BADEV="$HOME/D10-bradford-abbas.uk"
 
 # URL of Live, and Virtual Development and Staging sites
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
@@ -43,7 +43,7 @@ alias cdm="cd $BADEV/web/modules/contrib/ && ls $BADEV/web/modules/contrib/"
 alias cdt="cd $BADEV/web/themes/contrib/pellucid_olivero/ && ls ./"
 alias cds="cd $BADEV/web/sites/default/"
 alias cdf="cd $BADEV/web/sites/default/files/"
-alias cdv="cd $BADEV/library/geerlingguy/drupal-vm"
+alias cdv="cd $BADEV/library/provisioning/roles"
 
 # The `drush` we use for this project is installed locally with composer
 export DRUSH="$BADEV/vendor/drush/drush/drush"
