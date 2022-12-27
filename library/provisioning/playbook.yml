@@ -74,7 +74,7 @@
       tags: ['php']
 
     - { role: geerlingguy.blackfire, when: '"blackfire" in installed_extras' }
-    - { role: geerlingguy.adminer, when: '"adminer" in installed_extras', tags: ['database'] }
+    - { role: iainhouston.adminer, when: '"adminer" in installed_extras', tags: ['database'] }
     - { role: geerlingguy.daemonize, when: '"mailhog" in installed_extras' }
     - { role: iainhouston.mailhog, when: '"mailhog" in installed_extras' }
     - { role: weareinteractive.newrelic, when: '"newrelic" in installed_extras' }
