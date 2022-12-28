@@ -18,14 +18,12 @@
 	"extra": {
 		"drupal-core-project-message": {
 			"post-install-cmd-message": [
-				"Thanks for installing this project.",
-				"More messages to follow"
+				"Bradford Abbas Parish Council",
+				"Drupal and contributed code up-to-date"
 				]
 			},
 		"drupal-scaffold": {
 			"file-mapping": {
-				"[web-root]/sites/default/default.services.yml": false,
-				"[web-root]/sites/default/default.settings.php": false
 			},
 			"locations": {
 				"web-root": "web/"
