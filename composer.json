@@ -103,7 +103,7 @@
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
 		"drupal/simplenews": "^3.0@beta",
-		"drupal/symfony_mailer": "^1.1@beta",
+		"drupal/symfony_mailer": "^1.2@beta",
 		"drupal/token": "^1.7",
 		"drupal/webform": "^6.0",
 		"drush/drush": "^11.0",
