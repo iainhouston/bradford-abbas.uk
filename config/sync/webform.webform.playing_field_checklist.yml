@@ -32,10 +32,13 @@ elements: |-
         type: _none
     '#required': true
   date_and_time_of_inspection:
-    '#type': datetime
-    '#title': 'Date and time of inspection'
-    '#date_time_step': '1800'
+    '#type': date
+    '#title': 'Date of inspection'
     '#required': true
+    '#format_items': comma
+    '#date_date_format': ''
+    '#date_time_format': ''
+    '#date_time_step': '1800'
   container:
     '#type': container
     is_fencing_secure_:
@@ -342,7 +345,7 @@ handlers:
         - completed
       to_mail: bradfordabbas@dorset-aptc.gov.uk
       to_options: {  }
-      bcc_mail: ''
+      bcc_mail: iainhouston@me.com
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }

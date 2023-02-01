@@ -1,0 +1,452 @@
+uuid: 97b3a014-0af4-4265-ba85-084cf034e90d
+langcode: en
+status: closed
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: np_household_survey
+title: 'NP Household Survey'
+description: '<p>Neighbourhood Plan&nbsp;Household Survey</p>'
+category: ''
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': '<p>Welcome to our first household survey that will help us produce a Neighbourhood Plan<br>for Bradford Abbas and Clifton Maybank, reflecting the community''s needs and aspirations. We are asking every household in the parishes some questions about their thoughts on what is important and what needs to be addressed in our Neighbourhood Plan, which will help assist important decisions in the future.</p><h3>What is a Neighbourhood Plan?</h3><p>A neighbourhood plan gives local communities the opportunity to develop a shared vision for their area.</p><p>It can help to shape, direct, and deliver sustainable development, by influencing local planning decisions as part of the statutory Development Plan. Bradford Abbas and Clifton Maybank’s neighbourhood plan will span the next 15 years.</p><p>We ALL have a chance to influence development in our parishes. Please help our community by compleCng this survey.</p><p>Please complete <strong>one survey per household</strong>. If there is more than one person in your household, please find a consensus where your answers may have differed as your neighbourhood plan is about finding consensus, as a community. Please submit your response by <strong>31/03/2023</strong>. We would prefer that you complete it online by scanning the QR code below or the following link: [LINK]. However, if you prefer, please use this paper copy and return it to one of the following locatons:</p><ul><li>Telephone Box</li><li>Sports Club</li><li>Village Hall post box</li><li>Through the door or post to:<ul><li>2 East Farm Cottages, North Street, Bradford Abbas, DT9 6SF&nbsp;</li><li>1 Huish Farm Cottages, Bradford Abbas, DT9 6RE</li></ul></li></ul>'
+    '#format': basic_html
+  introduction:
+    '#type': fieldset
+    '#title': Introduction
+    1_age_of_you_and_other_people_in_your_house:
+      '#type': fieldset
+      '#title': '1. Age of you and other people in your house'
+      you:
+        '#type': select
+        '#title': You
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+        '#empty_option': 'Please select your age'
+        '#required': true
+      second_person:
+        '#type': select
+        '#title': 'Second person'
+        '#description_display': after
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      third_person:
+        '#type': select
+        '#title': 'Third person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      fourth_person:
+        '#type': select
+        '#title': 'Fourth person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      fifth_person:
+        '#type': select
+        '#title': 'Fifth person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      sixth_person:
+        '#type': select
+        '#title': 'Sixth person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      seventh_person:
+        '#type': select
+        '#title': 'Seventh person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      eighth_person:
+        '#type': select
+        '#title': 'Eighth person'
+        '#options':
+          'Age 0 - 9': 'Age 0-9'
+          'Age 10 - 19': 'Age 10 - 19'
+          'Age 20 - 29': 'Age 20 - 29'
+          'Age 30 - 39': 'Age 30 - 39'
+          'Age 40 - 49': 'Age 40 - 49'
+          'Age 50 - 59': 'Age 50 - 59'
+          'Age 60 - 69': 'Age 60 - 69'
+          'Age 70 - 79': 'Age 70 - 79'
+          'Age 80 +': 'Age 80 +'
+      any_others_please_specify_:
+        '#type': textarea
+        '#title': 'Any others (please specify)'
+        '#format_items': comma
+    2_where_do_you_live_:
+      '#type': fieldset
+      '#title': '2. Where do you live?'
+      select:
+        '#type': select
+        '#title': Select
+        '#options':
+          'Clifton Maybank': 'Clifton Maybank'
+          'Prefer not to say': 'Prefer not to say'
+        '#empty_option': 'Bradford Abbas'
+        '#empty_value': 'Bradford Abbas'
+  community:
+    '#type': fieldset
+    '#title': Community
+    3_looking_at_the_present_provision_in_the_parishes_please_indica:
+      '#type': fieldset
+      '#title': '3. Looking at the present provision in the parishes, please indicate which you consider is important to retain?'
+      children_s_equipped_play_area:
+        '#type': radios
+        '#title': 'Children’s equipped play area'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      church:
+        '#type': radios
+        '#title': Church
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      clubs_and_societies:
+        '#type': radios
+        '#title': 'Clubs and societies'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      post_box:
+        '#type': radios
+        '#title': 'Post Box'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      post_office:
+        '#type': radios
+        '#title': 'Post Office'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      pre_school:
+        '#type': radios
+        '#title': Pre-school
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      pub:
+        '#type': radios
+        '#title': Pub
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      school:
+        '#type': radios
+        '#title': School
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      shop:
+        '#type': radios
+        '#title': Shop
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      sports_club:
+        '#type': radios
+        '#title': 'Sports Club'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      tuesday_market:
+        '#type': radios
+        '#title': 'Tuesday Market'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+      village_hall:
+        '#type': radios
+        '#title': 'Village Hall'
+        '#options':
+          'Very Important': 'Very Important'
+          Important: Important
+          'Not sure either way': 'Not sure either way'
+          'Not important': 'Not important'
+          'Don''t know / never used': 'Don''t know / never used'
+    4_do_you_have_any_concerns_about_possible_changes_or_loss_of_the:
+      '#type': textarea
+      '#title': '4. Do you have any concerns about possible changes or loss of the above facilities – if so, can you explain what these are and which facilities you are concerned about.'
+      '#format_items': comma
+    5_are_there_any_community_facilices_you_feel_are_missing_and_nee:
+      '#type': textarea
+      '#title': '5. Are there any community facilities you feel are missing and need to be explored? (eg. activities for younger people, tennis, wild swimming)'
+      '#format_items': comma
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
