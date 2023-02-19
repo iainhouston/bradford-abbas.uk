@@ -145,6 +145,7 @@ elements: |-
       '#file_placeholder': 'Upload a photo if it will help identify and track issues with playground equipment'
       '#file_preview': 'bapc_medium:modal'
       '#max_filesize': '12'
+      '#file_extensions': 'gif jpg jpeg png svg'
       '#attachment_image_style': bapc_medium
 css: ''
 javascript: ''

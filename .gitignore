@@ -26,6 +26,7 @@ BAPC.code-workspace
 # Saved SQL dumps easily recreated each development cycle
 vm/saved_sql/*
 mostRecentLive.sql
+mostRecentDev.sql
 vm/xdebug/*
 
 # working files in vagrant dev machine

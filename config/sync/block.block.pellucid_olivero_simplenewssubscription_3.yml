@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - simplenews
+    - system
   theme:
     - pellucid_olivero
 id: pellucid_olivero_simplenewssubscription_3
@@ -26,4 +27,8 @@ settings:
   message: 'Stay informed - subscribe to our newsletters.'
   show_manage: true
   unique_id: f89e6e76-655a-4c83-a53c-3132b5a09709
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/form/*'

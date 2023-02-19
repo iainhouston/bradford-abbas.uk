@@ -1,6 +1,6 @@
 uuid: 97b3a014-0af4-4265-ba85-084cf034e90d
 langcode: en
-status: closed
+status: open
 dependencies: {  }
 weight: 0
 open: null
@@ -13,21 +13,20 @@ title: 'NP Household Survey'
 description: '<p>Neighbourhood Plan&nbsp;Household Survey</p>'
 category: ''
 elements: |-
-  processed_text:
-    '#type': processed_text
-    '#text': '<p>Welcome to our first household survey that will help us produce a Neighbourhood Plan<br>for Bradford Abbas and Clifton Maybank, reflecting the community''s needs and aspirations. We are asking every household in the parishes some questions about their thoughts on what is important and what needs to be addressed in our Neighbourhood Plan, which will help assist important decisions in the future.</p><h3>What is a Neighbourhood Plan?</h3><p>A neighbourhood plan gives local communities the opportunity to develop a shared vision for their area.</p><p>It can help to shape, direct, and deliver sustainable development, by influencing local planning decisions as part of the statutory Development Plan. Bradford Abbas and Clifton Maybank’s neighbourhood plan will span the next 15 years.</p><p>We ALL have a chance to influence development in our parishes. Please help our community by compleCng this survey.</p><p>Please complete <strong>one survey per household</strong>. If there is more than one person in your household, please find a consensus where your answers may have differed as your neighbourhood plan is about finding consensus, as a community. Please submit your response by <strong>31/03/2023</strong>. We would prefer that you complete it online by scanning the QR code below or the following link: [LINK]. However, if you prefer, please use this paper copy and return it to one of the following locatons:</p><ul><li>Telephone Box</li><li>Sports Club</li><li>Village Hall post box</li><li>Through the door or post to:<ul><li>2 East Farm Cottages, North Street, Bradford Abbas, DT9 6SF&nbsp;</li><li>1 Huish Farm Cottages, Bradford Abbas, DT9 6RE</li></ul></li></ul>'
-    '#format': basic_html
-  introduction:
-    '#type': fieldset
+  inro_page:
+    '#type': webform_wizard_page
     '#title': Introduction
-    1_age_of_you_and_other_people_in_your_house:
+    processed_text:
+      '#type': processed_text
+      '#text': '<h3>Welcome</h3><p>Welcome to our first household survey that will help us produce a Neighbourhood Plan<br>for Bradford Abbas and Clifton Maybank, reflecting the community''s needs and aspirations. We are asking every household in the parishes some questions about their thoughts on what is important and what needs to be addressed in our Neighbourhood Plan, which will help assist important decisions in the future.</p><h3>What is a Neighbourhood Plan?</h3><p>A neighbourhood plan gives local communities the opportunity to develop a shared vision for their area.</p><p>It can help to shape, direct, and deliver sustainable development, by influencing local planning decisions as part of the statutory Development Plan. Bradford Abbas and Clifton Maybank’s neighbourhood plan will span the next 15 years. Based on the results of this survey, a further housing needs assessment may take place, hosted by the Community Land Trust.</p><p>We ALL have a chance to influence development in our parishes. Please help our community by completing this survey.</p><h3>Household Survey</h3><p>Please complete <strong>one survey per household</strong>. If there is more than one person in your household, please find a consensus where your answers may have differed as your neighbourhood plan is about finding consensus, as a community. Please submit your response by <strong>31/03/2023</strong>. We would prefer that you complete it online toi assist data collection and analysis.</p><p>If anyone requires assistance or clarification on completing the survey, please call Terry Hunt: 07400 506 203<br>&nbsp;</p><p>&nbsp;</p>'
+      '#format': basic_html
+    1_age_of_you_and_other_people_in_your_house_:
       '#type': fieldset
-      '#title': '1. Age of you and other people in your house'
+      '#title': '1. Age of you and other people in your house '
       you:
         '#type': select
         '#title': You
         '#options':
-          'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
           'Age 20 - 29': 'Age 20 - 29'
           'Age 30 - 39': 'Age 30 - 39'
@@ -37,7 +36,7 @@ elements: |-
           'Age 70 - 79': 'Age 70 - 79'
           'Age 80 +': 'Age 80 +'
         '#empty_option': 'Please select your age'
-        '#required': true
+        '#required_error': 'Please provide your age. Thank you.'
       second_person:
         '#type': select
         '#title': 'Second person'
@@ -55,6 +54,7 @@ elements: |-
       third_person:
         '#type': select
         '#title': 'Third person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -68,6 +68,7 @@ elements: |-
       fourth_person:
         '#type': select
         '#title': 'Fourth person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -81,6 +82,7 @@ elements: |-
       fifth_person:
         '#type': select
         '#title': 'Fifth person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -94,6 +96,7 @@ elements: |-
       sixth_person:
         '#type': select
         '#title': 'Sixth person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -107,6 +110,7 @@ elements: |-
       seventh_person:
         '#type': select
         '#title': 'Seventh person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -120,6 +124,7 @@ elements: |-
       eighth_person:
         '#type': select
         '#title': 'Eighth person'
+        '#description_display': after
         '#options':
           'Age 0 - 9': 'Age 0-9'
           'Age 10 - 19': 'Age 10 - 19'
@@ -130,23 +135,20 @@ elements: |-
           'Age 60 - 69': 'Age 60 - 69'
           'Age 70 - 79': 'Age 70 - 79'
           'Age 80 +': 'Age 80 +'
-      any_others_please_specify_:
+      any_othersa:
         '#type': textarea
         '#title': 'Any others (please specify)'
         '#format_items': comma
     2_where_do_you_live_:
-      '#type': fieldset
+      '#type': select
       '#title': '2. Where do you live?'
-      select:
-        '#type': select
-        '#title': Select
-        '#options':
-          'Clifton Maybank': 'Clifton Maybank'
-          'Prefer not to say': 'Prefer not to say'
-        '#empty_option': 'Bradford Abbas'
-        '#empty_value': 'Bradford Abbas'
-  community:
-    '#type': fieldset
+      '#options':
+        'Bradford Abbas': 'Bradford Abbas'
+        'Clifton Maybank': 'Clifton Maybank'
+        'Prefer not to say': 'Prefer not to say'
+      '#required_error': 'Please select one pf the places'
+  community_page:
+    '#type': webform_wizard_page
     '#title': Community
     3_looking_at_the_present_provision_in_the_parishes_please_indica:
       '#type': fieldset
@@ -259,6 +261,12 @@ elements: |-
           'Not sure either way': 'Not sure either way'
           'Not important': 'Not important'
           'Don''t know / never used': 'Don''t know / never used'
+      please_specify_any_other_community_assets_you_consider_important:
+        '#type': textarea
+        '#title': 'Please specify any other community assets you consider important to retain'
+        '#description': 'Please list your additional items here'
+        '#description_display': before
+        '#format_items': comma
     4_do_you_have_any_concerns_about_possible_changes_or_loss_of_the:
       '#type': textarea
       '#title': '4. Do you have any concerns about possible changes or loss of the above facilities – if so, can you explain what these are and which facilities you are concerned about.'
@@ -267,6 +275,386 @@ elements: |-
       '#type': textarea
       '#title': '5. Are there any community facilities you feel are missing and need to be explored? (eg. activities for younger people, tennis, wild swimming)'
       '#format_items': comma
+  climate_change_and_water_management:
+    '#type': webform_wizard_page
+    '#title': 'Climate change and water management'
+    6_should_the_neighbourhood_plan_support_the_allocation_of_land_f:
+      '#type': fieldset
+      '#title': '6. Should the Neighbourhood Plan support the allocation of land for the following types of renewable energy production? '
+      '#description': 'Please check any/all that you would support (subject to identification of the right site).'
+      '#description_display': before
+      allocation_of_land:
+        '#type': tableselect
+        '#title': 'allocation of land'
+        '#title_display': none
+        '#options':
+          'Wind turbine(s) providing power to the parishes': 'Wind turbine(s) providing power to the parishes'
+          'A biomass facility providing power to the parishes': 'A biomass facility providing power to the parishes'
+          'Ground source heat pump providing power to the parishes': 'Ground source heat pump providing power to the parishes'
+          'Solar panel(s) providing power to the parishes': 'Solar panel(s) providing power to the parishes'
+          'None of the above': 'None of the above'
+        '#js_select': false
+    would_you_be_willing_support_any_of_the_above_through_community_:
+      '#type': select
+      '#title': '7. Would you be willing to support any of the above through community purchase initiatives?'
+      '#description': 'For example: local people buying shares in a non-profit organisation to finance the installation of renewable energy projects that will provide benefit to the community.'
+      '#description_display': before
+      '#options': yes_no
+    8_has_flooding_within_the_parishes_affected_you_:
+      '#type': select
+      '#title': '8. Has flooding within the parishes affected you?'
+      '#options': yes_no
+    please_provide_suggestions_on_how_flooding_within_the_parishes_c:
+      '#type': textarea
+      '#title': 'Please share in what way flooding has affected you'
+      '#description': 'If possible, provide suggestions on how flooding within the parishes could be addressed:'
+      '#description_display': before
+      '#format_items': comma
+  business_services_economy:
+    '#type': webform_wizard_page
+    '#title': 'Business Services & Economy'
+    9a:
+      '#type': fieldset
+      '#title': '9. Is someone in your household likely to need business premises to set up or expand their own business?'
+      '#description': 'Please select all that may apply.'
+      '#description_display': before
+      9_is_someone_in_your_household_likely_to_need_business_premises_:
+        '#type': tableselect
+        '#title': 'Hidden header'
+        '#title_display': none
+        '#description_display': before
+        '#options':
+          'Yes – to start up a new business': 'Yes – to start up a new business'
+          'Yes – to expand an existing business currently running from home': 'Yes – to expand an existing business currently running from home'
+          'Yes – to relocate an existing business currently based outside the parishes ': 'Yes – to relocate an existing business currently based outside the parishes '
+          'No': 'No'
+        '#js_select': false
+      if_yes_can_you_tell_us_a_little_more_about_the_type_of_business_:
+        '#type': fieldset
+        '#title': 'If YES, can you tell us a little more about the type of business, and the size and location of premises you think you would need?'
+        '#states':
+          visible:
+            ':input[name="9_is_someone_in_your_household_likely_to_need_business_premises_[No]"]':
+              unchecked: true
+        type_of_business:
+          '#type': textarea
+          '#title': 'Type of business'
+          '#format_items': comma
+        size_and_location_of_premises_needed:
+          '#type': textarea
+          '#title': 'Size and location of premises needed'
+          '#format_items': comma
+    11_if_you_are_a_local_business_owner_would_you_like_the_opportun:
+      '#type': select
+      '#title': '10. If you are a local business owner, would you like the opportunity to meet and discuss your needs with the neighbourhood plan working group and other local business providers within the parishes?'
+      '#options': yes_no
+    12_what_sort_of_business_or_activity_do_you_think_should_be_enco:
+      '#type': fieldset
+      '#title': '11. What sort of business or activity do you think should be encouraged within our parishes over the next 15 years?'
+      '#description': 'Please check all that apply'
+      '#description_display': before
+      12a_what_sort_of_business_or_accvity_do_you_think_should_be_enco:
+        '#type': tableselect
+        '#title': 'What sort of business or activity do you think should be encouraged'
+        '#title_display': none
+        '#options':
+          'Office-based business (consultancies, etc)': 'Office-based business (consultancies, etc)'
+          'Retail (shops, etc)': 'Retail (shops, etc)'
+          'Small-scale industrial workshops': 'Small-scale industrial workshops'
+          'Agriculture/horticulture/food production': 'Agriculture/horticulture/food production'
+          'Farm shop': 'Farm shop'
+          'Animal related businesses and services': 'Animal related businesses and services'
+          'Service trades (plumbers, electricians, etc)': 'Service trades (plumbers, electricians, etc)'
+          'Home working': 'Home working'
+          'None of the above': 'None of the above'
+        '#js_select': false
+      please_add_any_other_comments_below:
+        '#type': textarea
+        '#title': 'Please add any other comments below'
+        '#title_display': before
+        '#format_items': comma
+  housing_and_planning:
+    '#type': webform_wizard_page
+    '#title': 'Housing and planning'
+    13_are_you_or_people_in_your_household_likely_to_require_differe:
+      '#type': select
+      '#title': '12. Are you or people in your household likely to require different housing in the parishes in the next 10-15 years?'
+      '#description_display': before
+      '#options':
+        'Yes - different home (due to changing circumstances)': 'Yes - different home (due to changing circumstances)'
+        'Yes - additional home (becoming more than one household) ': 'Yes - additional home (becoming more than one household) '
+        'No - We are likely top stay in our home': 'No - We are likely top stay in our home'
+        'No - We are more likely to move away from this area': 'No - We are more likely to move away from this area'
+        'Not sure': 'Not sure'
+    14_if_yes_which_one_or_more_of_the_following_best_describes_the_:
+      '#type': fieldset
+      '#title': 'If YES which one or more of the following best describes the housing this will need?'
+      '#description_display': before
+      '#states':
+        invisible:
+          - ':input[name="13_are_you_or_people_in_your_household_likely_to_require_differe"]':
+              value: 'No - We are likely top stay in our home'
+          - or
+          - ':input[name="13_are_you_or_people_in_your_household_likely_to_require_differe"]':
+              value: 'No - We are more likely to move away from this area'
+          - or
+          - ':input[name="13_are_you_or_people_in_your_household_likely_to_require_differe"]':
+              value: 'Not sure'
+      home_size:
+        '#type': select
+        '#title': 'Home size'
+        '#options':
+          '1 Bedroom home': '1 Bedroom home'
+          '2 Bedroom home': '2 Bedroom home'
+          '3 Bedroom home': '3 Bedroom home'
+          '4+ Bedroom home': '4+ Bedroom home'
+      housing_needed:
+        '#type': tableselect
+        '#title': 'housing needed'
+        '#description': 'And are there any special qualities this will need?'
+        '#title_display': none
+        '#description_display': before
+        '#options':
+          'Home more suitable for health reasons (e.g. Bungalow or adaptions for persons with limited mobility) ': 'Home more suitable for health reasons (e.g. Bungalow or adaptions for persons with limited mobility) '
+          'An affordable home to rent – as unable to rent on the private market': 'An affordable home to rent – as unable to rent on the private market'
+          'An affordable home to buy - as unable to buy on the private market': 'An affordable home to buy - as unable to buy on the private market'
+          'A home suitable to run a business from': 'A home suitable to run a business from'
+          'Other (click to specify below)': 'Other (click to specify below)'
+        '#js_select': false
+      other_housing:
+        '#type': textarea
+        '#title': 'other housing'
+        '#title_display': none
+        '#states':
+          visible:
+            ':input[name="housing_needed[Other (click to specify below)]"]':
+              checked: true
+        '#format_items': comma
+    15_would_you_support_new_housing_development_to_assist_the_viabi:
+      '#type': select
+      '#title': '13. Would you support new housing development to assist the viability of our local community services?'
+      '#options': yes_no
+    _16_how_many_additional_new_houses_if_any_do_you_think_might_be_:
+      '#type': radios
+      '#title': ' 14. Between the Census in 2001 and 2021, the number of households living in our area has hardly changed (decreasing from 422 to 421 usual resident households).  How many additional new houses, if any, do you think might be good for the parishes over the next 10-15 years?'
+      '#options':
+        'No new homes': 'No new homes'
+        '1 - 5 homes': '1 - 5 homes'
+        '6 - 10 homes': '6 - 10 homes'
+        '11 - 15 homes': '11 - 15 homes'
+        '16+ homes': '16+ homes'
+    17_how_important_is_it_to_you_that_any_new_homes_that_are_built_:
+      '#type': radios
+      '#title': '15. How important is it to you that any new homes that are built reflect the traditional character of the parishes?'
+      '#description': 'For example: homes that are built are of a high standard of design using good quality materials and reflect the local aesthetics'
+      '#description_display': before
+      '#options':
+        'Very important': 'Very important'
+        Important: Important
+        'Not sure either way': 'Not sure either way'
+        'Not important': 'Not important'
+        'Not important at all': 'Not important at all'
+        'Don''t know': 'Don''t know'
+  environment:
+    '#type': webform_wizard_page
+    '#title': Environment
+    18_please_indicate_whether_you_think_the_following_are_important:
+      '#type': fieldset
+      '#title': '16. Please indicate whether you think the following are important to the character of the parishes:'
+      the_mix_of_houses_community_and_employment_these_are_working_par:
+        '#type': select
+        '#title': 'The mix of houses, community, and employment – these are working parishes'
+        '#options': likert_comparison
+      the_network_of_footpaths_and_green_spaces_where_people_can_walk_:
+        '#type': select
+        '#title': 'The network of footpaths and green spaces, where people can walk and enjoy the fresh air, scenery, and views of the countryside'
+        '#options': likert_comparison
+      the_mix_of_houses_and_boundary_walls_that_include_local_material:
+        '#type': select
+        '#title': 'The mix of houses and boundary walls that include local materials, particularly limestone'
+        '#options': likert_comparison
+      the_hedgerows_and_trees_in_gardens_and_on_the_edge_of_the_parish:
+        '#type': select
+        '#title': 'The hedgerows and trees in gardens and on the edge of the parishes that generally ''green'' the parishes'
+        '#options': likert_comparison
+      keeping_dark_skies_that_allow_you_to_see_the_stars_more_clearly_:
+        '#type': select
+        '#title': 'Keeping dark skies that allow you to see the stars more clearly (no streetlights)'
+        '#options': likert_comparison
+      open_views_across_the_river_yeo_valley_with_its_bridge_crossings:
+        '#type': select
+        '#title': 'Open views across the River Yeo valley with its bridge crossings and former mills'
+        '#options': likert_comparison
+      farming_legacy_farm_yards_and_buildings_present_and_past_fields_:
+        '#type': select
+        '#title': 'Farming legacy; farm yards and buildings; present and past fields and orchards'
+        '#options': likert_comparison
+      railway_legacy_main_lines_through_the_parishes_with_under_and_ov:
+        '#type': select
+        '#title': 'Railway legacy; main lines through the parishes with under and over bridges'
+        '#options': likert_comparison
+    20_would_you_support_community_purchase_of_land_to_protect_impor:
+      '#type': select
+      '#title': '17. Would you support Community purchase of land to protect important public open spaces within the parishes?'
+      '#options': yes_no
+    19_during_the_public_consultation_some_key_open_green_spaces_hav:
+      '#type': fieldset
+      '#title': '18. During the public consultation some significant spaces have been identified as important to the residents of the parishes to protect'
+      '#description': |-
+        Do you agree these are important to our environment and the character of the parishes, and are there any spaces that have been missed?<br />
+        <br />
+        (*Not publicly accessible)
+      '#description_display': before
+      allotments:
+        '#type': select
+        '#title': Allotments
+        '#options': likert_comparison
+      church_yard:
+        '#type': select
+        '#title': 'Church yard'
+        '#options': likert_comparison
+      clifton_maybank_wood:
+        '#type': select
+        '#title': 'Clifton Maybank Wood*'
+        '#options': likert_comparison
+      field_opposite_rose_crown:
+        '#type': select
+        '#title': 'Field opposite Rose & Crown*'
+        '#options': likert_comparison
+      gollops_ground:
+        '#type': select
+        '#title': 'Gollops Ground* (Field by the river)'
+        '#options': likert_comparison
+      rose_crown_garden_and_car_park:
+        '#type': select
+        '#title': 'Rose & Crown garden*'
+        '#options': likert_comparison
+      rose_crown_car_park_where_the_tuesday_market_takes_place_:
+        '#type': select
+        '#title': 'Rose & Crown car park* (Where the Tuesday Market takes place)'
+        '#options': likert_comparison
+      recreation_ground:
+        '#type': select
+        '#title': 'Recreation ground'
+        '#options': likert_comparison
+      roman_marching_camp:
+        '#type': select
+        '#title': 'Roman marching camp*'
+        '#options': likert_comparison
+      school_playing_fields:
+        '#type': select
+        '#title': 'School playing fields*'
+        '#options': likert_comparison
+      school_playground:
+        '#type': select
+        '#title': 'School playground*'
+        '#options': likert_comparison
+      sports_club_field:
+        '#type': select
+        '#title': 'Sports Club field*'
+        '#options': likert_comparison
+      please_describe_any_other_areas_you_think_have_been_missed_:
+        '#type': textarea
+        '#title': 'Please describe any other areas you think have been missed:'
+        '#format_items': comma
+    19_should_the_neighbourhood_plan_actively_support_the_following_:
+      '#type': fieldset
+      '#title': '19. Should the Neighbourhood Plan actively support the following?'
+      '#description': 'Please select all that may apply'
+      '#description_display': before
+      np_supports_x:
+        '#type': tableselect
+        '#title': 'NP supports cycle and footpath connectivity'
+        '#title_display': none
+        '#options':
+          'The exploration of safe off-road bicycle routes to surrounding areas / towns': 'The exploration of safe off-road bicycle routes to surrounding areas / towns'
+          'Improving quality and connectivity of footpaths': 'Improving quality and connectivity of footpaths'
+        '#js_select': false
+  traffic_road_safety_and_transport:
+    '#type': webform_wizard_page
+    '#title': 'Traffic, Road Safety and Transport'
+    23_do_any_of_the_following_within_two_parishes_cause_you_direct_:
+      '#type': fieldset
+      '#title': '20. Do any of the following within the two parishes cause you direct concern?'
+      road_safety_from_speeding_traffic:
+        '#type': select
+        '#title': 'Road safety from speeding traffic'
+        '#options':
+          'Yes, a lot': 'Yes, a lot'
+          'Yes, a little': 'Yes, a little'
+          'Not really': 'Not really'
+      road_safety_other_e_g_dangerous_bends_junctions_:
+        '#type': select
+        '#title': 'Road safety other (e.g., dangerous bends, junctions, vehicle size and bridges)'
+        '#options':
+          'Yes, a lot': 'Yes, a lot'
+          'Yes, a little': 'Yes, a little'
+          'Not really': 'Not really'
+      on_street_parking_in_unsafe_locations:
+        '#type': select
+        '#title': 'On-street parking in unsafe locations'
+        '#options':
+          'Yes, a lot': 'Yes, a lot'
+          'Yes, a little': 'Yes, a little'
+          'Not really': 'Not really'
+      since_you_have_answered_yes_a_lot_to_at_least_one_of_the_above_:
+        '#type': textarea
+        '#title': 'Since you have answered "Yes, a lot" to at least one of the above:'
+        '#description': 'Please give details of locations in the parishes where you have the most concern and what the concern is:'
+        '#description_display': before
+        '#states':
+          visible:
+            - ':input[name="road_safety_from_speeding_traffic"]':
+                value: 'Yes, a lot'
+            - or
+            - ':input[name="road_safety_other_e_g_dangerous_bends_junctions_"]':
+                value: 'Yes, a lot'
+            - or
+            - ':input[name="on_street_parking_in_unsafe_locations"]':
+                value: 'Yes, a lot'
+        '#format_items': comma
+    24_if_there_was_public_transport_available_within_the_parishes_w:
+      '#type': select
+      '#title': '21. If there was public transport available within the parishes, would you use it?'
+      '#options': yes_no
+    25_you_answered_yes_to_question_24_how_often_would_you_use_publi:
+      '#type': select
+      '#title': 'You answered "Yes" to question 21. How often would you use public transport?'
+      '#options':
+        'More than once a day': 'More than once a day'
+        'Once a day': 'Once a day'
+        'Once a week': 'Once a week'
+        'Once a month': 'Once a monh'
+      '#states':
+        visible:
+          ':input[name="24_if_there_was_public_transport_available_within_the_parishes_w"]':
+            value: 'Yes'
+    26_if_you_would_use_public_transport_would_you_have_a_preferred_:
+      '#type': webform_select_other
+      '#title': 'You answered "Yes" to Question 21. Would you have a preferred destination?'
+      '#multiple': true
+      '#description_display': before
+      '#options':
+        Yeovil: Yeovil
+        Sherborne: Sherborne
+        'Both Yeovil and Sherborne': 'Both Yeovil and Sherborne'
+      '#states':
+        visible:
+          ':input[name="24_if_there_was_public_transport_available_within_the_parishes_w"]':
+            value: 'Yes'
+  other:
+    '#type': webform_wizard_page
+    '#title': Thanks
+    27_thank_you_for_completing_this_survey_if_there_is_anything_you:
+      '#type': textarea
+      '#title': '22. Thank you for completing this survey'
+      '#description': '&nbsp;If there is anything you particularly want to raise now, please do tell us.'
+      '#description_display': before
+      '#format_items': comma
+    processed_text_01:
+      '#type': processed_text
+      '#text': '<p>Not all the answers provided will fall within the legal framework of the plan, however, they will be used to assist in further developing our community.</p>'
+      '#format': basic_html
 css: ''
 javascript: ''
 settings:
@@ -279,7 +667,7 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_open_message: ''
   form_close_message: ''
@@ -354,6 +742,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -372,7 +762,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: "Thank you for completing the survey.&nbsp;<br />\r\nNot all the answers provided will fall within the legal framework of the plan, however, they will be used to assist in further developing our community."
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
