@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "edfd38db2f5d686ea41fa9262dd8eeab",
+    "content-hash": "9b6ff7bc6343674b8d5c86a09eeaf83e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7919,7 +7919,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/simplenews": 10,
-        "drupal/symfony_mailer": 10
+        "drupal/symfony_mailer": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
