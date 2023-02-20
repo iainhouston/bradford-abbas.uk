@@ -91,7 +91,7 @@
 	],
 	"require": {
 		"composer/installers": "^1.2",
-		"drupal/cleantalk": "^9.1",
+		"drupal/cleantalk": "^9.2",
 		"drupal/core-composer-scaffold": "^9.2",
 		"drupal/core-project-message": "^9.2",
 		"drupal/core-recommended": "^9.3",

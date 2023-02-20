@@ -11,15 +11,15 @@
     - firewall_disable_firewalld
   check_mode: false
 
-- name: Disable the firewalld service (on RHEL, if configured).
-  service:
-    name: firewalld
-    state: stopped
-    enabled: false
-  when:
-    - ansible_os_family == "RedHat"
-    - firewall_disable_firewalld
-    - firewalld_installed.rc == 0
+#- name: Disable the firewalld service (on RHEL, if configured).
+#  service:
+#    name: firewalld
+#    state: stopped
+#    enabled: false
+#  when:
+#    - ansible_os_family == "RedHat"
+#    - firewall_disable_firewalld
+#    - firewalld_installed.rc == 0
 
 - name: Check if ufw package is installed (on Ubuntu).
   command: service ufw status
@@ -41,7 +41,7 @@
   when:
     - ansible_distribution == "Ubuntu"
     - firewall_disable_ufw
-    - ufw_installed.rc == 0
+#    - ufw_installed.rc == 0
 
 - name: Check if ufw package is installed (on Archlinux).
   command: pacman -Q ufw

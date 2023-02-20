@@ -35,12 +35,12 @@
   with_items: "{{ mysql_config_include_files }}"
   notify: restart mysql
 
-- name: Create slow query log file (if configured).
-  command: "touch {{ mysql_slow_query_log_file }}"
-  args:
-    creates: "{{ mysql_slow_query_log_file }}"
-    warn: false
-  when: mysql_slow_query_log_enabled
+#- name: Create slow query log file (if configured).
+#  command: "touch {{ mysql_slow_query_log_file }}"
+#  args:
+#    creates: "{{ mysql_slow_query_log_file }}"
+#    warn: false
+#  when: mysql_slow_query_log_enabled
 
 - name: Create datadir if it does not exist
   file:
@@ -50,15 +50,15 @@
     group: mysql
     mode: 0755
     setype: mysqld_db_t
-
-- name: Set ownership on slow query log file (if configured).
-  file:
-    path: "{{ mysql_slow_query_log_file }}"
-    state: file
-    owner: mysql
-    group: "{{ mysql_log_file_group }}"
-    mode: 0640
-  when: mysql_slow_query_log_enabled
+#
+#- name: Set ownership on slow query log file (if configured).
+#  file:
+#    path: "{{ mysql_slow_query_log_file }}"
+#    state: file
+#    owner: mysql
+#    group: "{{ mysql_log_file_group }}"
+#    mode: 0640
+#  when: mysql_slow_query_log_enabled
 
 - name: Create error log file (if configured).
   command: "touch {{ mysql_log_error }}"
