@@ -104,6 +104,7 @@
     - import_tasks: tasks/sshd.yml
     - import_tasks: tasks/extras.yml
 
+#   We don't use a mysql slow log
 #    - include_tasks: tasks/apparmor.yml
 #      when: ansible_os_family == 'Debian' and drupal_db_backend == 'mysql'
 #      tags: ['database']
