@@ -71,6 +71,11 @@ installed_extras:
   - upload-progress
 
 # See role ../library/provisioning/roles/iainhouston.php-xdebug for default XDEBUG php.ini values
+php_xdebug_mode: debug
+php_start_with_request: trigger
+php_xdebug_trigger_value: PHPSTORM
+php_xdebug_discover_client_host: true
+php_xdebug_client_port: 9003
 
 dashboard_install_dir: /var/www/dashboard
 
