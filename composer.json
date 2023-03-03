@@ -8,7 +8,8 @@
 		"allow-plugins": {
 			"composer/installers": true,
 			"drupal/core-composer-scaffold": true,
-			"drupal/core-project-message": true
+			"drupal/core-project-message": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
 	"conflict": {
@@ -97,15 +98,16 @@
 		"drupal/core-recommended": "^9.3",
 		"drupal/diff": "^1.0",
 		"drupal/draggableviews": "^2.1",
-		"drupal/exif_orientation": "^1.1",
+		"drupal/exif_orientation": "^1.2",
 		"drupal/honeypot": "^2.1",
 		"drupal/password_policy": "^4.0",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
-		"drupal/simplenews": "^3.0@beta",
+		"drupal/simplenews": "3.x-dev@dev",
 		"drupal/symfony_mailer": "^1.2@RC",
 		"drupal/token": "^1.7",
-		"drupal/webform": "^6.0",
+		"drupal/upgrade_status": "^3.18",
+		"drupal/webform": "^6.2@beta",
 		"drush/drush": "^11.0",
 		"iainhouston/pellucid_agenda": "^4.0",
 		"iainhouston/pellucid_document": "^1.1",
@@ -114,5 +116,8 @@
 		"iainhouston/pellucid_olivero": "^5.0",
 		"tijsverkoyen/css-to-inline-styles": "^2.2"
 	},
-	"type": "project"
+	"type": "project",
+	"require-dev": {
+		"drupal/core-dev": "9.5.3"
+	}
 }
