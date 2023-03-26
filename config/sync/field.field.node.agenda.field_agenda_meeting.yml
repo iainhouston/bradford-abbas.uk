@@ -5,25 +5,21 @@ dependencies:
   config:
     - field.storage.node.field_agenda_meeting
     - node.type.agenda
-    - node.type.meeting
 id: node.agenda.field_agenda_meeting
 field_name: field_agenda_meeting
 entity_type: node
 bundle: agenda
 label: Meeting
-description: '<p>Start typing to reveal the Meeting for which this is the Agenda</p><p>Then click the chosen Meeting before clicking <em>Save</em></p>'
+description: '<p>Start typing a search word to reveal the Meeting for which this is the Agenda</p><p>Then click the chosen Meeting before clicking <em>Save</em></p>'
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      meeting: meeting
-    sort:
-      field: field_meeting_date
-      direction: DESC
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: putative_meetings
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference
