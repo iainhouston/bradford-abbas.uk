@@ -799,7 +799,8 @@ access:
     users: {  }
     permissions: {  }
   view_any:
-    roles: {  }
+    roles:
+      - authenticated
     users: {  }
     permissions: {  }
   update_any:
