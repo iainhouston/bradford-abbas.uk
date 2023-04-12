@@ -104,9 +104,10 @@
 		"drupal/password_policy": "^4.0",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
-		"drupal/simplenews": "3.x-dev@dev",
+		"drupal/simplenews": "^3.0@beta",
 		"drupal/symfony_mailer": "^1.2",
 		"drupal/token": "^1.7",
+		"drupal/upgrade_status": "^4.0",
 		"drupal/webform": "^6.2@beta",
 		"drush/drush": "^11.0",
 		"iainhouston/pellucid_agenda": "^5.0",
@@ -118,6 +119,6 @@
 	},
 	"type": "project",
 	"require-dev": {
-		"drupal/core-dev": "9.5.3"
+		"drupal/core-dev": "9.5.7"
 	}
 }
