@@ -11,7 +11,7 @@ field_name: field_file_under
 entity_type: node
 bundle: village_plan_page
 label: 'File under'
-description: 'Choose under which Village Plan heading this page''s Title will be a subheading'
+description: "Choose under which Village Plan heading this page's Title will be a subheading"
 required: true
 translatable: false
 default_value: {  }

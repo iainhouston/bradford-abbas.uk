@@ -12,7 +12,7 @@ field_name: body
 entity_type: node
 bundle: item_of_expense
 label: Notes
-description: '<p>Any notes you''d like to make about this transaction that you wish to be available to the public.</p>'
+description: "<p>Any notes you'd like to make about this transaction that you wish to be available to the public.</p>"
 required: false
 translatable: true
 default_value: {  }

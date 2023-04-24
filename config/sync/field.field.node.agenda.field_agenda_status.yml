@@ -13,7 +13,7 @@ field_name: field_agenda_status
 entity_type: node
 bundle: agenda
 label: 'Agenda status'
-description: '<p>You can only edit or delete the <em>Agenda text</em> when the Agenda is in <em>Draft</em> status.<br>Remember to make a note in the <em>Revision log message</em> box if you''re changing the <em>Agenda status</em></p>'
+description: "<p>You can only edit or delete the <em>Agenda text</em> when the Agenda is in <em>Draft</em> status.<br>Remember to make a note in the <em>Revision log message</em> box if you're changing the <em>Agenda status</em></p>"
 required: true
 translatable: false
 default_value:

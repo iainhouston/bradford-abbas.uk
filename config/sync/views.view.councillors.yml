@@ -21,7 +21,7 @@ dependencies:
 id: councillors
 label: Councillors
 module: views
-description: 'List Councillor''s responsibilities'
+description: "List Councillor's responsibilities"
 tag: ''
 base_table: users_field_data
 base_field: uid
@@ -32,7 +32,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Councillors'' responsibilities'
+      title: "Councillors' responsibilities"
       fields:
         user_picture:
           id: user_picture
@@ -612,7 +612,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<p>Click on a person''s picture or name to see their contact details.</p>'
+            value: "<p>Click on a person's picture or name to see their contact details.</p>"
             format: basic_html
           tokenize: false
       footer:
@@ -626,7 +626,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'Notes:<ul><li>Representation on <em>*External local public bodies</em> if nominated to represent the Parish Council</li><li><em>DPI</em> is a signed Declaration of Pecuniary Interest and can be inspected in each Councillor''s contact details.</li></ul>'
+            value: "Notes:<ul><li>Representation on <em>*External local public bodies</em> if nominated to represent the Parish Council</li><li><em>DPI</em> is a signed Declaration of Pecuniary Interest and can be inspected in each Councillor's contact details.</li></ul>"
             format: basic_html
           tokenize: false
       display_extenders: {  }
@@ -655,7 +655,7 @@ display:
       path: councillors-responsibilities
       menu:
         type: normal
-        title: 'Councillors'' responsibilities'
+        title: "Councillors' responsibilities"
         description: ''
         weight: -46
         expanded: false

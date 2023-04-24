@@ -12,7 +12,7 @@ field_name: field_dpi
 entity_type: user
 bundle: user
 label: DPI
-description: 'Declaration of Pecuniary Interest. We upload the scanned form here. Ensure the Councillor''s signature is redacted.'
+description: "Declaration of Pecuniary Interest. We upload the scanned form here. Ensure the Councillor's signature is redacted."
 required: false
 translatable: false
 default_value: {  }
