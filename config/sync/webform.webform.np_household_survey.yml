@@ -18,7 +18,7 @@ elements: |-
     '#title': Introduction
     processed_text:
       '#type': processed_text
-      '#text': '<h3>Welcome</h3><p>Welcome to our first household survey that will help us produce a Neighbourhood Plan<br>for Bradford Abbas and Clifton Maybank, reflecting the community''s needs and aspirations. We are asking every household in the parishes some questions about their thoughts on what is important and what needs to be addressed in our Neighbourhood Plan, which will help assist important decisions in the future.</p><h3>What is a Neighbourhood Plan?</h3><p>A neighbourhood plan gives local communities the opportunity to develop a shared vision for their area.</p><p>It can help to shape, direct, and deliver sustainable development, by influencing local planning decisions as part of the statutory Development Plan. Bradford Abbas and Clifton Maybank’s neighbourhood plan will span the next 15 years. Based on the results of this survey, a further housing needs assessment may take place, hosted by the Community Land Trust.</p><p>We ALL have a chance to influence development in our parishes. Please help our community by completing this survey.</p><h3>Household Survey</h3><p>Please complete <strong>one survey per household</strong>. If there is more than one person in your household, please find a consensus where your answers may have differed as your neighbourhood plan is about finding consensus, as a community. Please submit your response by <strong>31/03/2023</strong>. We would prefer that you complete it online to assist data collection and analysis.</p><p>If anyone requires assistance or clarification on completing the survey, please call Terry Hunt: 07400 506 203<br>&nbsp;</p><p>&nbsp;</p>'
+      '#text': '<h3>Welcome</h3><p>Welcome to our first household survey that will help us produce a Neighbourhood Plan for Bradford Abbas and Clifton Maybank, reflecting the community''s needs and aspirations. We are asking every household in the parishes some questions about their thoughts on what is important and what needs to be addressed in our Neighbourhood Plan, which will help assist important decisions in the future.</p><h3>What is a Neighbourhood Plan?</h3><p>A neighbourhood plan gives local communities the opportunity to develop a shared vision for their area.</p><p>It can help to shape, direct, and deliver sustainable development, by influencing local planning decisions as part of the statutory Development Plan. Bradford Abbas and Clifton Maybank’s neighbourhood plan will span the next 15 years. Based on the results of this survey, a further housing needs assessment may take place, hosted by the Community Land Trust.</p><p>We ALL have a chance to influence development in our parishes. Please help our community by completing this survey.</p><h3>Household Survey</h3><p>Please complete <strong>one survey per household</strong>. If there is more than one person in your household, please find a consensus where your answers may have differed as your neighbourhood plan is about finding consensus, as a community. Please submit your response by <strong>31/03/2023</strong>. We would prefer that you complete it online to assist data collection and analysis.</p><p>If anyone requires assistance or clarification on completing the survey, please call Terry Hunt: <a href="tel:07400 506 203">07400 506 203</a><br>&nbsp;</p><p>&nbsp;</p>'
       '#format': basic_html
     1_age_of_you_and_other_people_in_your_house_:
       '#type': fieldset
@@ -264,7 +264,7 @@ elements: |-
       please_specify_any_other_community_assets_you_consider_important:
         '#type': textarea
         '#title': 'Please specify any other community assets you consider important to retain'
-        '#description': 'Please list your additional items here'
+        '#description': 'List your additional items here'
         '#description_display': before
         '#format_items': comma
     4_do_you_have_any_concerns_about_possible_changes_or_loss_of_the:
@@ -800,7 +800,8 @@ access:
     permissions: {  }
   view_any:
     roles:
-      - authenticated
+      - np_author
+      - np_editor
     users: {  }
     permissions: {  }
   update_any:
