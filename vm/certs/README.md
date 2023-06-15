@@ -24,11 +24,14 @@ Checking (on prod host) that dkim keys match with DNS:
 
 # CSR Certificate renewal stuff
 
-LCN will (silently) raise a support ticket when you renew the SSL Cert from the LCN Dashboard  
+LCN will (silently) raise a support ticket when you renew the SSL Cert from the LCN Dashboard
+They will also send an email to `webmaster@bradford-abbas.uk` requesting that we submit a new CSR
 
 On MacOS:
 
 ```
+cd ~/bradford-abbas.uk/vm/certs
+
 ansible-vault decrypt  SSL.key
 ansible-vault decrypt  SSL.csr
 
@@ -68,12 +71,13 @@ Check ourselves and submit to LCN:
 ```
 openssl req -text -noout -verify -in SSL.csr
 
-cat SSL.csr # paste into LCN's ticket response comment box
+# paste from MacOS clipboard into LCN's ticket response comment box
+cat SSL.csr | pbcopy
 ```
 
 And now encrypt
 
-```   
+```
 ansible-vault encrypt  SSL.key
 ansible-vault encrypt  SSL.csr
 ```
@@ -81,55 +85,9 @@ ansible-vault encrypt  SSL.csr
 
 # Create an SSL Certificate Bundle
 
-If several intermediate certificate files are received (as opposed to a single CA bundle), the files should be merged into a bundle before importing.  
-
-Note:  This procedure assumes all intermediate files have been provided by the Certificate Authority (CA).       
+If several intermediate certificate files are received (as opposed to a single CA bundle), the files should be merged into a bundle before importing.
 
 
-Procedure:
-
-1.  Confirm the files are in PEM format.  When opened in a text editor, the content should look similar to the format:  
-
-        -----BEGIN CERTIFICATE1-----
-        sajaisjkajfsdvjJV;kjvd;Kjv;Js;FDJVKjv
-        -----END CERTIFICTATE1-----
-
-    If the content does not have these types of headers, convert to PEM format first.   
-
-    Convert DER/Binary to PEM Format:
-
-            openssl x509 -inform der -in <filename> -out <newfilename>
-
-    Example converting certificate.cer:  
-
-            openssl x509 -inform der -in certificate.cer -out certificate.pem
-
-    Convert P7B/PKCS#7 to PEM Format:  
-
-            openssl pkcs7 -print_certs -in <filename> -out <newfilename>
-
-    Example converting certificate.p7b:
-
-            openssl pkcs7 -print_certs -in certificate.p7b -out certificate.cer
-
-    Convert PFX/PKCS#12 to PEM Format:  
-
-            openssl pkcs12 -in <filename> -out <newfilename> –nodes
-
-    Example converting certificate.pfx:  
-
-            openssl pkcs12 -in certificate.pfx -out certificate.cer –nodes
-
-2.  Verify Private Key is in RSA format.  Review the private key file using a text editor.  Alternatively, if in Linux, the file can be viewed by running the command: `cat <filename> `.
-
-    If Key Header looks like this:  `-----BEGIN PRIVATE KEY-----`  
-
-    This is an indication the Key is not in the correct format and needs to be converted.
-    Covert the file by running the following command (on a Linux server):  
-
-        openssl rsa -in <old_file_name> -out  <new_file>
-
-    Header should now look like this:  `-----BEGIN RSA PRIVATE KEY-----`
 
 3.  Append all intermediate and root files into a single text file (example: `vm/certs/SSL.crt"`).  The appended files must not have any spaces between each start and end of file.
 
@@ -145,24 +103,24 @@ Procedure:
 
     Order is important.  Put the Intermediate Certificate(s) at the top and Root at the bottom.  If more than one intermediate file, place them in order.  Look at the leaf certificate Issuer to determine the certificate to be listed at the top of the bundle.
 
-    Leaf certificate   
-    Owner: CN=hostname.domain.edu  
+    Leaf certificate
+    Owner: CN=hostname.domain.edu
     Issuer: CN= CA 1
 
-    Bundle (Bundle.crt)  
-    Intermediate certificate 1   
-    Owner: CN= CA 1  
-    Issuer: CN= CA 2  
+    Bundle (Bundle.crt)
+    Intermediate certificate 1
+    Owner: CN= CA 1
+    Issuer: CN= CA 2
 
-    Intermediate certificate 2  
-    Owner: CN= CA 2  
-    Issuer: CN= Root CA  
+    Intermediate certificate 2
+    Owner: CN= CA 2
+    Issuer: CN= Root CA
 
-    Root certificate content  
+    Root certificate content
     Owner: CN= Root CA.
 
 
-    Example Bundle content:  
+    Example Bundle content:
 
         -----BEGIN CERTIFICATE1-----
         sajaisjkajfsdvjJV;kjvd;Kjv;Js;FDJVKjv
@@ -184,6 +142,7 @@ cat USERTrustRSAAAACA.crt >> SSL.crt
 cat AAACertificateServices.crt >> SSL.crt
 cat SSL.crt
 ```
+[2023] Just edited **last** / **bottom** certificate as intermediates had expiry dates of more than a year
 
 Check the key with the CRT.
 
@@ -202,7 +161,6 @@ cp SSL.crt ~/bradford-abbas.uk/vm/certs/
 
 # Renewing the SSL Certificate
 
-1. We make the Domain / CA bunndle [per these instructions](https://iainhouston.com/devops/drupal/parish%20councils/2019/06/15/Annual_SSL_Renewal.html)
 
 1. Decrypt the old Certificates:
 
@@ -210,7 +168,7 @@ cp SSL.crt ~/bradford-abbas.uk/vm/certs/
 
 1. Copy bundle from step 1 above into `SSL.crt`
 
-1. Encrypt the new Certificates:  
+1. Encrypt the new Certificates:
 
         ansible-vault encrypt vm/certs/SSL.crt
 
