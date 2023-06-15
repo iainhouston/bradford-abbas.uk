@@ -142,7 +142,8 @@ cat USERTrustRSAAAACA.crt >> SSL.crt
 cat AAACertificateServices.crt >> SSL.crt
 cat SSL.crt
 ```
-[2023] Just edited **last** / **bottom** certificate as intermediates had expiry dates of more than a year
+[2023]  **first** / **top** certificate is `www_bradford-abbas_uk.crt`
+intermediates had expiry dates of more than a year
 
 Check the key with the CRT.
 
