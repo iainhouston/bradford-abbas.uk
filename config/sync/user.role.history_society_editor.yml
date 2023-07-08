@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - node.type.history_society_event
   module:
+    - file
     - filter
     - node
     - simplenews
@@ -19,6 +20,7 @@ permissions:
   - 'create history_society_event content'
   - 'delete any history_society_event content'
   - 'delete history_society_event revisions'
+  - 'delete own files'
   - 'delete own history_society_event content'
   - 'edit any history_society_event content'
   - 'edit own history_society_event content'

@@ -10,6 +10,7 @@ dependencies:
     - node.type.article
     - node.type.document
   module:
+    - file
     - filter
     - media
     - node
@@ -36,6 +37,7 @@ permissions:
   - 'delete own audio media'
   - 'delete own document content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'edit any article content'
   - 'edit any audio media'

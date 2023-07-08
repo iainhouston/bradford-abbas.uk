@@ -100,7 +100,7 @@
 		"drupal/diff": "^1.0",
 		"drupal/draggableviews": "^2.1",
 		"drupal/exif_orientation": "^1.2",
-		"drupal/honeypot": "^2.1",
+		"drupal/honeypot": "2.1.x-dev@dev",
 		"drupal/password_policy": "^4.0",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",

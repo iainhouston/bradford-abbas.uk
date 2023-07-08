@@ -11,7 +11,7 @@ archive: false
 id: self_isolating_help
 title: 'Self-isolating help'
 description: 'Form to register helpers for those who have to self-isolate because of the COVID-19 pandemic'
-category: ''
+categories: {  }
 elements: |-
   my_name_is:
     '#type': textfield
@@ -135,6 +135,8 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''

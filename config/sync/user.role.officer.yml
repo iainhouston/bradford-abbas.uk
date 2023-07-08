@@ -71,6 +71,7 @@ permissions:
   - 'delete own agenda content'
   - 'delete own article content'
   - 'delete own document content'
+  - 'delete own files'
   - 'delete own item_of_expense content'
   - 'delete own meeting content'
   - 'delete own minutes content'

@@ -11,7 +11,7 @@ archive: false
 id: np_household_survey
 title: 'NP Household Survey'
 description: '<p>Neighbourhood Plan&nbsp;Household Survey</p>'
-category: ''
+categories: {  }
 elements: |-
   inro_page:
     '#type': webform_wizard_page

@@ -88,3 +88,9 @@ filters:
         bapc_small: bapc_small
       allowed_media_types:
         image: image
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -44
+    settings: {  }
