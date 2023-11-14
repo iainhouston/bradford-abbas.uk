@@ -92,6 +92,7 @@
 		}
 	],
 	"require": {
+		"composer/composer": "2.6.4",
 		"composer/installers": "^1.2",
 		"drupal/cleantalk": "^9.3",
 		"drupal/core-composer-scaffold": "^10",
