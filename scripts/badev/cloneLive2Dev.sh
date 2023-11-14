@@ -20,7 +20,7 @@ echo "Emptying Drupal database on Dev machine"
 $DRUSH $DEVALIAS sql:drop -y
 echo "Loading replica of Live database"
 $DRUSH $DEVALIAS sql:cli < $FILE
-echo "Setting alias mostRecentLive.sql to ${GREEN}${FILE}${NC}"
+echo "Setting alias ${GREEN}mostRecentLive.sql${NC} to ${RED}${FILE}${NC}"
 ln -sf ${FILE} mostRecentLive.sql
 
 echo "Syncing files from Live to Dev machine"
