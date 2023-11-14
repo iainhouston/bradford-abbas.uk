@@ -16,4 +16,5 @@ allowed_handlers:
   simplenews_all: '0'
 new_account: none
 access: hidden
+reason: ''
 weight: 0
