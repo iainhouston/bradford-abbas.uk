@@ -24,8 +24,7 @@ apache_global_vhost_settings: |
   DirectoryIndex index.php index.html
   NameVirtualHost *:80
 
-apache_vhost_redirect_parameters: |
-  Redirect permanent / https://bradford-abbas.uk/
+apache_vhost_redirect_parameters: "Redirect permanent / https://{{ drupal_domain }}/"
 
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
@@ -51,11 +50,10 @@ mailcount_ceiling: 10
 mailcount_recipient: iainhouston@me.com
 mailcount_script_path: /usr/local/sbin/mailcount
 
-
 drupalvm_cron_jobs:
   - name: "Drupal Cron"
     minute: "*/45"
-    job: "{{ drush_source_install_bin_path }} -r {{ drupal_core_path }} core-cron --quiet"
+    job: "{{ drush_source_install_bin_path }} -r {{ drupal_core_path }} core-cron --quiet  --uri=https://{{ drupal_domain }}"
 
   - name: "Drupal Clear Views Cache"
     minute: "20"

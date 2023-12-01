@@ -106,3 +106,9 @@ mysql_root_password: root
 
 adminer_install_filename: index.php
 
+drupalvm_cron_jobs:
+  - name: "Drupal Cron"
+    minute: "*/45"
+    job: "{{ drush_source_install_bin_path }} -r {{ drupal_core_path }} core-cron --quiet  --uri=http://{{ drupal_domain }}"
+
+
