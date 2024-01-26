@@ -10,7 +10,8 @@
 			"drupal/core-composer-scaffold": true,
 			"drupal/core-project-message": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"phpstan/extension-installer": true
+			"phpstan/extension-installer": true,
+			"php-http/discovery": true
 		}
 	},
 	"conflict": {
@@ -105,7 +106,7 @@
 		"drupal/password_policy": "^4.0",
 		"drupal/pathauto": "^1.8",
 		"drupal/redirect": "^1.7",
-		"drupal/simplenews": "^4.0@alpha",
+		"drupal/simplenews": "^4.0@RC",
 		"drupal/symfony_mailer": "^1.4",
 		"drupal/token": "^1.7",
 		"drupal/upgrade_status": "^4.0",

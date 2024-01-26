@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.webform_default
     - media.type.audio
     - media.type.file
     - media.type.image
@@ -78,6 +79,7 @@ permissions:
   - 'update any media'
   - 'use advanced search'
   - 'use text format basic_html'
+  - 'use text format webform_default'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any webform submission'
