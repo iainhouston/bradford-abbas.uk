@@ -12,4 +12,5 @@ general_settings:
       enabled: true
     visual_inline:
       enabled: true
+  visual_default_view_mode: full
   visual_inline_theme: default
