@@ -1,0 +1,28 @@
+uuid: 4c6ae562-1cd0-461c-9998-25b2b8bf6e11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_register_of_interest
+  module:
+    - link
+    - user
+id: user.user.field_register_of_interest
+field_name: field_register_of_interest
+entity_type: user
+bundle: user
+label: 'Register of Interest'
+description: "This is the link to the Register of Interests held on the Dorset Council website. Enter the URL of the Councillor's Register of Interests page."
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://www.dorsetcouncil.gov.uk/w/...'
+    title: "Click here to see this Councillor's ROI entry on the Dorset Council website"
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

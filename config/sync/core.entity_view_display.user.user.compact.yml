@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_dpi
     - field.field.user.user.field_external_bodies
     - field.field.user.user.field_first_name
     - field.field.user.user.field_function
@@ -14,6 +13,7 @@ dependencies:
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
     - field.field.user.user.field_postal_address
+    - field.field.user.user.field_register_of_interest
     - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -39,7 +39,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_dpi: true
   field_external_bodies: true
   field_first_name: true
   field_function: true
@@ -49,6 +48,7 @@ hidden:
   field_password_expiration: true
   field_pending_expire_sent: true
   field_postal_address: true
+  field_register_of_interest: true
   field_telephone: true
   member_for: true
   simplenews: true

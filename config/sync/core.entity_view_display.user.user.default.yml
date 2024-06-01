@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_dpi
     - field.field.user.user.field_external_bodies
     - field.field.user.user.field_first_name
     - field.field.user.user.field_function
@@ -13,12 +12,13 @@ dependencies:
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
     - field.field.user.user.field_postal_address
+    - field.field.user.user.field_register_of_interest
     - field.field.user.user.field_telephone
     - field.field.user.user.user_picture
     - image.style.medium
   module:
-    - file
     - image
+    - link
     - user
 _core:
   default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
@@ -27,13 +27,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_dpi:
-    type: file_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_notes:
     type: basic_string
     label: above
@@ -48,6 +41,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_register_of_interest:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_telephone:
     type: string
