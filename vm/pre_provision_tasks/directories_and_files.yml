@@ -30,7 +30,7 @@
   tags: ['drupal', 'prod_only']
   become: no
 
-- name: Ensure key directories are writable by http server
+- name: Ensure prodn directories are writable by http server
   file:
     path: "{{ item }}"
     recurse: yes
@@ -39,10 +39,27 @@
     owner: "{{ drupalvm_user }}"
     group: "{{ drupalvm_user }}"
   loop:
-      - "{{ drupal_deploy_dir }}"
-      - "{{ drupal_deploy_dir }}/private_files"
-      - "{{ drupal_deploy_dir }}/tmp"
-      - "{{ drupal_deploy_dir }}/config"
-      - "{{ drupal_core_path }}/sites/default"
+    - "{{ drupal_deploy_dir }}"
+    - "{{ drupal_deploy_dir }}/private_files"
+    - "{{ drupal_deploy_dir }}/tmp"
+    - "{{ drupal_deploy_dir }}/config"
+    - "{{ drupal_core_path }}/sites/default"
   tags: ['drupal', 'prod_only']
+  become: yes
+
+- name: Ensure test directories are writable by http server
+  file:
+    path: "{{ item }}"
+    recurse: yes
+    state: directory
+    mode: ug+w
+    owner: "{{ guest_files_owner }}"
+    group: "{{ guest_files_group }}"
+  loop:
+    - "{{ drupal_deploy_dir }}"
+    - "{{ drupal_deploy_dir }}/private_files"
+    - "{{ drupal_deploy_dir }}/tmp"
+    - "{{ drupal_deploy_dir }}/config"
+    - "{{ drupal_core_path }}/sites/default"
+  tags: ['test_only']
   become: yes

@@ -23,6 +23,8 @@ vagrant_box: "bento/ubuntu-20.04-arm64"
 vagrant_hostname: vagrant.bradford-abbas.uk
 vagrant_machine_name: BAPC-Dev
 vagrant_user: vagrant
+
+
 # or vagrant_ip: 0.0.0.0 then plugin vagrant-auto_network will find a spare IP Address automatically
 vagrant_ip: 10.20.1.2
 vagrant_synced_folder_default_type: nfs
@@ -37,6 +39,11 @@ vagrant_synced_folders:
     destination: "{{ drupal_deploy_dir }}"
     type: nfs
     create: true
+
+# these values set by vagrant (see .vagrant file) and not by us
+# used by nfsd in /etc/exports
+guest_files_owner: 501
+guest_files_group: 20
 
 vagrant_plugins:
   - name: vagrant-vbguest
