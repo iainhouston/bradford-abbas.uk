@@ -11,7 +11,7 @@ third_party_settings:
 name: Meeting
 type: meeting
 description: '<p>A meeting or some other significant event of the smaller authority. A summons to a meeting can be emailed to Councillors and others.</p>'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

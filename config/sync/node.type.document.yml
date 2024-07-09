@@ -12,7 +12,7 @@ third_party_settings:
 name: Document
 type: document
 description: '<p>A supporting document, typically relating to one or more <em>Meeting</em>s: e.g. a Planning document; something from WDDC; etc.</p>'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

@@ -14,7 +14,7 @@ _core:
 name: Article
 type: article
 description: "Each <em>News Article</em> appears ... </br>\r\n&nbsp;&nbsp;&nbsp;as a <em>teaser</em> in the \"News\" section on the front page of the Bradford Abbas Parish Council website;</br>\r\n&nbsp;&nbsp;&nbsp;in more detail in its own page on the website\r\n"
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: true

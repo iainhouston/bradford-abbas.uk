@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: "Councillor's function"
 vid: councillor_s_function
-description: ''
+description: null
 weight: 0
+new_revision: false

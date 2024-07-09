@@ -1,5 +1,6 @@
 _core:
   default_config_hash: cy-hJPYCnfCsuUZA7VDoAwssKhRJCa8N88iJTaWiims
+langcode: en
 hash_expiration: 86400
 newsletter:
   issue_tokens: false
@@ -22,7 +23,7 @@ subscription:
 mail:
   use_cron: true
   textalt: false
-  throttle: 20
+  throttle: 10
   spool_progress_expiration: 3600
   spool_expire: 1
   debug: true

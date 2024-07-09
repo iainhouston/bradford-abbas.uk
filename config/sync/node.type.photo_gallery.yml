@@ -11,7 +11,7 @@ third_party_settings:
 name: 'Photo Gallery'
 type: photo_gallery
 description: '<p>A photo gallery using the <em>JuiceBox</em> Javascript library (v 1.4.4.2 Pro)</p>'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

@@ -24,7 +24,6 @@ dependencies:
     - simplenews
     - system
     - toolbar
-    - tour
     - webform
 id: officer
 label: Officer
@@ -37,7 +36,6 @@ permissions:
   - 'access files overview'
   - 'access help pages'
   - 'access toolbar'
-  - 'access tour'
   - 'access user profiles'
   - 'administer nodes'
   - 'administer simplenews subscriptions'

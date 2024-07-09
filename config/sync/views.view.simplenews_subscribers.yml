@@ -2,8 +2,8 @@ uuid: 18d95bff-290d-4bf2-9400-ae17d1e5773d
 langcode: en
 status: true
 dependencies:
-  config: {  }
   module:
+    - options
     - simplenews
     - user
 _core:
@@ -369,6 +369,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Meeting Place'
 vid: meeting_place
-description: ''
+description: null
 weight: 0
+new_revision: false
