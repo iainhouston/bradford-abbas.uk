@@ -3,7 +3,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# load some ruby convenience and setup code 
+# load some ruby convenience and setup code
 require_relative 'vagrant.rb'
 
 # Absolute paths on the host machine.
@@ -72,7 +72,8 @@ Vagrant.configure('2') do |config|
   config.vm.box = vconfig['vagrant_box']
 
   # Display an introduction message after `vagrant up` and `vagrant provision`.
-  config.vm.post_up_message = vconfig.fetch('vagrant_post_up_message', get_default_post_up_message(vconfig))
+  #   config.vm.post_up_message = vconfig.fetch('vagrant_post_up_message', get_default_post_up_message(vconfig))
+  config.vm.post_up_message = vconfig['post_provision_motd']
 
   # If a hostsfile manager plugin is installed, add all server names as aliases.
   aliases = get_vhost_aliases(vconfig) - [config.vm.hostname]

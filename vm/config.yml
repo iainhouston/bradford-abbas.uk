@@ -156,3 +156,15 @@ post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 # Force use of ansible_local provisioner, even if Ansible is installed on host.
 force_ansible_local: false
 
+post_provision_motd: "\
+    * Utility shell commands:\
+  \n* ___________________________________________________________\
+  \n* checkVersions  - Review  software required for development\
+  \n* cloneLive2Dev  - Sync Live database and static files to Dev server\
+  \n* reloadDevDB    - Reload Dev database with most recently downloaded live database\
+  \n* endev          - Enable development modules in Dev site\
+  \n* safecex        - Safe export of Dev site's configuration\
+  \n* updateLiveCode - Code and Config to Live site\
+  \n* livemaint      - Put Live system into maintenance mode\
+  \n* liveumaint     - Take Live system out of maintenance mode"
+
