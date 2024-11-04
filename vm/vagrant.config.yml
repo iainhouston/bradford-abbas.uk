@@ -9,7 +9,7 @@
 # See vagrant_plugins below that specifies "vagrant plugin install vagrant-parallels"
 # bento boxes know somehow that they are for Parallels virtual machines
 # and not Oracle Virtualbox machines
-vagrant_box: "bento/ubuntu-20.04-arm64"
+vagrant_box: "bento/ubuntu-22.04-arm64"
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
@@ -20,13 +20,13 @@ vagrant_box: "bento/ubuntu-20.04-arm64"
 # Even though the following DOES work as expected:
 # ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}"
 
-vagrant_hostname: vagrant.bradford-abbas.uk
-vagrant_machine_name: BAPC-Dev
+vagrant_hostname: vagrant.bradford-abbas22.uk
+vagrant_machine_name: BAPC22-Dev
 vagrant_user: vagrant
 
 
 # or vagrant_ip: 0.0.0.0 then plugin vagrant-auto_network will find a spare IP Address automatically
-vagrant_ip: 10.20.1.2
+vagrant_ip: 10.20.1.4
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
 
@@ -52,8 +52,8 @@ vagrant_plugins:
   - name: vagrant-auto_network
 
 # Minimum required versions.
-drupalvm_vagrant_version_min: '2.2.18'
-drupalvm_ansible_version_min: '2.10'
+drupalvm_vagrant_version_min: '2.4.2'
+drupalvm_ansible_version_min: '2.17.5'
 
 vagrant_memory: 2048
 vagrant_cpus: 1
