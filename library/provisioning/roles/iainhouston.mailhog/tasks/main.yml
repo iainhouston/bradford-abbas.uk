@@ -14,7 +14,7 @@
     state: present
 
 - name: compile the Mailhog code
-  ansible.builtin.shell: go get  github.com/mailhog/MailHog
+  ansible.builtin.shell: go install  github.com/mailhog/MailHog@latest
 
 - name: move the Mailhog code to its install directory
   shell:  cp -f /root/go/bin/MailHog "{{ mailhog_install_dir }}/mailhog"

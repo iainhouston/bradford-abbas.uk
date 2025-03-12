@@ -129,13 +129,28 @@ Vagrant.configure('2') do |config|
   # VirtualBox.
 
   # Parallels.
-  config.vm.provider :parallels do |p, override|
-    override.vm.box = vconfig['vagrant_box']
-    p.name = vconfig['vagrant_hostname']
-    p.memory = vconfig['vagrant_memory']
-    p.cpus = vconfig['vagrant_cpus']
-    p.update_guest_tools = true
-  end
+
+  # Specify the default box and version
+# config.vm.box = "bento/ubuntu-20.04-arm64"
+# config.vm.box_version = "202112.19.0"
+
+# Parallels.
+config.vm.provider :parallels do |p, override|
+  override.vm.box = vconfig.fetch('vagrant_box', "bento/bento/ubuntu-22.04")
+  override.vm.box_version = vconfig.fetch('vagrant_box_version', "202502.21.0")
+  
+  p.name = vconfig['vagrant_hostname']
+  p.memory = vconfig['vagrant_memory']
+  p.cpus = vconfig['vagrant_cpus']
+  p.update_guest_tools = true
+end
+  # config.vm.provider :parallels do |p, override|
+  #   override.vm.box = vconfig['vagrant_box']
+  #   p.name = vconfig['vagrant_hostname']
+  #   p.memory = vconfig['vagrant_memory']
+  #   p.cpus = vconfig['vagrant_cpus']
+  #   p.update_guest_tools = true
+  # end
 
   # Cache packages and dependencies if vagrant-cachier plugin is present.
   if Vagrant.has_plugin?('vagrant-cachier')

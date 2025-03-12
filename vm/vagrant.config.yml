@@ -9,7 +9,8 @@
 # See vagrant_plugins below that specifies "vagrant plugin install vagrant-parallels"
 # bento boxes know somehow that they are for Parallels virtual machines
 # and not Oracle Virtualbox machines
-vagrant_box: "bento/ubuntu-20.04-arm64"
+vagrant_box: "bento/ubuntu-22.04"
+vagrant_box_version: "202502.21.0"
 
 # DEVSITE is defined in `SYMBOLS.sh` and is
 # most likely something like `vagrant.bradford-abbas.uk`
