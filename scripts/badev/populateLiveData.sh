@@ -36,6 +36,9 @@ then
     rsync -avz $BADEV/web/sites/default/files/ $LIVE_SSH_ALIAS:/var/www/drupal/web/sites/default/files/ \
         --exclude=js --exclude=php --exclude=css
 
+    echo "Syncing private files from Dev to Live server"
+    rsync -avz $BADEV/private_files/ $LIVE_SSH_ALIAS:/var/www/drupal/private_files/
+
     osascript -e 'display notification "Live Database and Files in sync with Dev virtual server" with title "Task complete" sound name "Basso"'
 
     Elapsed_time=$(($SECONDS - $Start_time))

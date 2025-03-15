@@ -5,12 +5,6 @@
     mysql_daemon: mysql
   when: ansible_os_family == 'Debian'
 
-- name: Configure toggle vars for CentOS.
-  set_fact:
-    apache_service: httpd
-    mysql_daemon: "{{ 'mysqld' if ansible_distribution_major_version == '6' else 'mariadb' }}"
-  when: ansible_os_family == 'RedHat'
-
 # Toggle for drupalvm_webserver.
 - name: Ensure Apache is stopped and disabled if Nginx is used.
   service:

@@ -24,15 +24,15 @@ if [ -e ${HOME}/.vaultpw ]
 
 then
 
-    echo "${GREEN}About to provision ${RED}Live${GREEN} Server{NC}"
+    echo "${GREEN}About to provision ${RED}Live${GREEN} Server ${NC}"
     Start_time=$SECONDS
     
     becomepass=`cat ${HOME}/.vaultpw`
 
-    DRUPALVM_ENV=prod ansible-playbook library/provisioning/playbook.yml \
-         --inventory-file=prod/inventory \
+    DRUPALVM_ENV=prod ansible-playbook prod/provision.yml \
+         --inventory-file=prod/inventory.yml \
          --vault-password-file="${HOME}/.vaultpw" \
-         --extra-vars="config_dir=${pwd}/vm" \
+         --extra-vars="config_dir=../vm" \
          --extra-vars="ansible_become_pass=${becomepass}" \
          --skip-tags=test_only 
 

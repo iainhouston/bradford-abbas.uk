@@ -1,4 +1,7 @@
 ---
+# Who is running the shhow?
+drupalvm_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+
 # The web server software to use. Can be either 'apache' or 'nginx'.
 drupalvm_webserver: apache
 

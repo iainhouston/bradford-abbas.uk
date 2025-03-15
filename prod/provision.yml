@@ -1,0 +1,66 @@
+---
+- hosts: all
+  become: yes
+
+  vars_files:
+    - ../vm/config.yml
+    - provision.config.yml
+    - secrets.yml"
+
+  pre_tasks:
+
+    - import_tasks:  ../library/provisioning/tasks/app-toggles.yml
+      tags: ['always']
+
+    - include_tasks: "../library/provisioning/tasks/init-Debian.yml"
+
+    - name: Run configured pre-provision ansible task files.
+      include_tasks: "{{ outer_item }}"
+      loop_control:
+        loop_var: outer_item
+      with_fileglob: "../vm/pre_provision_tasks/*.yml"
+
+    - import_tasks: ../library/provisioning/tasks/php.yml
+
+  roles:
+    # Essential roles.
+    - {  role: ../library/provisioning/roles/drupalvm.hostname, when: hostname_configure }
+    - {  role: ../library/provisioning/roles/iainhouston.firewall, when: firewall_enabled }
+    - {  role: ../library/provisioning/roles/geerlingguy.git }
+    - {  role: ../library/provisioning/roles/geerlingguy.postfix }
+    - {  role: ../library/provisioning/roles/geerlingguy.apache, when: drupalvm_webserver == 'apache', tags: ['webserver'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.apache-php-fpm, when: drupalvm_webserver == 'apache', tags: ['webserver'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.php-versions, when: php_version != '', tags: ['php', 'xdebug', 'database'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.php, tags: ['php'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.php-pecl, tags: ['php'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.composer }
+    - {  role: ../library/provisioning/roles/iainhouston.mysql, when: drupal_db_backend == 'mysql', tags: ['database'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.php-mysql, when: drupal_db_backend == 'mysql', tags: ['php', 'database'] }
+
+    # Conditionally-installed roles.
+    - {  role: ../library/provisioning/roles/geerlingguy.drush, when: '"drush" in installed_extras' }
+    - {  role: ../library/provisioning/roles/geerlingguy.memcached, when: '"memcached" in installed_extras' }
+    - {  role: ../library/provisioning/roles/geerlingguy.php-memcached, when: '"memcached" in installed_extras', tags: ['php'] }
+
+    -  role: ../library/provisioning/roles/thom8.php-upload-progress
+       workspace: "/root/php{{ php_version }}"
+       when: '"upload-progress" in installed_extras'
+       tags: ['php']
+
+    - {  role: ../library/provisioning/roles/drupalvm.www, tags: ['webserver'] }
+    - {  role: ../library/provisioning/roles/geerlingguy.drupal, tags: ['drupal'] }
+
+    # Roles for security and stability on production.
+    - {  role: ../library/provisioning/roles/geerlingguy.security, when: extra_security_enabled }
+
+  tasks:
+    - import_tasks:  ../library/provisioning/tasks/sshd.yml
+    - import_tasks:  ../library/provisioning/tasks/extras.yml
+    - import_tasks:  ../library/provisioning/tasks/cron.yml
+      tags: ['cron']
+
+    - name: Run configured post-provision ansible task files.
+      include_tasks: "{{ outer_item }}"
+      loop_control:
+        loop_var: outer_item
+      with_fileglob: "../vm/post_provision_tasks/*.yml"

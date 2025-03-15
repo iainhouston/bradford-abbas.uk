@@ -2,6 +2,7 @@
 - hosts: drupal_live
   gather_facts: no
 
+# Load variables (like admin_pubkey etc.) from secrets.yml.
   vars_files:
     - secrets.yml
 
@@ -32,4 +33,10 @@
         regexp: '^Defaults.+requiretty'
         line: 'Defaults    !requiretty'
         state: present
+      become: yes
+
+    - name: Stop service unattended-upgrades, if started
+      ansible.builtin.service:
+        name: unattended-upgrades
+        state: stopped
       become: yes

@@ -41,8 +41,16 @@ Regarding this subdirectory `prod`: it contains settings and variables that serv
 
 # 2. Initialising the server
 
+## Obtain public key authentication to the Live Server's *root* account.  
 
-## How to set up the administrator account `webadmin` prior to provisioning the new live server
+`ssh-copy-id  root@bradford-abbas.uk` using the given root password of the new server
+
+You'll be asked to change the root password. **Change it to the text found in ~/.vaultpw**
+
+Now's probably the best time to disable the Unattented Upgrades service (see below)
+
+
+## Set up the administrator account `webadmin` prior to provisioning the new live server
 
 We use *live* and *prod*uction interchangeably here.
 
@@ -72,6 +80,15 @@ But first, just check that you can do `ssh webadmin`, with `~/.ssh/config` havin
             User webadmin
             Hostname bradford-abbas.uk
             PreferredAuthentications publickey
+
+## Disable Unattented Upgrades 
+
+Do this on the root account of the new Live Server to avoid installation race conditions
+
+        systemctl disable --now unattended-upgrades
+
+`unattended-upgrades` is later re-installed to the the live system by `library/provisioning/roles/geerlingguy.security` (I don't know whether it is automatically re-enabled, though)
+
 
 ## Provisioning the new Live server
 
