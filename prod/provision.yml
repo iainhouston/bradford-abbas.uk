@@ -47,7 +47,9 @@
        when: '"upload-progress" in installed_extras'
        tags: ['php']
 
-    - {  role: ../library/provisioning/roles/drupalvm.www, tags: ['webserver'] }
+    # For VM provisioning only `drupalvm.www`
+    # - {  role: ../library/provisioning/roles/drupalvm.www, tags: ['webserver'] }
+    
     - {  role: ../library/provisioning/roles/geerlingguy.drupal, tags: ['drupal'] }
 
     # Roles for security and stability on production.
