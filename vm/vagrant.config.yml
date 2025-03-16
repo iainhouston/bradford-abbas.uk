@@ -109,7 +109,7 @@ drupal_account_name: admin
 drupal_account_pass: admin
 drupal_db_user: drupal
 drupal_db_name: drupal
-drupal_db_password: drupal
+drupal_db_password: drupalVagrant
 mysql_root_password: root
 
 adminer_install_filename: index.php

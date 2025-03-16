@@ -5,7 +5,7 @@
   vars_files:
     - ../vm/config.yml
     - provision.config.yml
-    - secrets.yml"
+    - secrets.yml
 
   pre_tasks:
 

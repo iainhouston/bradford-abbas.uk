@@ -29,8 +29,7 @@ else
     exit 1
 fi
 
-if [ -e $BADEV/web/sites/default/files/ ]
-then
+if [ -e $BADEV/web/sites/default/files/ ]  && [ -e $BADEV/private_files/  ]; then
 
     echo "Syncing static files from Dev to Live server"
     rsync -avz $BADEV/web/sites/default/files/ $LIVE_SSH_ALIAS:/var/www/drupal/web/sites/default/files/ \
@@ -45,6 +44,6 @@ then
     echo "${GREEN}Populated Live data in ${RED}${Elapsed_time}${GREEN} seconds${NC}"
 
 else
-    echo "${RED}Couldn't find ${GREEN}$BADEV/web/sites/default/files/{NC}"
+    echo "${RED}Couldn't find either ${GREEN}$BADEV/web/sites/default/files/{RED} or ${GREEN}$BADEV/private_files/${NC}"
     exit 2
 fi

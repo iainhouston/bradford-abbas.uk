@@ -1,5 +1,0 @@
-drupal_staging:
-  hosts:
-    staging.bradford-abbas.uk:
-      ansible_ssh_user: webadmin
-      ansible_python_interpreter: /usr/bin/python3
