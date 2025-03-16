@@ -20,19 +20,29 @@
 	},
 	"description": "Project Drupal build file for Bradford Abbas Parish Council",
 	"extra": {
+		"drupal-scaffold": {
+        "locations": {
+            "web-root": "web/"
+        },
+        "file-mapping": {
+			"[web-root]/sites/default/settings.php": {
+				"mode": "replace",
+				"path": "web/core/assets/scaffold/files/default.settings.php",
+				"overwrite": false
+			  },
+			"[web-root]/sites/default/services.yml": {
+				"mode": "replace",
+				"path": "web/core/assets/scaffold/files/default.services.yml",
+				"overwrite": false
+			  }
+        }
+	},
 		"drupal-core-project-message": {
 			"post-install-cmd-message": [
 				"Bradford Abbas Parish Council",
 				"Drupal and contributed code up-to-date"
 				]
 			},
-		"drupal-scaffold": {
-			"file-mapping": {
-			},
-			"locations": {
-				"web-root": "web/"
-			}
-		},
 		"installer-paths": {
 			"drush/Commands/contrib/{$name}": [
 				"type:drupal-drush"
