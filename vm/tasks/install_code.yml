@@ -1,13 +1,29 @@
 ---
-- name: install the code
-  shell: composer install
-  args:
-    chdir: "{{ drupal_deploy_dir }}"
-  become: no
+ - name: Get remote user
+   command: whoami
+   register: remote_iain2
 
-- name: Make local drush executable globally
-  file:
-    src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
-    dest: /usr/local/bin/drush
-    state: link
-    force: yes
+ - name: Show remote user
+   debug:
+     msg: "The task is running as user: {{ remote_iain2.stdout }}"
+
+ - name: Show drupalvm_user user
+   debug:
+     msg: "drupalvm_user is: {{ drupalvm_user }}"
+
+#  - name: Mark the directory as safe for Git
+#    command: "git config --global --add safe.directory {{ drupal_deploy_dir }}"
+#    become: no
+
+ - name: Install dependencies using Composer
+   shell: composer install --no-interaction --prefer-dist
+   args:
+     chdir: "{{ drupal_deploy_dir }}"
+   become: no
+
+ - name: Make local drush executable globally
+   file:
+     src: "{{ drupal_deploy_dir }}/vendor/drush/drush/drush"
+     dest: /usr/local/bin/drush
+     state: link
+     force: yes
