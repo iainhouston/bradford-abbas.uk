@@ -16,6 +16,9 @@ drupal_domain_regex: "{{ vagrant_hostname | regex_findall('([^.]+)')  | join('\\
 # mySQL security hardened on Live site
 extra_security_enabled: true
 
+guest_files_owner:  "{{ drupalvm_user }}"
+guest_files_group: "{{ drupalvm_user }}"
+
 # Apache VirtualHosts.
 ssl_key_dest: "/etc/ssl/private/bradford-abbas.uk.key"
 ssl_crt_dest: "/etc/ssl/certs/bradford-abbas.uk.crt"

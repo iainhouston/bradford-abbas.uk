@@ -1,18 +1,4 @@
 ---
- - name: Get remote user
-   command: whoami
-   register: remote_iain2
-
- - name: Show remote user
-   debug:
-     msg: "The task is running as user: {{ remote_iain2.stdout }}"
-
- - name: Show drupalvm_user user
-   debug:
-     msg: "drupalvm_user is: {{ drupalvm_user }}"
-
- - name: Mark the directory as safe for Git
-   command: "git config --global --add safe.directory {{ drupal_deploy_dir }}"
 
  - name: Install the code using Composer
    shell: composer install
