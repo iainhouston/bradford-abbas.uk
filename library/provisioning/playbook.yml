@@ -77,6 +77,8 @@
     - import_tasks: tasks/cron.yml
       tags: ['cron']
 
+    - include_tasks: "{{ tasks_dir }}/install_code.yml"
+
     - include_tasks: tasks/dashboard.yml
       when: dashboard_install_dir is defined and dashboard_install_dir != ''
       tags: ['webserver', 'database', 'php']

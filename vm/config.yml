@@ -153,6 +153,7 @@ hostname_configure: true
 hostname_fqdn: "{{ vagrant_hostname }}"
 ssh_home: "{{ drupal_core_path }}"
 
+tasks_dir: "{{ config_dir }}/tasks/"
 pre_provision_tasks_dir: "{{ config_dir }}/pre_provision_tasks/*"
 post_provision_tasks_dir: "{{ config_dir }}/post_provision_tasks/*"
 

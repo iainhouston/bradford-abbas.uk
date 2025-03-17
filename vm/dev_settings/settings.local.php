@@ -153,3 +153,11 @@ $settings['skip_permissions_hardening'] = TRUE;
  * the language or field module.
  */
 # $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
+
+// Dev system specials
+# mailhog needs symfony mailer to use SMTP Transport to port 1025
+$config['symfony_mailer.settings']['default_transport'] = 'smtp';
+// drush @badev config-get symfony_mailer.settings  default_transport --include-overridden
+$config['symfony_mailer.mailer_transport.smtp']['configuration.port'] = '1025';
+// drush @badev config-get symfony_mailer.mailer_transport.smtp configuration.port --include-overridden
+# settings.local.php SHOULD? disable CSS aggregation and disables Internal Page Cache etc.

@@ -21,13 +21,16 @@ vagrant_box_version: "202502.21.0"
 # Even though the following DOES work as expected:
 # ansible all -i localhost, -m debug -a msg="{{ lookup('env', 'DEVSITE') }}"
 
-vagrant_hostname: vagrant.bradford-abbas.uk
-vagrant_machine_name: BAPC-Dev
+# vagrant_hostname: bradford-abbas.uk
+# vagrant_machine_name: BAPC-Dev
+vagrant_hostname: experimental.bradford-abbas.uk
+vagrant_machine_name: experimantal-BAPC-Dev
 vagrant_user: vagrant
 
 
 # or vagrant_ip: 0.0.0.0 then plugin vagrant-auto_network will find a spare IP Address automatically
-vagrant_ip: 10.20.1.2
+# vagrant_ip: 10.20.1.2
+vagrant_ip: 10.20.1.3
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
 

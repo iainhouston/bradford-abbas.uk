@@ -61,6 +61,9 @@
     - import_tasks:  ../library/provisioning/tasks/cron.yml
       tags: ['cron']
 
+    
+    - import_tasks: "{{ tasks_dir }}/install_code.yml"
+
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
       loop_control:

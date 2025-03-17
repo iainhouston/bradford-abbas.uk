@@ -6,6 +6,8 @@ Please ~~strike through a completed item~~ when done.
 
 ## To Do Next
 
+- Ansible block in text for additional settings
+
 - Update templates for services.yml and settings.php per Live site 
 
 - mysql user password will be set to whatever drupal_db_password is. Check that it can be changed by re-provisioning/ IT DOES!

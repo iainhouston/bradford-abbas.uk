@@ -1,6 +1,71 @@
 ---
-# The following two steps are only used on the dev server
-# to initialise the development environment
+# These steps apply to provisioning both Dev and Live servers
+# _______________________________________________________________________________________
+
+- name: Temporarily allow write access to sites/default
+  file:
+    path: "{{ drupal_core_path }}/sites/default"
+    state: touch
+    mode: ugo=rwx
+  become: yes
+
+- name: Allow write access to settings.php and services.yml
+  file:
+    path: "{{ item }}"
+    state: touch
+    mode: ugo=rw
+  loop:
+    - "{{ drupal_core_path }}/sites/default/services.yml"
+    - "{{ drupal_core_path }}/sites/default/settings.php"
+
+- name: Add settings overrides settings.php
+  blockinfile:
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    block: |
+          # ini_set('error_reporting', !E_NOTICE & !E_WARNING);
+
+# Change services.yml to be have cookie_samesite: None
+- name: Change services to have cookie_samesite value None
+  replace:  
+    path:  "{{ drupal_core_path }}/sites/default/services.yml"
+    regexp: '^cookie_samesite:\s*Lax'
+    replace: 'cookie_samesite: None' 
+
+#  Add the block of settings overrides to the settings.php file that was created by `composer install`
+- name: Add settings overrides to Live settings.php
+  blockinfile:
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    block: |
+          $databases['default']['default'] = [
+            'database' => "{{ drupal_db_name }}",
+            'username' => "{{ drupal_db_user }}",
+            'password' => "{{ drupal_db_password }}",
+            'host' => 'localhost',
+            'port' => '3306',
+            'driver' => 'mysql',
+            'prefix' => '',
+            'collation' => 'utf8mb4_general_ci',
+            'init_commands' => ['isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',],
+          ];
+          $settings['hash_salt'] = "{{ drupal_hash_salt }}";
+          $settings['update_free_access'] = FALSE;
+          $settings['config_sync_directory'] = '../config/sync';
+          $settings['file_public_path'] = 'sites/default/files';
+          $settings['file_private_path'] = '../private_files';
+          $settings['file_temp_path'] = '../tmp';
+          $settings['trusted_host_patterns'] = [
+            "^{{ drupal_domain_regex }}",
+            "^.+\.{{ drupal_domain_regex }}",
+          ];
+          ini_set('error_reporting', !E_NOTICE & !E_WARNING); 
+          if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+            include $app_root . '/' . $site_path . '/settings.local.php';
+          } 
+
+
+# These steps apply to provisioning just the Dev server
+# _______________________________________________________________________________________
+
 - name: Ensure Dev sql-dump target directory is present
   local_action:
     module: file
@@ -17,101 +82,28 @@
   become: no
   tags: ['test_only']
 
- # We write in our remembered site settings files
-- name: Temporarily allow write access to sites/default
-  file:
-    path: "{{ drupal_core_path }}/sites/default"
-    state: directory
-    mode: ugo=rwx
-  become: yes
-  tags: ['test_only']
-
-# - name: Temporarily allow write access to sensitive sites files
-#   file:
-#     path: "{{ item }}"
-#     state: file
-#     mode: ugo=rw
-#   loop:
-#     - "{{ drupal_core_path }}/sites/default/services.yml"
-#     - "{{ drupal_core_path }}/sites/default/settings.local.yml"
-#   become: yes
-#   tags: ['test_only']
-
-- name: Allow write access to settings.php
-  file:
-    path: "{{ drupal_core_path }}/sites/default/settings.php"
-    state: touch
-    mode: ugo=rw
-
-- name: Template Drupal settings file to sites/default/
-  template:
-    src: "{{ config_dir }}/saved_default_settings/settings.php.j2"
-    dest: "{{ drupal_core_path }}/sites/default/settings.php"
-  become: no
-
-- name: Harden settings.php
-  file:
-    path: "{{ drupal_core_path }}/sites/default/settings.php"
-    state: file
-    mode: ug=r
-    group: www-data
-  become: yes
-  tags: ['drupal', 'prod_only']
-
-- name: Harden access to sites/default
-  file:
-    path: "{{ drupal_core_path }}/sites/default"
-    state: directory
-    mode: ugo=rx
-    group: www-data
-  become: yes
-  tags: ['drupal', 'prod_only']
-
 - name: Copy Development services file to sites/
   copy:
-    src: "{{ config_dir }}/saved_default_settings/development.services.yml"
+    src: "{{ config_dir }}/dev_settings/development.services.yml"
     dest: "{{ drupal_core_path }}/sites/development.services.yml"
   tags: ['test_only']
 
-- name: Configure Dev Settings in sites/default
-  blockinfile:
-    dest: "{{ drupal_core_path }}/sites/default/settings.php"
-    block: |
-          # mailhog needs symfony mailer to use SMTP Transport to port 1025
-          $config['symfony_mailer.settings']['default_transport'] = 'smtp';
-          // drush @badev config-get symfony_mailer.settings  default_transport --include-overridden
-          $config['symfony_mailer.mailer_transport.smtp']['configuration.port'] = '1025';
-          // drush @badev config-get symfony_mailer.mailer_transport.smtp configuration.port --include-overridden
-          # settings.local.php disables CSS aggregation and disables Internal Page Cache etc.
-          if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-            include $app_root . '/' . $site_path . '/settings.local.php';
-          }
-          # ini_set('error_reporting', !E_NOTICE & !E_WARNING);
-  tags: ['test_only']
-
-- name: Copy services file to sites/default/
-  copy:
-    src: "{{ config_dir }}/saved_default_settings/services.yml"
-    dest: "{{ drupal_core_path }}/sites/default/services.yml"
-    group: www-data
-    mode: ug=r
-
+# settings.local.php is not in the repo, so we need to copy it from the dev_settings directory
+# It contains overrides to allow mailhog to operate with symfony mailer
 - name: Copy settings.local file to sites/default/
   copy:
-    src: "{{ config_dir }}/saved_default_settings/settings.local.php"
+    src: "{{ config_dir }}/dev_settings/settings.local.php"
     dest: "{{ drupal_core_path }}/sites/default/settings.local.php"
   tags: ['test_only']
 
-- name: Create a new database with "drupal_db_name"
-  mysql_db:
-    name: "{{ drupal_db_name }}"
-    login_password: "{{mysql_root_password}}"
-    login_user: root
-    state: present
+# These steps apply to provisioning both Dev and Live servers
+# _______________________________________________________________________________________
 
-- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
-  mysql_user:
-    name: "{{drupal_db_user}}"
-    password: "{{drupal_db_password}}"
-    priv: '*.*:ALL,GRANT'
-    state: present
+# Only really necessary on Live site 
+- name: Recursively harden configuration files
+  ansible.builtin.file:
+    path:  "{{ drupal_core_path }}/sites/default"
+    state: directory
+    recurse: yes
+    mode: ug=r, o-rwx
+

@@ -11,15 +11,6 @@
   tags: ['drupal', 'prod_only']
   become: yes
 
-#  !!! This will destroy your static files !!!
-#
-# - name: Ensure Drupal deploy directory is NOT present yet
-#   file:
-#     path: "{{ drupal_deploy_dir }}"
-#     state: absent
-#   tags: ['drupal', 'prod_only']
-#   become: yes
-
 # on the dev system we are working in the directory that already has the repo as we like it
 # we don't want to overwrite any git changes we've made on the dev sysytem
 # but we do want to populate the live system with latest code pushed to the repo
