@@ -46,14 +46,15 @@ vagrant_synced_folders:
 
 # these values set by vagrant (see .vagrant file) and not by us
 # used by nfsd in /etc/exports
-guest_files_owner: 501
-guest_files_group: 20
+guest_files_owner: vagrant
+guest_files_group: www-data
 
 vagrant_plugins:
   - name: vagrant-vbguest
   - name: vagrant-hostsupdater
   - name: vagrant-parallels
   - name: vagrant-auto_network
+  - name: vagrant-bindfs
 
 # Minimum required versions.
 drupalvm_vagrant_version_min: '2.2.18'
