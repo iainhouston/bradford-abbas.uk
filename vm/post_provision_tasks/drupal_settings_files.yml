@@ -7,7 +7,6 @@
     path: "{{ drupal_core_path }}/sites/default"
     state: touch
     mode: ugo=rwx
-  become: yes
 
 - name: Allow write access to settings.php and services.yml
   file:
@@ -28,8 +27,8 @@
 - name: Change services to have cookie_samesite value None
   replace:  
     path:  "{{ drupal_core_path }}/sites/default/services.yml"
-    regexp: '^cookie_samesite:\s*Lax'
-    replace: 'cookie_samesite: None' 
+    regexp: '\bcookie_samesite:\s*Lax\b'
+    replace: 'cookie_samesite: None'
 
 #  Add the block of settings overrides to the settings.php file that was created by `composer install`
 - name: Add settings overrides to Live settings.php
@@ -58,6 +57,8 @@
             "^.+\.{{ drupal_domain_regex }}",
           ];
           ini_set('error_reporting', !E_NOTICE & !E_WARNING); 
+
+          # settings.local.php should not exist on Live Server
           if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
             include $app_root . '/' . $site_path . '/settings.local.php';
           } 
@@ -99,11 +100,21 @@
 # These steps apply to provisioning both Dev and Live servers
 # _______________________________________________________________________________________
 
-# Only really necessary on Live site 
-- name: Recursively harden configuration files
+# Really necessary on Live site. Can be inconvenient on Dev site
+
+- name: Prevent write access to settings.php and services.yml
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: touch
+    mode: ug=r,o-rw
+  loop:
+    - "{{ drupal_core_path }}/sites/default/services.yml"
+    - "{{ drupal_core_path }}/sites/default/settings.php"
+  tags: ['prod_only']
+
+- name: Prevent write access to configuration directory
   ansible.builtin.file:
     path:  "{{ drupal_core_path }}/sites/default"
     state: directory
-    recurse: yes
-    mode: ug=r, o-rwx
-
+    mode: ugo=rx
+  tags: ['prod_only']
