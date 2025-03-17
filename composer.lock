@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa91c838e9dccf3e85a9616ab590ffca",
+    "content-hash": "5bf953efff23b688f5eef064a21fa966",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "caxy/php-htmldiff",
-            "version": "v0.1.15",
+            "version": "v0.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caxy/php-htmldiff.git",
-                "reference": "6342b02ddb86fd36093ad7e2db2efc21f01ab7cd"
+                "reference": "5c580b4f09285c078f0c5cb261573412a736a8cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caxy/php-htmldiff/zipball/6342b02ddb86fd36093ad7e2db2efc21f01ab7cd",
-                "reference": "6342b02ddb86fd36093ad7e2db2efc21f01ab7cd",
+                "url": "https://api.github.com/repos/caxy/php-htmldiff/zipball/5c580b4f09285c078f0c5cb261573412a736a8cb",
+                "reference": "5c580b4f09285c078f0c5cb261573412a736a8cb",
                 "shasum": ""
             },
             "require": {
@@ -119,9 +119,9 @@
             ],
             "support": {
                 "issues": "https://github.com/caxy/php-htmldiff/issues",
-                "source": "https://github.com/caxy/php-htmldiff/tree/v0.1.15"
+                "source": "https://github.com/caxy/php-htmldiff/tree/v0.1.16"
             },
-            "time": "2023-11-05T23:49:04+00:00"
+            "time": "2025-01-22T17:03:45+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -974,16 +974,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "4.10.0",
+            "version": "4.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1e830ba908c9ffb1ba7ca056203531b27188812c"
+                "reference": "362310b13ececa9f6f0a4a880811fa08fecc348b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1e830ba908c9ffb1ba7ca056203531b27188812c",
-                "reference": "1e830ba908c9ffb1ba7ca056203531b27188812c",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/362310b13ececa9f6f0a4a880811fa08fecc348b",
+                "reference": "362310b13ececa9f6f0a4a880811fa08fecc348b",
                 "shasum": ""
             },
             "require": {
@@ -1024,9 +1024,9 @@
             "description": "Initialize Symfony Console commands from annotated command class methods.",
             "support": {
                 "issues": "https://github.com/consolidation/annotated-command/issues",
-                "source": "https://github.com/consolidation/annotated-command/tree/4.10.0"
+                "source": "https://github.com/consolidation/annotated-command/tree/4.10.1"
             },
-            "time": "2024-04-05T21:05:39+00:00"
+            "time": "2024-12-13T19:55:40+00:00"
         },
         {
             "name": "consolidation/config",
@@ -1374,16 +1374,16 @@
         },
         {
             "name": "consolidation/site-alias",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/site-alias.git",
-                "reference": "1056ceb93f6aafe6f7600d7bbe1b62b8488abccf"
+                "reference": "aff6189aae17da813d23249cb2fc0fff33f26d40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/site-alias/zipball/1056ceb93f6aafe6f7600d7bbe1b62b8488abccf",
-                "reference": "1056ceb93f6aafe6f7600d7bbe1b62b8488abccf",
+                "url": "https://api.github.com/repos/consolidation/site-alias/zipball/aff6189aae17da813d23249cb2fc0fff33f26d40",
+                "reference": "aff6189aae17da813d23249cb2fc0fff33f26d40",
                 "shasum": ""
             },
             "require": {
@@ -1427,22 +1427,22 @@
             "description": "Manage alias records for local and remote sites.",
             "support": {
                 "issues": "https://github.com/consolidation/site-alias/issues",
-                "source": "https://github.com/consolidation/site-alias/tree/4.1.0"
+                "source": "https://github.com/consolidation/site-alias/tree/4.1.1"
             },
-            "time": "2024-04-05T15:58:04+00:00"
+            "time": "2024-12-13T19:05:11+00:00"
         },
         {
             "name": "consolidation/site-process",
-            "version": "5.4.0",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/site-process.git",
-                "reference": "7ab3ffe4195a89b8dc334ea22e7881abe79ffd9a"
+                "reference": "e7fafc40ebfddc1a5ee99ee66e5d186fc1bed4da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/site-process/zipball/7ab3ffe4195a89b8dc334ea22e7881abe79ffd9a",
-                "reference": "7ab3ffe4195a89b8dc334ea22e7881abe79ffd9a",
+                "url": "https://api.github.com/repos/consolidation/site-process/zipball/e7fafc40ebfddc1a5ee99ee66e5d186fc1bed4da",
+                "reference": "e7fafc40ebfddc1a5ee99ee66e5d186fc1bed4da",
                 "shasum": ""
             },
             "require": {
@@ -1484,9 +1484,9 @@
             "description": "A thin wrapper around the Symfony Process Component that allows applications to use the Site Alias library to specify the target for a remote call.",
             "support": {
                 "issues": "https://github.com/consolidation/site-process/issues",
-                "source": "https://github.com/consolidation/site-process/tree/5.4.0"
+                "source": "https://github.com/consolidation/site-process/tree/5.4.2"
             },
-            "time": "2024-04-06T00:00:28+00:00"
+            "time": "2024-12-13T19:25:56+00:00"
         },
         {
             "name": "dekor/php-array-table",
@@ -1868,7 +1868,7 @@
                     "homepage": "https://www.drupal.org/user/3597814"
                 },
                 {
-                    "name": "Anton1211",
+                    "name": "anton1211",
                     "homepage": "https://www.drupal.org/user/3795706"
                 },
                 {
@@ -2562,13 +2562,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/honeypot.git",
-                "reference": "6f34b4b1ea85e62558356dbcbe4aa8bf98db1920"
+                "reference": "054466c687666bca0df3790e4df3b69f3d98119f"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
             },
             "require-dev": {
-                "drupal/rules": "^3.x-dev"
+                "drupal/rules": "^3 || ^4.0"
             },
             "type": "drupal-module",
             "extra": {
@@ -2576,8 +2576,8 @@
                     "dev-2.1.x": "2.1.x-dev"
                 },
                 "drupal": {
-                    "version": "2.1.4+3-dev",
-                    "datestamp": "1729815514",
+                    "version": "2.1.4+9-dev",
+                    "datestamp": "1736402353",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2724,7 +2724,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.13",
-                    "datestamp": "1722507672",
+                    "datestamp": "1739552840",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2742,11 +2742,11 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
+                    "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
@@ -3247,23 +3247,23 @@
                     "sut/libraries/{$name}": [
                         "type:drupal-library"
                     ],
+                    "sut/themes/unish/{$name}": [
+                        "drupal/empty_theme"
+                    ],
+                    "sut/drush/contrib/{$name}": [
+                        "type:drupal-drush"
+                    ],
                     "sut/modules/unish/{$name}": [
                         "drupal/devel"
                     ],
-                    "sut/themes/unish/{$name}": [
-                        "drupal/empty_theme"
+                    "sut/themes/contrib/{$name}": [
+                        "type:drupal-theme"
                     ],
                     "sut/modules/contrib/{$name}": [
                         "type:drupal-module"
                     ],
                     "sut/profiles/contrib/{$name}": [
                         "type:drupal-profile"
-                    ],
-                    "sut/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "sut/drush/contrib/{$name}": [
-                        "type:drupal-drush"
                     ]
                 }
             },
@@ -4166,11 +4166,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.x-dev",
-                    "dev-4.x": "4.x-dev",
-                    "dev-3.x": "3.x-dev",
+                    "dev-1.x": "1.x-dev",
                     "dev-2.x": "2.x-dev",
-                    "dev-1.x": "1.x-dev"
+                    "dev-3.x": "3.x-dev",
+                    "dev-4.x": "4.x-dev",
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload": {
@@ -5385,16 +5385,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.4",
+            "version": "v0.12.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "2fd717afa05341b4f8152547f142cd2f130f6818"
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/2fd717afa05341b4f8152547f142cd2f130f6818",
-                "reference": "2fd717afa05341b4f8152547f142cd2f130f6818",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
                 "shasum": ""
             },
             "require": {
@@ -5421,12 +5421,12 @@
             ],
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "0.12.x-dev"
-                },
                 "bamarni-bin": {
                     "bin-links": false,
                     "forward-command": false
+                },
+                "branch-alias": {
+                    "dev-main": "0.12.x-dev"
                 }
             },
             "autoload": {
@@ -5458,9 +5458,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.4"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
             },
-            "time": "2024-06-10T01:18:23+00:00"
+            "time": "2025-03-16T03:05:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8536,31 +8536,33 @@
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
-            "version": "v2.2.7",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb"
+                "reference": "0d72ac1c00084279c1816675284073c5a337c20d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/83ee6f38df0a63106a9e4536e3060458b74ccedb",
-                "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/0d72ac1c00084279c1816675284073c5a337c20d",
+                "reference": "0d72ac1c00084279c1816675284073c5a337c20d",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "php": "^5.5 || ^7.0 || ^8.0",
-                "symfony/css-selector": "^2.7 || ^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0"
+                "php": "^7.4 || ^8.0",
+                "symfony/css-selector": "^5.4 || ^6.0 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0 || ^7.5 || ^8.5.21 || ^9.5.10"
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^8.5.21 || ^9.5.10"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -8583,9 +8585,9 @@
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "support": {
                 "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
-                "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.2.7"
+                "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
-            "time": "2023-12-08T13:03:43+00:00"
+            "time": "2024-12-21T16:25:41+00:00"
         },
         {
             "name": "twig/twig",
@@ -9315,16 +9317,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v4.30.0",
+            "version": "v4.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "e1d66682f6836aa87820400f0aa07d9eb566feb6"
+                "reference": "f29ba8a30dfd940efb3a8a75dc44446539101f24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/e1d66682f6836aa87820400f0aa07d9eb566feb6",
-                "reference": "e1d66682f6836aa87820400f0aa07d9eb566feb6",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/f29ba8a30dfd940efb3a8a75dc44446539101f24",
+                "reference": "f29ba8a30dfd940efb3a8a75dc44446539101f24",
                 "shasum": ""
             },
             "require": {
@@ -9353,9 +9355,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.30.0"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.30.1"
             },
-            "time": "2025-03-04T22:54:49+00:00"
+            "time": "2025-03-13T21:08:17+00:00"
         },
         {
             "name": "instaclick/php-webdriver",

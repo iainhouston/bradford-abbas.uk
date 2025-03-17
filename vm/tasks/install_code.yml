@@ -11,12 +11,11 @@
    debug:
      msg: "drupalvm_user is: {{ drupalvm_user }}"
 
-#  - name: Mark the directory as safe for Git
-#    command: "git config --global --add safe.directory {{ drupal_deploy_dir }}"
-#    become: no
+ - name: Mark the directory as safe for Git
+   command: "git config --global --add safe.directory {{ drupal_deploy_dir }}"
 
- - name: Install dependencies using Composer
-   shell: composer install --no-interaction --prefer-dist
+ - name: Install the code using Composer
+   shell: composer install
    args:
      chdir: "{{ drupal_deploy_dir }}"
    become: no
