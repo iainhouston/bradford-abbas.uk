@@ -23,13 +23,6 @@
     block: |
           # ini_set('error_reporting', !E_NOTICE & !E_WARNING);
 
-# Change services.yml to be have cookie_samesite: None
-- name: Change services to have cookie_samesite value None
-  replace:  
-    path:  "{{ drupal_core_path }}/sites/default/services.yml"
-    regexp: '\bcookie_samesite:\s*Lax\b'
-    replace: 'cookie_samesite: None'
-
 #  Add the block of settings overrides to the settings.php file that was created by `composer install`
 - name: Add settings overrides to Live settings.php
   blockinfile:
@@ -100,8 +93,17 @@
 # These steps apply to provisioning both Dev and Live servers
 # _______________________________________________________________________________________
 
-# Really necessary on Live site. Can be inconvenient on Dev site
+# Change services.yml to be have cookie_samesite: None on the Live system
+# But if we do this on the test system, we will not be able to log in 
+# as session cookies will not be sent via http (only via https)
+- name: Change services to have cookie_samesite value None
+  replace:  
+    path:  "{{ drupal_core_path }}/sites/default/services.yml"
+    regexp: '\bcookie_samesite:\s*Lax\b'
+    replace: 'cookie_samesite: None'
+  tags: ['prod_only']
 
+# Really necessary on Live site. Can be inconvenient on Dev site
 - name: Prevent write access to settings.php and services.yml
   ansible.builtin.file:
     path: "{{ item }}"

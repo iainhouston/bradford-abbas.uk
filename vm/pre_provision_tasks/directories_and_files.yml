@@ -35,6 +35,9 @@
   become: no
   tags: ['prod_only']
 
+# The Dev system is created after having cloned all the files from the repo
+# The Prod system does not require the files to be cloned, only the latest changes
+# The Prod system might be compromised if ALL the dev files are cloned from the repo
 - name: Add remote repository
   command: git remote add origin https://github.com/iainhouston/bradford-abbas.uk.git
   args:
