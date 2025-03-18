@@ -41,12 +41,19 @@
                     systemctl restart apache2.service
             become: yes
 
-        -   name: checkout the latest committed program code and config settings
-            git:
-                repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-                dest: "{{ drupal_deploy_dir }}"
-            # Ignore "unable to write default.services.yml etc."
-            # ignore_errors: True
+        # -   name: checkout the latest committed program code and config settings
+        #     git:
+        #         repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
+        #         dest: "{{ drupal_deploy_dir }}"
+        #     # Ignore "unable to write default.services.yml etc."
+        #     # ignore_errors: True
+       
+        # When git was initialised originally: git config core.sparseCheckout true
+        # With --depth=1, Git downloads only the latest commit and avoids fetching older history.
+        - name: Pull only the files originally specified in .git/info/sparse-checkout
+          command: git pull --depth=1 origin master
+          args:
+            chdir: "{{ drupal_deploy_dir }}"
 
         -   name: install the latest code
             composer:

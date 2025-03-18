@@ -50,10 +50,9 @@
       composer.lock
   become: no
 
-# DEBUG: This is a test to see if the git pull works. Change from newscaffold to master
 # With --depth=1, Git downloads only the latest commit and avoids fetching older history.
 - name: Pull only the specified files
-  command: git pull --depth=1 origin newscaffold
+  command: git pull --depth=1 origin master
   args:
     chdir: "{{ drupal_deploy_dir }}"
   become: no
