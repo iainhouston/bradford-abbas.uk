@@ -6,14 +6,21 @@
 # we don't want to overwrite any git changes we've made on the dev sysytem
 # but we do want to populate the live system with latest code pushed to the repo
 
-- name: Ensure  Drupal deploy directory can be created by git and accessible to http server
+- name: Ensure key directories are writable by http server
   file:
-    path: "{{ drupal_deploy_dir }}/.."
+    path: "{{ item }}"
+    recurse: yes
     state: directory
     mode: ug+w
     owner: "{{ guest_files_owner }}"
     group: "{{ guest_files_group }}"
-  become: yes
+  loop:
+    - "{{ drupal_deploy_dir }}"
+    - "{{ drupal_deploy_dir }}/private_files"
+    - "{{ drupal_deploy_dir }}/tmp"
+    - "{{ drupal_deploy_dir }}/config"
+    - "{{ drupal_core_path }}/sites/default"
+  become: no
 
 - name: Ensure Git allows the repo directory
   command: git config --global --add safe.directory "{{ drupal_deploy_dir }}"
@@ -21,12 +28,12 @@
     chdir: "{{ drupal_deploy_dir }}"
   become: no
   
-
 - name: Initialize an empty Git repository
   command: git init
   args:
     chdir: "{{ drupal_deploy_dir }}"
   become: no
+  tags: ['prod_only']
 
 - name: Add remote repository
   command: git remote add origin https://github.com/iainhouston/bradford-abbas.uk.git
@@ -34,12 +41,14 @@
     chdir: "{{ drupal_deploy_dir }}"
   ignore_errors: yes  # Ignore errors if remote already exists
   become: no
+  tags: ['prod_only']
 
 - name: Enable sparse checkout
   command: git config core.sparseCheckout true
   args:
     chdir: "{{ drupal_deploy_dir }}"
   become: no
+  tags: ['prod_only']
 
 - name: Define the sparse checkout paths
   ansible.builtin.copy:
@@ -49,6 +58,8 @@
       composer.json
       composer.lock
   become: no
+  tags: ['prod_only']
+
 
 # With --depth=1, Git downloads only the latest commit and avoids fetching older history.
 - name: Pull only the specified files
@@ -56,16 +67,9 @@
   args:
     chdir: "{{ drupal_deploy_dir }}"
   become: no
+  tags: ['prod_only']
 
-# - name: Create and populate Drupal deploy directory
-#   git:
-#     repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-#     dest: "{{ drupal_deploy_dir }}"
-#   # tags: ['drupal', 'prod_only']
-#   become: no
-#   tags: ['drupal', 'prod_only'] # Dev already has cloned the rep. DONT OVERWRITE!
-
-- name: Ensure Dev directories are writable by http server
+- name: Ensure key directories are writable by http server
   file:
     path: "{{ item }}"
     recurse: yes
