@@ -8,29 +8,24 @@
 # Unfortunately, we have not yet completed the total parameterisation of the
 # naming of the website domain names created.
 # So domain names are still hard-coded into the following files:
-# -  staging/inventory
-# -  vm/inventory
+# -  prod/inventory.yml
 # -  vm/vagrant.config.yml
-# -  vm/prod.config.yml
 
 # Project directory; created when cloned from GitHub thus:
 # `cd && clone git@github.com:iainhouston/bradford-abbas.uk.git`
 export BADEV="$HOME/bradford-abbas.uk"
 
-# URL of Live, and Virtual Development and Staging sites
+# URL of Live, and Virtual Development sites
 # Used, besides others, by gulp tasks in theme toolchain and Vagrantfile provisioning
 export LIVESITE="bradford-abbas.uk"
-export STAGESITE="staging.bradford-abbas.uk"
 export DEVSITE="vagrant.bradford-abbas.uk"
 
 # the following aliases must have corresponding `.yml` files in `drush/sites`
 export LIVEALIAS="@balive"
-export STAGEALIAS="@bastage"
 export DEVALIAS="@badev"
 
 # the following aliases must have corresponding `Host` settings in `~/.ssh/config`
 export LIVE_SSH_ALIAS="webadmin"
-export STAGING_SSH_ALIAS="stageadmin"
 
 # End of main PARAMETERS section
 # ______________________________

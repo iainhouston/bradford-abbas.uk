@@ -10,5 +10,6 @@ echo "__________________________________________________________________________
 echo "There are other utilty scripts aliased in ${GREEN}SYMBOLS.sh${NC}"
 echo " "
 echo "${GREEN}drush alias ${RED}${LIVEALIAS}${GREEN} for the Live Server at ${RED}https://${LIVESITE}${NC}"
-echo "${GREEN}drush alias ${RED}${STAGEALIAS}${GREEN} for the Staging Server at ${RED}https://${STAGESITE}${NC}"
 echo "${GREEN}drush alias ${RED}${DEVALIAS}${GREEN} for the Development Server at ${RED}http://${DEVSITE}${NC}"
+echo " "
+echo "_________________________________________________________________________________"
