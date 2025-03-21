@@ -22,7 +22,7 @@ then
     Start_time=$SECONDS
     
     ansible-playbook prod/init.yml \
-        --inventory-file=prod/inventory \
+        --inventory-file=prod/inventory.yml \
         --extra-vars="ansible_ssh_user=root" \
         --vault-password-file="~/.vaultpw"
         

@@ -31,13 +31,13 @@ apache_vhost_redirect_parameters: "Redirect permanent / https://{{ drupal_domain
 
 apache_vhosts:
   - servername: "{{ drupal_domain }}"
-    serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
+    serveralias: "www.{{ drupal_domain }} "
     extra_parameters: "{{ apache_vhost_redirect_parameters }}"
 
 apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
-    serveralias: "www.{{ drupal_domain }} staging.{{ drupal_domain }}"
-    documentroot: "{{ drupal_core_path }}"
+    serveralias: "www.{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"ire
     certificate_file: "{{ ssl_crt_dest }}"
     certificate_key_file: "{{ ssl_key_dest }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"

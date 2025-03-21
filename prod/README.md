@@ -81,14 +81,11 @@ But first, just check that you can do `ssh webadmin`, with `~/.ssh/config` havin
             Hostname bradford-abbas.uk
             PreferredAuthentications publickey
 
-## Disable Unattented Upgrades 
+## Preparing to provision the new Live server
 
-Do this on the root account of the new Live Server to avoid installation race conditions
+Encountered issues on (SimplyHost) Ubuntu 22.04 LTS server running unattended upgrades (despite attempt to disable)and blocking installation of required software during provisioning. Possibly due to fresh installation requiring 200+ updates.  
 
-        systemctl disable --now unattended-upgrades
-
-`unattended-upgrades` is later re-installed to the the live system by `library/provisioning/roles/geerlingguy.security` (I don't know whether it is automatically re-enabled, though)
-
+So log in as root and ` apt update` and `apt upgrade` before continuing.
 
 ## Provisioning the new Live server
 

@@ -19,8 +19,7 @@
     - "{{ drupal_deploy_dir }}/private_files"
     - "{{ drupal_deploy_dir }}/tmp"
     - "{{ drupal_deploy_dir }}/config"
-    - "{{ drupal_core_path }}/sites/default"
-  become: no
+    - "{{ drupal_core_path }}/sites/default/files"
 
 - name: Ensure Git allows the repo directory
   command: git config --global --add safe.directory "{{ drupal_deploy_dir }}"
@@ -71,19 +70,3 @@
     chdir: "{{ drupal_deploy_dir }}"
   become: no
   tags: ['prod_only']
-
-- name: Ensure key directories are writable by http server
-  file:
-    path: "{{ item }}"
-    recurse: yes
-    state: directory
-    mode: ug+w
-    owner: "{{ guest_files_owner }}"
-    group: "{{ guest_files_group }}"
-  loop:
-    - "{{ drupal_deploy_dir }}"
-    - "{{ drupal_deploy_dir }}/private_files"
-    - "{{ drupal_deploy_dir }}/tmp"
-    - "{{ drupal_deploy_dir }}/config"
-    - "{{ drupal_core_path }}/sites/default"
-  become: no

@@ -108,7 +108,7 @@
   ansible.builtin.file:
     path: "{{ item }}"
     state: touch
-    mode: ug=r,o-rw
+    mode: '0444'
   loop:
     - "{{ drupal_core_path }}/sites/default/services.yml"
     - "{{ drupal_core_path }}/sites/default/settings.php"
