@@ -60,34 +60,22 @@
 # These steps apply to provisioning just the Dev server
 # _______________________________________________________________________________________
 
-- name: Ensure Dev sql-dump target directory is present
-  local_action:
-    module: file
-    path: "{{ config_dir }}/saved_sql/dev"
-    state: directory
-  become: no
-  tags: ['test_only']
 
-- name: Ensure Live sql-dump target directory is present
-  local_action:
-    module: file
-    path: "{{ config_dir }}/saved_sql/live"
-    state: directory
-  become: no
-  tags: ['test_only']
-
-- name: Copy Development services file to sites/
-  copy:
-    src: "{{ config_dir }}/dev_settings/development.services.yml"
-    dest: "{{ drupal_core_path }}/sites/development.services.yml"
-  tags: ['test_only']
-
-# settings.local.php is not in the repo, so we need to copy it from the dev_settings directory
-# It contains overrides to allow mailhog to operate with symfony mailer
+# settings.local.php contains overrides to allow mailhog to operate with symfony mailer
 - name: Copy settings.local file to sites/default/
   copy:
     src: "{{ config_dir }}/dev_settings/settings.local.php"
     dest: "{{ drupal_core_path }}/sites/default/settings.local.php"
+  tags: ['test_only']
+
+
+- name: Ensure development system can save SQL from both Live and Dev sources
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ drupal_deploy_dir }}/vm/saved_sql/live"
+    - "{{ drupal_deploy_dir }}/vm/saved_sql/dev"
   tags: ['test_only']
 
 # These steps apply to provisioning both Dev and Live servers
