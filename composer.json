@@ -25,11 +25,13 @@
             "web-root": "web/"
         },
         "file-mapping": {
+			"[web-root]/sites/default/default.settings.php": false,
 			"[web-root]/sites/default/settings.php": {
 				"mode": "replace",
 				"path": "web/core/assets/scaffold/files/default.settings.php",
 				"overwrite": false
 			  },
+			"[web-root]/sites/default/default.services.yml": false,
 			"[web-root]/sites/default/services.yml": {
 				"mode": "replace",
 				"path": "web/core/assets/scaffold/files/default.services.yml",
