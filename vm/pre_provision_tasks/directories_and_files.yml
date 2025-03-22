@@ -11,7 +11,7 @@
     path: "{{ item }}"
     recurse: yes
     state: directory
-    mode: ug+w
+    mode: ugo+w
     owner: "{{ guest_files_owner }}"
     group: "{{ guest_files_group }}"
   loop:

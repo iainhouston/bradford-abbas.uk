@@ -37,7 +37,7 @@ apache_vhosts:
 apache_vhosts_ssl:
   - servername: "{{ drupal_domain }}"
     serveralias: "www.{{ drupal_domain }}"
-    documentroot: "{{ drupal_core_path }}"ire
+    documentroot: "{{ drupal_core_path }}"
     certificate_file: "{{ ssl_crt_dest }}"
     certificate_key_file: "{{ ssl_key_dest }}"
     extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"

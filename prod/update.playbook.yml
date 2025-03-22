@@ -5,7 +5,7 @@
     vars_files:
 
         -   ../vm/config.yml
-        -   ../vm/prod.config.yml
+        -   provision.config.yml
 
     tasks:
 
@@ -40,13 +40,6 @@
                     "systemctl restart php{{ php_version }}-fpm"
                     systemctl restart apache2.service
             become: yes
-
-        # -   name: checkout the latest committed program code and config settings
-        #     git:
-        #         repo: 'https://github.com/iainhouston/bradford-abbas.uk.git'
-        #         dest: "{{ drupal_deploy_dir }}"
-        #     # Ignore "unable to write default.services.yml etc."
-        #     # ignore_errors: True
        
         # When git was initialised originally: git config core.sparseCheckout true
         # With --depth=1, Git downloads only the latest commit and avoids fetching older history.
