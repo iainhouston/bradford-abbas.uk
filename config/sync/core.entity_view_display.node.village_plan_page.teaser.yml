@@ -4,36 +4,22 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.village_plan_page.body
-    - field.field.node.village_plan_page.field_back_to_index
-    - field.field.node.village_plan_page.field_file_under
     - node.type.village_plan_page
   module:
-    - text
     - user
 id: node.village_plan_page.teaser
 targetEntityType: node
 bundle: village_plan_page
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: -20
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden:
-  field_back_to_index: true
-  field_file_under: true
+hidden: {  }
