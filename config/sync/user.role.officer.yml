@@ -7,7 +7,6 @@ dependencies:
     - node.type.agenda
     - node.type.article
     - node.type.document
-    - node.type.history_society_event
     - node.type.item_of_expense
     - node.type.meeting
     - node.type.minutes
@@ -44,7 +43,6 @@ permissions:
   - 'create agenda content'
   - 'create article content'
   - 'create document content'
-  - 'create history_society_event content'
   - 'create item_of_expense content'
   - 'create meeting content'
   - 'create minutes content'
@@ -56,7 +54,6 @@ permissions:
   - 'delete any agenda content'
   - 'delete any article content'
   - 'delete any document content'
-  - 'delete any history_society_event content'
   - 'delete any item_of_expense content'
   - 'delete any meeting content'
   - 'delete any minutes content'
@@ -64,7 +61,6 @@ permissions:
   - 'delete any photo_gallery content'
   - 'delete article revisions'
   - 'delete document revisions'
-  - 'delete history_society_event revisions'
   - 'delete item_of_expense revisions'
   - 'delete meeting revisions'
   - 'delete minutes revisions'
@@ -80,7 +76,6 @@ permissions:
   - 'edit any agenda content'
   - 'edit any article content'
   - 'edit any document content'
-  - 'edit any history_society_event content'
   - 'edit any item_of_expense content'
   - 'edit any meeting content'
   - 'edit any minutes content'
@@ -98,7 +93,6 @@ permissions:
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert document revisions'
-  - 'revert history_society_event revisions'
   - 'revert item_of_expense revisions'
   - 'revert meeting revisions'
   - 'revert minutes revisions'
@@ -112,7 +106,6 @@ permissions:
   - 'view any webform submission'
   - 'view article revisions'
   - 'view document revisions'
-  - 'view history_society_event revisions'
   - 'view item_of_expense revisions'
   - 'view meeting revisions'
   - 'view minutes revisions'
