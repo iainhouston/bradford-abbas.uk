@@ -61,6 +61,7 @@ alias liveunmaint="sh $BADEVSCRIPTS/liveunmaint.sh"
 
 # Production to Development
 alias rsyncp2dfiles="sh $BADEVSCRIPTS/rsyncProd2DevFiles.sh"
+
 # exceptionally - bring dev Drupal Config settings in line with live ones
 alias rsyncp2dconfig="rsync -avz --delete $LIVE_SSH_ALIAS:/var/www/drupal/config/sync/ ./config/sync/"
 
@@ -85,6 +86,9 @@ alias reloadDevDB="sh $BADEVSCRIPTS/reloadDevDB.sh"
 alias initialiseLiveServer="sh $BADEVSCRIPTS/initialiseLiveServer.sh"
 alias provisionLiveServer="sh $BADEVSCRIPTS/provisionLiveServer.sh"
 alias populateLiveData="sh $BADEVSCRIPTS/populateLiveData.sh"
+
+# Exceptionally load Live DB from Dev DB (e.g. after removing Content Types)
+alias clonedbDev2Live="sh $BADEVSCRIPTS/clonedbDev2Live.sh"
 
 # For pretty printing
 # See https://en.wikipedia.org/wiki/ANSI_escape_code

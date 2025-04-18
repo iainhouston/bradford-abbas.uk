@@ -2,8 +2,6 @@ uuid: dba8e460-735e-4d10-918c-64092b02da57
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.village_plan_page
   module:
     - content_moderation
 _core:
@@ -61,7 +59,5 @@ type_settings:
         - published
       to: published
       weight: 1
-  entity_types:
-    node:
-      - village_plan_page
+  entity_types: {  }
   default_moderation_state: draft
