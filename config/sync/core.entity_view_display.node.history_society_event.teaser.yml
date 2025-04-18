@@ -4,40 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.history_society_event.body
-    - field.field.node.history_society_event.field_meeting_date
-    - field.field.node.history_society_event.simplenews_issue
     - node.type.history_society_event
   module:
-    - datetime
-    - text
     - user
 id: node.history_society_event.teaser
 targetEntityType: node
 bundle: history_society_event
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_meeting_date:
-    type: datetime_custom
-    label: above
-    settings:
-      timezone_override: ''
-      date_format: 'Y-m-d\TH:i:s'
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  simplenews_issue: true
+hidden: {  }
