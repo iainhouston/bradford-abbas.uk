@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 echo "${RED}Do you really want to do this?"
+echo "${RED}Did you sqldumpDev to create ${GREEN}mostRecentDev.sql${NC}? "
 echo "${GREEN}mostRecentDev.sql${NC} is expected to contain the most recent Dev SQL to clone to Live"
 echo "${GREEN}(Please choose a number in reply)${NC}"
 select choice in "Yes" "No"; do
