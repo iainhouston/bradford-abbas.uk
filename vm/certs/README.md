@@ -29,6 +29,14 @@ They will also send an email to `webmaster@bradford-abbas.uk` requesting that we
 
 On MacOS:
 
+Firstly, find the password used to encrypt the key and the signing certficate in this repo. e.g. put the one stored locally into the MacOS clipboard (pb gor PasteBoard?):
+
+```
+cat .vaultpw | pbcopy
+```
+
+Then decrypt the repo's key and CSY and generate new ones
+
 ```
 cd ~/bradford-abbas.uk/vm/certs
 
@@ -38,7 +46,11 @@ ansible-vault decrypt  SSL.csr
 openssl req -nodes -newkey rsa:2048 -keyout SSL.key -out SSL.csr
 ```
 
-More details on what was required by LCN in May 2022:
+More details on what was required by LCN in May 2025:
+
+1. Must use `www.bradford-abbas.uk` as "Common Name" for LCN to re-issue certificate  
+
+1. Don't provide challenge password (or optional Company Name)
 
 ```
 Generating a 2048 bit RSA private key
@@ -64,6 +76,9 @@ Email Address []:webmaster@bradford-abbas.uk
 Please enter the following 'extra' attributes
 to be sent with your certificate request
 A challenge password []:
+
+An optional company name []:
+
 ```
 
 Check ourselves and submit to LCN:
