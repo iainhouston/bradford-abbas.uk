@@ -32,7 +32,7 @@ On MacOS:
 Firstly, find the password used to encrypt the key and the signing certficate in this repo. e.g. put the one stored locally into the MacOS clipboard (pb gor PasteBoard?):
 
 ```
-cat .vaultpw | pbcopy
+cat ~/.vaultpw | pbcopy
 ```
 
 Then decrypt the repo's key and CSY and generate new ones
@@ -43,7 +43,7 @@ cd ~/bradford-abbas.uk/vm/certs
 ansible-vault decrypt  SSL.key
 ansible-vault decrypt  SSL.csr
 
-openssl req -nodes -newkey rsa:2048 -keyout SSL.key -out SSL.csr
+openssl req -nodes -newkey rsa:2048 -sha256 -keyout SSL.key -out SSL.csr
 ```
 
 More details on what was required by LCN in May 2025:
@@ -100,11 +100,13 @@ ansible-vault encrypt  SSL.csr
 
 # Create an SSL Certificate Bundle
 
-If several intermediate certificate files are received (as opposed to a single CA bundle), the files should be merged into a bundle before importing.
-
-
-
-3.  Append all intermediate and root files into a single text file (example: `vm/certs/SSL.crt"`).  The appended files must not have any spaces between each start and end of file.
+*If only BA Cert supplied* 
+I do this by copying and pasting the newly-aquired crt into the existing crt bundle
+ `vm/certs/SSL.crt` replacing the top crt in the bundle  with the newly-aquired one.
+ 
+ *If they send us a zipped up bundle of certificates*  we have to merge them together.  
+ 
+The appended files must not have any spaces between each start and end of file.
 
     Example Bundle content:
 
@@ -176,13 +178,6 @@ cp SSL.crt ~/bradford-abbas.uk/vm/certs/
 ```
 
 # Renewing the SSL Certificate
-
-
-1. Decrypt the old Certificates:
-
-        ansible-vault decrypt vm/certs/SSL.crt
-
-1. Copy bundle from step 1 above into `SSL.crt`
 
 1. Encrypt the new Certificates:
 
