@@ -41,10 +41,13 @@
                     systemctl restart apache2.service
             become: yes
        
-        # When git was initialised originally: git config core.sparseCheckout true
-        # With --depth=1, Git downloads only the latest commit and avoids fetching older history.
-        - name: Pull only the files originally specified in .git/info/sparse-checkout
-          command: git pull --depth=1 origin master
+        - name: Fetch latest changes (shallow) from origin master
+          command: git fetch --depth=1 origin master
+          args:
+            chdir: "{{ drupal_deploy_dir }}"
+
+        - name: Reset working tree to match shallow fetched commit
+          command: git reset --hard FETCH_HEAD
           args:
             chdir: "{{ drupal_deploy_dir }}"
 
