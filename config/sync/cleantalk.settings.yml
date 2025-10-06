@@ -1,5 +1,5 @@
 cleantalk_authkey: zyraga9u3e2e
-cleantalk_check_comments: true
+cleantalk_check_comments: false
 cleantalk_check_comments_automod: false
 cleantalk_check_comments_min_approved: 3
 cleantalk_check_register: true
@@ -19,6 +19,7 @@ cleantalk_alternative_cookies_session: false
 cleantalk_check_added_content: false
 cleantalk_check_ccf: false
 cleantalk_link: false
+cleantalk_bot_detector: false
 cleantalk_sfw: true
 cleantalk_sfw_ac: false
 cleantalk_sfw_antiflood: false
@@ -28,3 +29,7 @@ _core:
 cleantalk_check_external: 0
 cleantalk_check_external__capture_buffer: 0
 cleantalk_salt: '95779732354827475'
+cleantalk_debug_enabled: 0
+cleantalk_use_drupal_http_api: 0
+cleantalk_show_debug_checkbox: 0
+cleantalk_debug_save_button: 'Save to file'
