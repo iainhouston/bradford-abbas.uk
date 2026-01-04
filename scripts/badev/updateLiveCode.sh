@@ -15,7 +15,7 @@ then
     becomepass=`cat ${HOME}/.vaultpw`
 
     ansible-playbook prod/update.playbook.yml \
-        --inventory-file=prod/inventory.yml \
+        --inventory=prod/inventory.yml \
         --extra-vars="project_dir=$(pwd)" \
         --extra-vars="ansible_become_pass=${becomepass}" \
         --vault-password-file="~/.vaultpw"
